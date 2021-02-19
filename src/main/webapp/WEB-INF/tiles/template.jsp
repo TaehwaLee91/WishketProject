@@ -31,5 +31,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="/js/signup.js"></script>
+        <script>$('#loginbtn1').on('click',function(){location.href='/accounts/login'})
+        $('#joinbtn').on('click',function(){location.href='/accounts/signup'})</script>
     </body>
 </html>
