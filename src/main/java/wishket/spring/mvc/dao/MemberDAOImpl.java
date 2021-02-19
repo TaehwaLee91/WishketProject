@@ -14,4 +14,14 @@ public class MemberDAOImpl implements MemberDAO{
     public int insertMember(MemberVO mvo) {
         return sqlSession.insert("member.insertMember",mvo);
     }
+
+    @Override
+    public int selectOneUserid(String userid) {
+        return sqlSession.selectOne("member.selectUserid",userid);
+    }
+
+    @Override
+    public int selectOneEmail(String email) {
+        return sqlSession.selectOne("member.selectEmail",email);
+    }
 }

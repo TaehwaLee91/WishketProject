@@ -22,24 +22,25 @@
             <div class="form-group row ">
                 <label for="email" class="col-form-label col-2 text-right font-weight-bold "><span class="text-danger">*</span>이메일</label>
                 <input type="text" id="email" name="email"class="form-control col-8">
-                <small class="text-muted  offset-2 mt-2">비즈니스용 이메일 사용을 권장합니다 <i class="bi bi-question-circle bidragup"></i></small>
+                <small  id="emailText" name="emailText" class="text-muted  offset-2 mt-2">비즈니스용 이메일 사용을 권장합니다 <i class="bi bi-question-circle bidragup"></i></small>
             </div>
 
             <div class="form-group row ">
                 <label for="userid" class="col-form-label col-2 text-right font-weight-bold "><span class="text-danger">*</span>아이디</label>
                 <input type="text" id="userid" name="userid"class="form-control col-8">
+                <small id="idText" name="idText"class="text-muted  offset-2 mt-2">아이디는 8~16자 이내로 해주세요.<i class="bi bi-question-circle bidragup"></i></small>
             </div>
 
             <div class="form-group row">
                 <label for="passwd" class="col-form-label col-2 text-right font-weight-bold"><span class="text-danger">*</span>비밀번호</label>
                 <input type="password" id="passwd" name="passwd" class="form-control col-8" >
-                <small class="text-muted  offset-2 mt-2">비밀번호는 8자 이상 32자 이하로 입력해 주세요.<i class="bi bi-question-circle bidragup"></i></small>
+                <small id="pwdText" name="pwdText"class="text-muted  offset-2 mt-2">비밀번호는 대/소/숫자/특수문자 각각 한개 이상을 포함한 8~32글자로 입력해 주세요.<i class="bi bi-question-circle bidragup"></i></small>
             </div>
 
             <div class="form-group row ">
                 <label for="checkpwd" class="col-form-label col-2  font-weight-bold" style="width: 200px"><span class="text-danger">*</span>비밀번호</label>
                 <input type="password" id="checkpwd"name="checkpwd" class="form-control col-8">
-                <small class="text-muted  offset-2 mt-2">동일한 비밀번호를 입력해 주세요.<i class="bi bi-question-circle bidragup"></i></small>
+                <small id="checkpwdText" name="checkpwdText"class="text-muted  offset-2 mt-2">동일한 비밀번호를 입력해 주세요.<i class="bi bi-question-circle bidragup"></i></small>
             </div>
 
             <div class="form-group row">

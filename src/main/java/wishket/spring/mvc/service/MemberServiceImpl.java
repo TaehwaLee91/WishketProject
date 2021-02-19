@@ -17,4 +17,20 @@ public class MemberServiceImpl implements MemberService{
         if (cnt>0) result="회원가입 성공!";
         return result;
     }
+
+    @Override
+    public String checkUserid(String userid) {
+        String isOk = "0";
+        int  cnt = mdao.selectOneUserid(userid);
+        if(cnt>0) isOk="1";
+        return isOk;
+    }
+
+    @Override
+    public String checkEmail(String email) {
+        String isOk="0";
+        int cnt = mdao.selectOneEmail(email);
+        if(cnt>0) isOk="1";
+        return isOk;
+    }
 }

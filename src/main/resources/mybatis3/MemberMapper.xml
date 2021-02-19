@@ -4,7 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="member">
+    <!-- 데이터입력 -->
     <insert id="insertMember" statementType="PREPARED" parameterType="wishket.spring.mvc.vo.MemberVO">
         insert into 회원 (userid, email, passwd) values (#{userid},#{email},#{passwd})
     </insert>
+    <!-- 아이디 중복조회-->
+    <select id="selectUserid" statementType="PREPARED" parameterType="String" resultType="int">
+        select count(userid) cnt from 회원 where userid = #{userid}
+    </select>
+    <!-- 이메일 중복조회-->
+    <select id="selectEmail" statementType="PREPARED" parameterType="String" resultType="int">
+        select count(email) cnt from 회원 where email =#{email}
+    </select>
 </mapper>
