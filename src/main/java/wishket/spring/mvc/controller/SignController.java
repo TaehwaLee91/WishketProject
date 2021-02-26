@@ -40,6 +40,7 @@ public class SignController {
             e.printStackTrace();
         }
     }
+
     @ResponseBody // 이메일 중복체크
     @GetMapping("accounts/signup/checkEmail")
     public void checkEmail(String email, HttpServletResponse res){
