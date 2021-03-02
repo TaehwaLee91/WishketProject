@@ -1,0 +1,139 @@
+
+.enroll-row {
+    margin-top: 30px
+}
+
+/*프로젝트 등록 첫번째 화면*/
+.enroll-banner {
+    height: 50px;
+    background-color: #e8faff; 
+    border: 1px solid #bfedfa;
+    padding-top: 12px
+}
+
+.project-select-card {
+    width: 232px;
+    margin: 20px 20px 0px 20px;
+    padding: 10px 10px 0px 10px !important;
+    display: inline-block;
+
+}
+
+.select-card-content {
+    text-align: center;
+}
+
+
+
+/* enroll 첫번째 페이지*/
+.status-main-menu {
+    margin-top: 50px;
+    color: #616161;
+}
+.main-menu-title{
+    color: #616161;
+}
+.main-menu-active {
+    color: #212121;
+    font-weight: bold;
+}
+
+/* enrollDetail */
+.status-sub-menu {
+    border-left: 2px solid #e0e0e0;
+    margin: 18px 0 26px 8px;
+}
+
+.status-sub-menu-title {
+    padding-left: 20px;
+    color: #616161;
+}
+
+.sub-menu-active {
+    border-left: 2px solid #2e6baa;
+    color: #212121;
+    margin-left: -2px;
+    font-weight: bold;
+}
+
+
+
+.status-mark {
+    padding-top:5px;
+}
+
+.form-input-section {
+    padding: 15px;
+}
+
+.plan-detail-status-list {
+    padding-left: 20px;
+}
+
+.plan-detail-status-list li > span:nth-of-type(2) {
+    margin-left: 10px;
+}
+
+
+/* 공통 적용 사항 */
+/* 폰트 크기 */
+    .page-title {
+        font-size:x-large; font-weight: 500;
+    }
+
+    .form-title {
+        font-size: x-large; font-weight: 400;
+    }
+
+    .form-content-title {
+        font-size: medium; font-weight: 700;
+    }
+
+    .caption-1 {
+        font-size:13px
+    }
+
+/* 폰트 색상 */
+    .required {
+        color: red;
+    }
+
+/* 폰트 두께 */
+
+
+/* 버튼 */
+    .backBtn {
+        color: #6aadc0;
+    }
+
+    .backBtn > p {
+        display: inline;
+    }
+
+/* 리스트 */
+    .img-item {
+        margin-bottom: 4px;
+        margin-right: 3px;
+    }
+
+    .list-items {
+        list-style-type: none;
+        margin-left:0px;
+        padding-left: 0px;
+    }
+
+/*  라디오, 체크박스 */
+.radio_item{
+    margin: 0 10px;
+}
+
+/* 컨테이너 */
+.container-row {
+    padding-top: 30px;
+}
+
+.form-content {
+    margin-top: 30px;
+    font-size: 14px;
+}
+

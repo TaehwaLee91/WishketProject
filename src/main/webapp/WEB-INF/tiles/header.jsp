@@ -3,7 +3,7 @@
     <nav class="nav navbar-expand navbar-dark bg-dark col-12" >
         <ul class="nav navbar-nav  nav-fill w-100  col-7   " style="margin:15px auto;">
             <li class="nav-item small font-weight-bold"><a class="nav-link navbar-brand text-white" href="#">WishKet</a></li>
-            <li class="nav-item small font-weight-bold align-self-center"><a class="nav-link text-white" href="#">프로젝트 등록</a></li>
+            <li class="nav-item small font-weight-bold align-self-center"><a class="nav-link text-white" href="/project/create">프로젝트 등록</a></li>
             <li class="nav-item small font-weight-bold align-self-center"><a  class="nav-link text-white "href="#">프로젝트 찾기</a></li>
             <li class="nav-item small font-weight-bold align-self-center"><a class="nav-link text-white" href="#">파트너스 찾기</a></li>
             <li class="nav-item small font-weight-bold align-self-center"><a class="nav-link text-white" href="#">이용방법</a></li>
