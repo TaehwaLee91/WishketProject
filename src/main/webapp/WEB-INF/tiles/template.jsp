@@ -33,6 +33,7 @@
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="/js/signup.js"></script>
         <script src="/js/index.js"></script>
+        <script src="/js/login.js"></script>
         <script>$('#loginbtn1').on('click',function(){location.href='/accounts/login'})
         $('#joinbtn').on('click',function(){location.href='/accounts/signup'})</script>
 

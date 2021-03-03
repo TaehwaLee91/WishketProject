@@ -24,4 +24,7 @@ public class MemberDAOImpl implements MemberDAO{
     public int selectOneEmail(String email) {
         return sqlSession.selectOne("member.selectEmail",email);
     }
+
+    @Override
+    public int selectLogin(MemberVO mvo) {return sqlSession.selectOne("member.checkLogin",mvo);}
 }
