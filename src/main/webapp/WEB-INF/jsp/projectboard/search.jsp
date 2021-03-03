@@ -137,7 +137,7 @@
                                     <br><br>
                                     <div class="category-title body-2-medium" style="margin-top: -20px">
                                         프로젝트 진행 방식&nbsp;
-                                        <img class="iconi" src="/resources/img/tab-icon-tooltip.png"
+                                        <img class="iconi" src="/img/tab-icon-tooltip.png"
                                              title="외주(도급) 프로젝트
 프로젝트 단위로 금액을 지급받고 원하는 장소에서 프로젝트를
 진행합니다.
@@ -208,7 +208,7 @@
                                         <input class="only-selected-checkbox" data-value="선택한 카테고리만 보기"
                                                id="selected_category"
                                                name="selected_category" type="image"
-                                               src="/resources/img/input-roundcheckbox-unselected.png"
+                                               src="/img/input-roundcheckbox-unselected.png"
                                                value="only_selected_category"
                                                style="opacity: 0.7">
                                         <label class="only-selected-label" for="selected_category">
@@ -270,7 +270,7 @@
                                 <div class="show-only-seleted">
                                     <input class="only-selected-checkbox" data-value="선택한 분야만 보기" id="onlySelectedFiled"
                                            name="onlySelectedFiled" type="image"
-                                           src="/resources/img/input-roundcheckbox-unselected.png"
+                                           src="/img/input-roundcheckbox-unselected.png"
                                            value="onlySelectedFiled"
                                            style="opacity: 0.7">
                                     <label class="only-selected-label" for="selected_category">
@@ -282,7 +282,7 @@
                                     <input class="only-selected-checkbox" data-value="프로젝트 분야추가하기"
                                            id="subcategoryModalButton"
                                            name="subcategoryModalButton" type="image"
-                                           src="/resources/img/input-plusbox-selected-w.png" value="ModalButton"
+                                           src="/img/input-plusbox-selected-w.png" value="ModalButton"
                                            style="opacity: 0.7">
                                     <label class="only-selected-label" for="subcategoryModalButton"
                                            style="font-size: 13px; color: #007bff; font-weight: bold;">
@@ -362,7 +362,7 @@
 
                                             <button class="btn reset-btn caption-2" id="resetBudget"
                                                     style="margin-top: -5px; font-size: 13px;"><img
-                                                    src="/resources/img/chip-btn-refresh.svg"/>
+                                                    src="/img/chip-btn-refresh.svg"/>
                                                 &nbsp;&nbsp;금액초기화
                                             </button>
                                         </div>
@@ -413,7 +413,7 @@
 
                                             <button class="btn reset-btn caption-2" id="resetBudget3"
                                                     style="margin-top: -5px; font-size: 13px;">
-                                                <img src="/resources/img/chip-btn-refresh.svg"/>
+                                                <img src="/img/chip-btn-refresh.svg"/>
                                                 &nbsp;&nbsp;기간초기화
                                             </button>
                                         </div>
@@ -473,7 +473,7 @@
 
                                             <button class="btn reset-btn caption-2" id="resetBudget4"
                                                     style="margin-top: -5px; font-size: 13px;">
-                                                <img src="/resources/img/chip-btn-refresh.svg"/>
+                                                <img src="/img/chip-btn-refresh.svg"/>
                                                 &nbsp;&nbsp;기간초기화
                                             </button>
                                         </div>
@@ -500,7 +500,7 @@
                                          <label onclick="direct()">직접 입력</label>
                                             <div class="reset-box">
                                             <button class="btn reset-btn caption-2" id="resetBudget2"
-                                                    style="margin-top: -5px; font-size: 13px"><img src="/resources/img/chip-btn-refresh.svg"/>
+                                                    style="margin-top: -5px; font-size: 13px"><img src="/img/chip-btn-refresh.svg"/>
                                                 금액초기화
                                             </button>
                                             </div>
@@ -518,7 +518,7 @@
                                      <input class="wishket-checkbox theme-wishket" data-value="평가 우수"
                                             id="clientPro" name="clientPro"
                                             type="checkbox" value="pro" style="margin-top: 10px">
-                                     <span>평가 우수<img src="/resources/img/icon-badge-client-pro.png" width="20px"
+                                     <span>평가 우수<img src="/img/icon-badge-client-pro.png" width="20px"
                                                      height="20px"/></span>
                                  </span>
                                                 </label>
@@ -532,7 +532,7 @@
                                      <input class="wishket-checkbox theme-wishket" data-value="인증 완료"
                                             id="clientVerified" name="clientVerified"
                                             type="checkbox" value="pro" style="margin-top: 2px">
-                                     <span>인증 완료<img src="/resources/img/icon-badge-verification.png" width="20px"
+                                     <span>인증 완료<img src="/img/icon-badge-verification.png" width="20px"
                                                      height="20px"/></span>
                                  </span>
                                                 </label>
@@ -546,7 +546,7 @@
                                     <div class="filter-detail-checkbox body-3" id="filterLocation"></div>
                                     <button class="btn reset-btn caption-2" id="location"
                                             style="margin-top: -5px; font-size: 13px"><img
-                                            src="/resources/img/input-plusbox-selected-w.png" height="20px"
+                                            src="/img/input-plusbox-selected-w.png" height="20px"
                                             width="20px"/>
                                         위치 추가하기
                                     </button> <!-- 위치 추가하기 모달창 --> <!-- 추후 추가 -->
@@ -585,7 +585,7 @@
                                     <div class="selected-filter-list">
                                         <button class="selected-filter-clear" id="chipResetButton"
                                                 onclick="resetFilter()">
-                                            <img id="chipResetIcon" src="/resources/img/chip-btn-refresh.svg"/>
+                                            <img id="chipResetIcon" src="/img/chip-btn-refresh.svg"/>
                                             <span class="caption-1" id="chipResetText">초기화</span>
                                         </button>
                                     </div>
@@ -595,24 +595,24 @@
                                         <form name="" method="" action="">
                                             <input checked="" class="order-radio" id="orderByDefault"
                                                    name="order_by" type="image"
-                                                   src="/resources/img/check-inactive.png" value="default"/>
+                                                   src="/img/check-inactive.png" value="default"/>
                                             <label class="caption-1-medium order-text" for="orderByDefault">기본 정렬 순&nbsp;</label>
                                             <input class="order-radio" id="orderByHighPrice" name="order_by"
-                                                   type="image" src="/resources/img/check-inactive.png"
+                                                   type="image" src="/img/check-inactive.png"
                                                    value="price"/>
                                             <label class="caption-1-medium order-text" for="orderByHighPrice">금액 높은
                                                 순&nbsp;</label>
                                             <input class="order-radio" id="orderByLowApplicant" name="order_by"
-                                                   type="image" src="/resources/img/check-inactive.png"
+                                                   type="image" src="/img/check-inactive.png"
                                                    value="applicant"/>
                                             <label class="caption-1-medium order-text" for="orderByHighPrice">지원 적은
                                                 순&nbsp;</label>
                                             <input class="order-radio" id="orderBySubmit" name="order_by"
-                                                   type="image" src="/resources/img/check-inactive.png"
+                                                   type="image" src="/img/check-inactive.png"
                                                    value="submit"/>
                                             <label class="caption-1-medium order-text" for="orderBySubmit">최신 등록 순&nbsp;</label>
                                             <input class="order-radio" id="orderByClose" name="order_by"
-                                                   type="image" src="/resources/img/check-inactive.png"
+                                                   type="image" src="/img/check-inactive.png"
                                                    value="close"/>
                                             <label class="caption-1-medium order-text" for="orderByClose">마감 임박 순</label>
                                         </form>
@@ -621,7 +621,7 @@
                             </div>
                         </section>  <!-- result header wrap -->
                         <!--<section class="result-list-wrap" id="resultListWrap">
-                            <div id="loadingWrap"><img alt="로딩 중" id="loadingSpinner" src="/resources/img/spinner-loading.gif"/>
+                            <div id="loadingWrap"><img alt="로딩 중" id="loadingSpinner" src="/img/spinner-loading.gif"/>
                             <p id="loadingText">로딩 중 입니다.</p></div>
                         </section>--> <!-- 화면 로딩시 -->
                         <section class="result-list-wrap" id="resultListWrap">
@@ -645,12 +645,12 @@
                                             <section class="project-unit-info">
                                                 <div class="estimated-box" style="font-size: 15px">
                                                     <p class="body-2-medium estimated estimated-price">
-                                                        <img src="/resources/img/icon-project-features.svg" style="margin-top: -5px">
+                                                        <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                         <span>예상 금액&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">30,000,000원</span>
                                                     </p>
                                                     <p class="body-2-medium estimated estimated-term" style="margin-top: -12px">
-                                                        <img src="/resources/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
+                                                        <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
                                                         <span>예상 기간&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">90일</span>
                                                     </p>
@@ -659,11 +659,11 @@
                                                 <div class="project-unit-category" style="text-align: center; font-size: 15px">
 
                                                     <p class="body-2 category-text category" style="margin: -66px 0px 20px -200px">
-                                                        <img src="/resources/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
+                                                        <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
                                                         개발 · 디자인 · 기획
                                                     </p>
                                                     <p class="body-2 category-text subcategory2" style="margin: -15px -5px 0px -145px">
-                                                        <img src="/resources/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
+                                                        <img src="/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         웹 · 애플리케이션 · 퍼블리싱
                                                     </p>
                                                 </div>
@@ -698,7 +698,7 @@
                                                     <hr class="small-line-1">
                                                     <div class="pipe"></div>
                                                     <div class="client-location-tag">
-                                                        <img src="/resources/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
                                                         <span class="client-location caption-1" style="font-size: 13px; float: left">
                                                             경기도 > 수원시 권선구&nbsp;&nbsp;&nbsp;
                                                         </span>
@@ -713,14 +713,14 @@
                                         <section class="project-unit-status"; style="text-align: right; margin-top: -90px;">
                                             <div class="application-status-box">
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                             마감
                                                             <strong>1주 3일 전</strong>
                                                         </span>
                                                 </div>
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                             총
                                                             <strong>13명</strong> 지원
@@ -730,10 +730,10 @@
                                             <hr class="short-line">
                                             <div class="interest-status-box">
                                                 <div class="status-wrap-icon" style="cursor: pointer; margin-right: -60px">
-                                                    <img src="/resources/img/post-icon-view.png"
+                                                    <img src="/img/post-icon-view.png"
                                                          style="width: 15px; height: 15px;" title="조회수가 아주 높은 프로젝트입니다.">
                                                     <span class="caption-1-high text500">아주 높음</span>
-                                                    <img src="/resources/img/btn-icon-like-s-off.png"
+                                                    <img src="/img/btn-icon-like-s-off.png"
                                                          style="width: 15px; height: 15px; margin-left: -50px" title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                     <span class="caption-1-high text500">14</span>
                                                 </div>
@@ -756,12 +756,12 @@
                                             <section class="project-unit-info">
                                                 <div class="estimated-box" style="font-size: 15px">
                                                     <p class="body-2-medium estimated estimated-price">
-                                                        <img src="/resources/img/icon-project-features.svg" style="margin-top: -5px">
+                                                        <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                         <span>예상 금액&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">30,000,000원</span>
                                                     </p>
                                                     <p class="body-2-medium estimated estimated-term" style="margin-top: -12px">
-                                                        <img src="/resources/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
+                                                        <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
                                                         <span>예상 기간&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">90일</span>
                                                     </p>
@@ -770,11 +770,11 @@
                                                 <div class="project-unit-category" style="text-align: center; font-size: 15px">
 
                                                     <p class="body-2 category-text category" style="margin: -66px 0px 20px -200px">
-                                                        <img src="/resources/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
+                                                        <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
                                                         개발 · 디자인 · 기획
                                                     </p>
                                                     <p class="body-2 category-text subcategory2" style="margin: -15px -5px 0px -145px">
-                                                        <img src="/resources/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
+                                                        <img src="/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         웹 · 애플리케이션 · 퍼블리싱
                                                     </p>
                                                 </div>
@@ -809,7 +809,7 @@
                                                     <hr class="small-line-1">
                                                     <div class="pipe"></div>
                                                     <div class="client-location-tag">
-                                                        <img src="/resources/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
                                                         <span class="client-location caption-1" style="font-size: 13px; float: left">
                                                             경기도 > 수원시 권선구&nbsp;&nbsp;&nbsp;
                                                         </span>
@@ -824,14 +824,14 @@
                                         <section class="project-unit-status"; style="text-align: right; margin-top: -90px;">
                                             <div class="application-status-box">
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                             마감
                                                             <strong>1주 3일 전</strong>
                                                         </span>
                                                 </div>
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                             총
                                                             <strong>13명</strong> 지원
@@ -841,10 +841,10 @@
                                             <hr class="short-line">
                                             <div class="interest-status-box">
                                                 <div class="status-wrap-icon" style="cursor: pointer; margin-right: -60px">
-                                                    <img src="/resources/img/post-icon-view.png"
+                                                    <img src="/img/post-icon-view.png"
                                                          style="width: 15px; height: 15px;" title="조회수가 아주 높은 프로젝트입니다.">
                                                     <span class="caption-1-high text500">아주 높음</span>
-                                                    <img src="/resources/img/btn-icon-like-s-off.png"
+                                                    <img src="/img/btn-icon-like-s-off.png"
                                                          style="width: 15px; height: 15px; margin-left: -50px" title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                     <span class="caption-1-high text500">14</span>
                                                 </div>
@@ -867,12 +867,12 @@
                                             <section class="project-unit-info">
                                                 <div class="estimated-box" style="font-size: 15px">
                                                     <p class="body-2-medium estimated estimated-price">
-                                                        <img src="/resources/img/icon-project-features.svg" style="margin-top: -5px">
+                                                        <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                         <span>예상 금액&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">30,000,000원</span>
                                                     </p>
                                                     <p class="body-2-medium estimated estimated-term" style="margin-top: -12px">
-                                                        <img src="/resources/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
+                                                        <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
                                                         <span>예상 기간&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">90일</span>
                                                     </p>
@@ -881,11 +881,11 @@
                                                 <div class="project-unit-category" style="text-align: center; font-size: 15px">
 
                                                     <p class="body-2 category-text category" style="margin: -66px 0px 20px -200px">
-                                                        <img src="/resources/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
+                                                        <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
                                                         개발 · 디자인 · 기획
                                                     </p>
                                                     <p class="body-2 category-text subcategory2" style="margin: -15px -5px 0px -145px">
-                                                        <img src="/resources/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
+                                                        <img src="/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         웹 · 애플리케이션 · 퍼블리싱
                                                     </p>
                                                 </div>
@@ -920,7 +920,7 @@
                                                     <hr class="small-line-1">
                                                     <div class="pipe"></div>
                                                     <div class="client-location-tag">
-                                                        <img src="/resources/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
                                                         <span class="client-location caption-1" style="font-size: 13px; float: left">
                                                             경기도 > 수원시 권선구&nbsp;&nbsp;&nbsp;
                                                         </span>
@@ -935,14 +935,14 @@
                                         <section class="project-unit-status"; style="text-align: right; margin-top: -90px;">
                                             <div class="application-status-box">
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                             마감
                                                             <strong>1주 3일 전</strong>
                                                         </span>
                                                 </div>
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                             총
                                                             <strong>13명</strong> 지원
@@ -952,10 +952,10 @@
                                             <hr class="short-line">
                                             <div class="interest-status-box">
                                                 <div class="status-wrap-icon" style="cursor: pointer; margin-right: -60px">
-                                                    <img src="/resources/img/post-icon-view.png"
+                                                    <img src="/img/post-icon-view.png"
                                                          style="width: 15px; height: 15px;" title="조회수가 아주 높은 프로젝트입니다.">
                                                     <span class="caption-1-high text500">아주 높음</span>
-                                                    <img src="/resources/img/btn-icon-like-s-off.png"
+                                                    <img src="/img/btn-icon-like-s-off.png"
                                                          style="width: 15px; height: 15px; margin-left: -50px" title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                     <span class="caption-1-high text500">14</span>
                                                 </div>
@@ -978,12 +978,12 @@
                                             <section class="project-unit-info">
                                                 <div class="estimated-box" style="font-size: 15px">
                                                     <p class="body-2-medium estimated estimated-price">
-                                                        <img src="/resources/img/icon-project-features.svg" style="margin-top: -5px">
+                                                        <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                         <span>예상 금액&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">30,000,000원</span>
                                                     </p>
                                                     <p class="body-2-medium estimated estimated-term" style="margin-top: -12px">
-                                                        <img src="/resources/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
+                                                        <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
                                                         <span>예상 기간&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">90일</span>
                                                     </p>
@@ -992,11 +992,11 @@
                                                 <div class="project-unit-category" style="text-align: center; font-size: 15px">
 
                                                     <p class="body-2 category-text category" style="margin: -66px 0px 20px -200px">
-                                                        <img src="/resources/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
+                                                        <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
                                                         개발 · 디자인 · 기획
                                                     </p>
                                                     <p class="body-2 category-text subcategory2" style="margin: -15px -5px 0px -145px">
-                                                        <img src="/resources/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
+                                                        <img src="/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         웹 · 애플리케이션 · 퍼블리싱
                                                     </p>
                                                 </div>
@@ -1031,7 +1031,7 @@
                                                     <hr class="small-line-1">
                                                     <div class="pipe"></div>
                                                     <div class="client-location-tag">
-                                                        <img src="/resources/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
                                                         <span class="client-location caption-1" style="font-size: 13px; float: left">
                                                             경기도 > 수원시 권선구&nbsp;&nbsp;&nbsp;
                                                         </span>
@@ -1046,14 +1046,14 @@
                                         <section class="project-unit-status"; style="text-align: right; margin-top: -90px;">
                                             <div class="application-status-box">
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                             마감
                                                             <strong>1주 3일 전</strong>
                                                         </span>
                                                 </div>
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                             총
                                                             <strong>13명</strong> 지원
@@ -1063,10 +1063,10 @@
                                             <hr class="short-line">
                                             <div class="interest-status-box">
                                                 <div class="status-wrap-icon" style="cursor: pointer; margin-right: -60px">
-                                                    <img src="/resources/img/post-icon-view.png"
+                                                    <img src="/img/post-icon-view.png"
                                                          style="width: 15px; height: 15px;" title="조회수가 아주 높은 프로젝트입니다.">
                                                     <span class="caption-1-high text500">아주 높음</span>
-                                                    <img src="/resources/img/btn-icon-like-s-off.png"
+                                                    <img src="/img/btn-icon-like-s-off.png"
                                                          style="width: 15px; height: 15px; margin-left: -50px" title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                     <span class="caption-1-high text500">14</span>
                                                 </div>
@@ -1089,12 +1089,12 @@
                                             <section class="project-unit-info">
                                                 <div class="estimated-box" style="font-size: 15px">
                                                     <p class="body-2-medium estimated estimated-price">
-                                                        <img src="/resources/img/icon-project-features.svg" style="margin-top: -5px">
+                                                        <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                         <span>예상 금액&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">30,000,000원</span>
                                                     </p>
                                                     <p class="body-2-medium estimated estimated-term" style="margin-top: -12px">
-                                                        <img src="/resources/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
+                                                        <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
                                                         <span>예상 기간&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">90일</span>
                                                     </p>
@@ -1103,11 +1103,11 @@
                                                 <div class="project-unit-category" style="text-align: center; font-size: 15px">
 
                                                     <p class="body-2 category-text category" style="margin: -66px 0px 20px -200px">
-                                                        <img src="/resources/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
+                                                        <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
                                                         개발 · 디자인 · 기획
                                                     </p>
                                                     <p class="body-2 category-text subcategory2" style="margin: -15px -5px 0px -145px">
-                                                        <img src="/resources/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
+                                                        <img src="/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         웹 · 애플리케이션 · 퍼블리싱
                                                     </p>
                                                 </div>
@@ -1142,7 +1142,7 @@
                                                     <hr class="small-line-1">
                                                     <div class="pipe"></div>
                                                     <div class="client-location-tag">
-                                                        <img src="/resources/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
                                                         <span class="client-location caption-1" style="font-size: 13px; float: left">
                                                             경기도 > 수원시 권선구&nbsp;&nbsp;&nbsp;
                                                         </span>
@@ -1157,14 +1157,14 @@
                                         <section class="project-unit-status"; style="text-align: right; margin-top: -90px;">
                                             <div class="application-status-box">
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                             마감
                                                             <strong>1주 3일 전</strong>
                                                         </span>
                                                 </div>
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                             총
                                                             <strong>13명</strong> 지원
@@ -1174,10 +1174,10 @@
                                             <hr class="short-line">
                                             <div class="interest-status-box">
                                                 <div class="status-wrap-icon" style="cursor: pointer; margin-right: -60px">
-                                                    <img src="/resources/img/post-icon-view.png"
+                                                    <img src="/img/post-icon-view.png"
                                                          style="width: 15px; height: 15px;" title="조회수가 아주 높은 프로젝트입니다.">
                                                     <span class="caption-1-high text500">아주 높음</span>
-                                                    <img src="/resources/img/btn-icon-like-s-off.png"
+                                                    <img src="/img/btn-icon-like-s-off.png"
                                                          style="width: 15px; height: 15px; margin-left: -50px" title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                     <span class="caption-1-high text500">14</span>
                                                 </div>
@@ -1200,12 +1200,12 @@
                                             <section class="project-unit-info">
                                                 <div class="estimated-box" style="font-size: 15px">
                                                     <p class="body-2-medium estimated estimated-price">
-                                                        <img src="/resources/img/icon-project-features.svg" style="margin-top: -5px">
+                                                        <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                         <span>예상 금액&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">30,000,000원</span>
                                                     </p>
                                                     <p class="body-2-medium estimated estimated-term" style="margin-top: -12px">
-                                                        <img src="/resources/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
+                                                        <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
                                                         <span>예상 기간&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">90일</span>
                                                     </p>
@@ -1214,11 +1214,11 @@
                                                 <div class="project-unit-category" style="text-align: center; font-size: 15px">
 
                                                     <p class="body-2 category-text category" style="margin: -66px 0px 20px -200px">
-                                                        <img src="/resources/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
+                                                        <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
                                                         개발 · 디자인 · 기획
                                                     </p>
                                                     <p class="body-2 category-text subcategory2" style="margin: -15px -5px 0px -145px">
-                                                        <img src="/resources/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
+                                                        <img src="/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         웹 · 애플리케이션 · 퍼블리싱
                                                     </p>
                                                 </div>
@@ -1253,7 +1253,7 @@
                                                     <hr class="small-line-1">
                                                     <div class="pipe"></div>
                                                     <div class="client-location-tag">
-                                                        <img src="/resources/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
                                                         <span class="client-location caption-1" style="font-size: 13px; float: left">
                                                             경기도 > 수원시 권선구&nbsp;&nbsp;&nbsp;
                                                         </span>
@@ -1268,14 +1268,14 @@
                                         <section class="project-unit-status"; style="text-align: right; margin-top: -90px;">
                                             <div class="application-status-box">
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                             마감
                                                             <strong>1주 3일 전</strong>
                                                         </span>
                                                 </div>
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                             총
                                                             <strong>13명</strong> 지원
@@ -1285,10 +1285,10 @@
                                             <hr class="short-line">
                                             <div class="interest-status-box">
                                                 <div class="status-wrap-icon" style="cursor: pointer; margin-right: -60px">
-                                                    <img src="/resources/img/post-icon-view.png"
+                                                    <img src="/img/post-icon-view.png"
                                                          style="width: 15px; height: 15px;" title="조회수가 아주 높은 프로젝트입니다.">
                                                     <span class="caption-1-high text500">아주 높음</span>
-                                                    <img src="/resources/img/btn-icon-like-s-off.png"
+                                                    <img src="/img/btn-icon-like-s-off.png"
                                                          style="width: 15px; height: 15px; margin-left: -50px" title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                     <span class="caption-1-high text500">14</span>
                                                 </div>
@@ -1311,12 +1311,12 @@
                                             <section class="project-unit-info">
                                                 <div class="estimated-box" style="font-size: 15px">
                                                     <p class="body-2-medium estimated estimated-price">
-                                                        <img src="/resources/img/icon-project-features.svg" style="margin-top: -5px">
+                                                        <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                         <span>예상 금액&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">30,000,000원</span>
                                                     </p>
                                                     <p class="body-2-medium estimated estimated-term" style="margin-top: -12px">
-                                                        <img src="/resources/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
+                                                        <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
                                                         <span>예상 기간&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">90일</span>
                                                     </p>
@@ -1325,11 +1325,11 @@
                                                 <div class="project-unit-category" style="text-align: center; font-size: 15px">
 
                                                     <p class="body-2 category-text category" style="margin: -66px 0px 20px -200px">
-                                                        <img src="/resources/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
+                                                        <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
                                                         개발 · 디자인 · 기획
                                                     </p>
                                                     <p class="body-2 category-text subcategory2" style="margin: -15px -5px 0px -145px">
-                                                        <img src="/resources/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
+                                                        <img src="/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         웹 · 애플리케이션 · 퍼블리싱
                                                     </p>
                                                 </div>
@@ -1364,7 +1364,7 @@
                                                     <hr class="small-line-1">
                                                     <div class="pipe"></div>
                                                     <div class="client-location-tag">
-                                                        <img src="/resources/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
                                                         <span class="client-location caption-1" style="font-size: 13px; float: left">
                                                             경기도 > 수원시 권선구&nbsp;&nbsp;&nbsp;
                                                         </span>
@@ -1379,14 +1379,14 @@
                                         <section class="project-unit-status"; style="text-align: right; margin-top: -90px;">
                                             <div class="application-status-box">
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                             마감
                                                             <strong>1주 3일 전</strong>
                                                         </span>
                                                 </div>
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                             총
                                                             <strong>13명</strong> 지원
@@ -1396,10 +1396,10 @@
                                             <hr class="short-line">
                                             <div class="interest-status-box">
                                                 <div class="status-wrap-icon" style="cursor: pointer; margin-right: -60px">
-                                                    <img src="/resources/img/post-icon-view.png"
+                                                    <img src="/img/post-icon-view.png"
                                                          style="width: 15px; height: 15px;" title="조회수가 아주 높은 프로젝트입니다.">
                                                     <span class="caption-1-high text500">아주 높음</span>
-                                                    <img src="/resources/img/btn-icon-like-s-off.png"
+                                                    <img src="/img/btn-icon-like-s-off.png"
                                                          style="width: 15px; height: 15px; margin-left: -50px" title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                     <span class="caption-1-high text500">14</span>
                                                 </div>
@@ -1422,12 +1422,12 @@
                                             <section class="project-unit-info">
                                                 <div class="estimated-box" style="font-size: 15px">
                                                     <p class="body-2-medium estimated estimated-price">
-                                                        <img src="/resources/img/icon-project-features.svg" style="margin-top: -5px">
+                                                        <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                         <span>예상 금액&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">30,000,000원</span>
                                                     </p>
                                                     <p class="body-2-medium estimated estimated-term" style="margin-top: -12px">
-                                                        <img src="/resources/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
+                                                        <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
                                                         <span>예상 기간&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">90일</span>
                                                     </p>
@@ -1436,11 +1436,11 @@
                                                 <div class="project-unit-category" style="text-align: center; font-size: 15px">
 
                                                     <p class="body-2 category-text category" style="margin: -66px 0px 20px -200px">
-                                                        <img src="/resources/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
+                                                        <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
                                                         개발 · 디자인 · 기획
                                                     </p>
                                                     <p class="body-2 category-text subcategory2" style="margin: -15px -5px 0px -145px">
-                                                        <img src="/resources/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
+                                                        <img src="/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         웹 · 애플리케이션 · 퍼블리싱
                                                     </p>
                                                 </div>
@@ -1475,7 +1475,7 @@
                                                     <hr class="small-line-1">
                                                     <div class="pipe"></div>
                                                     <div class="client-location-tag">
-                                                        <img src="/resources/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
                                                         <span class="client-location caption-1" style="font-size: 13px; float: left">
                                                             경기도 > 수원시 권선구&nbsp;&nbsp;&nbsp;
                                                         </span>
@@ -1490,14 +1490,14 @@
                                         <section class="project-unit-status"; style="text-align: right; margin-top: -90px;">
                                             <div class="application-status-box">
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                             마감
                                                             <strong>1주 3일 전</strong>
                                                         </span>
                                                 </div>
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                             총
                                                             <strong>13명</strong> 지원
@@ -1507,10 +1507,10 @@
                                             <hr class="short-line">
                                             <div class="interest-status-box">
                                                 <div class="status-wrap-icon" style="cursor: pointer; margin-right: -60px">
-                                                    <img src="/resources/img/post-icon-view.png"
+                                                    <img src="/img/post-icon-view.png"
                                                          style="width: 15px; height: 15px;" title="조회수가 아주 높은 프로젝트입니다.">
                                                     <span class="caption-1-high text500">아주 높음</span>
-                                                    <img src="/resources/img/btn-icon-like-s-off.png"
+                                                    <img src="/img/btn-icon-like-s-off.png"
                                                          style="width: 15px; height: 15px; margin-left: -50px" title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                     <span class="caption-1-high text500">14</span>
                                                 </div>
@@ -1533,12 +1533,12 @@
                                             <section class="project-unit-info">
                                                 <div class="estimated-box" style="font-size: 15px">
                                                     <p class="body-2-medium estimated estimated-price">
-                                                        <img src="/resources/img/icon-project-features.svg" style="margin-top: -5px">
+                                                        <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                         <span>예상 금액&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">30,000,000원</span>
                                                     </p>
                                                     <p class="body-2-medium estimated estimated-term" style="margin-top: -12px">
-                                                        <img src="/resources/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
+                                                        <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
                                                         <span>예상 기간&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">90일</span>
                                                     </p>
@@ -1547,11 +1547,11 @@
                                                 <div class="project-unit-category" style="text-align: center; font-size: 15px">
 
                                                     <p class="body-2 category-text category" style="margin: -66px 0px 20px -200px">
-                                                        <img src="/resources/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
+                                                        <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
                                                         개발 · 디자인 · 기획
                                                     </p>
                                                     <p class="body-2 category-text subcategory2" style="margin: -15px -5px 0px -145px">
-                                                        <img src="/resources/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
+                                                        <img src="/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         웹 · 애플리케이션 · 퍼블리싱
                                                     </p>
                                                 </div>
@@ -1586,7 +1586,7 @@
                                                     <hr class="small-line-1">
                                                     <div class="pipe"></div>
                                                     <div class="client-location-tag">
-                                                        <img src="/resources/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
                                                         <span class="client-location caption-1" style="font-size: 13px; float: left">
                                                             경기도 > 수원시 권선구&nbsp;&nbsp;&nbsp;
                                                         </span>
@@ -1601,14 +1601,14 @@
                                         <section class="project-unit-status"; style="text-align: right; margin-top: -90px;">
                                             <div class="application-status-box">
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                             마감
                                                             <strong>1주 3일 전</strong>
                                                         </span>
                                                 </div>
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                             총
                                                             <strong>13명</strong> 지원
@@ -1618,10 +1618,10 @@
                                             <hr class="short-line">
                                             <div class="interest-status-box">
                                                 <div class="status-wrap-icon" style="cursor: pointer; margin-right: -60px">
-                                                    <img src="/resources/img/post-icon-view.png"
+                                                    <img src="/img/post-icon-view.png"
                                                          style="width: 15px; height: 15px;" title="조회수가 아주 높은 프로젝트입니다.">
                                                     <span class="caption-1-high text500">아주 높음</span>
-                                                    <img src="/resources/img/btn-icon-like-s-off.png"
+                                                    <img src="/img/btn-icon-like-s-off.png"
                                                          style="width: 15px; height: 15px; margin-left: -50px" title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                     <span class="caption-1-high text500">14</span>
                                                 </div>
@@ -1644,12 +1644,12 @@
                                             <section class="project-unit-info">
                                                 <div class="estimated-box" style="font-size: 15px">
                                                     <p class="body-2-medium estimated estimated-price">
-                                                        <img src="/resources/img/icon-project-features.svg" style="margin-top: -5px">
+                                                        <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                         <span>예상 금액&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">30,000,000원</span>
                                                     </p>
                                                     <p class="body-2-medium estimated estimated-term" style="margin-top: -12px">
-                                                        <img src="/resources/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
+                                                        <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">
                                                         <span>예상 기간&nbsp;&nbsp;</span>
                                                         <span class="estimated-data">90일</span>
                                                     </p>
@@ -1658,11 +1658,11 @@
                                                 <div class="project-unit-category" style="text-align: center; font-size: 15px">
 
                                                     <p class="body-2 category-text category" style="margin: -66px 0px 20px -200px">
-                                                        <img src="/resources/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
+                                                        <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px";>
                                                         개발 · 디자인 · 기획
                                                     </p>
                                                     <p class="body-2 category-text subcategory2" style="margin: -15px -5px 0px -145px">
-                                                        <img src="/resources/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
+                                                        <img src="/img/icon-project-subcategory.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         웹 · 애플리케이션 · 퍼블리싱
                                                     </p>
                                                 </div>
@@ -1697,7 +1697,7 @@
                                                     <hr class="small-line-1">
                                                     <div class="pipe"></div>
                                                     <div class="client-location-tag">
-                                                        <img src="/resources/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px; float:left;">
                                                         <span class="client-location caption-1" style="font-size: 13px; float: left">
                                                             경기도 > 수원시 권선구&nbsp;&nbsp;&nbsp;
                                                         </span>
@@ -1712,14 +1712,14 @@
                                         <section class="project-unit-status"; style="text-align: right; margin-top: -90px;">
                                             <div class="application-status-box">
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                             마감
                                                             <strong>1주 3일 전</strong>
                                                         </span>
                                                 </div>
                                                 <div class="application-status">
-                                                    <img src="/resources/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                     <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                             총
                                                             <strong>13명</strong> 지원
@@ -1729,10 +1729,10 @@
                                             <hr class="short-line">
                                             <div class="interest-status-box">
                                                 <div class="status-wrap-icon" style="cursor: pointer; margin-right: -60px">
-                                                    <img src="/resources/img/post-icon-view.png"
+                                                    <img src="/img/post-icon-view.png"
                                                          style="width: 15px; height: 15px;" title="조회수가 아주 높은 프로젝트입니다.">
                                                     <span class="caption-1-high text500">아주 높음</span>
-                                                    <img src="/resources/img/btn-icon-like-s-off.png"
+                                                    <img src="/img/btn-icon-like-s-off.png"
                                                          style="width: 15px; height: 15px; margin-left: -50px" title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                     <span class="caption-1-high text500">14</span>
                                                 </div>
