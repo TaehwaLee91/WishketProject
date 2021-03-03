@@ -1,7 +1,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <!-- 메인 -->
 <div id="main" class="row bg-light" style="height: 680px">
-
+    <form name="loginfrm" id="loginfrm"action="/accounts/login/login" method="post"  class="col-12" style="margin: 0 auto;">
     <div id="intro" class="border col-7 mt-4 bg-white" style="height: 116px; margin:0 auto;">
         <div style="margin:25px 20px">
             <h4 class="font-weight-bold text-dark">로그인</h4>
@@ -39,5 +39,5 @@
         </div>
     </div>
 
-
+    </form>
 </div><!-- 메인 -->

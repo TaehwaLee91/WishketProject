@@ -10,6 +10,7 @@ import wishket.spring.mvc.service.MemberService;
 import wishket.spring.mvc.vo.MemberVO;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
@@ -52,4 +53,19 @@ public class SignController {
     }
     @GetMapping("/accounts/signok") // 회원가입 완료 부분
     public String signok() { return "accounts/signok.tiles";}
+
+
+
+    @ResponseBody
+    @GetMapping("/accounts/login/login") // 로그인 체크
+    public String loginok(MemberVO mvo, HttpSession sess) {
+        String returnPage ="redirect:/login/loginfail";
+
+        if(msrv.checkLogin(mvo,sess))  //로그인 성공시
+            returnPage="redirect:/index";
+
+        return returnPage;
+    }
 }
+
+
