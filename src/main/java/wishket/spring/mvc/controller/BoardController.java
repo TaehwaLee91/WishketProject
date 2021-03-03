@@ -10,4 +10,5 @@ public class BoardController {
     public String Board() {
         return "projectboard/search.tiles";
     }
+
 }
