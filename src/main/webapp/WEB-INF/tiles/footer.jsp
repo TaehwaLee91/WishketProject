@@ -1,7 +1,6 @@
 <%@ page pageEncoding="UTF-8" %>
 <footer class="row bg-light h-auto">
-    <div class="col-7" style="margin:0 auto;">
-        <hr>
+    <div class="col-7" style="margin:15px auto;">
         <div id="footermenu" style="height: 180px" class="row  mt-5">
             <div style="display:inline-block;"class="col-2">
                 <p class="font-weight-bold">위시켓</p>

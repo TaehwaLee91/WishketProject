@@ -13,11 +13,11 @@
         <div class="col-7 offset-1 mt-3 " style="display:inline-block;">
             <div class="form-group row ">
                 <label for="userid" class="col-form-label col-4 text-right font-weight-bold "><span class="text-danger">*</span>아이디 또는 이메일</label>
-                <input type="text" id="userid" class="form-control col-6">
+                <input type="text" id="userid" name="userid" class="form-control col-6">
             </div>
             <div class="form-group row">
-                <label for="pwd" class="col-form-label col-4 text-right font-weight-bold"><span class="text-danger">*</span>비밀번호</label>
-                <input type="password" id="pwd" class="form-control col-6 " >
+                <label for="passwd" class="col-form-label col-4 text-right font-weight-bold"><span class="text-danger">*</span>비밀번호</label>
+                <input type="password" id="passwd" name="passwd"  class="form-control col-6 " >
             </div>
             <div class="form-group row">
                 <div class="custom-control custom-checkbox offset-4 col-6">
