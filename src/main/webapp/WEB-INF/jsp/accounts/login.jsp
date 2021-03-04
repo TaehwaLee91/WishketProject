@@ -9,6 +9,11 @@
       <input id="warning" type="text" value="올바른 아이디 또는 이메일와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다." class="col-7  mt-4" style=" height: 52px; border:1px solid #FAEBCC; background: #fcf8e3; color:#f48023;">
   </div>
     </c:if>
+    <c:if test="${not empty logout}">
+        <div class="row col-12 justify-content-center " style="margin:0 auto;">
+            <input id="message" type="text" value="로그아웃 하셨습니다." class="col-7  mt-4" style=" height: 52px; border:1px solid #CAECF6; background: #E0F4FA; color:#2099BB;">
+        </div>
+    </c:if>
 
     <div id="intro" class="row border col-7 mt-4 bg-white" style="height: 116px; margin:0px auto;">
         <div style="margin:25px 20px">
@@ -21,7 +26,7 @@
         <div class="col-7 offset-1 mt-3 " style="display:inline-block;">
             <form id="loginfrm">
             <div class="form-group row ">
-                <label for="userid" class="col-form-label col-4 text-right font-weight-bold "><span class="text-danger">*</span>아이디 또는 이메일</label>
+                <label for="userid" class="col-form-label col-4 text-right font-weight-bold "><span class="text-danger">*</span>아이디</label>
                 <input type="text" id="userid" name="userid" class="form-control col-6">
             </div>
             <div class="form-group row">

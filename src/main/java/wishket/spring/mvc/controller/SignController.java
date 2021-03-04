@@ -55,14 +55,22 @@ public class SignController {
     public String signok() { return "accounts/signok.tiles";}
 
 
-@PostMapping("/accounts/login/login")
-public String login(MemberVO mvo, HttpSession sess) {
-    String returnPage ="redirect:/accounts/login";
+    @PostMapping("/accounts/login/login")
+    public String login(MemberVO mvo, HttpSession sess) {
+        String returnPage ="redirect:/accounts/login";
 
-    if(msrv.checkLogin(mvo,sess))  //로그인 성공시
-        returnPage="redirect:/index";
+        if(msrv.checkLogin(mvo,sess))  //로그인 성공시
+            returnPage="redirect:/index";
 
 
-    return returnPage;
-}
+        return returnPage;
+    }
+
+    @GetMapping("/accounts/logout")
+    public String logout(HttpSession sess) {
+        sess.setAttribute("logout","logout");
+        sess.setMaxInactiveInterval(1);
+
+        return "redirect:/accounts/login";
+    }
 }

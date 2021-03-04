@@ -1,9 +1,10 @@
 // login
 $('#loginbtn2').on('click',function(){
-        $('#loginfrm').attr("method","post");
-        $('#loginfrm').attr("action","/accounts/login/login");
-        $('#loginfrm').submit()
+    $('#loginfrm').attr("method", "post");
+    $('#loginfrm').attr("action", "/accounts/login/login");
+    $('#loginfrm').submit()
 })
+
 
 $('#userid').on('blur', function(){
     let userid = $('#userid').val().trim();
@@ -19,7 +20,7 @@ $('#userid').on('blur', function(){
 
 $('#passwd').on('blur', function(){
     let passwd = $('#passwd').val().trim();
-    let reg = /^[0-9a-zA-Z]{8,50}$/
+    let reg = /^[0-9a-zA-Z!@#$%^&*]{8,50}$/
     if(passwd ==' ' || !reg.test(passwd)){
         $('#passwd').attr('style','border: 1px solid red !important');
         $('#warning2').attr('style','color:red !important');
