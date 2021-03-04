@@ -18,8 +18,11 @@
     </select>
     <!-- 로그인 할때 아이디/비밀번호 확인 -->
     <select id="checkLogin" statementType="PREPARED" parameterType="wishket.spring.mvc.vo.MemberVO" resultType="int">
-        select count(userid) cnt from 회원 where userid = #{userid} and passwd=#{passwd}
+        select count(userid) cnt from 회원 where userid = #{userid} and passwd=#{passwd} and user_key = 'Y'
     </select>
+    <update id="confirmUser" statementType="PREPARED" parameterType="String">
+        update 회원 set user_key = 'Y' where email=#{email}
+    </update>
 
 
 </mapper>

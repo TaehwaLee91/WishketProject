@@ -10,4 +10,6 @@ public interface MemberDAO {
     int selectOneEmail(String email);
 
     int selectLogin(MemberVO mvo);
+
+    int confirmUser(String email);
 }

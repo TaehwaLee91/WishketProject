@@ -15,6 +15,7 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public String newMember(MemberVO mvo) {
         String result="회원가입 실패!";
+
         int cnt=mdao.insertMember(mvo);
         if (cnt>0) result="회원가입 성공!";
         return result;
@@ -51,5 +52,13 @@ public class MemberServiceImpl implements MemberService{
             sess.setMaxInactiveInterval(1);
         }
         return isLogin;
+    }
+
+    @Override
+    public String confirmUserid(String email) {
+        String isOk="0";
+        int cnt = mdao.confirmUser(email);
+        if(cnt>0) isOk="1";
+        return isOk;
     }
 }

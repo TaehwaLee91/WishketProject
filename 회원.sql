@@ -8,3 +8,5 @@ create table 회원 (
 );
 
 insert into 회원 (userid, email, passwd) values (?,?,?)
+
+update 회원 set user_key = 'Y' where email='a787574@daum.net';

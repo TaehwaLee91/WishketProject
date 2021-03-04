@@ -6,7 +6,7 @@
 
     <c:if test="${not empty warning}">
   <div class="row col-12 justify-content-center " style="margin:0 auto;">
-      <input id="warning" type="text" value="올바른 아이디 또는 이메일와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다." class="col-7  mt-4" style=" height: 52px; border:1px solid #FAEBCC; background: #fcf8e3; color:#f48023;">
+      <input id="warning" type="text" value="올바른 아이디 또는 이메일와/과 비밀번호를 입력하십시오. 혹은 이메일인증이 되지 않으면 로그인이 안됩니다." class="col-7  mt-4" style=" height: 52px; border:1px solid #FAEBCC; background: #fcf8e3; color:#f48023;">
   </div>
     </c:if>
     <c:if test="${not empty logout}">
