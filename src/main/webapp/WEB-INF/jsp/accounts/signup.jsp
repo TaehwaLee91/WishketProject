@@ -3,14 +3,14 @@
 
 <div id="main" class="row bg-light" style="height: auto">
 <form name="accountfrm" id="accountfrm"action="signok.jsp" method="post"  class="col-12" style="margin: 0 auto;">
-    <div id="intro" class="border col-8 mt-4 bg-white" style="height: 116px; margin:0 auto;">
+    <div id="intro" class="border col-7 mt-4 bg-white" style="height: 116px; margin:0 auto;">
         <div style="margin:25px 20px">
             <h4 class="font-weight-bold text-dark">회원가입</h4>
             <p class="text-muted">위시켓에 오신 것을 환영합니다.</p>
         </div>
     </div>
 
-    <div id="input" class="card card-body bg-white  col-8 mt-3 row" style="height:780px; margin:50px auto;" >
+    <div id="input" class="card card-body bg-white  col-7 mt-3 row" style="height:780px; margin:50px auto;" >
         <div class="col-7 offset-1 mt-3 " style="display:inline-block;">
             <div class="form-group row">
                 <label class="col-form-label col-2 text-right font-weight-bold"><span class="text-danger">*</span>이용목적</label>

@@ -2,7 +2,7 @@
 <%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <header class="row">
     <nav class="nav navbar-expand navbar-dark bg-dark col-12" >
-        <ul class="nav navbar-nav  nav-fill w-100  col-9   " style="margin:15px auto;">
+        <ul class="nav navbar-nav  nav-fill w-100  col-7   " style="margin:15px auto;">
             <li class="nav-item small font-weight-bold"><a class="nav-link navbar-brand text-white" href="/index">WishKet</a></li>
             <li class="nav-item small font-weight-bold align-self-center"><a class="nav-link text-white" href="#">프로젝트 등록</a></li>
             <li class="nav-item small font-weight-bold align-self-center"><a  class="nav-link text-white "href="#">프로젝트 찾기</a></li>

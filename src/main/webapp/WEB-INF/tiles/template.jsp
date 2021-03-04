@@ -18,7 +18,7 @@
 
     </head>
     <body>
-        <div class="container-xl">
+        <div class="container-fluid">
 
             <tiles:insertAttribute name="header"/>
 

@@ -3,6 +3,25 @@
     max-width: none !important;
 }
 
+ .container-fluid{
+     width: 1903px;
+     max-width: none; !important;
+ }
+.basicWidth{
+    width: 1903px;
+}
+.contentsWidth{
+    width: 1100px;
+    max-width: 1100px; !important;
+    margin:0 auto;
+}
+.center{
+    margin:0 auto;
+}
+.move{
+    position:relative
+}
+
 
 .section1{margin:0px auto; padding-top:100px; height: 650px;}
     #sc1Title{font-size:60px;}
@@ -10,8 +29,7 @@
     #sc1Btn{width:250px; height: 50px}
     #sc1Img{margin-left:0px}
 
-.section2{height:177px;
-           min-width: 1903px; margin-left:-400px}
+.section2{}
     .sc2contents{margin-top:-15px;}
 
 .section3{height: 850px}
@@ -21,7 +39,7 @@
     .sc3Contents3{font-size:16px; margin-top:20px}
     .card-title{font-weight: bold;}
 
-.section4{height: 150px;margin-top:100px; background: linear-gradient( to right, #8adfe1, #07a2bf ); min-width: 1903px; margin-left:-400px}
+.section4{height: 150px;margin-top:100px; background: linear-gradient( to right, #8adfe1, #07a2bf );}
     #sc4contents{margin :65px auto; }
     #sc4Btn{width: 139px; height: 40px;}
 
@@ -30,7 +48,7 @@
     #sc5Contents{margin-left:380px; margin-top:10px}
     .sc5List{margin-left:100px}
     .lm{color:black;font-size:20px;font-weight: lighter;}
-    .lm2{color:black;font-weight: bold;}
+    .lm2{color:black;font-weight: lighter}
     .sc5Card{width:1086px; height:450px; margin-left:50px; margin-top:40px}
     .cardContents1{padding-left:24px}
     .cardContents2{font-size:20px; padding-left:24px}
@@ -54,17 +72,17 @@
     #sc7ReviewContents{margin-left:220px}
     #sc7ReviewFont1{font-size:14px}
     #sc7ReviewFont2{font-size:21px}
-    #sc7ReviewBtn{width: 108px; height: 45px; margin-left:500px}
+    #sc7ReviewBtn{width: 108px; height: 45px; margin-left:420px}
 
 .section8{height: 700px}
     #sc8Title{margin-left:220px; margin-top:100px}
 
 .section9{height: 315px}
     #sc9Contents{margin-top:100px}
-    #sc9Btn{margin-top:30px; width:285px; height: 58px}
+    #sc9Btn{ width:285px; height: 58px}
 
 
-.margin-algin-center{
+.margin-aligin-center{
     margin:0 auto;
 }
 
