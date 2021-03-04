@@ -43,3 +43,7 @@
         $('.carousel').carousel({ interval: 3500 })
 
 })
+
+
+//sc4btn
+$('#sc4Btn').on('click',function(){location.href="/accounts/signup"})

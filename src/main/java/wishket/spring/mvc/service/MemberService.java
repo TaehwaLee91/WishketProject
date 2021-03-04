@@ -13,5 +13,7 @@ public interface MemberService {
 
     boolean checkLogin(MemberVO mvo, HttpSession sess);
 
-    String confirmUserid(String email);
+    String confirmUserid(MemberVO mvo);
+
+    String sendEmail(MemberVO mvo);
 }

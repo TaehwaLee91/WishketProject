@@ -15,14 +15,14 @@
         </div>
     </c:if>
 
-    <div id="intro" class="row border col-7 mt-4 bg-white" style="height: 116px; margin:0px auto;">
+    <div id="intro" class="row border col-8 mt-4 bg-white" style="height: 116px; margin:0px auto;">
         <div style="margin:25px 20px">
             <h4 class="font-weight-bold text-dark">로그인</h4>
             <p class="text-muted">위시켓에 오신 것을 환영합니다.</p>
         </div>
     </div>
 
-    <div id="input" class="card card-body bg-white  col-7 border mt-3 row" style="height: 350px; margin:320px auto;" >
+    <div id="input" class="card card-body bg-white  col-8 border mt-3 row" style="height: 350px; margin:320px auto;" >
         <div class="col-7 offset-1 mt-3 " style="display:inline-block;">
             <form id="loginfrm">
             <div class="form-group row ">
@@ -52,7 +52,7 @@
             <p class="font-weight-bold">이미 페이스북으로 가입하셨다면</p>
             <button type="button" class="btn" style="margin-left:-10px"><img src="/img/login_facebook.png"></button>
             <hr style="border-style: dashed; width: 280px; margin-left: -5px">
-            <p>아직 회원이 아니신가요? <a  href="#" class="font-weight-bold text-info">회원가입하기</a></p>
+            <p>아직 회원이 아니신가요? <a  href="/accounts/signup" class="font-weight-bold text-info">회원가입하기</a></p>
         </div>
     </div>
 

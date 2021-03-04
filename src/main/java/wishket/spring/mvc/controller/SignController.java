@@ -26,8 +26,7 @@ import java.io.IOException;
 public class SignController {
     @Autowired
     MemberService msrv;
-    @Autowired
-    JavaMailSender jsms;
+
 
     @GetMapping("/accounts/login") // 로그인폼
     public String login() {return "accounts/login.tiles";}
@@ -35,36 +34,25 @@ public class SignController {
    @GetMapping("/accounts/signup") // 회원가입 폼
     public String signup() {return "accounts/signup.tiles";}
 
-    @PostMapping("/accounts/signup") // 회원가입 처리 , 인증메일 보내기
+    @PostMapping("/accounts/signup") // 회원가입 처리,인증메일 보내기
     public String signupok(MemberVO mvo, RedirectAttributes atb, HttpServletRequest hsrq) {
 
-        System.out.println(msrv.newMember(mvo));
+        System.out.println(msrv.newMember(mvo)); // DB에 가입정보 입력
+        System.out.println(msrv.sendEmail(mvo)); // 이메일 보내기 + 고유코드 DB에저장
         atb.addFlashAttribute("userid",mvo.getUserid());
         atb.addFlashAttribute("email",mvo.getEmail());
 
-        MimeMessage mail = jsms.createMimeMessage();
 
-
-        String htmlStr = "<h2>위시켓 인증메일</h2><br><br>"
-                + "<h3>" + mvo.getUserid() + "님</h3>" + "<p>인증하기 버튼을 누르시면 로그인을 하실 수 있습니다 : "
-                + "<a href='http://localhost:8080" + "/accounts/email" + "/user?email="+mvo.getEmail()+"'>인증하기</a></p>"
-                + "(혹시 잘못 전달된 메일이라면 이 이메일을 무시하셔도 됩니다)";
-
-
-        try {
-            mail.setSubject("[본인인증] 위시켓 인증메일입니다.", "utf-8");
-            mail.setText(htmlStr, "utf-8", "html");
-            mail.addRecipient(Message.RecipientType.TO, new InternetAddress(mvo.getEmail()));
-            jsms.send(mail);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
         return "redirect:/accounts/signok";
     }
 
+
     @GetMapping("/accounts/email/user") // 인증메일 링크 클릭시 user_key(DB)값 변경 - 로그인가능
-    public String confirmUser(@RequestParam String email, ModelAndView mv){
-        msrv.confirmUserid(email);
+    public String confirmUser(@RequestParam String email,@RequestParam String user_key){
+        // @RequestParam 을 이용해서 url상에 있는 email,user_key값을 가져와서 mvo에 값을 넣고
+        // DB값과 비교하기위한 메서드 실행 confrimUserid(mvo)
+        MemberVO mvo = new MemberVO(email,user_key);
+        msrv.confirmUserid(mvo);
 
         return "accounts/confirm.tiles";
     }
@@ -95,7 +83,7 @@ public class SignController {
     public String signok() { return "accounts/signok.tiles";}
 
 
-    @PostMapping("/accounts/login/login")
+    @PostMapping("/accounts/login/login") // 로그인기능
     public String login(MemberVO mvo, HttpSession sess) {
         String returnPage ="redirect:/accounts/login";
 
@@ -106,9 +94,10 @@ public class SignController {
         return returnPage;
     }
 
-    // 로그아웃
-    @GetMapping("/accounts/logout")
+
+    @GetMapping("/accounts/logout") // 로그아웃
     public String logout(HttpSession sess) {
+        // 로그아웃시 로그인창으로 돌아가게되는데 이때 로그아웃 메세지 출력을 위해 세션지정
         sess.setAttribute("logout","logout");
         sess.setMaxInactiveInterval(1);
 

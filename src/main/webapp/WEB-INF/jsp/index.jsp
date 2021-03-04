@@ -1,9 +1,10 @@
 <%@ page pageEncoding="UTF-8" %>
 <!-- 메인 -->
-<div id="main" class="row" style="height: auto">
+<div id="main">
     <!--section1 -->
-    <div class="row col-12 bg-white section1">
-        <div class="offset-3 row col-9 margin-algin-center">
+    <div class="container" style="" >
+    <div class=" bg-white section1">
+        <div class=" row col-12 margin-algin-center">
             <p class="pt-5"><span class="font-weight-bold" id="sc1Title">IT 아웃소싱을<br> 위시켓에서<br>빠르게 안전하게<br></span>
                 <span class="text-active" id="sc1Contents">애플리케이션 개발,웹 개발, 일반 소프트웨어 개발,<br>웹 디자인,커머스,쇼핑몰 등<br></span>
                 <button class="btn btn-info mt-4" id="sc1Btn">무료로 프로젝트 등록하기</button></p>
@@ -24,10 +25,10 @@
     <!--section3 -->
     <div class="section3 row col-12 bg-white ">
         <div class="col-12">
-            <h1 class="font-weight-light" id="sc3Title">다양한 카테고리의 IT 프로젝트를 등록하고 전문가를 만나보세요.</h1></div>
+            <h2 class="font-weight-light" id="sc3Title">다양한 카테고리의 IT 프로젝트를 등록하고 전문가를 만나보세요.</h2></div>
 
         <div class="col-12" id="sc3Contents">
-            <div class="col-9">
+            <div class="col-12">
                 <ul class="nav nav-pills mb-3 border-bottom" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active lm" id="application" data-toggle="pill" href="#application-contents" role="tab" aria-controls="pills-home" aria-selected="true">애플리케이션</a>
@@ -57,7 +58,9 @@
                         <a class="nav-link lm" id="other" data-toggle="pill" href="#other-contents" role="tab" aria-controls="pills-contact" aria-selected="false">기타</a>
                     </li>
                 </ul>
-                <div class="tab-content" id="pills-tabContent">
+
+                <div class="tab-content" id="pills-tabContent"><!--section3 contents-->
+
                     <div class="tab-pane fade show active" id="application-contents" role="tabpanel" aria-labelledby="pills-home-tab"> <!-- 애플리케이션 컨텐츠-->
                         <div class="row row-cols-1 row-cols-md-2">
                             <div class="col mb-4">
@@ -108,22 +111,182 @@
                                         <p class="sc3Contents2" >프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
                                         <p class="sc3Contents3" ><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
                                             <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end 애플리케이션 컨텐츠-->
+
+
+                    <div class="tab-pane fade" id="web-contents" role="tabpanel" aria-labelledby="pills-profile-tab"><!-- 웹 컨텐츠-->
+
+                        <div class="row row-cols-1 row-cols-md-2">
+
+                            <div class="col mb-4">
+                                <div class="card quest">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영3</a></h5>
+                                        <p class="card-text">
+                                        <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                        <p class="sc3Contents2">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                        <p class="sc3Contents3"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                            <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="web-contents" role="tabpanel" aria-labelledby="pills-profile-tab"><!-- 웹 컨텐츠-->
 
-                    </div>
-                    <div class="tab-pane fade" id="software-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 소프트웨어 컨텐츠-->
-                    <div class="tab-pane fade" id="commers-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 커머스 컨텐츠-->
-                    <div class="tab-pane fade" id="embeded-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 임베디드 컨텐츠-->
-                    <div class="tab-pane fade" id="publishing-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 퍼블리싱 컨텐츠-->
-                    <div class="tab-pane fade" id="product-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 제품 컨텐츠-->
-                    <div class="tab-pane fade" id="prints-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 인쇄물 컨텐츠-->
-                    <div class="tab-pane fade" id="other-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 기타 컨텐츠-->
+                    </div><!--end 웹 컨텐츠-->
+
+                    <div class="tab-pane fade" id="software-contents" role="tabpanel" aria-labelledby="pills-contact-tab"><!-- 소프트웨어 컨텐츠-->
+
+                        <div class="row row-cols-1 row-cols-md-2">
+
+                            <div class="col mb-4">
+                                <div class="card quest">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영3</a></h5>
+                                        <p class="card-text">
+                                        <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                        <p class="sc3Contents2">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                        <p class="sc3Contents3"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                            <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div><!--end 소프트웨어 컨텐츠-->
+
+                    <div class="tab-pane fade" id="commers-contents" role="tabpanel" aria-labelledby="pills-contact-tab"><!-- 커머스 컨텐츠-->
+
+                        <div class="row row-cols-1 row-cols-md-2">
+
+                            <div class="col mb-4">
+                                <div class="card quest">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영3</a></h5>
+                                        <p class="card-text">
+                                        <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                        <p class="sc3Contents2">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                        <p class="sc3Contents3"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                            <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!--end 커머스 컨텐츠-->
+
+                    <div class="tab-pane fade" id="embeded-contents" role="tabpanel" aria-labelledby="pills-contact-tab"><!-- 임베디드 컨텐츠-->
+
+                        <div class="row row-cols-1 row-cols-md-2">
+
+                            <div class="col mb-4">
+                                <div class="card quest">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영3</a></h5>
+                                        <p class="card-text">
+                                        <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                        <p class="sc3Contents2">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                        <p class="sc3Contents3"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                            <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!--end 임베디드 컨텐츠-->
+
+                    <div class="tab-pane fade" id="publishing-contents" role="tabpanel" aria-labelledby="pills-contact-tab"><!-- 퍼블리싱 컨텐츠-->
+
+                        <div class="row row-cols-1 row-cols-md-2">
+
+                            <div class="col mb-4">
+                                <div class="card quest">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영3</a></h5>
+                                        <p class="card-text">
+                                        <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                        <p class="sc3Contents2">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                        <p class="sc3Contents3"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                            <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!--end 퍼블리싱 컨텐츠-->
+
+                    <div class="tab-pane fade" id="product-contents" role="tabpanel" aria-labelledby="pills-contact-tab"><!-- 제품 컨텐츠-->
+
+                        <div class="row row-cols-1 row-cols-md-2">
+
+                            <div class="col mb-4">
+                                <div class="card quest">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영3</a></h5>
+                                        <p class="card-text">
+                                        <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                        <p class="sc3Contents2">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                        <p class="sc3Contents3"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                            <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!--end 제품 컨텐츠-->
+
+                    <div class="tab-pane fade" id="prints-contents" role="tabpanel" aria-labelledby="pills-contact-tab"><!-- 인쇄물 컨텐츠-->
+
+                        <div class="row row-cols-1 row-cols-md-2">
+
+                            <div class="col mb-4">
+                                <div class="card quest">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영3</a></h5>
+                                        <p class="card-text">
+                                        <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                        <p class="sc3Contents2">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                        <p class="sc3Contents3"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                            <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!--end 인쇄물 컨텐츠-->
+
+                    <div class="tab-pane fade" id="other-contents" role="tabpanel" aria-labelledby="pills-contact-tab"><!-- 기타 컨텐츠-->
+
+                        <div class="row row-cols-1 row-cols-md-2">
+
+                            <div class="col mb-4">
+                                <div class="card quest">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영3</a></h5>
+                                        <p class="card-text">
+                                        <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                        <p class="sc3Contents2">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                        <p class="sc3Contents3"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                            <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!--end 기타 컨텐츠-->
                 </div>
             </div>
         </div>
@@ -135,15 +298,15 @@
     <div class="section4 row col-12">
         <div class="row" id="sc4contents">
             <h4 class="text-white font-weight-light">다양한 카테고리의 IT 프로젝트를 찾고 있으신가요?</h4>
-            <button class="btn bg-white border-info ml-5 text-info" id="sc4Btn">회원가입하기</button></div>
+            <button type="button" class="btn bg-white border-info ml-5 text-info" id="sc4Btn">회원가입하기</button></div>
     </div><!--section4 -->
 
     <!--section5 -->
     <div class="section5 row col-12 bg-light">
         <div class="col-12">
-            <h1 class="font-weight-light" id="sc5Title">위시켓의 빠르고 편리하고 안전한 프로세스를 경험해 보세요.</h1></div>
+            <h2 class="font-weight-light" id="sc5Title">위시켓의 빠르고 편리하고 안전한 프로세스를 경험해 보세요.</h2></div>
         <div class="col-12" id="sc5Contents">
-            <div class="col-9">
+            <div class="col-12">
 
                 <ul class="nav nav-pills mb-3 row" role="tablist">
                     <li class="nav-item" role="presentation" style="margin-left:50px">
@@ -450,7 +613,7 @@
                     <img src="/img/review_icon.png"><span id="sc7ReviewFont2"> 4.7점</span></p>
             </div>
             <div class="col-6">
-                <button class="btn btn-info text-white" id="sc7ReviewBtn">이용후</button>
+                <button class="btn btn-info text-white" id="sc7ReviewBtn">이용후기</button>
             </div>
         </div>
 
@@ -498,5 +661,5 @@
 
     </div><!--section9 end-->
 
-
+    </div>
 </div><!-- 메인 -->

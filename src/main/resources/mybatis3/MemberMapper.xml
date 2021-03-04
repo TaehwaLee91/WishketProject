@@ -20,8 +20,15 @@
     <select id="checkLogin" statementType="PREPARED" parameterType="wishket.spring.mvc.vo.MemberVO" resultType="int">
         select count(userid) cnt from 회원 where userid = #{userid} and passwd=#{passwd} and user_key = 'Y'
     </select>
-    <update id="confirmUser" statementType="PREPARED" parameterType="String">
-        update 회원 set user_key = 'Y' where email=#{email}
+
+    <!--이메일인증완료로 업데이트-->
+    <update id="confirmUser" statementType="PREPARED" parameterType="wishket.spring.mvc.vo.MemberVO">
+        update 회원 set user_key = 'Y' where email=#{email} and user_key=#{confirmCode}
+    </update>
+
+    <!--회원가입성공시 이메일 인증코드 DB에 업데이트-->
+    <update id="updateCode" statementType="PREPARED" parameterType="wishket.spring.mvc.vo.MemberVO">
+        update 회원 set user_key = ${confirmCode} where email=#{email}
     </update>
 
 

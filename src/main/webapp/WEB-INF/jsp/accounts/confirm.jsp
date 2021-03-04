@@ -12,8 +12,9 @@
 
     <div id="signok" class="card card-body bg-white  col-7 mt-3" style="height: 400px; margin:320px auto;" >
         <div class="form-group row mt-4">
-            <div class="offset-1 col-7 ">
-                <p>로그인시 위시켓을 정상적으로 이용이 가능합니다.</p>
+            <div class="offset-1 col-7 mt-5">
+                <h2>이메일 인증완료!</h2>
+                <h4>로그인시 위시켓을 정상적으로 이용이 가능합니다.</h4>
             </div>
             <div class="col-4">
                 <img src="/img/accounts_signup_complete.png">
