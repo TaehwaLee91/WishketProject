@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import wishket.spring.mvc.dao.MemberDAO;
 import wishket.spring.mvc.vo.MemberVO;
 
+import javax.servlet.http.HttpSession;
+
 @Service("msrv")
 public class MemberServiceImpl implements MemberService{
 
@@ -32,5 +34,22 @@ public class MemberServiceImpl implements MemberService{
         int cnt = mdao.selectOneEmail(email);
         if(cnt>0) isOk="1";
         return isOk;
+    }
+
+    @Override
+    public boolean checkLogin(MemberVO mvo, HttpSession sess) {
+        boolean isLogin = false;
+        // 로그인 성공시 회원정보를 세션에 저장.
+        // 입력한 회원 아이디/비밀번호가 member 테이블에 있는지 확인
+        // 있으면 : 1을 반환, 없으면 : 0 을 반환
+        if (mdao.selectLogin(mvo) > 0) {
+            sess.setAttribute("UID", mvo.getUserid());
+            sess.setMaxInactiveInterval(60*60);
+            isLogin = true;
+        }else{
+            sess.setAttribute("warning","warning");
+            sess.setMaxInactiveInterval(1);
+        }
+        return isLogin;
     }
 }

@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="/css/index.css">
 
         <title>Wishket Project</title>
 
@@ -31,7 +32,10 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="/js/signup.js"></script>
+        <script src="/js/index.js"></script>
+        <script src="/js/login.js"></script>
         <script>$('#loginbtn1').on('click',function(){location.href='/accounts/login'})
         $('#joinbtn').on('click',function(){location.href='/accounts/signup'})</script>
+
     </body>
 </html>

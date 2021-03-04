@@ -16,4 +16,10 @@
     <select id="selectEmail" statementType="PREPARED" parameterType="String" resultType="int">
         select count(email) cnt from 회원 where email =#{email}
     </select>
+    <!-- 로그인 할때 아이디/비밀번호 확인 -->
+    <select id="checkLogin" statementType="PREPARED" parameterType="wishket.spring.mvc.vo.MemberVO" resultType="int">
+        select count(userid) cnt from 회원 where userid = #{userid} and passwd=#{passwd}
+    </select>
+
+
 </mapper>

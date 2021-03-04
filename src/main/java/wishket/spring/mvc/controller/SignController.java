@@ -10,6 +10,7 @@ import wishket.spring.mvc.service.MemberService;
 import wishket.spring.mvc.vo.MemberVO;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
@@ -40,6 +41,7 @@ public class SignController {
             e.printStackTrace();
         }
     }
+
     @ResponseBody // 이메일 중복체크
     @GetMapping("accounts/signup/checkEmail")
     public void checkEmail(String email, HttpServletResponse res){
@@ -51,4 +53,16 @@ public class SignController {
     }
     @GetMapping("/accounts/signok") // 회원가입 완료 부분
     public String signok() { return "accounts/signok.tiles";}
+
+
+@PostMapping("/accounts/login/login")
+public String login(MemberVO mvo, HttpSession sess) {
+    String returnPage ="redirect:/accounts/login";
+
+    if(msrv.checkLogin(mvo,sess))  //로그인 성공시
+        returnPage="redirect:/index";
+
+
+    return returnPage;
+}
 }
