@@ -45,12 +45,6 @@
         border: 1px solid #f5c6cb;
     }
 
-    footer {
-        padding: 10px;
-        width: 100%;
-        text-align: center;
-    }
-
     .filter-line {
         margin-left: -8px;
         width: 180px;
@@ -2033,7 +2027,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div> <!-- page만들기 -->
+                        </div> <!— page만들기 —>
 
                     </section>
                 </div>

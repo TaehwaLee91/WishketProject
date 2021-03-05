@@ -32,6 +32,7 @@
     footer { padding: 10px;
         width: 100%;
         text-align: center;}
+
     .hr1 {
         border-left: 1px solid #f5c6cb;
         height: 50px;
