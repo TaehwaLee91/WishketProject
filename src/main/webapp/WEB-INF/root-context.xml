@@ -22,7 +22,7 @@
           p:driverClassName="${DRV}"
           p:url="${URL}"
           p:username="${USR}"
-          p:password="${PWD}" />
+          p:password="sunwoo1234" />
 
     <!-- myBatis 설정 #1 -->
     <bean id="sqlSessionFactory"
