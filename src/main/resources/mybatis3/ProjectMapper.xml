@@ -5,15 +5,32 @@
 
 <mapper namespace="project">
 
+    <insert id="insertNewProject" statementType="PREPARED" parameterType="wishket.spring.mvc.vo.ProjectVO">
+        insert
+        into 프로젝트(type, purpose, title, industryArea, category, area, position, projectStatus, detailStatus,
+                  detailTask, skillStack, skillStackUse, availableBudget, budgetNego, budgetLater, projectStartDate,
+                  projectTerm, preMeetingType, meetingType, meetingTerm, workPlace, workingHours, extraWorkAndSupport,
+                  deadLine, supportBusiness, prerequisites, question, hireType, employeeState, managingExperience,
+                  futurePlan, projectPriority, interestProduct)
+        values ( #{type}, #{purpose}, #{title}, #{industryArea}, #{category}, #{area}, #{position},
+                 #{projectStatus}, #{detailStatus}, #{detailTask}, #{skillStack}, #{skillStackUse}, #{availableBudget},
+                 #{budgetNego}, #{budgetLater}, #{projectStartDate}, #{projectTerm}, #{preMeetingType}, #{meetingType},
+                 #{meetingTerm}, #{workPlace}, #{workingHours}, #{extraWorkAndSupport}, #{deadLine}, #{supportBusiness},
+                 #{prerequisites}, #{question}, #{hireType}, #{employeeState}, #{managingExperience}, #{futurePlan},
+                 #{projectPriority}, #{interestProduct});
+    </insert>
 
+    <select id="selectProject" statementType="PREPARED" resultType="wishket.spring.mvc.vo.ProjectVO">
+        select * from 프로젝트;
+    </select>
 
     <!-- ajax로 주소 정보 불러오기 위한 쿼리-->
     <select id="selectSido" statementType="PREPARED" resultType="String">
-        select distinct sido from zipcode_2013;
+        select distinct sido from 주소;
     </select>
 
     <select id="selectGugun" statementType="PREPARED" parameterType="String" resultType="String">
-        select distinct gugun from zipcode_2013 where sido = #{sido};
+        select distinct gugun from 주소 where sido = #{sido};
     </select>
 
 </mapper>

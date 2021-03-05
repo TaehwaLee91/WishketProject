@@ -55,69 +55,106 @@
                                 <p>준비 상태</p>
                                 <hr>
                             </div> <!--form title -->
-                            <div class="form-content">
-                                <p class="form-content-title">기획 상태 <span class="required">*</span></p>
-                                <p>업무 범위 산정과 예산 및 일정 상담을 위해 현재 기획 상태를 선택해 주세요.</p>
-                                <div class="form-row">
-                                    <label class="card col-3 project-select-card">
-                                        <input name="projectStatus" type="radio" value="아이디어" onclick="checkRadio()">
-                                        <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_planning_status_1_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_planning_status_1_c.png" style="display: none;"/>
-                                            <br>
-                                            <p>아이디어만 있습니다.<br/> </p>
-                                        </div>
-                                    </label> <!-- card1 -->
-                                    <label class="card col-3 project-select-card">
-                                        <input name="projectStatus" type="radio" value="간략한내용" onclick="checkRadio()">
-                                        <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_planning_status_2_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_planning_status_2_c.png" style="display: none;"/>
-                                            <br>
-                                            <p>필요한 내용들을 간단히<br/>정리해두었습니다.</p>
-                                        </div>
-                                    </label> <!-- card2 -->
-                                    <label class="card col-3 project-select-card">
-                                        <input name="projectStatus" type="radio" value="구체적내용" onclick="checkRadio()">
-                                        <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_planning_status_3_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_planning_status_3_c.png" style="display: none;"/>
-                                            <br>
-                                            <p>상세한 기획 문서가<br/>존재합니다.</p>
-                                        </div>
-                                    </label> <!-- card3 -->
+                            <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                <div class="form-content">
+                                    <p class="form-content-title">기획 상태 <span class="required">*</span></p>
+                                    <p>업무 범위 산정과 예산 및 일정 상담을 위해 현재 기획 상태를 선택해 주세요.</p>
+                                    <div class="form-row">
+                                        <label class="card col-3 project-select-card">
+                                            <input name="projectStatus" type="radio" id="status1" value="아이디어" onchange="checkRadio(this)">
+                                            <div class="select-card-content">
+                                                <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_planning_status_1_d.png"/>
+                                                <img class="select-card-img active-select-card-img" src="/img/select_card_icon_planning_status_1_c.png" style="display: none;"/>
+                                                <br>
+                                                <p>아이디어만 있습니다.<br/></p>
+                                            </div>
+                                        </label> <!-- card1 -->
+                                        <label class="card col-3 project-select-card">
+                                            <input name="projectStatus" type="radio"  id="status2" value="간략한내용" onchange="checkRadio(this)">
+                                            <div class="select-card-content">
+                                                <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_planning_status_2_d.png"/>
+                                                <img class="select-card-img active-select-card-img" src="/img/select_card_icon_planning_status_2_c.png" style="display: none;"/>
+                                                <br>
+                                                <p>필요한 내용들을 간단히<br/>정리해두었습니다.</p>
+                                            </div>
+                                        </label> <!-- card2 -->
+                                        <label class="card col-3 project-select-card">
+                                            <input name="projectStatus" type="radio" id="status3" value="구체적내용" onchange="checkRadio(this)">
+                                            <div class="select-card-content">
+                                                <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_planning_status_3_d.png"/>
+                                                <img class="select-card-img active-select-card-img" src="/img/select_card_icon_planning_status_3_c.png" style="display: none;"/>
+                                                <br>
+                                                <p>상세한 기획 문서가<br/>존재합니다.</p>
+                                            </div>
+                                        </label> <!-- card3 -->
+                                    </div>
+                                </div>
+                            </c:if>
+                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <div class="form-content">
+                                    <p class="form-content-title">프로젝트 상태 <span class="required">*</span></p>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="projectStatus" value="프로젝트 계획중">프로젝트를 계획하는 중입니다.(내부 계획수립 또는 고객사 제안 단계)</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="projectStatus" value="프로젝트 착수 준비">프로젝트를 착수하기 위한 준비 중입니다.</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="projectStatus" value="요구사항 분석중">프로젝트를 착수하여 요구사항을 분석하고 있습니다.</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="projectStatus" value="요구사항 분석 또는 설계 문서 존재">요구사항 분석 또는 설계 문서가 있습니다.</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="projectStatus" value="프로젝트 진행중">프로젝트를 진행하는 중입니다.</label>
+                                    </div>
+                                </div>
+                            </c:if>
+                            <div id="detailPlan" class="form-content" <c:if test="${pvo.type ne '상주(인력구인)'}">style="display: none"</c:if>>
+                                <p class="form-content-title">상세 기획 상태</p>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="요구사항정의서">요구사항 정의서</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="제안요청서">제안요청서</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="메뉴구조도">메뉴구조도 (IA)</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="화면설계서">화면설계서 (스토리보드, 와이어프레임)</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="프로토타입">프로토타입 (프로젝트 결과물의 샘플 버전)</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="detailEtc" name="detailStatus" onclick="checkEtc(this)">
+                                    <input type="text" class="form-control col-11" id="detailEtcText" placeholder="기타 (직접 입력)" disabled>
                                 </div>
                             </div>
 
-                            <div id="detailPlan" class="form-content" style="display: none">
-                                <p class="form-content-title">상세 기획 상태</p>
-                                    <div class="form-group form-check">
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="요구사항정의서">요구사항 정의서</label>
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="제안요청서">제안요청서</label>
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="메뉴구조도">메뉴구조도 (IA)</label>
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="화면설계서">화면설계서 (스토리보드, 와이어프레임)</label>
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="프로토타입">프로토타입 (프로젝트 결과물의 샘플 버전)</label>
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input" id="detailEtc" name="detailStatus">
-                                        <input type="text" class="form-control col-11" id="detailEtcText" placeholder="기타 (직접 입력)" disabled>
-                                    </div>
-                            </div>
-
-                            <%-- 미구현 --%>
-                            <div class="form-content">
+                            <%-- 추가는 구현. 삭제는 미구현 --%>
+                            <div class="form-content" id="basicPlan">
                                 <p class="form-content-title">프로젝트 관련자료</p>
                                 <p>아이디어 또는 필요한 내용을 정리한 문서를 추가해 주세요.<p>
                                 <p>프로젝트 예산 및 일정 산정에 활용되며, 문서 및 이미지 파일만 추가 가능합니다.</p>
-                                <p>여기는 파일 업로드할 수 있게 하는 자리</p>
+                                <button type="button" class="col-12 text-center" style="border: 1px dotted gray; background: none" onclick="clickFileBtn(this)">
+                                    <div style="padding-top: 15px">
+                                        <p><img src = "/img/btn_icon_plus_normal.png"/>  프로젝트 관련 자료 추가</p>
+                                    </div>
+                                </button>
+                                <div class="form-group">
+                                    <div>
+                                        <button type="button" onclick="deleteFile(this)" class="btn btn-danger col-2 offset-1" style="display: none">삭제</button>
+                                        <input type="file" name="file" id="file1" onchange="addFile(this)" style="display: none"/>
+                                    </div>
+                                    <div>
+                                        <input type="file" name="file" id="file2" onchange="addFile(this)" style="display: none"/>
+                                    </div>
+                                    <div>
+                                        <input type="file" name="file" id="file3" onchange="addFile(this)" style="display: none"/>
+                                    </div>
+                                </div>
                             </div>
 
                             <input type="hidden" name="type" value="${pvo.type}">
@@ -125,6 +162,8 @@
                             <input type="hidden" name="title" value="${pvo.title}">
                             <input type="hidden" name="category" value="${pvo.category}">
                             <input type="hidden" name="area" value="${pvo.area}">
+                            <input type="hidden" name="industryArea" value="${pvo.industryArea}">
+                            <input type="hidden" name="position" value="${pvo.position}">
 
                             <hr/>
                             <div class="bottomBtns">
@@ -145,30 +184,41 @@
         </div> <!-- row -->
     </div> <!-- div container-->
 </div> <!-- main -->
-<script type="text/javascript">
 
-    // 기획상태 카드 선택되었을대
-    function checkRadio(){
-        var radioCards = document.querySelectorAll('input[name="projectStatus"]');
+<script type="text/javascript">
+    // 기타입력
+    function checkEtc(etc){
+        var detailEtcText = document.getElementById('detailEtcText');
+        if(etc.checked == true){
+            detailEtcText.removeAttribute('disabled');
+        } else {
+            detailEtcText.setAttribute('disabled', 'true');
+        }
+    }
+
+    // 기획상태 카드 선택되었을때 이벤트
+    function checkRadio(radio) {
         var detailPlan = document.getElementById('detailPlan');
 
-        for(var i = 0; i < radioCards.length; i++){
-            if(radioCards[i].checked){
+        if (radio.id !== 'status1') {
+            detailPlan.setAttribute('style', 'display: block');
+        } else {
+            detailPlan.setAttribute('style', 'display: none');
+        }
+
+        var radioCards = document.getElementsByName('projectStatus');
+
+        for (var i = 0; i < radioCards.length; i++) {
+            if (radioCards[i].checked) {
                 var parentNode = radioCards[i].parentNode;
                 var parentImg = parentNode.getElementsByTagName('div')[0];
                 var imgTag = parentImg.getElementsByTagName('img');
 
-                parentNode.setAttribute('style', 'background: #BAE9FC');
+                parentNode.setAttribute('style', 'background: #E7EEFF');
                 imgTag[0].setAttribute('style', 'display: none');
                 imgTag[1].removeAttribute('style');
 
-
-                if(radioCards[i].value != '아이디어'){
-
-                    detailPlan.removeAttribute('style');
-                }
-
-            } else{
+            } else {
                 var parentNode = radioCards[i].parentNode;
                 var parentImg = parentNode.getElementsByTagName('div')[0];
                 var imgTag = parentImg.getElementsByTagName('img');
@@ -176,17 +226,82 @@
                 parentNode.removeAttribute('style');
                 imgTag[0].removeAttribute('style');
                 imgTag[1].setAttribute('style', 'display: none');
-                detailPlan.setAttribute('style', 'display: none');
             }
         }
     }
 
+    // 파일 개수는 3개까지만 추가되게 함
+    function clickFileBtn(btn) {
+        var file1 = document.getElementById('file1');
+        var file2 = document.getElementById('file2');
+        var file3 = document.getElementById('file3');
+
+        if(!file1.value) {
+            file1.click();
+        } else if(!file2.value) {
+            file2.click();
+        } else if(!file3.value) {
+            file3.click();
+        } else {
+            alert("더이상 파일을 추가할 수 없습니다.");
+        }
+
+    }
+
+    // 파일 추가시 파일명 출력
+    function addFile(fileTag){
+        var filePath = fileTag.value.split('\\');
+        var filename = filePath[filePath.length-1];
+
+        var parent = fileTag.parentElement;
+        var pTag = document.createElement('p');
+
+        pTag.setAttribute('class', 'col-8 text-center')
+        pTag.setAttribute('style', 'background: #e0e0e0; border-radius: 8px; padding: 10px 0px; display: inline-block');
+        pTag.innerText = filename;
+
+        parent.appendChild(pTag);
+        parent.firstElementChild.removeAttribute('style'); // 숨겨져있는 버튼의 스타일 삭제
+    }
+
+    function deleteFile(btn){
+        // var parent = btn.parentElement;
+        // var pTag = parent.lastChild;
+        // var pTag = document.querySelector('p');
+        // parent.removeChild(pTag);
+        // 파일을 어떻게 삭제?
+    }
+
     // 계속버튼 클릭
     function clickNextBtn(){
-        var prepareFrm = document.getElementById('prepareFrm');
-        prepareFrm.setAttribute('method', 'POST');
-        prepareFrm.setAttribute('action', '/project/edit/3');
-        prepareFrm.submit();
+        // 기타 입력시 텍스트 처리
+        var detailEtc = document.getElementById('detailEtc');
+        if(detailEtc.checked == true){
+            var detailEtcText = document.getElementById('detailEtcText');
+            detailEtc.value = detailEtcText.value;
+        }
+
+        // 유효성 검사
+        var projectStatus = document.getElementsByName('projectStatus');
+
+        var checked = false;
+        for(var i = 0; i < projectStatus.length; i++){
+            if(projectStatus[i].checked == true){
+                checked = true;
+                break;
+            }
+        }
+
+        if(checked == false){
+            alert('기획 상태/프로젝트 상태를 선택해주세요.');
+            event.preventDefault();
+        } else {
+            var prepareFrm = document.getElementById('prepareFrm');
+            prepareFrm.setAttribute('method', 'POST');
+            prepareFrm.setAttribute('enctype', 'multipart/form-data')
+            prepareFrm.setAttribute('action', '/project/edit/3');
+            prepareFrm.submit();
+        }
     }
 
 </script>

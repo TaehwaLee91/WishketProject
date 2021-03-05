@@ -55,15 +55,17 @@
                                 <p>추가 정보</p>
                                 <hr>
                             </div>
-                            <div class="form-content">
-                                <p class="form-content-title">구인 유형 <span class="required">*</span></p>
-                                <div class="form-group form-check">
-                                    <label class="form-check-label"><input type="radio" class="form-check-input" name="hireType" value="사내 프로젝트 인력 구인">사내 프로젝트에 필요한 인력을 구인합니다.</label>
+                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <div class="form-content">
+                                    <p class="form-content-title">구인 유형 <span class="required">*</span></p>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="hireType" value="사내 프로젝트 인력 구인">사내 프로젝트에 필요한 인력을 구인합니다.</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="hireType" value="수주 프로젝트 인력 구인">발주처에게서 수주한 프로젝트에 필요한 인력을 구인합니다.</label>
+                                    </div>
                                 </div>
-                                <div class="form-group form-check">
-                                    <label class="form-check-label"><input type="radio" class="form-check-input" name="hireType" value="수주 프로젝트 인력 구인">발주처에게서 수주한 프로젝트에 필요한 인력을 구인합니다.</label>
-                                </div>
-                            </div>
+                            </c:if>
                             <div class="form-content">
                                 <p class="form-content-title">프로젝트 인력 상황 <span class="required">*</span></p>
                                 <div class="form-group form-check">
@@ -74,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="form-content">
-                                <p class="form-content-title">프로젝트 매니징 겸험 <span class="required">*</span></p>
+                                <p class="form-content-title">프로젝트 매니징 경험 <span class="required">*</span></p>
                                 <div class="form-group form-check">
                                     <label class="form-check-label"><input type="radio" class="form-check-input" name="managingExperience" value="프로젝트 매니징 경험 있음">프로젝트 매니징 경험이 있습니다.</label>
                                 </div>
@@ -84,12 +86,22 @@
                             </div>
                             <div class="form-content">
                                 <p class="form-content-title">향후 계획</p>
-                                <div class="form-group form-check">
-                                    <label class="form-check-label"><input type="checkbox" class="form-check-input" name="futurePlan" value="유지보수를 위한 아웃소싱 계획">향후 유지보수를 위한 아웃소싱 계획이 있습니다.</label>
-                                </div>
-                                <div class="form-group form-check">
-                                    <label class="form-check-label"><input type="checkbox" class="form-check-input" name="futurePlan" value="고도화를 위한 아웃소싱 계획">향후 고도화를 위한 아웃소싱 계획이 있습니다.</label>
-                                </div>
+                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="futurePlan" value="월 단위 유지보수 의뢰 예정">월 단위 유지보수를 의뢰 예정입니다. 미팅시 논의가 필요합니다.</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="futurePlan" value="고도화 프로젝트 의뢰 예정">고도화 프로젝트를 의뢰 예정입니다. 미팅시 논의가 필요합니다.</label>
+                                    </div>
+                                </c:if>
+                                <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="futurePlan" value="유지보수를 위한 아웃소싱 계획">향후 유지보수를 위한 아웃소싱 계획이 있습니다.</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="futurePlan" value="고도화를 위한 아웃소싱 계획">향후 고도화를 위한 아웃소싱 계획이 있습니다.</label>
+                                    </div>
+                                </c:if>
                             </div>
                             <div class="form-content">
                                 <p class="form-content-title">프로젝트 우선순위</p>
@@ -108,76 +120,103 @@
                                 <p class="form-content-title">관심 상품</p>
                                 <p>프로젝트에 필요한 상품을 체크해주시면, 위시켓 스토어에서 저렴하게 구매를 도와드립니다.</p>
                                 <div class="form-row">
-                                    <div class="card col-3 project-select-card">
-                                        <input name="category" type="checkbox" value="develop">
+                                    <label class="card col-3 project-select-card">
+                                        <input name="interestProduct" type="checkbox" value="서버 또는 클라우드" onclick="clickCard(this)">
                                         <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_job_category_1_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_job_category_1_c.png" style="display: none;"/>
+                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_store_server_d.png"/>
+                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_store_server_c.png" style="display: none;"/>
                                             <p>서버 또는 클라우드</p>
                                         </div>
-                                    </div>
-                                    <div class="card col-3 project-select-card">
-                                        <input name="category" type="checkbox" value="design">
+                                    </label>
+                                    <label class="card col-3 project-select-card">
+                                        <input name="interestProduct" type="checkbox" value="도메인" onclick="clickCard(this)">
                                         <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_job_category_2_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_job_category_2_c.png" style="display: none;"/>
+                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_store_domain_d.png"/>
+                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_store_domain_c.png" style="display: none;"/>
                                             <p>도메인</p>
                                         </div>
-                                    </div>
-                                    <div class="card col-3 project-select-card">
-                                        <input name="category" type="checkbox" value="plan">
+                                    </label>
+                                    <label class="card col-3 project-select-card">
+                                        <input name="interestProduct" type="checkbox" value="SSL인증서" onclick="clickCard(this)">
                                         <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_job_category_3_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_job_category_3_c.png" style="display: none;"/>
+                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_store_ssl_d.png"/>
+                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_store_ssl_c.png" style="display: none;"/>
                                             <p>SSL 인증서</p>
                                         </div>
-                                    </div>
+                                    </label>
                                 </div>
                                 <div class="form-row">
-                                    <div class="card col-3 project-select-card">
-                                        <input name="category" type="checkbox" value="develop">
+                                    <label class="card col-3 project-select-card">
+                                        <input name="interestProduct" type="checkbox" value="보안 솔루션" onclick="clickCard(this)">
                                         <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_job_category_1_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_job_category_1_c.png" style="display: none;"/>
+                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_store_protect_d.png"/>
+                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_store_protect_c.png" style="display: none;"/>
                                             <p>보안 솔루션</p>
                                         </div>
-                                    </div>
-                                    <div class="card col-3 project-select-card">
-                                        <input name="category" type="checkbox" value="design">
+                                    </label>
+                                    <label class="card col-3 project-select-card">
+                                        <input name="interestProduct" type="checkbox" value="쇼핑몰 솔루션" onclick="clickCard(this)">
                                         <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_job_category_2_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_job_category_2_c.png" style="display: none;"/>
+                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_store_shopping_d.png"/>
+                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_store_shopping_c.png" style="display: none;"/>
                                             <p>쇼핑몰 솔루션</p>
                                         </div>
-                                    </div>
-                                    <div class="card col-3 project-select-card">
-                                        <input type="checkbox" value="plan">
+                                    </label>
+                                    <label class="card col-3 project-select-card">
+                                        <input name="interestProduct" type="checkbox" value="메시지 & 메일" onclick="clickCard(this)">
                                         <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_job_category_3_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_job_category_3_c.png" style="display: none;"/>
+                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_store_message_d.png"/>
+                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_store_message_c.png" style="display: none;"/>
                                             <p>메시지 & 메일</p>
                                         </div>
-                                    </div>
+                                    </label>
                                 </div>
                                 <div class="form-row">
-                                    <div class="card col-3 project-select-card">
-                                        <input type="checkbox" value="develop">
+                                    <label class="card col-3 project-select-card">
+                                        <input name="interestProduct" type="checkbox" value="모바일 호환성 테스트" onclick="clickCard(this)">
                                         <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_job_category_1_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_job_category_1_c.png" style="display: none;"/>
+                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_store_test_d.png"/>
+                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_store_test_c.png" style="display: none;"/>
                                             <p>모바일 호환성 테스트</p>
                                         </div>
-                                    </div>
-                                    <div class="card col-3 project-select-card">
-                                        <input type="checkbox" value="design">
+                                    </label>
+                                    <label class="card col-3 project-select-card">
+                                        <input name="interestProduct" type="checkbox" value="전자결제" onclick="clickCard(this)">
                                         <div class="select-card-content">
-                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_job_category_2_d.png"/>
-                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_job_category_2_c.png" style="display: none;"/>
+                                            <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_store_card_d.png"/>
+                                            <img class="select-card-img active-select-card-img" src="/img/select_card_icon_store_card_c.png" style="display: none;"/>
                                             <p>전자 결제(PG)</p>
                                         </div>
-                                    </div>
+                                    </label>
                                 </div>
                             </div>
+                            <input type="hidden" id="type" name="type" value="${pvo.type}">
+                            <input type="hidden" name="purpose" value="${pvo.purpose}">
+                            <input type="hidden" name="title" value="${pvo.title}">
+                            <input type="hidden" name="industryArea" value="${pvo.industryArea}">
+                            <input type="hidden" name="category" value="${pvo.category}">
+                            <input type="hidden" name="area" value="${pvo.area}">
+                            <input type="hidden" name="position" value="${pvo.position}">
+                            <input type="hidden" name="projectStatus" value="${pvo.projectStatus}">
+                            <input type="hidden" name="detailStatus" value="${pvo.detailStatus}">
+                            <input type="hidden" name="detailTask" value="${pvo.detailTask}">
+                            <input type="hidden" name="skillStack" value="${pvo.skillStack}">
+                            <input type="hidden" name="skillStackUse" value="${pvo.skillStackUse}">
+                            <input type="hidden" name="availableBudget" value="${pvo.availableBudget}">
+                            <input type="hidden" name="budgetNego" value="${pvo.budgetNego}">
+                            <input type="hidden" name="budgetLater" value="${pvo.budgetLater}">
+                            <input type="hidden" name="projectStartDate" value="${pvo.projectStartDate}">
+                            <input type="hidden" name="projectTerm" value="${pvo.projectTerm}">
+                            <input type="hidden" name="preMeetingType" value="${pvo.preMeetingType}">
+                            <input type="hidden" name="meetingType" value="${pvo.meetingType}">
+                            <input type="hidden" name="meetingTerm" value="${pvo.meetingTerm}">
+                            <input type="hidden" name="workPlace" value="${pvo.workPlace}">
+                            <input type="hidden" name="workingHours" value="${pvo.workingHours}">
+                            <input type="hidden" name="extraWorkAndSupport" value="${pvo.extraWorkAndSupport}">
+                            <input type="hidden" name="deadLine" value="${pvo.deadLine}">
+                            <input type="hidden" name="supportBusiness" value="${pvo.supportBusiness}">
+                            <input type="hidden" name="prerequisites" value="${pvo.prerequisites}">
+                            <input type="hidden" name="question" value="${pvo.question}">
                             <hr/>
                             <div class="bottomBtns">
                                 <span style="float: left;">
@@ -198,11 +237,85 @@
     </div> <!-- div container-->
 </div> <!-- main -->
 <script type="text/javascript">
-    function clickNextBtn(){
 
-        var additionalFrm = document.getElementById('additionalFrm');
-        additionalFrm.setAttribute('method', 'POST');
-        additionalFrm.setAttribute('action', '/project/edit/8');
-        additionalFrm.submit();
+    function clickCard(card) {
+        if(card.checked == true){
+            var parentNode = card.parentNode;
+            parentNode.setAttribute('style', 'background: #E7EEFF')
+            var parentImg = parentNode.getElementsByTagName('div')[0];
+            var imgTag = parentImg.getElementsByTagName('img');
+            imgTag[0].setAttribute('style', 'display: none');
+            imgTag[1].removeAttribute('style');
+        } else if(card.checked == false) {
+            var parentNode = card.parentNode;
+            parentNode.removeAttribute('style')
+            var parentImg = parentNode.getElementsByTagName('div')[0];
+            var imgTag = parentImg.getElementsByTagName('img');
+            imgTag[0].removeAttribute('style');
+            imgTag[1].setAttribute('style', 'display: none');
+        }
+    }
+
+    function clickNextBtn(){
+        var projectType = document.getElementById('type');
+
+        var employeeState = document.getElementsByName('employeeState');
+        var checked = false;
+        for(var i = 0; i < employeeState.length; i++){
+            if(employeeState[i].checked == true){
+                checked = true;
+                break;
+            }
+        }
+
+        var managingExperience = document.getElementsByName('managingExperience');
+        var checked2 = false;
+        for(var i = 0; i < managingExperience.length; i++){
+            if(managingExperience[i].checked == true){
+                checked2 = true;
+                break;
+            }
+        }
+
+        if( projectType.value == '상주(인력구인)'){
+            var hireType = document.getElementsByName('hireType');
+            var checked3 = false;
+            for(var i = 0; i < hireType.length; i++){
+                if(hireType[i].checked == true){
+                    checked3 = true;
+                    break;
+                }
+            }
+
+            if(checked3 == false){
+                alert('구인 유형을 선택해주세요.');
+                event.preventDefault();
+            } else if(checked == false){
+                alert('프로젝트 인력 상황을 선택해주세요.');
+                event.preventDefault();
+            } else if(checked2 == false){
+                alert('프로젝트 매니징 경험을 선택해주세요.');
+                event.preventDefault();
+            } else {
+                var additionalFrm = document.getElementById('additionalFrm');
+                additionalFrm.setAttribute('method', 'POST');
+                additionalFrm.setAttribute('action', '/project/edit/8');
+                additionalFrm.submit();
+            }
+
+        } else {
+            if(checked == false){
+                alert('프로젝트 인력 상황을 선택해주세요.');
+                event.preventDefault();
+            } else if(checked2 == false){
+                alert('프로젝트 매니징 경험을 선택해주세요.');
+                event.preventDefault();
+            } else {
+                var additionalFrm = document.getElementById('additionalFrm');
+                additionalFrm.setAttribute('method', 'POST');
+                additionalFrm.setAttribute('action', '/project/edit/8');
+                additionalFrm.submit();
+            }
+        }
     }
 </script>

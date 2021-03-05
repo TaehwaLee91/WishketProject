@@ -104,20 +104,24 @@
                                 <p>더 적합한 파트너가 프로젝트를 찾고 지원할 수 있도록 프로젝트와 관련된 기술을 입력해주세요.</p>
                                 <div class="form-group">
                                     <input class="col-lg-12 form-control" type="text" id="skillStack" name="skillStack" placeholder="추가할 기술을 입력해 주세요.">
-                                    <label for="skillStack" class="col-form-label-sm">기술명을 입력한 후, 해당하는 기술을 선택하거나 엔터키를 눌러 추가해 주세요.</label>
+                                    <%--                                    <label for="skillStack" class="col-form-label-sm">기술명을 입력한 후, 해당하는 기술을 선택하거나 엔터키를 눌러 추가해 주세요.</label>--%>
                                 </div>
                                 <div class="form-group form-check">
                                     <input class="form-check-input" type="checkbox" id="skillStackUse" name="skillStackUse" value="관련기술필수사용">
                                     <label for="skillStackUse" class="form-check-label">입력한 관련 기술을 필두로 사용해야 합니다.</label>
                                 </div>
                             </div>
+
                             <input type="hidden" name="type" value="${pvo.type}">
                             <input type="hidden" name="purpose" value="${pvo.purpose}">
                             <input type="hidden" name="title" value="${pvo.title}">
+                            <input type="hidden" name="industryArea" value="${pvo.industryArea}">
                             <input type="hidden" name="category" value="${pvo.category}">
                             <input type="hidden" name="area" value="${pvo.area}">
+                            <input type="hidden" name="position" value="${pvo.position}">
                             <input type="hidden" name="projectStatus" value="${pvo.projectStatus}">
                             <input type="hidden" name="detailStatus" value="${pvo.detailStatus}">
+
                             <hr/>
                             <div class="bottomBtns">
                                 <span style="float: left;">
@@ -141,10 +145,18 @@
 
     // 계속버튼 클릭
     function clickNextBtn(){
-        var detailFrm = document.getElementById('detailFrm');
-        detailFrm.setAttribute('method', 'POST');
-        detailFrm.setAttribute('action', '/project/edit/4');
-        detailFrm.submit();
+        var detailTask = document.getElementById('detailTask');
+
+        if(detailTask.value == ''){
+            alert('상세 업무 내용을 입력해주세요.');
+            event.preventDefault();
+        } else {
+            var detailFrm = document.getElementById('detailFrm');
+            detailFrm.setAttribute('method', 'POST');
+            detailFrm.setAttribute('action', '/project/edit/4');
+            detailFrm.submit();
+        }
+
     }
 
 </script>

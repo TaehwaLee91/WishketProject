@@ -6,7 +6,7 @@
 /*프로젝트 등록 첫번째 화면*/
 .enroll-banner {
     height: 50px;
-    background-color: #e8faff; 
+    background-color: #e8faff;
     border: 1px solid #bfedfa;
     padding-top: 12px
 }
@@ -77,50 +77,50 @@
 
 /* 공통 적용 사항 */
 /* 폰트 크기 */
-    .page-title {
-        font-size:x-large; font-weight: 500;
-    }
+.page-title {
+    font-size:x-large; font-weight: 500;
+}
 
-    .form-title {
-        font-size: x-large; font-weight: 400;
-    }
+.form-title {
+    font-size: x-large; font-weight: 400;
+}
 
-    .form-content-title {
-        font-size: medium; font-weight: 700;
-    }
+.form-content-title {
+    font-size: medium; font-weight: 700;
+}
 
-    .caption-1 {
-        font-size:13px
-    }
+.caption-1 {
+    font-size:13px
+}
 
 /* 폰트 색상 */
-    .required {
-        color: red;
-    }
+.required {
+    color: red;
+}
 
 /* 폰트 두께 */
 
 
 /* 버튼 */
-    .backBtn {
-        color: #6aadc0;
-    }
+.backBtn {
+    color: #6aadc0;
+}
 
-    .backBtn > p {
-        display: inline;
-    }
+.backBtn > p {
+    display: inline;
+}
 
 /* 리스트 */
-    .img-item {
-        margin-bottom: 4px;
-        margin-right: 3px;
-    }
+.img-item {
+    margin-bottom: 4px;
+    margin-right: 3px;
+}
 
-    .list-items {
-        list-style-type: none;
-        margin-left:0px;
-        padding-left: 0px;
-    }
+.list-items {
+    list-style-type: none;
+    margin-left:0px;
+    padding-left: 0px;
+}
 
 /*  라디오, 체크박스 */
 .radio_item{

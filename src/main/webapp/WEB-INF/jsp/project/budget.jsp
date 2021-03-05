@@ -68,49 +68,52 @@
                                 <p>예산 및 일정</p>
                                 <hr>
                             </div>
-                            <%-- 이부분은 맨처음에 termBased로 했을때 뜨는거--%>
-
                             <div class="form-content">
                                 <c:if test="${pvo.type eq '상주(인력구인)'}">
-                                <p class="form-content-title">지출 가능 예산 <span class="required">*</span></p>
-                                <p>지출 가능 예산은 파트너 1인당 월 단위로 지급받는 실수령액이며, 사업소득(3.3%)이 포함된 금액입니다.</p>
-                                <p>위시켓 이용요금(5%)은 별도입니다.</p>
-                                <div id="partnerBudget" class="row">
-                                    <div class="form-group row col-8 bg-light partnerRow" >
-                                        <select class="form-control col-4" name="availableBudget1">
-                                            <option value="경력무관">경력무관</option>
-                                            <option value="1~2년차">1~2년 차</option>
-                                            <option value="3~4년차">3~4년 차</option>
-                                            <option value="5~9년차">5~9년 차</option>
-                                            <option value="10년차이상">10년 차 이상</option>
-                                        </select>
-                                        <input type="text" class="form-control col-3" name="availableBudget2" placeholder="인원수">
-                                        <input type="text" class="form-control col-4" name="availableBudget3" placeholder="1인당 월 지급액">
+                                    <p class="form-content-title">지출 가능 예산 <span class="required">*</span></p>
+                                    <p>지출 가능 예산은 파트너 1인당 월 단위로 지급받는 실수령액이며, 사업소득(3.3%)이 포함된 금액입니다.</p>
+                                    <p>위시켓 이용요금(5%)은 별도입니다.</p>
+                                    <div id="partnerBudget" class="row">
+                                        <div class="form-group row col-8 bg-light partnerRow" >
+                                            <select id="availableBudget1" class="form-control col-4" name="availableBudget1">
+                                                <option value="경력무관">경력무관</option>
+                                                <option value="1~2년차">1~2년 차</option>
+                                                <option value="3~4년차">3~4년 차</option>
+                                                <option value="5~9년차">5~9년 차</option>
+                                                <option value="10년차이상">10년 차 이상</option>
+                                            </select>
+                                            <input type="text" id="availableBudget2" class="form-control col-3" name="availableBudget2" placeholder="인원">
+                                            <input type="text" id="availableBudget3" class="form-control col-4" name="availableBudget3" placeholder="1인당 월 지급액">
+                                        </div>
+                                        <button type="button" id="addWorker" class="btn col-1 offset-1" onclick="addNewWorker()" style="height: 50px">
+                                            &nbsp;<img class="img-item" src="/img/btn_icon_plus_normal.png">
+                                        </button>
                                     </div>
-                                    <button type="button" id="addWorker" class="btn col-1 offset-1" onclick="addNewWorker()" style="height: 50px">
-                                        &nbsp;<img class="img-item" src="/img/btn_icon_plus_normal.png">
-                                    </button>
-                                </div>
                                 </c:if>
-                                <c:if test="${pvo.type eq '외주(프로젝트계약)'}">
-                                <p class="form-content-title">지출 가능 예산 <span class="required">*</span></p>
-                                <p>프로젝트에 지출 가능한 예산을 입력해 주세요.</p>
-                                <div class="form-group">
-                                    <input type="text" class="form-control col-5">
-                                    <label class="col-form-label">예상 결제 금액: 금액이 입력되면 *10퍼한 금액을 띄워줘야함</label>
-                                </div>
+                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                    <p class="form-content-title">지출 가능 예산 <span class="required">*</span></p>
+                                    <p>프로젝트에 지출 가능한 예산을 입력해 주세요.</p>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control col-5" id="availableBudget" name="availableBudget"
+                                               onchange="computeBudget(this)" onkeyup="numberWithCommas(this.value)">
+                                        <label class="col-form-label">예상 결제 금액: <span id="newBudget"></span>원 (부가가치세 10% 포함)</label>
+                                    </div>
                                 </c:if>
                                 <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" name="budgetNego" value="예산조율가능">
-                                    <label class="form-check-label">프로젝트 예산의 조율이 가능해집니다.</label>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" name="budgetNego" value="예산 조율 가능">
+                                        프로젝트 예산의 조율이 가능해집니다.
+                                    </label>
                                 </div>
                                 <div style="padding-left: 5px;">
                                     <img class="img-item" src="/img/icon_project_consulting_c.png" width="20" height="20">
                                     <p style="display: inline-block;">예산 입력이 어려우신가요?</p>
                                     <div style="background: #eaefff; height: 120px; padding: 10px 10px; border-radius: 5px;">
                                         <div class="form-group form-check">
-                                            <input type="checkbox" class="form-check-input" name="budgetLater" value="상담후예산결정">
-                                            <label class="form-check-label">상담 후 예산 결정</label>
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="budgetLater" value="상담 후 예산 결정">
+                                                상담 후 예산 결정
+                                            </label>
                                         </div>
                                         <p>프로젝트 예산이 얼마나 필요할지 산정하기 어려우신가요?</p>
                                         <p>걱정마세요. 위시켓에서 유선으로 예산 책정을 도와드립니다.</p>
@@ -118,12 +121,18 @@
                                 </div>
                             </div>
                             <div class="form-content">
-                                <p class="form-content-title">희망 근무 시작일 <span class="required">*</span></p>
+                                <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                    <p class="form-content-title">희망 근무 시작일 <span class="required">*</span></p>
+                                </c:if>
+                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                    <p class="form-content-title">예상 시작일 <span class="required">*</span></p>
+                                </c:if>
                                 <p>파트너가 프로젝트에 착수하는 날짜입니다.</p>
                                 <p>해당 날짜에 프로젝트 시작이 가능한 파트너들이 지원하게 됩니다.</p>
                                 <div class="form-group">
                                     <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input col-4" data-target="#datetimepicker1" name="projectStartDate"/>
+                                        <input type="text" id="projectStartDate" class="form-control datetimepicker-input col-4"
+                                               data-target="#datetimepicker1" name="projectStartDate"/>
                                         <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="bi bi-calendar3"></i></div>
                                         </div>
@@ -134,14 +143,17 @@
                                 <p class="form-content-title">예상 진행 기간 <span class="required">*</span></p>
                                 <p>프로젝트 진행 기간을 입력해 주세요.</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control col-5" name="projectTerm">
+                                    <input type="text" id="projectTerm" class="form-control col-5" name="projectTerm" placeholder="일 단위로 입력해주세요."
+                                           onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                                 </div>
                             </div>
-                            <input type="hidden" name="type" value="${pvo.type}">
+                            <input type="hidden" id="type" name="type" value="${pvo.type}">
                             <input type="hidden" name="purpose" value="${pvo.purpose}">
                             <input type="hidden" name="title" value="${pvo.title}">
+                            <input type="hidden" name="industryArea" value="${pvo.industryArea}">
                             <input type="hidden" name="category" value="${pvo.category}">
                             <input type="hidden" name="area" value="${pvo.area}">
+                            <input type="hidden" name="position" value="${pvo.position}">
                             <input type="hidden" name="projectStatus" value="${pvo.projectStatus}">
                             <input type="hidden" name="detailStatus" value="${pvo.detailStatus}">
                             <input type="hidden" name="detailTask" value="${pvo.detailTask}">
@@ -185,12 +197,70 @@
     //     });
     // }
 
+    // 3자리마다 콤마
+    function numberWithCommas(x) {
+        x = x.replace(/[^0-9]/g,'');   // 입력값이 숫자가 아니면 공백
+        x = x.replace(/,/g,'');        // ,값 공백처리
+        var budget = document.getElementById('availableBudget');
+        budget.value = x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    // 예상금액
+    function computeBudget(budget){
+        var newBudget = document.getElementById('newBudget');
+        var budgetVal = budget.value.replace(/,/g, '');
+        newBudget.innerText = parseInt(budgetVal * 1.1).toLocaleString();
+    }
+
     // 계속버튼
     function clickNextBtn(){
-        var budgetFrm = document.getElementById('budgetFrm');
-        budgetFrm.setAttribute('method', 'POST');
-        budgetFrm.setAttribute('action', '/project/edit/5');
-        budgetFrm.submit();
+        // false 상주, true 외주
+        var projectType = document.getElementById('type');
+
+        // 외주일경우 뜨는 input
+        var availableBudget = document.getElementById('availableBudget');
+
+        // 상주일경우 뜨는 input, select
+        var availableBudget1 = document.getElementById('availableBudget1');
+        var availableBudget2 = document.getElementById('availableBudget2');
+        var availableBudget3 = document.getElementById('availableBudget3');
+
+        var projectStartDate = document.getElementById('projectStartDate');
+        var projectTerm = document.getElementById('projectTerm');
+
+        if(projectType.value == '상주(인력구인)' ) {
+            if( availableBudget1.value == '' || availableBudget2.value == '' || availableBudget3.value == '' ){
+                alert('지출 가능 예산을 입력해주세요');
+                event.preventDefault();
+            } else if (projectStartDate.value == '') {
+                alert('희망 근무 시작일을 선택해주세요.');
+                event.preventDefault();
+            } else if (projectTerm.value == '') {
+                alert('프로젝트 예상 진행 기간을 입력해주세요.');
+                event.preventDefault();
+            } else {
+                var budgetFrm = document.getElementById('budgetFrm');
+                budgetFrm.setAttribute('method', 'POST');
+                budgetFrm.setAttribute('action', '/project/edit/5');
+                budgetFrm.submit();
+            }
+        } else {
+            if(availableBudget.value == '') {
+                alert('지출 가능 예산을 입력해주세요.');
+                event.preventDefault();
+            } else if (projectStartDate.value == '') {
+                alert('프로젝트 예상 시작일을 선택해주세요.');
+                event.preventDefault();
+            } else if (projectTerm.value == '') {
+                alert('프로젝트 예상 진행 기간을 입력해주세요.');
+                event.preventDefault();
+            } else {
+                var budgetFrm = document.getElementById('budgetFrm');
+                budgetFrm.setAttribute('method', 'POST');
+                budgetFrm.setAttribute('action', '/project/edit/5');
+                budgetFrm.submit();
+            }
+        }
+
     }
 
 </script>

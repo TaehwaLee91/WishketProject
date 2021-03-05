@@ -4,31 +4,48 @@ public class ProjectVO {
     private String pno;
     private String type;
     private String purpose;
+
     private String title;
+    private String industryArea;
     private String category;
     private String area;
-    private String industryArea;
     private String position;
+
     private String projectStatus;
     private String detailStatus;
-//    private String file;
+    private String fname1;
+    private String fname2;
+    private String fname3;
+    private String ftype1;
+    private String ftype2;
+    private String ftype3;
+    private String fsize1;
+    private String fsize2;
+    private String fsize3;
+    private String fuuid;
+
     private String detailTask;
     private String skillStack;
     private String skillStackUse;
+
     private String availableBudget;
     private String budgetNego;
     private String budgetLater;
     private String projectStartDate;
     private String projectTerm;
+
     private String preMeetingType;
+    private String meetingType;
+    private String meetingTerm;
     private String workPlace;
     private String workingHours;
-    private String breakTime;
     private String extraWorkAndSupport;
+
     private String deadLine;
     private String supportBusiness;
     private String prerequisites;
     private String question;
+
     private String hireType;
     private String employeeState;
     private String managingExperience;
@@ -68,6 +85,14 @@ public class ProjectVO {
         this.title = title;
     }
 
+    public String getIndustryArea() {
+        return industryArea;
+    }
+
+    public void setIndustryArea(String industryArea) {
+        this.industryArea = industryArea;
+    }
+
     public String getCategory() {
         return category;
     }
@@ -82,14 +107,6 @@ public class ProjectVO {
 
     public void setArea(String area) {
         this.area = area;
-    }
-
-    public String getIndustryArea() {
-        return industryArea;
-    }
-
-    public void setIndustryArea(String industryArea) {
-        this.industryArea = industryArea;
     }
 
     public String getPosition() {
@@ -114,6 +131,86 @@ public class ProjectVO {
 
     public void setDetailStatus(String detailStatus) {
         this.detailStatus = detailStatus;
+    }
+
+    public String getFname1() {
+        return fname1;
+    }
+
+    public void setFname1(String fname1) {
+        this.fname1 = fname1;
+    }
+
+    public String getFname2() {
+        return fname2;
+    }
+
+    public void setFname2(String fname2) {
+        this.fname2 = fname2;
+    }
+
+    public String getFname3() {
+        return fname3;
+    }
+
+    public void setFname3(String fname3) {
+        this.fname3 = fname3;
+    }
+
+    public String getFtype1() {
+        return ftype1;
+    }
+
+    public void setFtype1(String ftype1) {
+        this.ftype1 = ftype1;
+    }
+
+    public String getFtype2() {
+        return ftype2;
+    }
+
+    public void setFtype2(String ftype2) {
+        this.ftype2 = ftype2;
+    }
+
+    public String getFtype3() {
+        return ftype3;
+    }
+
+    public void setFtype3(String ftype3) {
+        this.ftype3 = ftype3;
+    }
+
+    public String getFsize1() {
+        return fsize1;
+    }
+
+    public void setFsize1(String fsize1) {
+        this.fsize1 = fsize1;
+    }
+
+    public String getFsize2() {
+        return fsize2;
+    }
+
+    public void setFsize2(String fsize2) {
+        this.fsize2 = fsize2;
+    }
+
+    public String getFsize3() {
+        return fsize3;
+    }
+
+    public void setFsize3(String fsize3) {
+        this.fsize3 = fsize3;
+    }
+
+    public String getFuuid() {
+        return fuuid;
+    }
+
+    public void setFuuid(String fuuid) {
+        this.fuuid = fuuid;
     }
 
     public String getDetailTask() {
@@ -188,6 +285,22 @@ public class ProjectVO {
         this.preMeetingType = preMeetingType;
     }
 
+    public String getMeetingType() {
+        return meetingType;
+    }
+
+    public void setMeetingType(String meetingType) {
+        this.meetingType = meetingType;
+    }
+
+    public String getMeetingTerm() {
+        return meetingTerm;
+    }
+
+    public void setMeetingTerm(String meetingTerm) {
+        this.meetingTerm = meetingTerm;
+    }
+
     public String getWorkPlace() {
         return workPlace;
     }
@@ -202,14 +315,6 @@ public class ProjectVO {
 
     public void setWorkingHours(String workingHours) {
         this.workingHours = workingHours;
-    }
-
-    public String getBreakTime() {
-        return breakTime;
-    }
-
-    public void setBreakTime(String breakTime) {
-        this.breakTime = breakTime;
     }
 
     public String getExtraWorkAndSupport() {

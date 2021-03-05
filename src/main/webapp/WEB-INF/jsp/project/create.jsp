@@ -40,7 +40,7 @@
                                 <p>프로젝트에 적합한 작업자를 모집하기 위해 프로젝트 진행 방식을 선택해 주세요.</p>
                                 <div class="form-row">
                                     <label class="card col-3 project-select-card">
-                                        <input id="projectBased" name="type" type="radio" value="외주(프로젝트계약)" onclick="checkRadio()" checked/>
+                                        <input id="projectBased" name="type" type="radio" value="외주(프로젝트계약)" onclick="checkRadio()"/>
                                         <div class="select-card-content">
                                             <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_project_type_1_d.png"/>
                                             <img class="select-card-img active-select-card-img" src="/img/select_card_icon_project_type_1_c.png" style="display: none;"/>
@@ -69,7 +69,7 @@
                             <div class="form-content">
                                 <div class="form-content-title">프로젝트 진행 분류 <span class="required">*</span></div><br/>
                                 <label class="form-group form-check">
-                                    <input type="radio" class="form-check-input" name="purpose" value="신규프로젝트" checked>
+                                    <input type="radio" class="form-check-input" name="purpose" value="신규프로젝트">
                                     <p>신규 프로젝트를 진행하려 합니다.</p>
                                 </label>
                                 <label class="form-group form-check">
@@ -95,7 +95,7 @@
         for(var i = 0; i < radioCards.length; i++){
             if(radioCards[i].checked){
                 var parentNode = radioCards[i].parentNode;
-                parentNode.setAttribute('style', 'background: #BAE9FC')
+                parentNode.setAttribute('style', 'background: #E7EEFF')
                 var parentImg = parentNode.getElementsByTagName('div')[0];
                 var imgTag = parentImg.getElementsByTagName('img');
                 imgTag[0].setAttribute('style', 'display: none');
@@ -112,10 +112,39 @@
     }
 
     function clickNextBtn(){
-        var enrollFrm = document.getElementById('enrollFrm');
-        enrollFrm.setAttribute('method', 'POST');
-        enrollFrm.setAttribute('action', '/project/edit/1');
-        enrollFrm.submit();
+        var type = document.getElementsByName('type');
+        var purpose = document.getElementsByName('purpose');
+
+        // 유효성 검사
+        var checked = false;
+        for(var i = 0; i < type.length; i++){
+            if(type[i].checked == true){
+                checked = true;
+                break;
+            }
+        }
+
+        var checked2 = false;
+        for(var i = 0; i < purpose.length; i++){
+            if(purpose[i].checked == true){
+                checked2 = true;
+                break;
+            }
+        }
+
+        if(checked == false){
+            alert('프로젝트 진행 방식을 선택해주세요.');
+            event.preventDefault();
+        } else if(checked2 == false){
+            alert('프로젝트 진행 방식을 선택해주세요.');
+            event.preventDefault();
+        } else {
+            var enrollFrm = document.getElementById('enrollFrm');
+            enrollFrm.setAttribute('method', 'POST');
+            enrollFrm.setAttribute('action', '/project/edit/1');
+            enrollFrm.submit();
+        }
+
     }
 
 </script>
