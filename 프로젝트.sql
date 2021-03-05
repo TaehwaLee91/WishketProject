@@ -1,0 +1,41 @@
+create table 프로젝트 (
+    pno int primary key auto_increment,
+    type varchar(50) not null,
+    purpose varchar(50) not null,
+    title varchar(30) not null,
+    industryArea varchar(50) default '',
+    category varchar(20) not null,
+    area varchar(60) not null,
+    position varchar(100) default '',
+    projectStatus varchar(50) not null,
+    detailStatus varchar(50) default '',
+    -- fname1, ftype1, fsize1
+    -- fname2, ftype2, fsize2
+    -- fname3, ftype3, fsize3
+    detailTask varchar(6000) not null,
+    skillStack varchar(50) default '',
+    skillStackUse varchar(20) default '',
+    availableBudget varchar(50) not null,
+    budgetNego varchar(20) default '',
+    budgetLater varchar(20) default '',
+    projectStartDate datetime,
+    projectTerm int not null,
+    preMeetingType varchar(20) not null,
+    meetingType varchar(20) default '',
+    meetingTerm varchar(20) default '',
+    workPlace varchar(200) not null,
+    workingHours varchar(50) not null,
+    extraWorkAndSupport varchar(200) not null,
+    deadLine datetime,
+    supportBusiness varchar(20) not null,
+    prerequisites varchar(100) default '',
+    question varchar(200) default '',
+    hireType varchar(50) not null,
+    employeeState varchar(50) not null,
+    managingExperience varchar(50) not null,
+    futurePlan varchar(50) default '',
+    projectPriority varchar(50) default '',
+    interestProduct varchar(50) default '',
+    regdate timestamp default current_timestamp
+);
+
