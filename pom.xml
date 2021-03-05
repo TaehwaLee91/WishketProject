@@ -145,6 +145,7 @@
       <scope>provided</scope>
     </dependency>
 
+
     <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
     <dependency>
       <groupId>javax.mail</groupId>
@@ -159,7 +160,6 @@
       <version>5.2.0.RELEASE</version>
     </dependency>
     <!-- 이메일 인증 2018.11.20 KW -->
-
 
 
     <!-- JSON : object mapper -->
