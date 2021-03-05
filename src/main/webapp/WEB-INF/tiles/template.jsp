@@ -19,11 +19,13 @@
     </head>
     <body>
         <div class="container-fluid">
+
             <tiles:insertAttribute name="header"/>
 
             <tiles:insertAttribute name="main"/>
 
             <tiles:insertAttribute name="footer"/>
+
 
             <!-- 로그인 모달 -->
 <%--            <tiles:insertAttribute name="modal"/>--%>

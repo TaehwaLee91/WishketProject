@@ -6,6 +6,7 @@ public class MemberVO {
     private String email;
     private String passwd;
     private String regdate;
+    private String confirmCode;
 
     public MemberVO() {
     }
@@ -16,6 +17,19 @@ public class MemberVO {
         this.email = email;
         this.passwd = passwd;
         this.regdate = regdate;
+    }
+
+    public MemberVO(String email,String confirmCode) {
+        this.confirmCode = confirmCode;
+        this.email = email;
+    }
+
+    public String getConfirmCode() {
+        return confirmCode;
+    }
+
+    public void setConfirmCode(String confirmCode) {
+        this.confirmCode = confirmCode;
     }
 
     public String getMno() {

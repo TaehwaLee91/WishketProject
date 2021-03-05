@@ -6,8 +6,13 @@
 
     <c:if test="${not empty warning}">
   <div class="row col-12 justify-content-center " style="margin:0 auto;">
-      <input id="warning" type="text" value="올바른 아이디 또는 이메일와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다." class="col-7  mt-4" style=" height: 52px; border:1px solid #FAEBCC; background: #fcf8e3; color:#f48023;">
+      <input id="warning" type="text" value="올바른 아이디 또는 이메일와/과 비밀번호를 입력하십시오. 혹은 이메일인증이 되지 않으면 로그인이 안됩니다." class="col-7  mt-4" style=" height: 52px; border:1px solid #FAEBCC; background: #fcf8e3; color:#f48023;">
   </div>
+    </c:if>
+    <c:if test="${not empty logout}">
+        <div class="row col-12 justify-content-center " style="margin:0 auto;">
+            <input id="message" type="text" value="로그아웃 하셨습니다." class="col-7  mt-4" style=" height: 52px; border:1px solid #CAECF6; background: #E0F4FA; color:#2099BB;">
+        </div>
     </c:if>
 
     <div id="intro" class="row border col-7 mt-4 bg-white" style="height: 116px; margin:0px auto;">
@@ -21,7 +26,7 @@
         <div class="col-7 offset-1 mt-3 " style="display:inline-block;">
             <form id="loginfrm">
             <div class="form-group row ">
-                <label for="userid" class="col-form-label col-4 text-right font-weight-bold "><span class="text-danger">*</span>아이디 또는 이메일</label>
+                <label for="userid" class="col-form-label col-4 text-right font-weight-bold "><span class="text-danger">*</span>아이디</label>
                 <input type="text" id="userid" name="userid" class="form-control col-6">
             </div>
             <div class="form-group row">
@@ -47,7 +52,7 @@
             <p class="font-weight-bold">이미 페이스북으로 가입하셨다면</p>
             <button type="button" class="btn" style="margin-left:-10px"><img src="/img/login_facebook.png"></button>
             <hr style="border-style: dashed; width: 280px; margin-left: -5px">
-            <p>아직 회원이 아니신가요? <a  href="#" class="font-weight-bold text-info">회원가입하기</a></p>
+            <p>아직 회원이 아니신가요? <a  href="/accounts/signup" class="font-weight-bold text-info">회원가입하기</a></p>
         </div>
     </div>
 

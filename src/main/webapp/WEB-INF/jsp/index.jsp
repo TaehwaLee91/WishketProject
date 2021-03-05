@@ -2,59 +2,68 @@
 <!-- 메인 -->
 <div id="main" class="row" style="height: auto">
     <!--section1 -->
-    <div class="row col-12 bg-white section1">
-        <div class="offset-3 row col-9 margin-algin-center">
-            <p class="pt-5"><span class="font-weight-bold" id="sc1Title">IT 아웃소싱을<br> 위시켓에서<br>빠르게 안전하게<br></span>
-                <span class="text-active" id="sc1Contents">애플리케이션 개발,웹 개발, 일반 소프트웨어 개발,<br>웹 디자인,커머스,쇼핑몰 등<br></span>
-                <button class="btn btn-info mt-4" id="sc1Btn">무료로 프로젝트 등록하기</button></p>
-            <img src="/img/introduction-img.png" id="sc1Img">
+    <div class="bg-white basicWidth" style="height: 580px">
+        <div class="center contentsWidth" >
+            <div class="row" style="margin-top:50px">
+                <div class="col-5"><p class="pt-5"><span class="font-weight-bold" id="sc1Title">IT 아웃소싱을<br> 위시켓에서<br>빠르게 안전하게<br></span>
+                    <span class="text-active" id="sc1Contents">애플리케이션 개발,웹 개발, 일반 소프트웨어 개발,<br>웹 디자인,커머스,쇼핑몰 등<br></span>
+                    <button class="btn btn-info mt-4" id="sc1Btn">무료로 프로젝트 등록하기</button></p></div>
+                <div class="col-7"><img src="/img/introduction-img.png" id="sc1Img"></div>
+            </div>
         </div>
     </div><!--section1 end-->
 
     <!--section2 -->
-    <div class="section2 row col-12 bg-light align-content-center" >
-        <div class="col-2"></div>
+    <div class="basicWidth bg-light" >
+        <div class="center contentsWidth" style="height: 130px">
+        <div class="row" style="margin-top:50px">
+
         <div class="col-2 mt-3"><img src="/img/laurel_wreath.png"></div>
-        <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count1"></span><span>개</span></h2></p><p class="sc2contents">등록된 프로젝트</p></div>
-        <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count2"></span><span>억 원</span></h2></p><p class="sc2contents">프로젝트 등록금</p></div>
-        <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count3"></span><span>명</span></h2></p><p class="sc2contents" >개발회사 & 프리랜</p></div>
-        <div class="col-2"></div>
+        <div class="col-1"></div>
+            <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count1"></span><span>개</span></h2></p><p class="sc2contents">등록된 프로젝트</p></div>
+            <div class="col-1"></div>
+            <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count2"></span><span>억 원</span></h2></p><p class="sc2contents">프로젝트 등록금</p></div>
+            <div class="col-1"></div>
+            <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count3"></span><span>명</span></h2></p><p class="sc2contents" >개발회사 & 프리랜</p></div>
+
+        </div>
+        </div>
     </div><!--section2 end-->
 
     <!--section3 -->
-    <div class="section3 row col-12 bg-white ">
-        <div class="col-12">
-            <h1 class="font-weight-light" id="sc3Title">다양한 카테고리의 IT 프로젝트를 등록하고 전문가를 만나보세요.</h1></div>
+    <div class="basicWidth bg-white">
+        <div class="center contentsWidth" >
+            <h3 class="font-weight-bold" style="margin-top:100px">다양한 카테고리의 IT 프로젝트를 등록하고 전문가를 만나보세요.</h3>
 
-        <div class="col-12" id="sc3Contents">
-            <div class="col-9">
+        <div class="" style="position:relative; right:15px; margin-top:50px" >
+            <div class="col-12">
                 <ul class="nav nav-pills mb-3 border-bottom" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active lm" id="application" data-toggle="pill" href="#application-contents" role="tab" aria-controls="pills-home" aria-selected="true">애플리케이션</a>
+                        <a class="nav-link active lm" id="application" data-toggle="pill" href="#application-contents" role="tab" aria-controls="pills-home" aria-selected="true" style="font-size:16px">애플리케이션</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link lm" id="web" data-toggle="pill" href="#web-contents" role="tab" aria-controls="pills-profile" aria-selected="false">웹</a>
+                        <a class="nav-link lm " id="web" data-toggle="pill" href="#web-contents" role="tab" aria-controls="pills-profile" aria-selected="false" style="font-size:16px">웹</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link lm" id="software" data-toggle="pill" href="#software-contents" role="tab" aria-controls="pills-contact" aria-selected="false">일반 소프트웨어</a>
+                        <a class="nav-link lm" id="software" data-toggle="pill" href="#software-contents" role="tab" aria-controls="pills-contact" aria-selected="false" style="font-size:16px">일반 소프트웨어</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link lm" id="commers" data-toggle="pill" href="#commers-contents" role="tab" aria-controls="pills-contact" aria-selected="false">커머스, 쇼핑몰</a>
+                        <a class="nav-link lm" id="commers" data-toggle="pill" href="#commers-contents" role="tab" aria-controls="pills-contact" aria-selected="false" style="font-size:16px">커머스, 쇼핑몰</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link lm" id="embeded" data-toggle="pill" href="#embeded-contents" role="tab" aria-controls="pills-contact" aria-selected="false">임베디드</a>
+                        <a class="nav-link lm" id="embeded" data-toggle="pill" href="#embeded-contents" role="tab" aria-controls="pills-contact" aria-selected="false" style="font-size:16px">임베디드</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link lm" id="publishing" data-toggle="pill" href="#publishing-contents" role="tab" aria-controls="pills-contact" aria-selected="false">퍼블리싱</a>
+                        <a class="nav-link lm" id="publishing" data-toggle="pill" href="#publishing-contents" role="tab" aria-controls="pills-contact" aria-selected="false" style="font-size:16px">퍼블리싱</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link lm" id="product" data-toggle="pill" href="#product-contents" role="tab" aria-controls="pills-contact" aria-selected="false">제품</a>
+                        <a class="nav-link lm" id="product" data-toggle="pill" href="#product-contents" role="tab" aria-controls="pills-contact" aria-selected="false" style="font-size:16px">제품</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link lm" id="prints" data-toggle="pill" href="#prints-contents" role="tab" aria-controls="pills-contact" aria-selected="false">인쇄물</a>
+                        <a class="nav-link lm" id="prints" data-toggle="pill" href="#prints-contents" role="tab" aria-controls="pills-contact" aria-selected="false" style="font-size:16px">인쇄물</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link lm" id="other" data-toggle="pill" href="#other-contents" role="tab" aria-controls="pills-contact" aria-selected="false">기타</a>
+                        <a class="nav-link lm" id="other" data-toggle="pill" href="#other-contents" role="tab" aria-controls="pills-contact" aria-selected="false" style="font-size:16px">기타</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
@@ -127,25 +136,30 @@
                 </div>
             </div>
         </div>
+        </div>
 
 
     </div><!--section3 end -->
 
     <!--section4 -->
-    <div class="section4 row col-12">
-        <div class="row" id="sc4contents">
+    <div class="section4 basicWidth">
+        <div class="center contentsWidth" >
+            <div class="row" style="margin:65px 220px;">
             <h4 class="text-white font-weight-light">다양한 카테고리의 IT 프로젝트를 찾고 있으신가요?</h4>
             <button class="btn bg-white border-info ml-5 text-info" id="sc4Btn">회원가입하기</button></div>
+        </div>
     </div><!--section4 -->
 
     <!--section5 -->
-    <div class="section5 row col-12 bg-light">
-        <div class="col-12">
-            <h1 class="font-weight-light" id="sc5Title">위시켓의 빠르고 편리하고 안전한 프로세스를 경험해 보세요.</h1></div>
-        <div class="col-12" id="sc5Contents">
-            <div class="col-9">
+    <div class="basicWidth bg-light" style="height: 832px">
+        <div class="center contentsWidth">
 
-                <ul class="nav nav-pills mb-3 row" role="tablist">
+
+            <h3 class="font-weight-bold" style="margin-top:100px">위시켓의 빠르고 편리하고 안전한 프로세스를 경험해 보세요.</h3>
+            <div class="row" >
+            <div class="col-12" style="position: relative; left:-33px">
+
+                <ul class="nav nav-pills mb-3 row" role="tablist" style="position: relative; top:30px;">
                     <li class="nav-item" role="presentation" style="margin-left:50px">
                         <a class=" active lm2" id="one" data-toggle="pill" href="#first" role="tab" aria-controls="pills-home" aria-selected="true">프로젝트 등록 및 상담</a>
                     </li>
@@ -335,17 +349,16 @@
                 </div>
             </div>
         </div>
-
+        </div>
     </div><!--section5 end -->
 
     <!--section6 -->
-    <div class="section6 row col-12 bg-white">
-        <div class="col-12">
-            <h1 class="font-weight-light"id="sc6Title" >위시켓은 빠르고 편리하고 안전합니다.</h1>
-        </div>
+    <div class="basicWidth bg-white" style="height: 600px">
+        <div class="center contentsWidth">
+            <h3 class="font-weight-bold" style="margin-top:100px" >위시켓은 빠르고 편리하고 안전합니다.</h3>
 
-        <div class="row" id="sc6Contents" >
-            <div class="col-12">
+        <div class="row" style="margin-top:100px">
+            <div class="col-4">
                 <img src="/img/appeal_img_1.png">
                 <p class="sc6ContentsFont">빠르고 편리하게,<br>
                     무료로 프로젝트 등록</p>
@@ -353,12 +366,8 @@
                 <p class="sc6ContentsFont">보호받을 수 있는<br>
                     위시켓 안심계약</p>
             </div>
-        </div>
 
-        <div class="col-2"></div>
-
-        <div class="row">
-            <div class="col-12">
+            <div class="col-4">
                 <img src="/img/appeal_img_2.png">
                 <p class="sc6ContentsFont">실력있는 지원자,<br>
                     한눈에 비교하고 선택까지</p>
@@ -366,12 +375,8 @@
                 <p class="sc6ContentsFont">신뢰할 수 있는<br>
                     위시켓 표준계약서</p>
             </div>
-        </div>
 
-        <div class="col-2"></div>
-
-        <div class="row">
-            <div class="col-12">
+            <div class="col-4">
                 <img src="/img/appeal_img_3.png">
                 <p class="sc6ContentsFont">안전한 대금보호,<br>
                     간편한 계약 시스템</p>
@@ -379,18 +384,19 @@
                 <p class="sc6ContentsFont">시작부터 끝까지<br>
                     함께하는 담당 매니저</p>
             </div>
+    </div>
         </div>
-
-    </div><!--section6 end -->
+        </div><!--section6 end -->
 
     <!--section7 -->
-    <div class="section7 row col-12 bg-light">
-        <div class="col-12">
-            <h1 class="font-weight-light" id="sc7Title" >위시켓은 이렇게 빠르고 편리하고 안전합니다.</h1>
-        </div>
+    <div class="bg-light basicWidth" style="height: 724px">
+        <div class="center contentsWidth" style="padding-top:75px">
 
-        <div class="row col-12" id="sc7Contents">
-            <div class="col-2" id="sc7Contents2">
+
+            <h3 class="font-weight-bold" >위시켓은 이렇게 빠르고 편리하고 안전합니다.</h3>
+            <div class="row " style="margin-top:75px;">
+
+            <div class="col-2">
                 <div class="card sc7Card">
                     <div class="card-body">
                         <img src="/img/review_bullet.png">
@@ -402,8 +408,7 @@
                 </div>
             </div>
 
-
-            <div class="col-2 ml-5">
+            <div class="col-2" style="margin-left:95px">
                 <div class="card sc7Card" >
                     <div class="card-body">
                         <img src="/img/review_bullet.png">
@@ -415,9 +420,9 @@
                 </div>
             </div>
 
+            <div class="col-1"></div>
 
-
-            <div class="col-2 ml-5" >
+            <div class="col-2">
                 <div class="card sc7Card" >
                     <div class="card-body">
                         <img src="/img/review_bullet.png">
@@ -429,7 +434,9 @@
                 </div>
             </div>
 
-            <div class="col-2 ml-5">
+            <div class="col-1"></div>
+
+            <div class="col-2">
                 <div class="card sc7Card">
                     <div class="card-body">
                         <img src="/img/review_bullet.png">
@@ -441,11 +448,13 @@
                 </div>
             </div>
 
+
+
         </div>
 
-        <div class="row col-12" id="sc7Review">
+        <div class="row" style="margin-top:50px">
             <div class="col-6">
-                <p id="sc7ReviewContents">
+                <p id="">
                     <span id="sc7ReviewFont1" class="font-weight-light">클라이언트 평균 만족도</span><br>
                     <img src="/img/review_icon.png"><span id="sc7ReviewFont2"> 4.7점</span></p>
             </div>
@@ -453,16 +462,16 @@
                 <button class="btn btn-info text-white" id="sc7ReviewBtn">이용후</button>
             </div>
         </div>
-
+        </div>
     </div><!--section7 end-->
 
     <!--section8 -->
-    <div class="section8 row col-12 bg-white">
-        <div class="col-12">
-            <h1 class="font-weight-light" id="sc8Title">이미 69,059개의 클라이언트가 이용하고 있습니다.</h1>
-        </div>
+    <div class="contentsWidth bg-white" style="height: 704px;">
+        <div class="center contentsWidth">
+            <h3 class="font-weight-bold" style="padding-top:100px">이미 69,059개의 클라이언트가 이용하고 있습니다.</h3>
 
-        <div class="margin-algin-center">
+
+        <div class="margin-algin-center" style="margin-top:100px">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <!--미구
                 <div class="carousel-indicators">
@@ -487,16 +496,19 @@
 
 
         </div>
+        </div>
     </div><!--section8 end-->
 
     <!--section9 -->
-    <div class="section9 row col-12 bg-dark">
-        <div class="col-12 text-center" id="sc9Contents">
-            <h1 class="font-weight-light text-white"  >위시켓에서 빠르고 안전한 IT 아웃소싱을 경험해 보세요.</h1>
-            <button class="btn btn-info font-weight-light" id="sc9Btn">무료로 프로젝트 등록하기</button>
-        </div>
+<div class="basicWidth bg-dark" style="height: 319px">
+        <div class="center contentsWidth text-center">
 
-    </div><!--section9 end-->
+                    <h2 class="font-weight-bold text-white" style="padding-top:100px">위시켓에서 빠르고 안전한 IT 아웃소싱을 경험해 보세요.</h2>
+
+                    <button class="btn btn-info font-weight-bold" id="sc9Btn" style="margin-top:30px">무료로 프로젝트 등록하기</button>
+            </div>
+        </div><!--section9 end-->
+
 
 
 </div><!-- 메인 -->
