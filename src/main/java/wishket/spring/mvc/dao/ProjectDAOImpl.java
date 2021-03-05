@@ -3,6 +3,7 @@ package wishket.spring.mvc.dao;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import wishket.spring.mvc.vo.ProjectVO;
 
 import java.util.List;
 
@@ -10,6 +11,11 @@ import java.util.List;
 public class ProjectDAOImpl implements ProjectDAO {
     @Autowired
     private SqlSession sqlSession;
+
+    @Override
+    public int insertNewProject(ProjectVO pvo) {
+        return sqlSession.insert("project.insertNewProject", pvo);
+    }
 
     // ajax로 시도 가져오기
     @Override
@@ -20,7 +26,6 @@ public class ProjectDAOImpl implements ProjectDAO {
     // ajax로 구군 가져오기
     @Override
     public List<String> selectGugun(String sido) {
-        System.out.println(sido);
         return sqlSession.selectList("project.selectGugun", sido);
     }
 }

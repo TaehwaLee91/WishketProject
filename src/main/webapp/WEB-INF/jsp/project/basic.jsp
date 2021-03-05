@@ -73,10 +73,32 @@
                             <div class="form-content">
                                 <p class="form-content-title">프로젝트 제목 <span class="required">*</span></p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="project-title" name="title" placeholder="예) B2B 미디어 커머스 모바일 플랫폼 구축"/>
-                                    <label for="project-title" class="col-form-label caption-1">30자 이내로 작성해주세요.</label>
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="예) B2B 미디어 커머스 모바일 플랫폼 구축" maxlength="30"/>
+                                    <label for="title" class="col-form-label caption-1">30자 이내로 작성해주세요.</label>
                                 </div>
                             </div>
+                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <div class="form-content" id="industryField">
+                                    <p class="form-content-title">산업 분야 <span class="required">*</span></p>
+                                    <div class="form-group form-inline">
+                                        <select id="industryArea" class="form-control col-3" name="industryArea" onchange="changeIndustryArea(this)">
+                                            <option value="서비스업">서비스업</option>
+                                            <option value="금융•은행업">금융•은행업</option>
+                                            <option value="IT•정보통신업">IT•정보통신업</option>
+                                            <option value="판매•유통업">판매•유통업</option>
+                                            <option value="제조•생산•화학업">제조•생산•화학업</option>
+                                            <option value="교육업">교육업</option>
+                                            <option value="의료•제약업">의료•제약업</option>
+                                            <option value="미디어•광고업">미디어•광고업</option>
+                                            <option value="문화•예술•디자인업">문화•예술•디자인업</option>
+                                            <option value="건설업">건설업</option>
+                                            <option value="기관•협회">기관•협회</option>
+                                            <option value="직접입력">직접입력</option>
+                                        </select>&nbsp;&nbsp;
+                                        <input type="text" id="industryAreaText" class="form-control col" name="industryAreaText" placeholder="산업 분야를 입력해 주세요." style="display: none">
+                                    </div>
+                                </div>
+                            </c:if>
                             <div class="form-content">
                                 <p class="form-content-title">프로젝트 카테고리 <span class="required">*</span></p>
                                 <p>해당하는 프로젝트 카테고리를 모두 선택해 주세요.</p>
@@ -131,9 +153,38 @@
                                     <label class="project-area-item">기타<input type="checkbox" name="area" class="checkHidden" value="기타" onclick="clickCheck(this)"></label>
                                 </div>
                             </div>
-
-                            <input type="hidden" name="type" value="${pvo.type}">
-                            <input type="hidden" name="purpose" value="${pvo.purpose}">
+                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <div class="form-content">
+                                    <p class="form-content-title">담당 직무 <span class="required">*</span></p>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="position" value="PM">PM(Project Manager)</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="position" value="PL">PL(Project Leader)</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="position" value="Front-end 개발자">Front-end 개발자</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="position" value="Back-end 개발자">Back-end 개발자</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="position" value="퍼블리셔">퍼블리셔</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="position" value="DBA">DBA</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="position" value="QA">QA</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="positionEtc" name="position" onchange="changePosition(this)">
+                                        <input type="text" class="form-control col-11" id="positionEtcText" placeholder="기타 (직접 입력)" disabled>
+                                    </div>
+                                </div>
+                            </c:if>
+                            <input type="hidden" id="type" name="type" value="${pvo.type}">
+                            <input type="hidden" id="purpose" name="purpose" value="${pvo.purpose}">
 
                         </div>
                         <hr/>
@@ -147,11 +198,27 @@
     </div> <!-- div container-->
 </div> <!-- main -->
 <script>
+    function changeIndustryArea(sBox){
+        var sBoxText = sBox.options[sBox.selectedIndex].value;
+        var industryEtc = document.getElementById('industryAreaText');
 
+        if(sBoxText == '직접입력'){
+            industryEtc.removeAttribute('style');
+        } else {
+            industryEtc.setAttribute('style', 'display: none');
+        }
+    }
+
+    function changePosition(cBox){
+        if(cBox.checked) {
+            var positionEtc = document.getElementById('positionEtcText');
+            positionEtc.removeAttribute('disabled');
+        }
+    }
 
     function clickCheck(box) {
         if(box.checked == true){
-            box.parentNode.setAttribute('style', 'background: #BAE9FC');
+            box.parentNode.setAttribute('style', 'background: #E7EEFF');
         } else if(box.checked == false) {
             box.parentNode.removeAttribute('style');
         }
@@ -160,7 +227,7 @@
     function clickCard(card) {
         if(card.checked == true){
             var parentNode = card.parentNode;
-            parentNode.setAttribute('style', 'background: #BAE9FC')
+            parentNode.setAttribute('style', 'background: #E7EEFF')
             var parentImg = parentNode.getElementsByTagName('div')[0];
             var imgTag = parentImg.getElementsByTagName('img');
             imgTag[0].setAttribute('style', 'display: none');
@@ -177,10 +244,76 @@
 
     // 계속버튼 클릭
     function clickNextBtn(){
-        var basicFrm = document.getElementById('basicFrm');
-        basicFrm.setAttribute('method', 'POST');
-        basicFrm.setAttribute('action', '/project/edit/2');
-        basicFrm.submit();
+        var title = document.getElementById('title');
+        var category = document.getElementsByName('category');
+        var area = document.getElementsByName('area');
+
+        // 체크박스 체크확인
+        var checked = false;
+        for(var i = 0; i < category.length; i++){
+            if(category[i].checked == true){
+                checked = true;
+                break;
+            }
+        }
+        var checked2 = false;
+        for(var i = 0; i < area.length; i++){
+            if(area[i].checked == true){
+                checked2 = true;
+                break;
+            }
+        }
+
+        // 산업분야 직접입력 값 처리
+        var type = document.getElementById('type');
+        var checked3 = null;
+        if( type.value == '상주(인력구인)') {
+            var industryArea = document.getElementById('industryArea');
+            var option = industryArea.options[industryArea.selectedIndex];
+            if(option.value === '직접입력'){
+                var industryEtc = document.getElementById('industryAreaText');
+                option.value = industryEtc.value;
+            }
+
+            // 담당 직무 직접입력 처리
+            var positionEtc = document.getElementById('positionEtc');
+            if(positionEtc.checked == true){
+                var etcText = document.getElementById('positionEtcText');
+                positionEtc.value = etcText.value;
+            }
+
+            checked3 = false;
+            var position = document.getElementsByName('position');
+            for(var i = 0; i < position.length; i++){
+                if(position[i].checked == true){
+                    checked3 = true;
+                    break;
+                }
+            }
+        }
+
+
+
+        // 유효성검사
+        if(title.value == ''){
+            alert('프로젝트 제목을 입력해주세요.');
+            event.preventDefault();
+        } else if(checked == false){
+            alert('프로젝트 카테고리를 선택해주세요.');
+            event.preventDefault();
+        } else if(checked2 == false){
+            alert('프로젝트 분야를 선택해주세요.');
+            event.preventDefault();
+        } else if(checked3 != null && checked3 == false){
+            alert('담당 직무를 선택해주세요');
+            event.preventDefault();
+        } else {
+            var basicFrm = document.getElementById('basicFrm');
+            basicFrm.setAttribute('method', 'POST');
+            basicFrm.setAttribute('action', '/project/edit/2');
+            basicFrm.submit();
+        }
+
     }
 
 </script>

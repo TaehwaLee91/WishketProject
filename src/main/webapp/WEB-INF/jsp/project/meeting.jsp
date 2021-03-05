@@ -59,14 +59,63 @@
                                 <p class="form-content-title">사전 미팅 방식 <span class="required">*</span></p>
                                 <p>위시켓이 클라이언트님에게 편한 미팅 방식으로 파트너와의 미팅 조율을 도와드립니다.</p>
                                 <div class="form-group form-check">
-                                    <label class="form-check-label"><input type="radio" class="form-check-input" name="preMeetingType" value="온라인"> 온라인 (카카오톡, 화상미팅 등)</label>
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="preMeetingType" value="온라인">
+                                        온라인 (카카오톡, 화상미팅 등)
+                                    </label>
                                 </div>
                                 <div class="form-group form-check">
-                                    <label class="form-check-label"><input type="radio" class="form-check-input" name="preMeetingType" value="오프라인">오프라인</label>
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="preMeetingType" value="오프라인">
+                                        오프라인</label>
                                 </div>
                             </div>
+
+                            <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                <div class="form-content">
+                                    <p class="form-content-title">진행 중 미팅 <span class="required">*</span></p>
+                                    <p class="caption-1">미팅 방식 <span class="required">*</span></p>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="meetingType" value="온라인">
+                                            온라인 (카카오톡, 화상미팅 등)
+                                        </label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="meetingType" value="오프라인">
+                                            오프라인</label>
+                                    </div>
+                                    <p class="caption-1">미팅 주기 <span class="required">*</span></p>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="meetingTerm" value="주 2회">
+                                            주 2회
+                                        </label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="meetingTerm" value="주 1회">
+                                            주 1회
+                                        </label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="meetingTerm" value="필요시 요청">
+                                            필요시 요청
+                                        </label>
+                                    </div>
+                                </div>
+                            </c:if>
+
                             <div class="form-content">
-                                <p class="form-content-title">근무 위치 <span class="required">*</span></p>
+                                <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                    <p class="form-content-title">근무 위치 <span class="required">*</span></p>
+                                </c:if>
+                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                    <p class="form-content-title">클라이언트 위치 <span class="required">*</span></p>
+                                    <p class="caption-1">파트너가 미팅 위치 선정시 클라이언트님의 위치를 참고합니다.</p>
+                                </c:if>
                                 <div class="form-group row col-12">
                                     <select class="form-control col-3" id="addrSido" name="workPlace1" onchange="getGugun()">
                                         <option>시/도</option>
@@ -76,66 +125,72 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-content">
-                                <p class="form-content-title">근무 장소</p>
-                                <div class="from-group">
-                                    <input type="text" class="col-8 form-control" name="workPlace3" placeholder="상세 주소">
+                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <div class="form-content">
+                                    <p class="form-content-title">근무 장소</p>
+                                    <div class="from-group">
+                                        <input type="text" class="col-8 form-control" name="workPlace3" placeholder="상세 주소">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-content">
-                                <p class="form-content-title">근무 시간 <span class="required">*</span></p>
-                                <div class="form-group form-check">
-                                    <label class="form-check-label"><input type="radio" class="form-check-input" name="workingHours" value="오전 9시 ~ 오후 7시">오전 9시 ~ 오후 6시</label>
+                                <div class="form-content">
+                                    <p class="form-content-title">근무 시간 <span class="required">*</span></p>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="workingHours" value="오전 9시 ~ 오후 7시">오전 9시 ~ 오후 6시</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="workingHours" value="오전 10시 ~ 오후 7시">오전 10시 ~ 오후 7시</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="radio" class="form-check-input" id="workingHoursEtc" name="workingHours" onclick="getWorkingHours()">
+                                        <input type="text" class="form-control col-4" id="workingHoursText" placeholder="기타 (직접 입력)" disabled>
+                                    </div>
                                 </div>
-                                <div class="form-group form-check">
-                                    <label class="form-check-label"><input type="radio" class="form-check-input" name="workingHours" value="오전 10시 ~ 오후 7시">오전 10시 ~ 오후 7시</label>
-                                </div>
-                                <div class="form-group form-check">
-                                    <input type="radio" class="form-check-input" id="workingHoursEtc" name="workingHours" onclick="getWorkingHours()">
-                                    <input type="text" class="form-control col-4" id="workingHoursText" placeholder="기타 (직접 입력)" disabled>
-                                </div>
-                            </div>
 
-                            <div class="form-content">
-                                <p class="form-content-title">추가 근무 및 지원 <span class="required">*</span></p>
-                                <div class="form-group row">
-                                    <p class="col-6">필요시 야간 근무를 요청할 수 있습니까?</p>
-                                    <label class="col-2">예 <input type="radio" name="support1" value="필요시 야간 근무 요청" checked></label>
-                                    <label class="col-2">아니오 <input type="radio" name="support1" value="야간 근무 없음"></label>
+                                <div class="form-content">
+                                    <p class="form-content-title">추가 근무 및 지원 <span class="required">*</span></p>
+                                    <div class="form-group row">
+                                        <p class="col-6">필요시 야간 근무를 요청할 수 있습니까?</p>
+                                        <label class="col-2">예 <input type="radio" name="support1" value="필요시 야간 근무 요청"></label>
+                                        <label class="col-2">아니오 <input type="radio" name="support1" value="야간 근무 없음" checked></label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <p class="col-6">필요시 주말 근무를 요청할 수 있습니까?</p>
+                                        <label class="col-2">예 <input type="radio" name="support2" value="필요시 주말 근무 요청"></label>
+                                        <label class="col-2">아니오 <input type="radio" name="support2" value="주말 근무 없음" checked></label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <p class="col-6">근무에 필요한 장비 지원이 가능합니까?</p>
+                                        <label class="col-2">예 <input type="radio" name="support3" value="장비 지원 가능"></label>
+                                        <label class="col-2">아니오 <input type="radio" name="support3" value="장비 지원 불가능" checked></label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <p class="col-6">근무 시 개인 장비 지참이 가능합니까?</p>
+                                        <label class="col-2">예 <input type="radio" name="support4" value="개인 장비 지참 가능"></label>
+                                        <label class="col-2">아니오 <input type="radio" name="support4" value="개인 장비 지참 불가능" checked></label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <p class="col-6">근무 시 개인 장비 지참이 가능합니까?</p>
+                                        <label class="col-2">예 <input type="radio" name="support5" value="근무 시 식사 지원 가능"></label>
+                                        <label class="col-2">아니오 <input type="radio" name="support5" value="근무 시 식사 지원 불가능" checked></label>
+                                    </div>
                                 </div>
-                                <div class="form-group row">
-                                    <p class="col-6">필요시 주말 근무를 요청할 수 있습니까?</p>
-                                    <label class="col-2">예 <input type="radio" name="support2" value="필요시 주말 근무 요청" checked></label>
-                                    <label class="col-2">아니오 <input type="radio" name="support2" value="주말 근무 없음"></label>
-                                </div>
-                                <div class="form-group row">
-                                    <p class="col-6">근무에 필요한 장비 지원이 가능합니까?</p>
-                                    <label class="col-2">예 <input type="radio" name="support3" value="장비 지원 가능" checked></label>
-                                    <label class="col-2">아니오 <input type="radio" name="support3" value="장비 지원 불가능"></label>
-                                </div>
-                                <div class="form-group row">
-                                    <p class="col-6">근무 시 개인 장비 지참이 가능합니까?</p>
-                                    <label class="col-2">예 <input type="radio" name="support4" value="개인 장비 지참 가능" checked></label>
-                                    <label class="col-2">아니오 <input type="radio" name="support4" value="개인 장비 지참 불가능"></label>
-                                </div>
-                                <div class="form-group row">
-                                    <p class="col-6">근무 시 개인 장비 지참이 가능합니까?</p>
-                                    <label class="col-2">예 <input type="radio" name="support5" value="근무 시 식사 지원 가능" checked></label>
-                                    <label class="col-2">아니오 <input type="radio" name="support5" value="근무 시 식사 지원 불가능"></label>
-                                </div>
-                            </div>
-
-                            <input type="hidden" name="type" value="${pvo.type}">
+                            </c:if>
+                            <input type="hidden" id="type" name="type" value="${pvo.type}">
                             <input type="hidden" name="purpose" value="${pvo.purpose}">
                             <input type="hidden" name="title" value="${pvo.title}">
+                            <input type="hidden" name="industryArea" value="${pvo.industryArea}">
                             <input type="hidden" name="category" value="${pvo.category}">
                             <input type="hidden" name="area" value="${pvo.area}">
+                            <input type="hidden" name="position" value="${pvo.position}">
                             <input type="hidden" name="projectStatus" value="${pvo.projectStatus}">
                             <input type="hidden" name="detailStatus" value="${pvo.detailStatus}">
                             <input type="hidden" name="detailTask" value="${pvo.detailTask}">
                             <input type="hidden" name="skillStack" value="${pvo.skillStack}">
                             <input type="hidden" name="skillStackUse" value="${pvo.skillStackUse}">
                             <input type="hidden" name="availableBudget" value="${pvo.availableBudget}">
+                            <input type="hidden" name="budgetNego" value="${pvo.budgetNego}">
+                            <input type="hidden" name="budgetLater" value="${pvo.budgetLater}">
+                            <input type="hidden" name="projectStartDate" value="${pvo.projectStartDate}">
                             <input type="hidden" name="projectTerm" value="${pvo.projectTerm}">
                             <hr/>
                             <div class="bottomBtns">
@@ -161,6 +216,7 @@
         getSido();
     }
 
+    // 근무 시간 직접입력 클릭
     function getWorkingHours(){
         var workingHoursText = document.getElementById('workingHoursText');
         workingHoursText.removeAttribute('disabled');
@@ -172,12 +228,8 @@
         jQuery.ajax({
             type:"GET",
             url:"/project/edit/sido",
-            // dataType:"JSON",
             success : function(data) {
-                // 서버로부터 넘어온 데이터는 JSON형식이므로
-                // 출력시 Object로 보여짐
                 let opts = '';
-                console.log(data)
                 $.each(data, function(){ // 행단위 반복처리
                     let sido = '';
                     $.each(this, function(k, v){ // 열단위 반복처리
@@ -186,7 +238,7 @@
                     opts += '<option>' + sido + '</option>';
                 });
                 // 기존 option 태그 제거
-                $('#addrSido').find('option').remove();
+                // $('#addrSido').find('option').remove();
                 // 새로 만든 option 태그를 추가함
                 $('#addrSido').append(opts);
             },
@@ -230,19 +282,94 @@
 
     // 계속버튼클릭 함수
     function clickNextBtn(){
-        // 기타 입력 확인
-        var meetingFrm = document.getElementById('meetingFrm');
+        // 유효성검사
+        // 사전 미팅방식 필수항목
+        var preMeetingType = document.getElementsByName('preMeetingType');
+        var checked = false;
+        for(var i = 0; i < preMeetingType.length; i++){
+            if(preMeetingType[i].checked == true){
+                checked = true;
+                break;
+            }
+        }
+
+        // 기타 입력 클릭했으면 직접 입력한 값을 workingHours에 저장
         var workingHours = document.getElementsByName('workingHours');
+        for(var i = 0; i < workingHours.length; i++){
+            if(workingHours[i].id == "workingHoursEtc"){
+                var workingHoursText = document.getElementById('workingHoursText');
+                workingHours[i].value = workingHoursText.value;
+            }
+        }
+
+        var type = document.getElementById('type');
+        var sido = document.getElementById('addrSido');
+        var gugun = document.getElementById('addrGugun');
+
+        if( type.value == '상주(인력구인)'){
+            var workingHours = document.getElementsByName('workingHours');
+            var checked2 = false;
             for(var i = 0; i < workingHours.length; i++){
-                if(workingHours[i].id == "workingHoursEtc"){
-                    var workingHoursText = document.getElementById('workingHoursText');
-                    workingHours[i].value = workingHoursText.value;
+                if(workingHours[i].checked == true){
+                    checked2 = true;
+                    break;
                 }
             }
 
-        meetingFrm.setAttribute('method', 'POST');
-        meetingFrm.setAttribute('action', '/project/edit/6');
-        meetingFrm.submit();
+            if(checked == false){
+                alert('사전 미팅 방식을 선택해주세요.');
+                event.preventDefault();
+            } else if (sido.value == '시/도' || gugun.value == '시/군/구') {
+                alert('근무 위치를 선택해주세요.');
+                event.preventDefault();
+            } else if(checked2 == false){
+                alert('근무 시간을 선택해주세요.');
+                event.preventDefault();
+            } else {
+                var meetingFrm = document.getElementById('meetingFrm');
+                meetingFrm.setAttribute('method', 'POST');
+                meetingFrm.setAttribute('action', '/project/edit/6');
+                meetingFrm.submit();
+            }
+
+        } else {
+            var checked3 = false;
+            var meetingType = document.getElementsByName('meetingType');
+            for(var i = 0; i < meetingType.length ; i++){
+                if(meetingType[i].checked == true){
+                    checked3 = true;
+                    break;
+                }
+            }
+
+            var checked4 = false;
+            var meetingTerm = document.getElementsByName('meetingTerm');
+            for(var i = 0; i < meetingTerm.length ; i++){
+                if(meetingTerm[i].checked == true){
+                    checked4 = true;
+                    break;
+                }
+            }
+
+            if(checked == false){
+                alert('사전 미팅 방식을 선택해주세요.');
+                event.preventDefault();
+            } else if (checked3 == false){
+                alert('진행 중 미팅 방식을 선택해주세요.');
+                event.preventDefault();
+            } else if (checked4 == false) {
+                alert('진행 중 미팅 주기를 선택해주세요.');
+                event.preventDefault();
+            } else if (sido.value == '시/도' || gugun.value == '시/군/구') {
+                alert('클라이언트 위치를 선택해주세요.');
+                event.preventDefault();
+            } else {
+                var meetingFrm = document.getElementById('meetingFrm');
+                meetingFrm.setAttribute('method', 'POST');
+                meetingFrm.setAttribute('action', '/project/edit/6');
+                meetingFrm.submit();
+            }
+        }
     }
 
 </script>

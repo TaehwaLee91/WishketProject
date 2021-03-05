@@ -29,8 +29,8 @@
   
   <div class="container-fluid bg-light">
     <tiles:insertAttribute name="header"/>
-    <tiles:insertAttribute name="footer"/>
     <tiles:insertAttribute name="main"/>
+    <tiles:insertAttribute name="footer"/>
   </div>
   <!-- 로그인 모달 -->
 <%--            <tiles:insertAttribute name="modal"/>--%>

@@ -66,7 +66,7 @@
                                 <p>지원자 모집 기간 중에도 파트너 선정과 계약 진행이 가능합니다.</p>
                                 <div class="form-group">
                                     <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input col-4" data-target="#datetimepicker1" name="deadLine"/>
+                                        <input type="text" id="deadLine" class="form-control datetimepicker-input col-4" name="deadLine" data-target="#datetimepicker1"/>
                                         <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="bi bi-calendar3"></i></div>
                                         </div>
@@ -91,9 +91,25 @@
                                 <div class="form-group form-check">
                                     <label class="form-check-label"><input type="checkbox" class="form-check-input" name="prerequisites" value="개인사업자 가능">개인사업자 가능</label>
                                 </div>
-                                <div class="form-group form-check">
-                                    <label class="form-check-label"><input type="checkbox" class="form-check-input" name="prerequisites" value="자격증, 증빙서류 필수">자격증, 증빙서류 필수</label>
-                                </div>
+                                <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="prerequisites" value="자격증, 증빙서류 필수">자격증, 증빙서류 필수</label>
+                                    </div>
+                                </c:if>
+                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="prerequisites" value="업력 1년 이상">업력 1년 이상</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="prerequisites" value="자사 협력업체 등록 가능">자사 협력업체 등록 가능</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="prerequisites" value="보증보험 발급 가능">보증보험 발급 가능</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" name="prerequisites" value="프로젝트 제안 발표 가능">프로젝트 제안 발표 가능</label>
+                                    </div>
+                                </c:if>
                                 <div class="form-group form-check">
                                     <input type="checkbox" class="form-check-input" id="prerequisitesEtc" name="prerequisites" onclick="checkEtc(this)">
                                     <input type="text" class="form-control col-11" id="prerequisitesEtcText" placeholder="기타 (직접 입력)" disabled>
@@ -103,7 +119,40 @@
                                 <p class="form-content-title">파트너 지원 전 질문</p>
                                 <p>파트너가 프로젝트에 지원할 때 답변해야 할 질문을 작성해 주세요. 최대 3개까지 입력 가능합니다.</p>
                                 <p>클라이언트님이 파트너를 선정할 때 지원서와 함께 답변 내용을 검토할 수 있습니다.</p>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="question1" placeholder="예) 물류 분야 프로젝트를 수행한 경험이 있습니까?">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="question2" placeholder="예) 물류 분야 프로젝트를 수행한 경험이 있습니까?">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="question3" placeholder="예) 물류 분야 프로젝트를 수행한 경험이 있습니까?">
+                                </div>
                             </div>
+
+                            <input type="hidden" id="type" name="type" value="${pvo.type}">
+                            <input type="hidden" name="purpose" value="${pvo.purpose}">
+                            <input type="hidden" name="title" value="${pvo.title}">
+                            <input type="hidden" name="industryArea" value="${pvo.industryArea}">
+                            <input type="hidden" name="category" value="${pvo.category}">
+                            <input type="hidden" name="area" value="${pvo.area}">
+                            <input type="hidden" name="position" value="${pvo.position}">
+                            <input type="hidden" name="projectStatus" value="${pvo.projectStatus}">
+                            <input type="hidden" name="detailStatus" value="${pvo.detailStatus}">
+                            <input type="hidden" name="detailTask" value="${pvo.detailTask}">
+                            <input type="hidden" name="skillStack" value="${pvo.skillStack}">
+                            <input type="hidden" name="skillStackUse" value="${pvo.skillStackUse}">
+                            <input type="hidden" name="availableBudget" value="${pvo.availableBudget}">
+                            <input type="hidden" name="budgetNego" value="${pvo.budgetNego}">
+                            <input type="hidden" name="budgetLater" value="${pvo.budgetLater}">
+                            <input type="hidden" name="projectStartDate" value="${pvo.projectStartDate}">
+                            <input type="hidden" name="projectTerm" value="${pvo.projectTerm}">
+                            <input type="hidden" name="preMeetingType" value="${pvo.preMeetingType}">
+                            <input type="hidden" name="meetingType" value="${pvo.meetingType}">
+                            <input type="hidden" name="meetingTerm" value="${pvo.meetingTerm}">
+                            <input type="hidden" name="workPlace" value="${pvo.workPlace}">
+                            <input type="hidden" name="workingHours" value="${pvo.workingHours}">
+                            <input type="hidden" name="extraWorkAndSupport" value="${pvo.extraWorkAndSupport}">
                             <hr/>
                             <div class="bottomBtns">
                                 <span style="float: left;">
@@ -141,17 +190,40 @@
 
     // 계속버튼클릭 함수
     function clickNextBtn(){
-        // 기타 입력 확인
+
+        // 기타 입력시 텍스트 처리
         var etcCheckbox = document.getElementById('prerequisitesEtc');
         if(etcCheckbox.checked == true){
             var etcText = document.getElementById('prerequisitesEtcText');
             etcCheckbox.value = etcText.value;
         }
 
-        var requireFrm = document.getElementById('requireFrm');
-        requireFrm.setAttribute('method', 'POST');
-        requireFrm.setAttribute('action', '/project/edit/7');
-        requireFrm.submit();
+        // 지원 사업여부 확인
+        var supportBusiness = document.getElementsByName('supportBusiness');
+        var checked = false;
+        for(var i = 0; i < supportBusiness.length; i++){
+            if(supportBusiness[i].checked == true){
+                checked = true;
+                break;
+            }
+        }
+
+        // 모집 마감일
+        var deadLine = document.getElementById('deadLine');
+
+        if (deadLine.value == '') {
+            alert('지원자 모집 마감일을 선택해주세요.');
+            event.preventDefault();
+        } else if(checked == false){
+            alert('지원사업 여부를 선택해주세요.');
+            event.preventDefault();
+        } else {
+            var requireFrm = document.getElementById('requireFrm');
+            requireFrm.setAttribute('method', 'POST');
+            requireFrm.setAttribute('action', '/project/edit/7');
+            requireFrm.submit();
+        }
+
     }
 
 
