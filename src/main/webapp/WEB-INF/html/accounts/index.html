@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../resources/css/bootstrap.css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    body { font-family :'나눔고딕', 'Malgun Gothic', sans-serif;}
+    <style>
+        body { font-family :'나눔고딕', 'Malgun Gothic', sans-serif;}
+        .container{
+        width: 1800px;
+        max-width: none !important;
+        }
+        .lm{
+            color:black;
+            font-size:20px;
+            font-weight: lighter;
+        }
+        .lm2{
+            color:black;
+            font-weight: bold;
+        }
+        .workbtn{
+            size:50px;
+            background:#e7e7e7;
+        }
+        .quest{
+            height: 233px;
+        }
+    </style>
+
+    <title>로그인</title>
+</head>
+<body>
+<div class="container-xl">
+    <!-- 헤더+네비 -->
+    <header class="row col-12">
+        <nav class="nav navbar-expand navbar-dark bg-dark col-12" >
+            <ul class="nav navbar-nav  nav-fill w-auto col-9 " style="margin:15px auto">
+                <li class="nav-item0"><a class="nav-link navbar-brand text-white" href="#">WishKet</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">프로젝트 등록</a></li>
+                <li class="nav-item"><a  class="nav-link text-white "href="#">프로젝트 찾기</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">파트너스 찾기</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">이용방법</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">이용후기</a></li>
+                <span class="mt-2 text-white text-muted">|</span>
+                <li class="nav-item "><a class="nav-link text-white" href="#">스토어</a></li>
+                <li class="nav-item"><button type="button" class="btn btn-light" id="loginbtn1">로그인</button></li>
+                <li><button type="button" class="btn btn-info" id="joinbtn">회원가입</button></li>
+            </ul>
+        </nav>
+    </header><!-- 헤더+네비 -->
+
+    <!-- 메인 -->
+    <div id="main" class="row" style="height: auto">
+        <div class="row col-12 bg-white" style="margin:0px auto; padding-top:100px; height: 650px">
+            <div class="offset-3 row col-9" style="margin:0 auto">
+                <p class="pt-5"><span class="font-weight-bold" style="font-size:60px;">IT 아웃소싱을<br> 위시켓에서<br>빠르게 안전하게<br></span>
+                <span class="text-active">애플리케이션 개발,웹 개발, 일반 소프트웨어 개발,<br>웹 디자인,커머스,쇼핑몰 등<br></span>
+                <button class="btn btn-info mt-4" style="width:250px; height: 50px;">무료로 프로젝트 등록하기</button></p>
+                <img src="../../../resources/img/introduction-img.png" style="margin-left:200px">
+            </div>
+        </div>
+
+        <div class="row col-12 bg-light align-content-center" style="height:177px">
+            <div class="col-2"></div>
+            <div class="col-2 mt-3"><img src="../../../resources/img/laurel_wreath.png"></div>
+            <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count1"></span><span>개</span></h2></p><p class="" style="margin-top:-15px">등록된 프로젝트</p></div>
+            <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count2"></span><span>억 원</span></h2></p><p class="" style="margin-top:-15px">프로젝트 등록금</p></div>
+            <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count3"></span><span>명</span></h2></p><p class="" style="margin-top:-15px">개발회사 & 프리랜</p></div>
+            <div class="col-2"></div>
+        </div>
+
+        <div class="row col-12 bg-white" style="height: 800px">
+            <div class="col-12">
+            <h1 class="font-weight-light" style="margin-left:220px; margin-top:100px" >다양한 카테고리의 IT 프로젝트를 등록하고 전문가를 만나보세요.</h1></div>
+
+            <div class="col-12" style="margin-left:220px; margin-top:50px">
+                <div class="col-9">
+            <ul class="nav nav-pills mb-3 border-bottom" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active lm" id="application" data-toggle="pill" href="#application-contents" role="tab" aria-controls="pills-home" aria-selected="true">애플리케이션</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link lm" id="web" data-toggle="pill" href="#web-contents" role="tab" aria-controls="pills-profile" aria-selected="false">웹</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link lm" id="software" data-toggle="pill" href="#software-contents" role="tab" aria-controls="pills-contact" aria-selected="false">일반 소프트웨어</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link lm" id="commers" data-toggle="pill" href="#commers-contents" role="tab" aria-controls="pills-contact" aria-selected="false">커머스, 쇼핑몰</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link lm" id="embeded" data-toggle="pill" href="#embeded-contents" role="tab" aria-controls="pills-contact" aria-selected="false">임베디드</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link lm" id="publishing" data-toggle="pill" href="#publishing-contents" role="tab" aria-controls="pills-contact" aria-selected="false">퍼블리싱</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                <a class="nav-link lm" id="product" data-toggle="pill" href="#product-contents" role="tab" aria-controls="pills-contact" aria-selected="false">제품</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link lm" id="prints" data-toggle="pill" href="#prints-contents" role="tab" aria-controls="pills-contact" aria-selected="false">인쇄물</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link lm" id="other" data-toggle="pill" href="#other-contents" role="tab" aria-controls="pills-contact" aria-selected="false">기타</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="application-contents" role="tabpanel" aria-labelledby="pills-home-tab"> <!-- 애플리케이션 정보-->
+                    <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col mb-4">
+                            <div class="card quest">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영3</a></h5>
+                                    <p class="card-text">
+                                    <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                    <p class="" style="color:gray; font-size:14px">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                    <p style="font-size:16px; margin-top:20px"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                        <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card quest">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영</a></h5>
+                                    <p class="card-text">
+                                    <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                    <p class="" style="color:gray; font-size:14px">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                    <p style="font-size:16px; margin-top:20px"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                        <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card quest">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영</a></h5>
+                                    <p class="card-text">
+                                    <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                    <p class="" style="color:gray; font-size:14px">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                    <p style="font-size:16px; margin-top:20px"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                        <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card quest">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영</a></h5>
+                                    <p class="card-text">
+                                    <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                    <p class="" style="color:gray; font-size:14px">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                    <p style="font-size:16px; margin-top:20px"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                        <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="web-contents" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                </div>
+                <div class="tab-pane fade" id="software-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 애플리케이션 정보-->
+                <div class="tab-pane fade" id="commers-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 애플리케이션 정보-->
+                <div class="tab-pane fade" id="embeded-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 애플리케이션 정보-->
+                <div class="tab-pane fade" id="publishing-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 애플리케이션 정보-->
+                <div class="tab-pane fade" id="product-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 애플리케이션 정보-->
+                <div class="tab-pane fade" id="prints-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 애플리케이션 정보-->
+                <div class="tab-pane fade" id="other-contents" role="tabpanel" aria-labelledby="pills-contact-tab">eee</div><!-- 애플리케이션 정보-->
+            </div>
+            </div>
+            </div><!-- 사용 -->
+
+        <!-- 미사용
+            <div class="col-12" style="margin-left:220px; margin-top:50px" >
+                <nav class="col-9">
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist" >
+                        <a class="nav-link active text-black lm" id="application" data-toggle="tab" href="#nav-app" role="tab" aria-controls="#nav-app" aria-selected="true">애플리케이션</a>
+                        <a class="nav-link lm"  id="web" data-toggle="tab" href="#nav-profile" role="tab"  aria-controls="#nav-app" aria-selected="false">웹</a>
+                        <a class="nav-link lm" id="software" data-toggle="tab" href="#nav-contact" role="tab"  aria-controls="#nav-app" aria-selected="false">일반 소프트웨어</a>
+                        <a class="nav-link lm" id="commers" data-toggle="tab" href="#nav-contact" role="tab"  aria-controls="#nav-app" aria-selected="false">커머스, 쇼핑몰</a>
+                        <a class="nav-link lm" id="embedded" data-toggle="tab" href="#nav-contact" role="tab"  aria-controls="#nav-app" aria-selected="false">임베디드</a>
+                        <a class="nav-link lm" id="publishing" data-toggle="tab" href="#nav-contact" role="tab"  aria-controls="#nav-app" aria-selected="false">퍼블리싱</a>
+                        <a class="nav-link lm" id="product" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="#nav-app" aria-selected="false">제품</a>
+                        <a class="nav-link lm" id="prints" data-toggle="tab" href="#nav-contact" role="tab"  aria-controls="#nav-app" aria-selected="false">인쇄물</a>
+                        <a class="nav-link lm" id="other" data-toggle="tab" href="#nav-contact" role="tab"  aria-controls="#nav-app" aria-selected="false">기타</a>
+                    </div>
+
+                        <div class="tab-content mt-4" id="nav-app9">
+
+                            <div class="row row-cols-1 row-cols-md-2">
+                                <div class="col mb-4">
+                                    <div class="card quest">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영3</a></h5>
+                                            <p class="card-text">
+                                            <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                            <p class="" style="color:gray; font-size:14px">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                            <p style="font-size:16px; margin-top:20px"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                                <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col mb-4">
+                                    <div class="card quest">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영</a></h5>
+                                            <p class="card-text">
+                                            <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                            <p class="" style="color:gray; font-size:14px">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                            <p style="font-size:16px; margin-top:20px"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                                <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col mb-4">
+                                    <div class="card quest">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영</a></h5>
+                                            <p class="card-text">
+                                            <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                            <p class="" style="color:gray; font-size:14px">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                            <p style="font-size:16px; margin-top:20px"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                                <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col mb-4">
+                                    <div class="card quest">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><a href="#" class="text-info">통합유지보수 ITO 위탁 운영</a></h5>
+                                            <p class="card-text">
+                                            <p>252,000,000원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>1,095일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                            <p class="" style="color:gray; font-size:14px">프로젝트 개요 구인 유형 : - 클라이언트가 1차 수주사인 프로젝트입니다. - 발주사와 클라이언트와의 계약이 완료된 상태입니다. - 발주사 ...</p>
+                                            <p style="font-size:16px; margin-top:20px"><span class="font-weight-bold">상주</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
+                                                <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="tab-content mt-4" id="nav-profile">
+                        <p>sdkdksdkdskksd</p>
+                    </div>
+
+                </nav>
+            </div>-->
+
+            </div>
+
+
+        <div class="row col-12" style="height: 100px; background: linear-gradient( to right, #8adfe1, #07a2bf );">
+            <div class="row" style="margin :40px auto; vertical-align: center">
+                <h4 class="text-white font-weight-light" style="">다양한 카테고리의 IT 프로젝트를 찾고 있으신가요?</h4>
+                <button class="btn bg-white border-info ml-5" style="width: 139px; height: 40px">회원가입하기</button></div>
+        </div>
+
+        <div class="row col-12 bg-light" style="height: 800px">
+            <div class="col-12">
+                <h1 class="font-weight-light" style="margin-left:220px; margin-top:100px" >위시켓의 빠르고 편리하고 안전한 프로세스를 경험해 보세요.</h1></div>
+            <div class="col-12" style="margin-left:220px; margin-top:50px">
+                <div class="col-9">
+
+            <ul class="nav nav-pills mb-3 row" role="tablist">
+                <li class="nav-item" role="presentation" style="margin-left:50px">
+                    <a class=" active lm2" id="one" data-toggle="pill" href="#first" role="tab" aria-controls="pills-home" aria-selected="true">프로젝트 등록 및 상담</a>
+                </li>
+                <li class="nav-item" role="presentation" style="margin-left:100px">
+                    <a class="lm2" id="two" data-toggle="pill" href="#second" role="tab" aria-controls="pills-profile" aria-selected="false">지원자 모집 및 선택</a>
+                </li>
+                <li class="nav-item" role="presentation" style="margin-left:100px">
+                    <a class="lm2" id="three" data-toggle="pill" href="#third" role="tab" aria-controls="pills-contact" aria-selected="false">프로젝트 미팅</a>
+                </li>
+                <li class="nav-item" role="presentation" style="margin-left:100px">
+                    <a class="lm2" id="four" data-toggle="pill" href="#fourth" role="tab" aria-controls="pills-contact" aria-selected="false">프로젝트 계약</a>
+                </li>
+                <li class="nav-item" role="presentation" style="margin-left:100px">
+                    <a class="lm2" id="five" data-toggle="pill" href="#fifth" role="tab" aria-controls="pills-contact" aria-selected="false">프로젝트 진행 및 완료</a>
+                </li>
+            </ul>
+            <div class="tab-content row">
+                <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                    <div class="card text-center" style="width:1086px; height:450px; margin-left:50px; margin-top:40px">
+                        <div class="card-body">
+                            <div class="row">
+                            <div class="col-6 mt-5 ">
+                            <p class="card-title text-left font-weight-bold" style="padding-left:24px"><span class="text-info">Step 1</span>   프로젝트 등록 및 상담</p>
+                            <p class="card-text text-left mt-3" style="font-size:20px; padding-left:24px">프로젝트에 딱 맞는 맞춤 상담을 받아보세요.<br>
+                                프로젝트를 등록해 주시면<br>
+                                견적 상담과 내용 작성을 도와드립니다.</p>
+                            <ul class="text-left" style="font-size:13px">
+                                <li><p>위시켓에서는 48,000여 건을 상담한 경험을 가진 위시켓 매니저가<br>
+                                    요구사항 구체화를 도와드리고, 그에 맞는 적정 견적을 안내합니다.</p></li>
+                                <li>개발자와 디자이너가 이해할 수 있는 용어로 프로젝트 내용을 수정해드립니다.</li>
+                            </ul>
+                            </div>
+                            <div class="col-6">
+                                <img src="../../../resources/img/process_2.png" >
+                            </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted bg-white" style="height: 60px">
+                            <div class="row">
+                                <div class="col-6 text-left ">
+                                    <a><i class="bi bi-arrow-left text-info"></i><span style="font-size:13px">1/5</span></a>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <a class="font-weight-bold text-info"style="font-size:16px"><span class="pt-2">지원자 모집선택</span><i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="second" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                    <div class="card text-center" style="width:1086px; height:450px; margin-left:50px; margin-top:40px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6 mt-5 ">
+                                    <p class="card-title text-left font-weight-bold" style="padding-left:24px"><span class="text-info">Step 2</span>   지원자 모집 및 선택</p>
+                                    <p class="card-text text-left mt-3" style="font-size:20px; padding-left:24px">마음에 드는 믿을만한 파트너를 만나보세요.<br>
+                                        유사 프로젝트를 진행한 경험이 있는 파트너에게<br>
+                                        프로젝트 분석 및 제안을 받아볼 수 있습니다.</p>
+                                    <ul class="text-left" style="font-size:13px">
+                                        <li><p>위시켓에서는 24시간 내에 평균 5.2명의 지원자가 빠르게 발생합니다.</p></li>
+                                        <li>지원자들의 견적, 포트폴리오, 클라이언트 평가를 한눈에 비교할 수 있습니다.</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <img src="../../../resources/img/process_1.png" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted bg-white" style="height: 60px">
+                            <div class="row">
+                                <div class="col-6 text-left ">
+                                    <a href="#one"><i class="bi bi-arrow-left text-info"></i><span style="font-size:13px">2/5</span></a>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <a class="font-weight-bold text-info"style="font-size:16px"><span class="pt-2">프로젝트 미팅</span><i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="third" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                    <div class="card text-center" style="width:1086px; height:450px; margin-left:50px; margin-top:40px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6 mt-5 ">
+                                    <p class="card-title text-left font-weight-bold" style="padding-left:24px"><span class="text-info">Step 3</span>   프로젝트 미팅</p>
+                                    <p class="card-text text-left mt-3" style="font-size:20px; padding-left:24px">프로젝트에 적합한 파트너 선정이 어려우셨나요?<br>
+                                        위시켓 매니저와 함께 미팅을 진행하면서<br>
+                                        파트너를 검증할 수 있습니다.</p>
+                                    <ul class="text-left" style="font-size:13px">
+                                        <li><p>업무범위, 계약 조건, 견적 및 일정을 협의한 후 안전하게 계약하실 수 있습니다.</p></li>
+                                        <li>담당 매니저가 배정되어 성공적으로 파트너와 계약할 수 있도록 상담해 드립니다.</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <img src="../../../resources/img/process_3.png" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted bg-white "style="height: 60px">
+                            <div class="row">
+                                <div class="col-6 text-left ">
+                                    <a href="#one"><i class="bi bi-arrow-left text-info"></i><span style="font-size:13px">3/5</span></a>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <a class="font-weight-bold text-info"style="font-size:16px"><span class="pt-2">프로젝트 계약</span><i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="fourth" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                    <div class="card text-center" style="width:1086px; height:450px; margin-left:50px; margin-top:40px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6 mt-5 ">
+                                    <p class="card-title text-left font-weight-bold" style="padding-left:24px"><span class="text-info">Step 4</span>   프로젝트 계약</p>
+                                    <p class="card-text text-left mt-3" style="font-size:20px; padding-left:24px">계약 과정이 복잡하고 번거로우셨나요?<br>
+                                        아웃소싱에 특화된 계약 시스템을 이용해 보세요.</p>
+                                    <ul class="text-left" style="font-size:13px">
+                                        <li><p>법무법인의 검토를 받은 신뢰할 수 있는 표준계약서를 사용해<br>
+                                            공정한 계약 체결을 도와드립니다.</p></li>
+                                        <li>계약서 검토, 날인 등 모든 계약과정을 위시켓 플랫폼 내에서 진행할 수 있어서<br>
+                                            계약이력을 보호받을 수 있습니다.</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <img src="../../../resources/img/process_4.png" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted bg-white" style="height: 60px">
+                            <div class="row">
+                                <div class="col-6 text-left ">
+                                    <a href="#one"><i class="bi bi-arrow-left text-info"></i><span style="font-size:13px">4/5</span></a>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <a class="font-weight-bold text-info"style="font-size:16px"><span class="pt-2">프로젝트 진행 및 완료</span><i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="fifth" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                    <div class="card text-center" style="width:1086px; height:450px; margin-left:50px; margin-top:40px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6 mt-5 ">
+                                    <p class="card-title text-left font-weight-bold" style="padding-left:24px"><span class="text-info">Step 5</span>   프로젝트 진행 및 완료</p>
+                                    <p class="card-text text-left mt-3" style="font-size:20px; padding-left:24px">위시켓의 안전한 대금보호시스템을 사용해보세요.<br>
+                                        혹시 모를 분쟁도 안심중재솔루션 3단계를 통해<br>
+                                        원만하게 해결할 수 있습니다.</p>
+                                    <ul class="text-left" style="font-size:13px">
+                                        <li>에스크로 방식의 대금보호시스템을 통해 대금걱정 없이<br>
+                                            프로젝트에만 집중하실 수 있습니다.</li>
+                                        <li>커뮤니케이션 매니저가 수시로 프로젝트 진행상황을 체크하고<br>
+                                            효율적인 커뮤니케이션을 도와드립니다.</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <img src="../../../resources/img/process_5.png" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted bg-white" style="height: 60px">
+                            <div class="row">
+                                <div class="col-6 text-left ">
+                                    <a href="#one"><i class="bi bi-arrow-left text-info"></i><span style="font-size:13px">5/5</span></a>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button class="btn btn-info">무료로 프로젝트 등록하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+            </div>
+
+        </div>
+
+        <div class="row col-12 bg-white" style="height: 600px">
+            <div class="col-12">
+                <h1 class="font-weight-light" style="margin-left:220px; margin-top:100px" >위시켓은 빠르고 편리하고 안전합니다.</h1>
+            </div>
+
+            <div class="row" style="margin-left:220px; margin-top:0px" >
+                <div class="col-12">
+                    <img src="../../../resources/img/appeal_img_1.png">
+                    <p style="font-size:20px">빠르고 편리하게,<br>
+                        무료로 프로젝트 등록</p>
+                    <img src="../../../resources/img/appeal_img_4.png">
+                    <p style="font-size:20px">보호받을 수 있는<br>
+                        위시켓 안심계약</p>
+                </div>
+            </div>
+
+            <div class="col-2"></div>
+
+            <div class="row">
+                <div class="col-12">
+                    <img src="../../../resources/img/appeal_img_2.png">
+                    <p style="font-size:20px">실력있는 지원자,<br>
+                        한눈에 비교하고 선택까지</p>
+                    <img src="../../../resources/img/appeal_img_5.png">
+                    <p style="font-size:20px">신뢰할 수 있는<br>
+                        위시켓 표준계약서</p>
+                </div>
+            </div>
+
+            <div class="col-2"></div>
+
+            <div class="row">
+                <div class="col-12">
+                    <img src="../../../resources/img/appeal_img_3.png">
+                    <p style="font-size:20px">안전한 대금보호,<br>
+                        간편한 계약 시스템</p>
+                    <img src="../../../resources/img/appeal_img_6.png">
+                    <p style="font-size:20px">시작부터 끝까지<br>
+                        함께하는 담당 매니저</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row col-12 bg-light" style="height: 650px">
+            <div class="col-12">
+                <h1 class="font-weight-light" style="margin-left:220px; margin-top:100px" >위시켓은 이렇게 빠르고 편리하고 안전합니다.</h1>
+            </div>
+
+            <div class="row col-12" style="margin-top:0; height: 350px">
+                <div class="col-2" style="margin-left:220px;">
+                    <div class="card" style="width: 248px; height: 300px">
+                        <div class="card-body">
+                        <img src="../../../resources/img/review_bullet.png">
+                        <p>파트너스 프로필의<br>
+                            <strong>실제 프로젝트 기록</strong> 덕분에<br>
+                            좋은 작업자를 만날 수 있었다.</p>
+                        </div>
+                        <img src="../../../resources/img/ceo1.png"style="width: 220px" class="ml-4"></li>
+                    </div>
+                </div>
+
+
+                <div class="col-2 ml-5">
+                    <div class="card" style="width: 248px; height: 300px">
+                        <div class="card-body">
+                            <img src="../../../resources/img/review_bullet.png">
+                            <p><strong>하루만에 8명의 지원자가</strong><br>
+                                발생해서 빠르게 프로젝트를<br>
+                                완료할 수 있었습니다.</p>
+                        </div>
+                        <img src="../../../resources/img/CEO2.png"style="width: 220px" class="ml-4"></li>
+                    </div>
+                </div>
+
+
+
+                <div class="col-2 ml-5" >
+                    <div class="card" style="width: 248px; height: 300px">
+                        <div class="card-body">
+                            <img src="../../../resources/img/review_bullet.png">
+                            <p><strong>견적과 일정을 상담해주고</strong><br>
+                                <strong>프로젝트 범위 정리</strong>를 도와주어<br>
+                                편리하게 계약을 체결했다.</p>
+                        </div>
+                        <img src="../../../resources/img/CEO3.png"style="width: 220px" class="ml-4"></li>
+                    </div>
+                </div>
+
+                <div class="col-2 ml-5">
+                    <div class="card" style="width: 248px; height: 300px">
+                        <div class="card-body">
+                            <img src="../../../resources/img/review_bullet.png">
+                            <p>위시켓 덕분에 비지니스의<br>
+                                <strong>핵심에 집중</strong>할 수 있었습니다.<br>
+                                스타트업에게 최고의 서비스.</p>
+                        </div>
+                        <img src="../../../resources/img/CEO4.png"style="width: 220px" class="ml-4"></li>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row col-12" style="margin-top:-50px">
+                <div class="col-6">
+                    <p style="margin-left:220px">
+                        <span style="font-size:14px" class="font-weight-light">클라이언트 평균 만족도</span><br>
+                        <img src="../../../resources/img/review_icon.png"><span style="font-size:21px"> 4.7점</span></p>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-info text-white" style="width: 108px; height: 45px; margin-left:500px">이용후</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row col-12 bg-white" style="height: 700px">
+            <div class="col-12">
+                <h1 class="font-weight-light" style="margin-left:220px; margin-top:100px" >이미 69,059개의 클라이언트가 이용하고 있습니다.</h1>
+            </div>
+
+            <div class="" style="margin:0 auto">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <!--미구
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" id="1">
+                            <img src="../../../resources/img/dump_client_logo_0.png"  class="" alt="...">
+                        </div>
+                        <div class="carousel-item" >
+                            <img src="../../../resources/img/dump_client_logo_1.png" class="" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../../resources/img/dump_client_logo_2.png"class="" alt="...">
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="row col-12 bg-dark" style="height: 315px">
+            <div class="col-12 text-center" style="margin-top:100px">
+                <h1 class="font-weight-light text-white"  >위시켓에서 빠르고 안전한 IT 아웃소싱을 경험해 보세요.</h1>
+                <button class="btn btn-info font-weight-light" style="margin-top:30px; width:285px; height: 58px">무료로 프로젝트 등록하기</button>
+            </div>
+
+        </div>
+
+
+    </div><!-- 메인 -->
+
+    <footer class="row bg-light h-auto">
+        <div class="col-9" style="margin:0 auto;">
+            <hr>
+            <div id="footermenu" style="height: 180px" class="row  mt-5">
+            <div style="display:inline-block;"class="col-2">
+                <p class="font-weight-bold">위시켓</p>
+                <a href="#" class="small text-muted">위시켓 소개</a><br>
+                <a href="#" class="small text-muted">신뢰와 안전</a><br>
+                <a href="#" class="small text-muted">이용약관</a><br>
+                <a href="#" class="small text-muted">개인정보 처리방침</a><br>
+            </div>
+            <div style="display:inline-block;" class="col-2">
+                <p><a href="#" class="text-dark font-weight-bold">고객센터 ></a></p>
+                <a href="#" class="small text-muted">클라이언트 고객센터</a><br>
+                <a href="#" class="small text-muted">파트너스 고객센터</a><br>
+                <a href="#" class="small text-muted">이용요금</a><br>
+                <a href="#" class="small text-muted">클라이언트 이용방법</a><br>
+                <a href="#" class="small text-muted">파트너스 이용방법</a><br>
+            </div>
+            <div style="display:inline-block;" class="col-2">
+                <p><a href="#" class="text-dark font-weight-bold">뉴스센터 ></a></p>
+                <a href="#" class="small text-muted">공지사항</a><br>
+                <a href="#" class="small text-muted">위시켓 소식</a><br>
+                <a href="#" class="small text-muted">위시켓 이용 팁</a><br>
+                <a href="#" class="small text-muted">프로젝트 성공사례</a><br>
+                <a href="#" class="small text-muted">언론 보도</a>
+            </div>
+            <div style="display:inline-block;" class="col-2">
+                <p><a href="#" class="text-dark font-weight-bold">이용후기 ></a></p>
+                <p><a href="#" class="text-dark font-weight-bold">위시켓 스토어 ></a></p>
+                <p><a href="#" class="text-dark font-weight-bold">요즘 IT ></a></p><br>
+            </div>
+                <div style="display:inline-block;"class="offset-1 col-3 ">
+            <p class="font-weight-bold">CONTACT US</p>
+            <a href="#" class="small text-muted">02-6925-4849(10:00-18:00, 공휴일 제외)</a><br>
+            <a href="#" class="small text-muted">help@wishket.com</a><br>
+        </div>
+            </div><!-- 푸터메뉴 -->
+
+            <hr>
+            <div class="row" style="height: 200px">
+                <div class="col-2 ">
+                    <img src="../../../resources/img/wishket_footer_logo.png">
+                </div>
+                <div class="col-8">
+                    <p class="small text-muted">주식회사 위시켓 (대표이사: 박우범) / 서울특별시 강남구 테헤란로 211 한국고등교육재단빌딩 3층 (주)위시켓<br>
+                        사업자등록번호: 209-81-57303 / 통신판매업신고: 제2018-서울강남-02337 호 / 직업정보제공사업 신고번호: J1200020180019</p>
+                    <p class="small text-muted">
+                        © 2013 Wishket Corp.
+                    </p>
+                </div>
+                <div class="col-2">
+                    <a href="#"><img src="../../../resources/img/footer_sns_facebook.png"></a>
+                    <a href="#"><img src="../../resources/img//footer_sns_blog.png"></a>
+                    <a href="#"><img src="../../../resources/img/footer_sns_naver.png"></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="../../../resources/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').carousel({ interval: 3500 })
+        })
+         </script>
+<script>
+    $(document).ready(function(){
+        setInterval(test1,1);
+        setInterval(test2,1);
+        setInterval(test3,1);
+        let num1 =27894
+        let num2 =3000
+        let num3 =83000
+
+        function test1() {
+            if (num1 >= 30000) {
+                $('#count1').text("31,865")
+                clearInterval()
+            }
+            else {
+                num1 += 10
+                $('#count1').text(num1)
+            }
+        }
+        function test2() {
+            if (num2 >= 4000) {
+                $('#count2').text("4,091")
+                clearInterval()
+            }
+            else {
+                num2 +=4
+                $('#count2').text(num2)
+            }
+        }
+        function test3() {
+            if (num3 >= 86000) {
+                $('#count3').text("86,856")
+                clearInterval()
+            }
+            else {
+                num3 +=10
+                $('#count3').text(num3)
+            }
+        }
+
+
+    })
+
+</script>
+</body>
+</html>

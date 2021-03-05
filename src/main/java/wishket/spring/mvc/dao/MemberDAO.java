@@ -8,4 +8,10 @@ public interface MemberDAO {
     int selectOneUserid(String userid);
 
     int selectOneEmail(String email);
+
+    int selectLogin(MemberVO mvo);
+
+    int confirmUser(MemberVO mvo);
+
+    int updateCode(MemberVO mvo);
 }
