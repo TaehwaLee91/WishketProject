@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface ProjectDAO {
     int insertNewProject(ProjectVO pvo);
+    List<ProjectVO> selectProject(int snum);
+    int selectCountProject();
     List<String> selectSido();
     List<String> selectGugun(String sido);
 }

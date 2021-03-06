@@ -55,7 +55,7 @@
                                 <p>추가 정보</p>
                                 <hr>
                             </div>
-                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                            <c:if test="${pvo.type eq '상주'}">
                                 <div class="form-content">
                                     <p class="form-content-title">구인 유형 <span class="required">*</span></p>
                                     <div class="form-group form-check">
@@ -86,7 +86,7 @@
                             </div>
                             <div class="form-content">
                                 <p class="form-content-title">향후 계획</p>
-                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                <c:if test="${pvo.type ne '상주'}">
                                     <div class="form-group form-check">
                                         <label class="form-check-label"><input type="checkbox" class="form-check-input" name="futurePlan" value="월 단위 유지보수 의뢰 예정">월 단위 유지보수를 의뢰 예정입니다. 미팅시 논의가 필요합니다.</label>
                                     </div>
@@ -94,7 +94,7 @@
                                         <label class="form-check-label"><input type="checkbox" class="form-check-input" name="futurePlan" value="고도화 프로젝트 의뢰 예정">고도화 프로젝트를 의뢰 예정입니다. 미팅시 논의가 필요합니다.</label>
                                     </div>
                                 </c:if>
-                                <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <c:if test="${pvo.type eq '상주'}">
                                     <div class="form-group form-check">
                                         <label class="form-check-label"><input type="checkbox" class="form-check-input" name="futurePlan" value="유지보수를 위한 아웃소싱 계획">향후 유지보수를 위한 아웃소싱 계획이 있습니다.</label>
                                     </div>
@@ -277,7 +277,7 @@
             }
         }
 
-        if( projectType.value == '상주(인력구인)'){
+        if( projectType.value == '상주'){
             var hireType = document.getElementsByName('hireType');
             var checked3 = false;
             for(var i = 0; i < hireType.length; i++){

@@ -71,7 +71,7 @@
                                 </div>
                             </div>
 
-                            <c:if test="${pvo.type ne '상주(인력구인)'}">
+                            <c:if test="${pvo.type ne '상주'}">
                                 <div class="form-content">
                                     <p class="form-content-title">진행 중 미팅 <span class="required">*</span></p>
                                     <p class="caption-1">미팅 방식 <span class="required">*</span></p>
@@ -109,10 +109,10 @@
                             </c:if>
 
                             <div class="form-content">
-                                <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <c:if test="${pvo.type eq '상주'}">
                                     <p class="form-content-title">근무 위치 <span class="required">*</span></p>
                                 </c:if>
-                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                <c:if test="${pvo.type ne '상주'}">
                                     <p class="form-content-title">클라이언트 위치 <span class="required">*</span></p>
                                     <p class="caption-1">파트너가 미팅 위치 선정시 클라이언트님의 위치를 참고합니다.</p>
                                 </c:if>
@@ -125,7 +125,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                            <c:if test="${pvo.type eq '상주'}">
                                 <div class="form-content">
                                     <p class="form-content-title">근무 장소</p>
                                     <div class="from-group">
@@ -306,7 +306,7 @@
         var sido = document.getElementById('addrSido');
         var gugun = document.getElementById('addrGugun');
 
-        if( type.value == '상주(인력구인)'){
+        if( type.value == '상주'){
             var workingHours = document.getElementsByName('workingHours');
             var checked2 = false;
             for(var i = 0; i < workingHours.length; i++){

@@ -33,6 +33,17 @@ public class ProjectServiceImpl implements ProjectService {
         return isSuccess;
     }
 
+    @Override
+    public List<ProjectVO> readProject(String cp) {
+        int snum = (Integer.parseInt(cp) - 1) * 10;
+        return pdao.selectProject(snum);
+    }
+
+    @Override
+    public int countProject() {
+        return pdao.selectCountProject();
+    }
+
     // ajax로 시도 가져오기
     @Override
     public String readSido() {

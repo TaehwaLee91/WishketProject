@@ -55,7 +55,7 @@
                                 <p>준비 상태</p>
                                 <hr>
                             </div> <!--form title -->
-                            <c:if test="${pvo.type ne '상주(인력구인)'}">
+                            <c:if test="${pvo.type ne '상주'}">
                                 <div class="form-content">
                                     <p class="form-content-title">기획 상태 <span class="required">*</span></p>
                                     <p>업무 범위 산정과 예산 및 일정 상담을 위해 현재 기획 상태를 선택해 주세요.</p>
@@ -90,7 +90,7 @@
                                     </div>
                                 </div>
                             </c:if>
-                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                            <c:if test="${pvo.type eq '상주'}">
                                 <div class="form-content">
                                     <p class="form-content-title">프로젝트 상태 <span class="required">*</span></p>
                                     <div class="form-group form-check">
@@ -110,7 +110,7 @@
                                     </div>
                                 </div>
                             </c:if>
-                            <div id="detailPlan" class="form-content" <c:if test="${pvo.type ne '상주(인력구인)'}">style="display: none"</c:if>>
+                            <div id="detailPlan" class="form-content" <c:if test="${pvo.type ne '상주'}">style="display: none"</c:if>>
                                 <p class="form-content-title">상세 기획 상태</p>
                                 <div class="form-group form-check">
                                     <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="요구사항정의서">요구사항 정의서</label>

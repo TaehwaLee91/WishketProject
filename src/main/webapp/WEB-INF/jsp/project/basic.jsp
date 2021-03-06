@@ -77,7 +77,7 @@
                                     <label for="title" class="col-form-label caption-1">30자 이내로 작성해주세요.</label>
                                 </div>
                             </div>
-                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                            <c:if test="${pvo.type eq '상주'}">
                                 <div class="form-content" id="industryField">
                                     <p class="form-content-title">산업 분야 <span class="required">*</span></p>
                                     <div class="form-group form-inline">
@@ -153,7 +153,7 @@
                                     <label class="project-area-item">기타<input type="checkbox" name="area" class="checkHidden" value="기타" onclick="clickCheck(this)"></label>
                                 </div>
                             </div>
-                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                            <c:if test="${pvo.type eq '상주'}">
                                 <div class="form-content">
                                     <p class="form-content-title">담당 직무 <span class="required">*</span></p>
                                     <div class="form-group form-check">
@@ -267,7 +267,7 @@
         // 산업분야 직접입력 값 처리
         var type = document.getElementById('type');
         var checked3 = null;
-        if( type.value == '상주(인력구인)') {
+        if( type.value == '상주') {
             var industryArea = document.getElementById('industryArea');
             var option = industryArea.options[industryArea.selectedIndex];
             if(option.value === '직접입력'){

@@ -91,12 +91,12 @@
                                 <div class="form-group form-check">
                                     <label class="form-check-label"><input type="checkbox" class="form-check-input" name="prerequisites" value="개인사업자 가능">개인사업자 가능</label>
                                 </div>
-                                <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <c:if test="${pvo.type eq '상주'}">
                                     <div class="form-group form-check">
                                         <label class="form-check-label"><input type="checkbox" class="form-check-input" name="prerequisites" value="자격증, 증빙서류 필수">자격증, 증빙서류 필수</label>
                                     </div>
                                 </c:if>
-                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                <c:if test="${pvo.type ne '상주'}">
                                     <div class="form-group form-check">
                                         <label class="form-check-label"><input type="checkbox" class="form-check-input" name="prerequisites" value="업력 1년 이상">업력 1년 이상</label>
                                     </div>

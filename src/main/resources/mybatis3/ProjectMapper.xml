@@ -20,9 +20,32 @@
                  #{projectPriority}, #{interestProduct});
     </insert>
 
-    <select id="selectProject" statementType="PREPARED" resultType="wishket.spring.mvc.vo.ProjectVO">
-        select * from 프로젝트;
+    <select id="selectList" statementType="PREPARED" parameterType="int" resultType="wishket.spring.mvc.vo.ProjectVO">
+        select
+               pno, title, type, category, projectTerm, area, deadLine,
+               projectPriority, projectStatus, skillStack, workPlace, regdate, availableBudget
+        from 프로젝트
+        order by pno desc
+        limit #{snum}, 10;
     </select>
+
+    <select id="countProject" statementType="PREPARED" resultType="int">
+        select count(pno) cnt from 프로젝트;
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- ajax로 주소 정보 불러오기 위한 쿼리-->
     <select id="selectSido" statementType="PREPARED" resultType="String">

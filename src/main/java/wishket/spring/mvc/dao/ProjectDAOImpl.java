@@ -17,6 +17,16 @@ public class ProjectDAOImpl implements ProjectDAO {
         return sqlSession.insert("project.insertNewProject", pvo);
     }
 
+    @Override
+    public List<ProjectVO> selectProject(int snum) {
+        return sqlSession.selectList("project.selectList", snum);
+    }
+
+    @Override
+    public int selectCountProject() {
+        return sqlSession.selectOne("project.countProject");
+    }
+
     // ajax로 시도 가져오기
     @Override
     public List<String> selectSido() {

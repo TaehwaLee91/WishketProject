@@ -69,7 +69,7 @@
                                 <hr>
                             </div>
                             <div class="form-content">
-                                <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <c:if test="${pvo.type eq '상주'}">
                                     <p class="form-content-title">지출 가능 예산 <span class="required">*</span></p>
                                     <p>지출 가능 예산은 파트너 1인당 월 단위로 지급받는 실수령액이며, 사업소득(3.3%)이 포함된 금액입니다.</p>
                                     <p>위시켓 이용요금(5%)은 별도입니다.</p>
@@ -90,7 +90,7 @@
                                         </button>
                                     </div>
                                 </c:if>
-                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                <c:if test="${pvo.type ne '상주'}">
                                     <p class="form-content-title">지출 가능 예산 <span class="required">*</span></p>
                                     <p>프로젝트에 지출 가능한 예산을 입력해 주세요.</p>
                                     <div class="form-group">
@@ -121,10 +121,10 @@
                                 </div>
                             </div>
                             <div class="form-content">
-                                <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <c:if test="${pvo.type eq '상주'}">
                                     <p class="form-content-title">희망 근무 시작일 <span class="required">*</span></p>
                                 </c:if>
-                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                <c:if test="${pvo.type ne '상주'}">
                                     <p class="form-content-title">예상 시작일 <span class="required">*</span></p>
                                 </c:if>
                                 <p>파트너가 프로젝트에 착수하는 날짜입니다.</p>
@@ -227,7 +227,7 @@
         var projectStartDate = document.getElementById('projectStartDate');
         var projectTerm = document.getElementById('projectTerm');
 
-        if(projectType.value == '상주(인력구인)' ) {
+        if(projectType.value == '상주' ) {
             if( availableBudget1.value == '' || availableBudget2.value == '' || availableBudget3.value == '' ){
                 alert('지출 가능 예산을 입력해주세요');
                 event.preventDefault();

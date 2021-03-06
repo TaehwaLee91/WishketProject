@@ -40,7 +40,7 @@
                                 <p>프로젝트에 적합한 작업자를 모집하기 위해 프로젝트 진행 방식을 선택해 주세요.</p>
                                 <div class="form-row">
                                     <label class="card col-3 project-select-card">
-                                        <input id="projectBased" name="type" type="radio" value="외주(프로젝트계약)" onclick="checkRadio()"/>
+                                        <input id="projectBased" name="type" type="radio" value="외주(도급)" onclick="checkRadio()"/>
                                         <div class="select-card-content">
                                             <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_project_type_1_d.png"/>
                                             <img class="select-card-img active-select-card-img" src="/img/select_card_icon_project_type_1_c.png" style="display: none;"/>
@@ -49,7 +49,7 @@
                                         </div>
                                     </label>
                                     <label class="card col-3 project-select-card">
-                                        <input id="termBased" name="type" type="radio" value="상주(인력구인)" onclick="checkRadio()"/>
+                                        <input id="termBased" name="type" type="radio" value="상주" onclick="checkRadio()"/>
                                         <div class="select-card-content">
                                             <img class="select-card-img inherit-select-card-img" src="/img/select_card_icon_project_type_2_d.png"/>
                                             <img class="select-card-img active-select-card-img" src="/img/select_card_icon_project_type_2_c.png" style="display: none;"/>

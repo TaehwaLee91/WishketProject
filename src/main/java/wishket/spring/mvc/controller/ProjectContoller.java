@@ -128,7 +128,7 @@ public class ProjectContoller {
     public ModelAndView budgetOk(ModelAndView mv, ProjectVO pvo, HttpServletRequest rq){
         mv.setViewName("project/meeting.tiles");
 
-        if(pvo.getType() == "상주(인력구인)") {
+        if(pvo.getType() == "상주") {
             String availableBudget = rq.getParameter("availableBudget1") +
                     "/" + rq.getParameter("availableBudget2") +
                     "/" + rq.getParameter("availableBudget1");
@@ -156,7 +156,7 @@ public class ProjectContoller {
         }
 
         // 추가지원사항
-        if(pvo.getType() == "상주(인력구인)"){
+        if(pvo.getType() == "상주"){
             String extraWorkAndSupport = rq.getParameter("support1") + "/" +
                     rq.getParameter("support2") + "/" +
                     rq.getParameter("support3") + "/" +
