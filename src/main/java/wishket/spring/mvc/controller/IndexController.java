@@ -10,4 +10,9 @@ public class IndexController {
     public String index(){
         return "index.tiles";
     }
+
+    @GetMapping("/boardView")
+    public String board(){
+        return "boardView.tiles";
+    }
 }
