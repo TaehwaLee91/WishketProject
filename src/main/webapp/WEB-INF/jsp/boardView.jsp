@@ -182,7 +182,7 @@
                         <div class="col-6 text-left mt-3" style="color:gray;">프로젝트 계약률</div><div class="col-6 text-right mt-3">20%</div>
                         <div class="col-6 text-left mt-3" style="color:gray;">누적 완료금</div><div class="col-6 text-right mt-3">300만원</div>
                     </div>
-                </div><!--floating-->
+                </div><!--floatingg-->
 
             </div>
 
