@@ -145,7 +145,7 @@
             </div>
 
             <div class="col-3  mt-5" >
-                <div id="floatMenu"><!-- 플로팅 -->
+                <div class="floatMenu" ><!-- 플로팅 -->
                     <div class="col-12 border text-center" style="height: 200px; background: #eeeeee; border-radius: 5px" >
                         <button type="button" class="btn text-white mt-3" style="margin:0 auto; width:200px; height:50px; background: #02a878">프로젝트 지원하기</button>
                         <button type="button" class="btn bg-white mt-3" style="margin:0 auto; width:200px; height:50px; color:gray"><i class="bi bi-heart"></i>&nbsp;&nbsp;관심 프로젝트</button>
@@ -189,8 +189,5 @@
 
         </div>
     </div>
-
-</div>
-
 
 </div><!-- 메인 -->

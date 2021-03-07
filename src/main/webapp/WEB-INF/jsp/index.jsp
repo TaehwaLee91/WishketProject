@@ -22,15 +22,14 @@
     <div class="basicWidth bg-light" >
         <div class="center contentsWidth" style="height: 130px">
         <div class="row" style="margin-top:50px">
-            <fmt:parseNumber var="cp" value="${cp}" />
-            <fmt:parseNumber var="cm" value="${cm}" />
+
         <div class="col-2 mt-3"><img src="/img/laurel_wreath.png"></div>
         <div class="col-1"></div>
-            <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count1"></span><span>${cp}개</span></h2></p><p class="sc2contents">등록된 프로젝트</p></div>
+            <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count1">${cp}</span><span>개</span></h2></p><p class="sc2contents">등록된 프로젝트</p></div>
             <div class="col-1"></div>
             <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count2"></span><span>억 원</span></h2></p><p class="sc2contents">프로젝트 등록금</p></div>
             <div class="col-1"></div>
-            <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count3"></span><span>${cm}명</span></h2></p><p class="sc2contents" >개발회사 & 프리랜서</p></div>
+            <div class="col-2"><p><h2 class=" font-weight-bold"><span id="count3">${cm}</span><span>명</span></h2></p><p class="sc2contents" >개발회사 & 프리랜서</p></div>
 
         </div>
         </div>
@@ -137,7 +136,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
                                         <p class="card-text">
-                                        <p>${i.projectTerm}원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                        <p>${i.availableBudget}원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
                                         <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
                                         <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
                                             <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
@@ -164,7 +163,7 @@
     </div><!--section3 end -->
 
     <!--section4 -->
-    <div class="section4 basicWidth">
+    <div class="section4 basicWidth bg-white">
         <div class="center contentsWidth" >
             <div class="row" style="margin:65px 220px;">
             <h4 class="text-white font-weight-light">다양한 카테고리의 IT 프로젝트를 찾고 있으신가요?</h4>
@@ -488,7 +487,7 @@
     </div><!--section7 end-->
 
     <!--section8 -->
-    <div class="contentsWidth bg-white" style="height: 704px;">
+    <div class="basicWidth bg-white" style="height: 704px;">
         <div class="center contentsWidth">
             <h3 class="font-weight-bold" style="padding-top:100px">이미 69,059개의 클라이언트가 이용하고 있습니다.</h3>
 

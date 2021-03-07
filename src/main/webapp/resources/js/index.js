@@ -20,18 +20,12 @@
             $('#count2').text(count2)
             $('#count3').text(count3)
             clearInterval()
-        }
-        else if(num < 10){
-            num += 1
-            $('#count1').text(num)
-            $('#count2').text(num)
-            $('#count1').text(num)
-        }else if(num < 60) {
+        } else if(num < 60) {
             num+=10
             $('#count1').text(num)
             $('#count2').text(num)
             $('#count3').text(num)
-        }else{
+        }else if(num <9000){
             num+=32
             $('#count1').text(num)
             $('#count2').text(num)
