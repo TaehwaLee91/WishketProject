@@ -678,6 +678,11 @@
                                                     <div class="estimated-data">
                                                         <img src="/img/icon-project-features.svg" style="margin-top: -5px">
                                                             &nbsp;예상 금액&nbsp;&nbsp;${pro.availableBudget} 원
+<%--                                                            <c:choose>--%>
+<%--                                                                <c:when test="${fn: contains(pro.availableBudget, ',')}">${pro.availableBudget} 원</c:when>--%>
+<%--                                                                <c:otherwise><fmt:formatNumber value="${pro.availableBudget}" pattern="#,###"/> 원</c:otherwise>--%>
+<%--                                                            </c:choose>--%>
+
                                                     </div>
                                                     <div class="estimated-data">
                                                         <img src="/img/icon-project-clock.png" style="margin-top: -5px; height: 25px; width: 15px">

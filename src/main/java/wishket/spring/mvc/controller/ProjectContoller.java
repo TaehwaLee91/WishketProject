@@ -126,15 +126,30 @@ public class ProjectContoller {
 
     @PostMapping("/project/edit/5")
     public ModelAndView budgetOk(ModelAndView mv, ProjectVO pvo, HttpServletRequest rq){
+        StringBuilder sb = new StringBuilder();
         mv.setViewName("project/meeting.tiles");
-
         if(pvo.getType().equals("상주")) {
-            String availableBudget = rq.getParameter("availableBudget1") +
-                    "/" + rq.getParameter("availableBudget2") +
-                    "/" + rq.getParameter("availableBudget3");
-
+            int cnt = rq.getParameterValues("availableBudget").length / 3;
+            int k = 0;
+            String availableBudget = "";
+            for (int i = 0; i < cnt; i++) {
+                for (int j = 0; j < 3; j++) {
+                    sb.append(rq.getParameterValues("availableBudget")[k] + "/");
+                    k++;
+                }
+                sb.append("*");
+            }
+            availableBudget = sb.toString();
+            availableBudget = availableBudget.substring(0, availableBudget.length()-1);
             pvo.setAvailableBudget(availableBudget);
         }
+
+//            String availableBudget = rq.getParameter("availableBudget1") +
+//                    "/" + rq.getParameter("availableBudget2") +
+//                    "/" + rq.getParameter("availableBudget3");
+//
+//            pvo.setAvailableBudget(availableBudget);
+//        }
 
         mv.addObject("pvo", pvo);
 

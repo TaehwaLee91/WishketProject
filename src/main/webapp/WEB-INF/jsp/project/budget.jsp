@@ -73,21 +73,34 @@
                                     <p class="form-content-title">지출 가능 예산 <span class="required">*</span></p>
                                     <p>지출 가능 예산은 파트너 1인당 월 단위로 지급받는 실수령액이며, 사업소득(3.3%)이 포함된 금액입니다.</p>
                                     <p>위시켓 이용요금(5%)은 별도입니다.</p>
-                                    <div id="partnerBudget" class="row">
-                                        <div class="form-group row col-8 bg-light partnerRow" >
-                                            <select id="availableBudget1" class="form-control col-4" name="availableBudget1">
+                                    <div id="partnerBudget">
+<%--                                        <div class="form-group row col-8 bg-light partnerRow" >--%>
+<%--                                            <select id="availableBudget1" class="form-control col-4" name="availableBudget1">--%>
+<%--                                                <option value="경력무관">경력무관</option>--%>
+<%--                                                <option value="1~2년차">1~2년 차</option>--%>
+<%--                                                <option value="3~4년차">3~4년 차</option>--%>
+<%--                                                <option value="5~9년차">5~9년 차</option>--%>
+<%--                                                <option value="10년차이상">10년 차 이상</option>--%>
+<%--                                            </select>--%>
+<%--                                            <input type="text" id="availableBudget2" class="form-control col-3" name="availableBudget2" placeholder="인원">--%>
+<%--                                            <input type="text" id="availableBudget3" class="form-control col-4" name="availableBudget3" placeholder="1인당 월 지급액">--%>
+<%--                                        </div>--%>
+                                        <div class="row col-12">
+                                        <div class="form-group row col-8 bg-light partnerRow" id="workerBudget">
+                                            <select id="availableBudget1" class="form-control col-4" name="availableBudget">
                                                 <option value="경력무관">경력무관</option>
                                                 <option value="1~2년차">1~2년 차</option>
                                                 <option value="3~4년차">3~4년 차</option>
                                                 <option value="5~9년차">5~9년 차</option>
                                                 <option value="10년차이상">10년 차 이상</option>
                                             </select>
-                                            <input type="text" id="availableBudget2" class="form-control col-3" name="availableBudget2" placeholder="인원">
-                                            <input type="text" id="availableBudget3" class="form-control col-4" name="availableBudget3" placeholder="1인당 월 지급액">
+                                            <input type="text" id="availableBudget2" class="form-control col-3" name="availableBudget" placeholder="인원">
+                                            <input type="text" id="availableBudget3" class="form-control col-4" name="availableBudget" placeholder="1인당 월 지급액">
                                         </div>
                                         <button type="button" id="addWorker" class="btn col-1 offset-1" onclick="addNewWorker()" style="height: 50px">
-                                            &nbsp;<img class="img-item" src="/img/btn_icon_plus_normal.png">
+                                            <img class="img-item" src="/img/btn_icon_plus_normal.png">
                                         </button>
+                                        </div>
                                     </div>
                                 </c:if>
                                 <c:if test="${pvo.type ne '상주'}">
@@ -189,22 +202,44 @@
 
     $('#datetimepicker1').datetimepicker({  format: 'YYYY-MM-DD', defaultDate: new Date(), minDate: new Date()});
 
-    // function addNewWorker() {
-    //     let addWorkerBtn = document.getElementById('addWorker');
-    //     addWorkerBtn.addEventListener('click', function(){
-    //         let partnerBudget = document.getElementById('partnerBudget');
-    //         let childNode = partnerBudget.cloneNode();
-    //         partnerBudget.appendChild(childNode);
-    //     });
-    // }
+    function addNewWorker() {
+        var partnerBudget = document.getElementById('partnerBudget');
+
+        var workerBudget = document.getElementById('workerBudget');
+        var cloneDiv = workerBudget.cloneNode(true);
+
+        var deleteBtn = document.createElement('button');
+        deleteBtn.setAttribute('type', 'button');
+        deleteBtn.setAttribute('class', 'btn col-1 offset-1');
+        deleteBtn.setAttribute('style', 'height: 50px');
+        deleteBtn.setAttribute('onclick', 'deleteRow(this)');
+
+        var imgTag = document.createElement('img');
+        imgTag.setAttribute('class', 'img-item');
+        imgTag.setAttribute('src', '/img/btn_icon_minus_normal.png');
+        deleteBtn.appendChild(imgTag);
+
+        var wrapper = document.createElement('div');
+        wrapper.setAttribute('class', 'row col-12');
+        wrapper.appendChild(cloneDiv);
+        wrapper.appendChild(deleteBtn);
+
+        partnerBudget.appendChild(wrapper);
+    }
+
+    function deleteRow(delBtn){
+        var parent = delBtn.parentNode;
+        parent.parentNode.removeChild(parent);
+    }
 
     // 3자리마다 콤마
-    function numberWithCommas(x) {
-        x = x.replace(/[^0-9]/g,'');   // 입력값이 숫자가 아니면 공백
-        x = x.replace(/,/g,'');        // ,값 공백처리
-        var budget = document.getElementById('availableBudget');
-        budget.value = x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
+    // function numberWithCommas(x) {
+    //     x = x.replace(/[^0-9]/g,'');   // 입력값이 숫자가 아니면 공백
+    //     x = x.replace(/,/g,'');        // ,값 공백처리
+    //     var budget = document.getElementById('availableBudget');
+    //     budget.value = x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    // }
+
     // 예상금액
     function computeBudget(budget){
         var newBudget = document.getElementById('newBudget');
@@ -217,19 +252,22 @@
         // false 상주, true 외주
         var projectType = document.getElementById('type');
 
-        // 외주일경우 뜨는 input
-        var availableBudget = document.getElementById('availableBudget');
-
-        // 상주일경우 뜨는 input, select
-        var availableBudget1 = document.getElementById('availableBudget1');
-        var availableBudget2 = document.getElementById('availableBudget2');
-        var availableBudget3 = document.getElementById('availableBudget3');
-
         var projectStartDate = document.getElementById('projectStartDate');
         var projectTerm = document.getElementById('projectTerm');
 
         if(projectType.value == '상주' ) {
-            if( availableBudget1.value == '' || availableBudget2.value == '' || availableBudget3.value == '' ){
+            var availableBudgets = document.getElementsByName('availableBudget');
+            var check = true;
+
+            // 지출가능 예산 빈값 체크
+            for(var i = 0; i < availableBudgets.length; i++){
+                if(availableBudgets[i].value == ''){
+                    check = false;
+                    break;
+                }
+            }
+
+            if(check == false){
                 alert('지출 가능 예산을 입력해주세요');
                 event.preventDefault();
             } else if (projectStartDate.value == '') {
@@ -245,6 +283,9 @@
                 budgetFrm.submit();
             }
         } else {
+            // 외주일경우 뜨는 input
+            var availableBudget = document.getElementById('availableBudget');
+
             if(availableBudget.value == '') {
                 alert('지출 가능 예산을 입력해주세요.');
                 event.preventDefault();
