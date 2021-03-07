@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="index">
+    <select id="countMember" statementType="PREPARED"  resultType="int">
+        select count(userid) cnt from 회원
+    </select>
+
+    <select id="countProject" statementType="PREPARED"  resultType="int">
+        select count(pno) cnt from 프로젝트    </select>
+
+    <select id="selectList" statementType="PREPARED" parameterType="int"
+            resultType="wishket.spring.mvc.vo.IndexVO">
+        select pno,title,detailTask,availableBudget,projectTerm,type from 프로젝트
+        order by pno desc
+            limit 0,#{i};
+    </select>
+</mapper>

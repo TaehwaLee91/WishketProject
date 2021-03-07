@@ -1,0 +1,13 @@
+.bidragup{
+    position:relative;
+    top:-1px;
+}
+
+
+.floatMenu{
+    position: absolute;
+    width: 265px;
+    height: 200px;
+    left: 25px;
+    top: 0px;
+}
