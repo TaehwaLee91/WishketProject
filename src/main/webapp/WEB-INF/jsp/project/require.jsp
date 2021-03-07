@@ -179,7 +179,7 @@
             previous: 'bi bi-chevron-left',
             next: 'bi bi-chevron-right'
         } });
-    $('#datetimepicker1').datetimepicker({  format: 'YYYY-MM-DD'});
+    $('#datetimepicker1').datetimepicker({  format: 'YYYY-MM-DD', defaultDate: new Date(), minDate: new Date()});
 
     function checkEtc(etc){
         if(etc.checked == true){

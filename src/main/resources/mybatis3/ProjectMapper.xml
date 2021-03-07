@@ -22,7 +22,7 @@
 
     <select id="selectList" statementType="PREPARED" parameterType="int" resultType="wishket.spring.mvc.vo.ProjectVO">
         select
-               pno, title, type, category, projectTerm, area, deadLine,
+               pno, title, type, category, projectTerm, area, deadLine, detailTask,
                projectPriority, projectStatus, skillStack, workPlace, regdate, availableBudget
         from 프로젝트
         order by pno desc
