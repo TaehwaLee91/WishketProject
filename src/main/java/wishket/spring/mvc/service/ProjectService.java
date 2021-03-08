@@ -12,5 +12,4 @@ public interface ProjectService {
     String readSido();
     String readGugun(String sido);
     ProjectVO addFileTemp(ProjectVO pvo, MultipartFile[] file);
-    void uploadFile(ProjectVO pvo);
 }

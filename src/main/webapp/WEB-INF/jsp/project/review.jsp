@@ -178,6 +178,10 @@
                                         <p>${pvo.workingHours}</p>
                                     </div>
                                     <div class="form-content">
+                                        <p class="font-weight-bolder">휴게 시간 <span class="required">*</span></p>
+                                        <p>${pvo.breakTimes}</p>
+                                    </div>
+                                    <div class="form-content">
                                         <p class="font-weight-bolder">추가 근무 및 지원 <span class="required">*</span></p>
                                         <p>${pvo.extraWorkAndSupport}</p>
                                     </div>
@@ -210,7 +214,7 @@
                                     <p>${pvo.prerequisites}</p>
                                 </div>
                             </c:if>
-                            <c:if test="${pvo.question ne '//'}">
+                            <c:if test="${pvo.question ne ''}">
                                 <div class="form-content">
                                     <p class="font-weight-bolder">파트너 지원 전 질문</p>
                                     <p>${pvo.question}</p>
@@ -273,6 +277,7 @@
                             <input type="hidden" name="meetingTerm" value="${pvo.meetingTerm}">
                             <input type="hidden" name="workPlace" value="${pvo.workPlace}">
                             <input type="hidden" name="workingHours" value="${pvo.workingHours}">
+                            <input type="hidden" name="breakTimes" value="${pvo.breakTimes}">
                             <input type="hidden" name="extraWorkAndSupport" value="${pvo.extraWorkAndSupport}">
                             <input type="hidden" name="deadLine" value="${pvo.deadLine}">
                             <input type="hidden" name="supportBusiness" value="${pvo.supportBusiness}">

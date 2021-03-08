@@ -74,32 +74,21 @@
                                     <p>지출 가능 예산은 파트너 1인당 월 단위로 지급받는 실수령액이며, 사업소득(3.3%)이 포함된 금액입니다.</p>
                                     <p>위시켓 이용요금(5%)은 별도입니다.</p>
                                     <div id="partnerBudget">
-<%--                                        <div class="form-group row col-8 bg-light partnerRow" >--%>
-<%--                                            <select id="availableBudget1" class="form-control col-4" name="availableBudget1">--%>
-<%--                                                <option value="경력무관">경력무관</option>--%>
-<%--                                                <option value="1~2년차">1~2년 차</option>--%>
-<%--                                                <option value="3~4년차">3~4년 차</option>--%>
-<%--                                                <option value="5~9년차">5~9년 차</option>--%>
-<%--                                                <option value="10년차이상">10년 차 이상</option>--%>
-<%--                                            </select>--%>
-<%--                                            <input type="text" id="availableBudget2" class="form-control col-3" name="availableBudget2" placeholder="인원">--%>
-<%--                                            <input type="text" id="availableBudget3" class="form-control col-4" name="availableBudget3" placeholder="1인당 월 지급액">--%>
-<%--                                        </div>--%>
                                         <div class="row col-12">
-                                        <div class="form-group row col-8 bg-light partnerRow" id="workerBudget">
-                                            <select class="form-control col-4" name="availableBudget">
-                                                <option value="경력무관">경력무관</option>
-                                                <option value="1~2년차">1~2년 차</option>
-                                                <option value="3~4년차">3~4년 차</option>
-                                                <option value="5~9년차">5~9년 차</option>
-                                                <option value="10년차이상">10년 차 이상</option>
-                                            </select>
-                                            <input type="text" class="form-control col-3" name="availableBudget" placeholder="인원" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
-                                            <input type="text" class="form-control col-4" name="availableBudget" placeholder="1인당 월 지급액"  onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
-                                        </div>
-                                        <button type="button" id="addWorker" class="btn col-1 offset-1" onclick="addNewWorker()" style="height: 50px">
-                                            <img class="img-item" src="/img/btn_icon_plus_normal.png">
-                                        </button>
+                                            <div class="form-group row col-8 bg-light partnerRow" id="workerBudget">
+                                                <select class="form-control col-4" name="availableBudget">
+                                                    <option value="경력무관">경력무관</option>
+                                                    <option value="1~2년차">1~2년 차</option>
+                                                    <option value="3~4년차">3~4년 차</option>
+                                                    <option value="5~9년차">5~9년 차</option>
+                                                    <option value="10년차이상">10년 차 이상</option>
+                                                </select>
+                                                <input type="text" class="form-control col-3" name="availableBudget" placeholder="인원" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                                                <input type="text" class="form-control col-4" name="availableBudget" placeholder="1인당 월 지급액"  onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                                            </div>
+                                            <button type="button" id="addWorker" class="btn col-1 offset-1" onclick="addNewWorker()" style="height: 50px">
+                                                <img class="img-item" src="/img/btn_icon_plus_normal.png">
+                                            </button>
                                         </div>
                                     </div>
                                 </c:if>

@@ -148,7 +148,7 @@
                                 <div class="form-content">
                                     <p class="form-content-title">휴게 시간 <span class="required">*</span></p>
                                     <div class="form-group form-check">
-                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="breakTimes" value="오전 9시 ~ 오후 7시" onchange="getBreakTimes(this)">오후 12시 ~ 오후 1시</label>
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="breakTimes" value="오후 12시 ~ 오후 1시" onchange="getBreakTimes(this)">오후 12시 ~ 오후 1시</label>
                                     </div>
                                     <div class="form-group form-check">
                                         <input type="radio" class="form-check-input" id="breakTimesEtc" name="breakTimes" onchange="getBreakTimes(this)">
