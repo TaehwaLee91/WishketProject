@@ -14,6 +14,7 @@
  
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/boardView.css">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -42,6 +43,7 @@
         <script src="/js/signup.js"></script>
         <script src="/js/index.js"></script>
         <script src="/js/login.js"></script>
+        <script src="/js/boardView.js"></script>
         <script>$('#loginbtn1').on('click',function(){location.href='/accounts/login'})
         $('#joinbtn').on('click',function(){location.href='/accounts/signup'})</script>
 

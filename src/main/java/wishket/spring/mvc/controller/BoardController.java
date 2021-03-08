@@ -11,4 +11,9 @@ public class BoardController {
         return "projectboard/search.tiles";
     }
 
+    @GetMapping("/boardView")
+    public String boardView() {
+        return "projectboard/boardView.tiles";
+    }
+
 }
