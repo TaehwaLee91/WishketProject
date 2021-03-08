@@ -24,9 +24,9 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public Boolean createNewProject(ProjectVO pvo) {
+    public Boolean createNewProject(ProjectVO pvo, String userid) {
         Boolean isSuccess = false;
-        int checkCnt = pdao.insertNewProject(pvo);
+        int checkCnt = pdao.insertNewProject(pvo, userid);
         if(checkCnt > 0) {
             isSuccess = true;
         }

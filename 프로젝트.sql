@@ -1,5 +1,6 @@
 create table 프로젝트 (
     pno int primary key auto_increment,
+    mno int not null,
     type varchar(50) not null,
     purpose varchar(50) not null,
     title varchar(30) not null,
@@ -9,9 +10,6 @@ create table 프로젝트 (
     position varchar(100) default '',
     projectStatus varchar(50) not null,
     detailStatus varchar(50) default '',
-    -- fname1, ftype1, fsize1
-    -- fname2, ftype2, fsize2
-    -- fname3, ftype3, fsize3
     detailTask varchar(6000) not null,
     skillStack varchar(50) default '',
     skillStackUse varchar(20) default '',
@@ -36,6 +34,23 @@ create table 프로젝트 (
     futurePlan varchar(50) default '',
     projectPriority varchar(50) default '',
     interestProduct varchar(50) default '',
-    regdate timestamp default current_timestamp
+    regdate timestamp default current_timestamp,
+    fname1 varchar(100),
+    fsize1 varchar(5),
+    ftype1 varchar(5),
+    fname2 varchar(100),
+    fsize2 varchar(5),
+    ftype2 varchar(5),
+    fname3 varchar(100),
+    fsize3 varchar(5),
+    ftype3 varchar(5),
+    fuuid varchar(30)
 );
 
+
+
+
+create table 프로젝트상황(
+    pno int,
+    mno int
+);

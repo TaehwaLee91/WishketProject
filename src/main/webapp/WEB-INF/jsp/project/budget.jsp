@@ -108,7 +108,7 @@
                                     <p>프로젝트에 지출 가능한 예산을 입력해 주세요.</p>
                                     <div class="form-group">
                                         <input type="text" class="form-control col-5" id="availableBudget" name="availableBudget"
-                                               onchange="computeBudget(this)">
+                                               onchange="computeBudget(this)" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                                         <label class="col-form-label">예상 결제 금액: <span id="newBudget"></span>원 (부가가치세 10% 포함)</label>
                                     </div>
                                 </c:if>

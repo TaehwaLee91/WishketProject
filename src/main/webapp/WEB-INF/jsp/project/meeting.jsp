@@ -125,7 +125,7 @@
                                     </select>
                                 </div>
                             </div>
-<%--                            <c:if test="${pvo.type eq '상주'}">--%>
+                            <c:if test="${pvo.type eq '상주'}">
                                 <div class="form-content">
                                     <p class="form-content-title">근무 장소</p>
                                     <div class="from-group">
@@ -143,6 +143,16 @@
                                     <div class="form-group form-check">
                                         <input type="radio" class="form-check-input" id="workingHoursEtc" name="workingHours" onchange="getWorkingHours(this)">
                                         <input type="text" class="form-control col-4" id="workingHoursText" placeholder="기타 (직접 입력)" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-content">
+                                    <p class="form-content-title">휴게 시간 <span class="required">*</span></p>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="breakTimes" value="오전 9시 ~ 오후 7시" onchange="getBreakTimes(this)">오후 12시 ~ 오후 1시</label>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="radio" class="form-check-input" id="breakTimesEtc" name="breakTimes" onchange="getBreakTimes(this)">
+                                        <input type="text" class="form-control col-4" id="breakTimesText" placeholder="직접입력" disabled>
                                     </div>
                                 </div>
 
@@ -169,12 +179,12 @@
                                         <label class="col-2">아니오 <input type="radio" name="support4" value="개인 장비 지참 불가능" checked></label>
                                     </div>
                                     <div class="form-group row">
-                                        <p class="col-6">근무 시 개인 장비 지참이 가능합니까?</p>
+                                        <p class="col-6">근무 시 식사 지원이 가능합니까?</p>
                                         <label class="col-2">예 <input type="radio" name="support5" value="근무 시 식사 지원 가능"></label>
                                         <label class="col-2">아니오 <input type="radio" name="support5" value="근무 시 식사 지원 불가능" checked></label>
                                     </div>
                                 </div>
-<%--                            </c:if>--%>
+                            </c:if>
                             <input type="hidden" id="type" name="type" value="${pvo.type}">
                             <input type="hidden" name="purpose" value="${pvo.purpose}">
                             <input type="hidden" name="title" value="${pvo.title}">
@@ -223,6 +233,15 @@
             workingHoursText.removeAttribute('disabled');
         } else {
             workingHoursText.setAttribute('disabled', 'true');
+        }
+    }
+    // 휴게 시간 직접입력 클릭
+    function getBreakTimes(obj){
+        var breakTimesText = document.getElementById('breakTimesText');
+        if(obj.id == 'breakTimesEtc'){
+            breakTimesText.removeAttribute('disabled');
+        } else {
+            breakTimesText.setAttribute('disabled', 'true');
         }
     }
 
@@ -297,15 +316,6 @@
             }
         }
 
-        // 기타 입력 클릭했으면 직접 입력한 값을 workingHours에 저장
-        // var workingHours = document.getElementsByName('workingHours');
-        // for(var i = 0; i < workingHours.length; i++){
-        //     if(workingHours[i].id == "workingHoursEtc"){
-        //         var workingHoursText = document.getElementById('workingHoursText');
-        //         workingHours[i].value = workingHoursText.value;
-        //     }
-        // }
-
         var type = document.getElementById('type');
         var sido = document.getElementById('addrSido');
         var gugun = document.getElementById('addrGugun');
@@ -330,6 +340,25 @@
                     }
                 }
             }
+            var breakTimes = document.getElementsByName('breakTimes');
+            var checked5 = false;
+            for(var i = 0; i < breakTimes.length; i++){
+                if(breakTimes[i].checked == true){
+                    if(breakTimes[i].id == 'breakTimesEtc'){
+                        var breakTimesText = document.getElementById('breakTimesText');
+                        if(breakTimesText.value == ''){
+                            checked5 = false
+                        } else {
+                            breakTimes[i].value = breakTimesText.value;
+                            checked5 = true;
+                            break;
+                        }
+                    } else {
+                        checked5 = true;
+                        break;
+                    }
+                }
+            }
 
             if(checked == false){
                 alert('사전 미팅 방식을 선택해주세요.');
@@ -339,6 +368,9 @@
                 event.preventDefault();
             } else if(checked2 == false){
                 alert('근무 시간을 선택해주세요.');
+                event.preventDefault();
+            } else if(checked5 == false){
+                alert('휴게 시간을 선택해주세요.');
                 event.preventDefault();
             } else {
                 var meetingFrm = document.getElementById('meetingFrm');

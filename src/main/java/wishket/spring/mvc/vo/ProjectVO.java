@@ -2,6 +2,7 @@ package wishket.spring.mvc.vo;
 
 public class ProjectVO {
     private String pno;
+    private String mno;
     private String type;
     private String purpose;
 
@@ -39,6 +40,7 @@ public class ProjectVO {
     private String meetingTerm;
     private String workPlace;
     private String workingHours;
+    private String breakTimes;
     private String extraWorkAndSupport;
 
     private String deadLine;
@@ -61,6 +63,14 @@ public class ProjectVO {
 
     public void setPno(String pno) {
         this.pno = pno;
+    }
+
+    public String getMno() {
+        return mno;
+    }
+
+    public void setMno(String mno) {
+        this.mno = mno;
     }
 
     public String getType() {
@@ -317,6 +327,14 @@ public class ProjectVO {
 
     public void setWorkingHours(String workingHours) {
         this.workingHours = workingHours;
+    }
+
+    public String getBreakTimes() {
+        return breakTimes;
+    }
+
+    public void setBreakTimes(String breakTimes) {
+        this.breakTimes = breakTimes;
     }
 
     public String getExtraWorkAndSupport() {

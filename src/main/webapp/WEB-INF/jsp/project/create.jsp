@@ -1,4 +1,10 @@
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%-- 로그인하지 않았으면 로그인 페이지로 전환 --%>
+<c:if test="${empty UID}">
+    <c:redirect url="/accounts/login"/>
+</c:if>
 
 <link rel="stylesheet" href="/css/newProject.css">
 
