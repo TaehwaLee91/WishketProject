@@ -250,4 +250,43 @@ public class FileUpDownUtil {
         return sdf.format(new Date());
     }
 
+    public String moveToFile(String oname, String uuid){
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        String path = "/Users/Taehwa/Desktop/fileUpload/";
+        int pos = oname.lastIndexOf(".");
+        String ftype = oname.substring( pos + 1 );
+        String fname = oname.substring(0, pos);
+
+        String nfname = fname + uuid + "." + ftype;
+
+        File file = new File(tempPath, nfname);
+        File newFile = new File(path, nfname);
+
+        int n = 0;
+        byte[] buf = new byte[1024];
+
+        try {
+            fis = new FileInputStream(file);
+            fos = new FileOutputStream(newFile);
+            while( ( n = fis.read(buf)) != -1){
+                fos.write(buf, 0, n);
+                fos.flush();
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                fis.close();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return null;
+    }
 }

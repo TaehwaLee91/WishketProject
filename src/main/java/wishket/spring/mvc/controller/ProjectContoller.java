@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import wishket.spring.mvc.service.ProjectService;
+import wishket.spring.mvc.util.FileUpDownUtil;
 import wishket.spring.mvc.vo.ProjectVO;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,8 @@ public class ProjectContoller {
 
     @Autowired
     private ProjectService psrv;
+    @Autowired
+    private FileUpDownUtil futil;
 
     @PostMapping("/project/edit/1")
     public ModelAndView enrollOK(ModelAndView mv, ProjectVO pvo){
@@ -126,13 +129,24 @@ public class ProjectContoller {
 
     @PostMapping("/project/edit/5")
     public ModelAndView budgetOk(ModelAndView mv, ProjectVO pvo, HttpServletRequest rq){
+        StringBuilder sb = new StringBuilder();
         mv.setViewName("project/meeting.tiles");
 
-        if(pvo.getType() == "상주(인력구인)") {
-            String availableBudget = rq.getParameter("availableBudget1") +
-                    "/" + rq.getParameter("availableBudget2") +
-                    "/" + rq.getParameter("availableBudget1");
-
+        // 프로젝트 유형이 상주일 경우 '/'으로 년차,인원,월지급액을 구분하고 '*'으로 추가된 년차,인원,월지급액을 구분함
+        if(pvo.getType().equals("상주")) {
+            int cnt = rq.getParameterValues("availableBudget").length / 3;
+            int k = 0;
+            String availableBudget = "";
+            for (int i = 0; i < cnt; i++) {
+                for (int j = 0; j < 3; j++) {
+                    sb.append(rq.getParameterValues("availableBudget")[k] + "/");
+                    k++;
+                }
+                sb.deleteCharAt(sb.toString().length()-1);
+                sb.append("*");
+            }
+            availableBudget = sb.toString();
+            availableBudget = availableBudget.substring(0, availableBudget.length()-1);
             pvo.setAvailableBudget(availableBudget);
         }
 
@@ -156,7 +170,7 @@ public class ProjectContoller {
         }
 
         // 추가지원사항
-        if(pvo.getType() == "상주(인력구인)"){
+        if(pvo.getType().equals("상주")){
             String extraWorkAndSupport = rq.getParameter("support1") + "/" +
                     rq.getParameter("support2") + "/" +
                     rq.getParameter("support3") + "/" +
@@ -232,20 +246,41 @@ public class ProjectContoller {
     }
 
     @PostMapping("/project/finish")
-    public ModelAndView createProject(ModelAndView mv,ProjectVO pvo){
+    public ModelAndView createProject(ModelAndView mv,ProjectVO pvo, HttpSession session){
+        ProjectVO tempVO = (ProjectVO)session.getAttribute("pvo");
+
+        // session에 저장해뒀던 file 정보를 vo에 복사
+        pvo.setFname1( tempVO.getFname1() );
+        pvo.setFsize1( tempVO.getFsize1() );
+        pvo.setFtype1( tempVO.getFtype1() );
+        pvo.setFname2( tempVO.getFname2() );
+        pvo.setFsize2( tempVO.getFsize2() );
+        pvo.setFtype2( tempVO.getFtype2() );
+        pvo.setFname3( tempVO.getFname3() );
+        pvo.setFsize3( tempVO.getFsize3() );
+        pvo.setFtype3( tempVO.getFtype3() );
+
+        // 데이터 삽입
         Boolean isSuccess = psrv.createNewProject(pvo);
+
+        // 데이터 삽입 성공시
         if(isSuccess){
             mv.setViewName("redirect:/index");
+            String fuuid = tempVO.getFuuid();
+            if(!tempVO.getFname1().isEmpty()){
+                futil.moveToFile(tempVO.getFname1(), fuuid);
+            } else if (!tempVO.getFname2().isEmpty()){
+                futil.moveToFile(tempVO.getFname2(), fuuid);
+            } else if(!tempVO.getFname3().isEmpty()){
+                futil.moveToFile(tempVO.getFname3(), fuuid);
+            }
+
         } else {
             mv.setViewName("redirect:/project/create");
         }
 
         return mv;
     }
-
-
-
-
 
     // ajax로 주소 가져오기
     @ResponseBody
@@ -323,4 +358,9 @@ public class ProjectContoller {
         return "project/review.tiles";
     }
 
+    @PostMapping("/back")
+    public String goBack(HttpServletRequest rq){
+        String referer = rq.getHeader("Referer");
+        return "redirect:"+referer;
+    }
 }

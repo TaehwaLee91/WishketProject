@@ -53,6 +53,8 @@ public class ProjectVO {
     private String projectPriority;
     private String interestProduct;
 
+    private String regdate;
+
     public String getPno() {
         return pno;
     }
@@ -403,5 +405,13 @@ public class ProjectVO {
 
     public void setInterestProduct(String interestProduct) {
         this.interestProduct = interestProduct;
+    }
+
+    public String getRegdate() {
+        return regdate;
+    }
+
+    public void setRegdate(String regdate) {
+        this.regdate = regdate;
     }
 }

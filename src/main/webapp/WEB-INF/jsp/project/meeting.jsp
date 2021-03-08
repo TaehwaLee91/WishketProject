@@ -71,7 +71,7 @@
                                 </div>
                             </div>
 
-                            <c:if test="${pvo.type ne '상주(인력구인)'}">
+                            <c:if test="${pvo.type ne '상주'}">
                                 <div class="form-content">
                                     <p class="form-content-title">진행 중 미팅 <span class="required">*</span></p>
                                     <p class="caption-1">미팅 방식 <span class="required">*</span></p>
@@ -109,10 +109,10 @@
                             </c:if>
 
                             <div class="form-content">
-                                <c:if test="${pvo.type eq '상주(인력구인)'}">
+                                <c:if test="${pvo.type eq '상주'}">
                                     <p class="form-content-title">근무 위치 <span class="required">*</span></p>
                                 </c:if>
-                                <c:if test="${pvo.type ne '상주(인력구인)'}">
+                                <c:if test="${pvo.type ne '상주'}">
                                     <p class="form-content-title">클라이언트 위치 <span class="required">*</span></p>
                                     <p class="caption-1">파트너가 미팅 위치 선정시 클라이언트님의 위치를 참고합니다.</p>
                                 </c:if>
@@ -125,7 +125,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+<%--                            <c:if test="${pvo.type eq '상주'}">--%>
                                 <div class="form-content">
                                     <p class="form-content-title">근무 장소</p>
                                     <div class="from-group">
@@ -135,13 +135,13 @@
                                 <div class="form-content">
                                     <p class="form-content-title">근무 시간 <span class="required">*</span></p>
                                     <div class="form-group form-check">
-                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="workingHours" value="오전 9시 ~ 오후 7시">오전 9시 ~ 오후 6시</label>
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="workingHours" value="오전 9시 ~ 오후 7시" onchange="getWorkingHours(this)">오전 9시 ~ 오후 6시</label>
                                     </div>
                                     <div class="form-group form-check">
-                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="workingHours" value="오전 10시 ~ 오후 7시">오전 10시 ~ 오후 7시</label>
+                                        <label class="form-check-label"><input type="radio" class="form-check-input" name="workingHours" value="오전 10시 ~ 오후 7시" onchange="getWorkingHours(this)">오전 10시 ~ 오후 7시</label>
                                     </div>
                                     <div class="form-group form-check">
-                                        <input type="radio" class="form-check-input" id="workingHoursEtc" name="workingHours" onclick="getWorkingHours()">
+                                        <input type="radio" class="form-check-input" id="workingHoursEtc" name="workingHours" onchange="getWorkingHours(this)">
                                         <input type="text" class="form-control col-4" id="workingHoursText" placeholder="기타 (직접 입력)" disabled>
                                     </div>
                                 </div>
@@ -174,7 +174,7 @@
                                         <label class="col-2">아니오 <input type="radio" name="support5" value="근무 시 식사 지원 불가능" checked></label>
                                     </div>
                                 </div>
-                            </c:if>
+<%--                            </c:if>--%>
                             <input type="hidden" id="type" name="type" value="${pvo.type}">
                             <input type="hidden" name="purpose" value="${pvo.purpose}">
                             <input type="hidden" name="title" value="${pvo.title}">
@@ -195,7 +195,7 @@
                             <hr/>
                             <div class="bottomBtns">
                                 <span style="float: left;">
-                                    <a href="/project/prepare" class="backBtn">
+                                    <a href="javascript:window.history.back();" class="backBtn">
                                         <img class="img-item" src="/img/btn_icon_back_s.png">
                                         <p>이전</p>
                                     </a>
@@ -217,9 +217,13 @@
     }
 
     // 근무 시간 직접입력 클릭
-    function getWorkingHours(){
+    function getWorkingHours(obj){
         var workingHoursText = document.getElementById('workingHoursText');
-        workingHoursText.removeAttribute('disabled');
+        if(obj.id == 'workingHoursEtc'){
+            workingHoursText.removeAttribute('disabled');
+        } else {
+            workingHoursText.setAttribute('disabled', 'true');
+        }
     }
 
     // 주소 관련 함수
@@ -294,25 +298,36 @@
         }
 
         // 기타 입력 클릭했으면 직접 입력한 값을 workingHours에 저장
-        var workingHours = document.getElementsByName('workingHours');
-        for(var i = 0; i < workingHours.length; i++){
-            if(workingHours[i].id == "workingHoursEtc"){
-                var workingHoursText = document.getElementById('workingHoursText');
-                workingHours[i].value = workingHoursText.value;
-            }
-        }
+        // var workingHours = document.getElementsByName('workingHours');
+        // for(var i = 0; i < workingHours.length; i++){
+        //     if(workingHours[i].id == "workingHoursEtc"){
+        //         var workingHoursText = document.getElementById('workingHoursText');
+        //         workingHours[i].value = workingHoursText.value;
+        //     }
+        // }
 
         var type = document.getElementById('type');
         var sido = document.getElementById('addrSido');
         var gugun = document.getElementById('addrGugun');
 
-        if( type.value == '상주(인력구인)'){
+        if( type.value == '상주'){
             var workingHours = document.getElementsByName('workingHours');
             var checked2 = false;
             for(var i = 0; i < workingHours.length; i++){
                 if(workingHours[i].checked == true){
-                    checked2 = true;
-                    break;
+                    if(workingHours[i].id == 'workingHoursEtc'){
+                        var workingHoursText = document.getElementById('workingHoursText');
+                        if(workingHoursText.value == ''){
+                            checked2 = false
+                        } else {
+                            workingHours[i].value = workingHoursText.value;
+                            checked2 = true;
+                            break;
+                        }
+                    } else {
+                        checked2 = true;
+                        break;
+                    }
                 }
             }
 

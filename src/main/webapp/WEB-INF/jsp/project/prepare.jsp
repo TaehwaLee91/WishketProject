@@ -55,7 +55,7 @@
                                 <p>준비 상태</p>
                                 <hr>
                             </div> <!--form title -->
-                            <c:if test="${pvo.type ne '상주(인력구인)'}">
+                            <c:if test="${pvo.type ne '상주'}">
                                 <div class="form-content">
                                     <p class="form-content-title">기획 상태 <span class="required">*</span></p>
                                     <p>업무 범위 산정과 예산 및 일정 상담을 위해 현재 기획 상태를 선택해 주세요.</p>
@@ -90,7 +90,7 @@
                                     </div>
                                 </div>
                             </c:if>
-                            <c:if test="${pvo.type eq '상주(인력구인)'}">
+                            <c:if test="${pvo.type eq '상주'}">
                                 <div class="form-content">
                                     <p class="form-content-title">프로젝트 상태 <span class="required">*</span></p>
                                     <div class="form-group form-check">
@@ -110,7 +110,7 @@
                                     </div>
                                 </div>
                             </c:if>
-                            <div id="detailPlan" class="form-content" <c:if test="${pvo.type ne '상주(인력구인)'}">style="display: none"</c:if>>
+                            <div id="detailPlan" class="form-content" <c:if test="${pvo.type ne '상주'}">style="display: none"</c:if>>
                                 <p class="form-content-title">상세 기획 상태</p>
                                 <div class="form-group form-check">
                                     <label class="form-check-label"><input type="checkbox" class="form-check-input" name="detailStatus" value="요구사항정의서">요구사항 정의서</label>
@@ -138,22 +138,22 @@
                                 <p class="form-content-title">프로젝트 관련자료</p>
                                 <p>아이디어 또는 필요한 내용을 정리한 문서를 추가해 주세요.<p>
                                 <p>프로젝트 예산 및 일정 산정에 활용되며, 문서 및 이미지 파일만 추가 가능합니다.</p>
-                                <button type="button" class="col-12 text-center" style="border: 1px dotted gray; background: none" onclick="clickFileBtn(this)">
+                                <button type="button" class="col-12 text-center bg-light" style="border: 1px dotted gray;" onclick="clickFileBtn(this)">
                                     <div style="padding-top: 15px">
-                                        <p><img src = "/img/btn_icon_plus_normal.png"/>  프로젝트 관련 자료 추가</p>
+<%--                                        <p><img src = "/img/btn_icon_plus_normal.png"/>프로젝트 관련 자료 추가</p>--%>
+                                        <p><i class="bi bi-plus-square-dotted" style="font-size: 20px"></i>&nbsp;&nbsp;&nbsp;프로젝트 관련 자료 추가</p>
                                     </div>
                                 </button>
-                                <div class="form-group">
-                                    <div>
-                                        <button type="button" onclick="deleteFile(this)" class="btn btn-danger col-2 offset-1" style="display: none">삭제</button>
-                                        <input type="file" name="file" id="file1" onchange="addFile(this)" style="display: none"/>
-                                    </div>
-                                    <div>
-                                        <input type="file" name="file" id="file2" onchange="addFile(this)" style="display: none"/>
-                                    </div>
-                                    <div>
-                                        <input type="file" name="file" id="file3" onchange="addFile(this)" style="display: none"/>
-                                    </div>
+                                <div id="fileWrapper" class="form-group">
+<%--                                    <div>--%>
+<%--                                        <input type="file" name="file" id="file1" onchange="addFile(this)" style="display: none"/>--%>
+<%--                                    </div>--%>
+<%--                                    <div>--%>
+<%--                                        <input type="file" name="file" id="file2" onchange="addFile(this)" style="display: none"/>--%>
+<%--                                    </div>--%>
+<%--                                    <div>--%>
+<%--                                        <input type="file" name="file" id="file3" onchange="addFile(this)" style="display: none"/>--%>
+<%--                                    </div>--%>
                                 </div>
                             </div>
 
@@ -168,7 +168,7 @@
                             <hr/>
                             <div class="bottomBtns">
                                 <span style="float: left;">
-                                    <a href="/project/basic" class="backBtn">
+                                    <a href="javascript:window.history.back();" class="backBtn">
                                         <img class="img-item" src="/img/btn_icon_back_s.png">
                                         <p>이전</p>
                                     </a>
@@ -232,44 +232,57 @@
 
     // 파일 개수는 3개까지만 추가되게 함
     function clickFileBtn(btn) {
-        var file1 = document.getElementById('file1');
-        var file2 = document.getElementById('file2');
-        var file3 = document.getElementById('file3');
 
-        if(!file1.value) {
-            file1.click();
-        } else if(!file2.value) {
-            file2.click();
-        } else if(!file3.value) {
-            file3.click();
+        var wrapper = document.createElement('div');
+        var nextSib = btn.nextElementSibling;
+        if(nextSib.childElementCount >= 3) {
+            alert('파일은 최대 3개까지 업로드 가능합니다.');
+            return false;
         } else {
-            alert("더이상 파일을 추가할 수 없습니다.");
+            var fileInput = document.createElement('input');
+            fileInput.setAttribute('type', 'file');
+            fileInput.setAttribute('name', 'file');
+            fileInput.setAttribute('onchange', 'addFile(this)');
+            fileInput.setAttribute('style', 'display: none');
+            wrapper.appendChild(fileInput);
+
+            nextSib.appendChild(wrapper);
+            fileInput.click();
         }
 
     }
 
     // 파일 추가시 파일명 출력
     function addFile(fileTag){
+        var parent = fileTag.parentElement;
+
         var filePath = fileTag.value.split('\\');
         var filename = filePath[filePath.length-1];
 
-        var parent = fileTag.parentElement;
+        var deleteBtn = document.createElement('button');
+        deleteBtn.setAttribute('type', 'button');
+        deleteBtn.setAttribute('class', 'btn btn-danger col-1');
+        deleteBtn.setAttribute('onclick', 'deleteFile(this)');
+        deleteBtn.innerText = '삭제';
+
         var pTag = document.createElement('p');
 
-        pTag.setAttribute('class', 'col-8 text-center')
-        pTag.setAttribute('style', 'background: #e0e0e0; border-radius: 8px; padding: 10px 0px; display: inline-block');
+        pTag.setAttribute('class', 'col-8 offset-1 text-left')
+        pTag.setAttribute('style', 'padding: 10px 0px; display: inline-block;');
         pTag.innerText = filename;
 
-        parent.appendChild(pTag);
-        parent.firstElementChild.removeAttribute('style'); // 숨겨져있는 버튼의 스타일 삭제
+        var wrapper = document.createElement('div');
+        wrapper.appendChild(deleteBtn);
+        wrapper.appendChild(pTag);
+        parent.appendChild(wrapper);
+
     }
 
     function deleteFile(btn){
-        // var parent = btn.parentElement;
-        // var pTag = parent.lastChild;
-        // var pTag = document.querySelector('p');
-        // parent.removeChild(pTag);
-        // 파일을 어떻게 삭제?
+        var parent = btn.parentNode;
+        var wrapper = parent.parentNode;
+        var wrapperParent = wrapper.parentNode;
+        wrapperParent.removeChild(wrapper);
     }
 
     // 계속버튼 클릭

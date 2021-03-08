@@ -1,5 +1,6 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <link rel="stylesheet" href="/css/newProject.css">
 
@@ -69,6 +70,12 @@
                                 <p class="font-weight-bolder">프로젝트 제목 <span class="required">*</span></p>
                                 <p>${pvo.title}</p>
                             </div>
+                            <c:if test="${pvo.type eq '상주'}">
+                            <div class="form-content">
+                                <p class="font-weight-bolder">산업 분야 <span class="required">*</span></p>
+                                <p>${pvo.industryArea}</p>
+                            </div>
+                            </c:if>
                             <div class="form-content">
                                 <p class="font-weight-bolder">프로젝트 카테고리 <span class="required">*</span></p>
                                 <p>${pvo.category}</p>
@@ -77,34 +84,81 @@
                                 <p class="font-weight-bolder">프로젝트 분야 <span class="required">*</span></p>
                                 <p>${pvo.area}</p>
                             </div>
-                            <div class="form-content">
-                                <p class="font-weight-bolder">산업 분야 <span class="required">*</span></p>
-                                <p>${pvo.industryArea}</p>
-                            </div>
+                            <c:if test="${pvo.type eq '상주'}">
                             <div class="form-content">
                                 <p class="font-weight-bolder">담당 직무 <span class="required">*</span></p>
                                 <p>${pvo.position}</p>
                             </div>
+                            </c:if>
                             <hr>
                             <h5>준비 상태</h5>
                             <div class="form-content">
-                                <p class="font-weight-bolder">프로젝트 상태 <span class="required">*</span></p>
+                                <c:choose>
+                                    <c:when test="${pvo.type eq '상주'}">
+                                        <p class="font-weight-bolder">프로젝트 상태 <span class="required">*</span></p>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <p class="font-weight-bolder">기획 상태 <span class="required">*</span></p>
+                                    </c:otherwise>
+                                </c:choose>
                                 <p>${pvo.projectStatus}</p>
                             </div>
+                            <c:if test="${pvo.detailStatus ne ''}">
+                                <div class="form-content">
+                                    <p class="font-weight-bolder">상세 기획 상태</p>
+                                    <p>${pvo.detailStatus}</p>
+                                </div>
+                            </c:if>
                             <hr>
                             <h5>프로젝트 상세</h5>
                             <div class="form-content">
                                 <p class="font-weight-bolder">상세 업무 내용 <span class="required">*</span></p>
                                 <p>${pvo.detailTask}</p>
                             </div>
+                            <c:if test="${pvo.skillStack ne null}">
+                                <div class="form-content">
+                                    <p class="font-weight-bolder">관련 기술</p>
+                                    <p>${pvo.skillStack}</p>
+                                </div>
+                            </c:if>
                             <hr>
                             <h5>예산 및 일정</h5>
                             <div class="form-content">
                                 <p class="font-weight-bolder">지출 가능 예산 <span class="required">*</span></p>
-                                <p>${pvo.availableBudget} 원</p>
+                                <c:choose>
+                                    <c:when test="${pvo.type eq '상주'}">
+                                        <c:choose>
+                                            <c:when test="${fn: contains(pvo.availableBudget, '*')}">
+                                                <c:set var="rowArr" value="${fn: split(pvo.availableBudget, '*')}"/>
+                                                <c:forEach var="row" items="${rowArr}">
+                                                    <c:set var="col" value="${fn: split(row, '/')}"/>
+                                                    <div>
+                                                        <p>경력: ${col[0]}, 인원: ${col[1]}명, 1명당 월지급액: ${col[2]}원</p>
+                                                    </div>
+                                                </c:forEach>
+                                            </c:when>
+                                            <c:otherwise>
+                                               <c:set var="col" value="${fn: split(pvo.availableBudget, '/')}"/>
+                                                <div>
+                                                    <p>경력: ${col[0]}, 인원: ${col[1]}명, 1명당 월지급액: ${col[2]}원</p>
+                                                </div>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <p>${pvo.availableBudget} 원</p>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                             <div class="form-content">
-                                <p class="font-weight-bolder">희망 근무 시작일 <span class="required">*</span></p>
+                                <c:choose>
+                                    <c:when test="${pvo.type eq '상주'}">
+                                        <p class="font-weight-bolder">희망 근무 시작일 <span class="required">*</span></p>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <p class="font-weight-bolder">예상 시작일 <span class="required">*</span></p>
+                                    </c:otherwise>
+                                </c:choose>
                                 <p>${pvo.projectStartDate}</p>
                             </div>
                             <div class="form-content">
@@ -113,22 +167,33 @@
                             </div>
                             <hr>
                             <h5>미팅 및 근무 환경</h5>
-                            <div class="form-content">
-                                <p class="font-weight-bolder">사전 미팅 방식 <span class="required">*</span></p>
-                                <p>${pvo.preMeetingType}</p>
-                            </div>
-                            <div class="form-content">
-                                <p class="font-weight-bolder">근무 위치 <span class="required">*</span></p>
-                                <p>${pvo.workPlace}</p>
-                            </div>
-                            <div class="form-content">
-                                <p class="font-weight-bolder">근무 시간 <span class="required">*</span></p>
-                                <p>${pvo.workingHours}</p>
-                            </div>
-                            <div class="form-content">
-                                <p class="font-weight-bolder">추가 근무 및 지원 <span class="required">*</span></p>
-                                <p>${pvo.extraWorkAndSupport}</p>
-                            </div>
+                            <c:choose>
+                                <c:when test="${pvo.type eq '상주'}">
+                                    <div class="form-content">
+                                        <p class="font-weight-bolder">근무 위치 <span class="required">*</span></p>
+                                        <p>${pvo.workPlace}</p>
+                                    </div>
+                                    <div class="form-content">
+                                        <p class="font-weight-bolder">근무 시간 <span class="required">*</span></p>
+                                        <p>${pvo.workingHours}</p>
+                                    </div>
+                                    <div class="form-content">
+                                        <p class="font-weight-bolder">추가 근무 및 지원 <span class="required">*</span></p>
+                                        <p>${pvo.extraWorkAndSupport}</p>
+                                    </div>
+                                </c:when>
+                                <c:otherwise>
+                                    <div class="form-content">
+                                        <p class="font-weight-bolder">진행중 미팅 <span class="required">*</span></p>
+                                        <p>미팅 방식: ${pvo.meetingType}</p>
+                                        <p>미팅 주기: ${pvo.meetingTerm}</p>
+                                    </div>
+                                    <div class="form-content">
+                                        <p class="font-weight-bolder">클라이언트 위치 <span class="required">*</span></p>
+                                        <p>${pvo.workPlace}</p>
+                                    </div>
+                                </c:otherwise>
+                            </c:choose>
                             <hr>
                             <h5>모집 요건</h5>
                             <div class="form-content">
@@ -139,12 +204,26 @@
                                 <p class="font-weight-bolder">지원사업 여부 <span class="required">*</span></p>
                                 <p>${pvo.supportBusiness}</p>
                             </div>
+                            <c:if test="${pvo.prerequisites ne ''}">
+                                <div class="form-content">
+                                    <p class="font-weight-bolder">지원자 필수 요건</p>
+                                    <p>${pvo.prerequisites}</p>
+                                </div>
+                            </c:if>
+                            <c:if test="${pvo.question ne '//'}">
+                                <div class="form-content">
+                                    <p class="font-weight-bolder">파트너 지원 전 질문</p>
+                                    <p>${pvo.question}</p>
+                                </div>
+                            </c:if>
                             <hr>
                             <h5>추가 정보</h5>
-                            <div class="form-content">
-                                <p class="font-weight-bolder">구인 유형 <span class="required">*</span></p>
-                                <p>${pvo.hireType}</p>
-                            </div>
+                            <c:if test="${pvo.type eq '상주'}">
+                                <div class="form-content">
+                                    <p class="font-weight-bolder">구인 유형 <span class="required">*</span></p>
+                                    <p>${pvo.hireType}</p>
+                                </div>
+                            </c:if>
                             <div class="form-content">
                                 <p class="font-weight-bolder">프로젝트 인력 상황 <span class="required">*</span></p>
                                 <p>${pvo.employeeState}</p>
@@ -153,10 +232,24 @@
                                 <p class="font-weight-bolder">매니징 경험 <span class="required">*</span></p>
                                 <p>${pvo.managingExperience}</p>
                             </div>
-                            <div class="form-content">
-                                <p class="font-weight-bolder">관심상품</p>
-                                <p>${pvo.interestProduct}</p>
-                            </div>
+                            <c:if test="${pvo.futurePlan ne null}">
+                                <div class="form-content">
+                                    <p class="font-weight-bolder">향후 계획</p>
+                                    <p>${pvo.futurePlan}</p>
+                                </div>
+                            </c:if>
+                            <c:if test="${pvo.projectPriority ne null}">
+                                <div class="form-content">
+                                    <p class="font-weight-bolder">프로젝트 우선순위</p>
+                                    <p>${pvo.projectPriority}</p>
+                                </div>
+                            </c:if>
+                            <c:if test="${pvo.interestProduct ne null}">
+                                <div class="form-content">
+                                    <p class="font-weight-bolder">관심상품</p>
+                                    <p>${pvo.interestProduct}</p>
+                                </div>
+                            </c:if>
 
                             <input type="hidden" id="type" name="type" value="${pvo.type}">
                             <input type="hidden" name="purpose" value="${pvo.purpose}">
@@ -195,7 +288,7 @@
                             <hr/>
                             <div class="bottomBtns">
                                 <span style="float: left;">
-                                    <a href="/project/prepare" class="backBtn">
+                                    <a href="javascript:window.history.back();" class="backBtn">
                                         <img class="img-item" src="/img/btn_icon_back_s.png">
                                         <p>이전</p>
                                     </a>

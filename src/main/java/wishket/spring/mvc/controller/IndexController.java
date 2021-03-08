@@ -5,9 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IndexController {
+    @GetMapping("/")
+    public String index(){
+        return "redirect:/index";
+    }
 
     @GetMapping("/index")
-    public String index(){
+    public String indexOk(){
         return "index.tiles";
     }
 }
