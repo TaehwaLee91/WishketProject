@@ -119,15 +119,25 @@
                                 <p class="form-content-title">파트너 지원 전 질문</p>
                                 <p>파트너가 프로젝트에 지원할 때 답변해야 할 질문을 작성해 주세요. 최대 3개까지 입력 가능합니다.</p>
                                 <p>클라이언트님이 파트너를 선정할 때 지원서와 함께 답변 내용을 검토할 수 있습니다.</p>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="question1" placeholder="예) 물류 분야 프로젝트를 수행한 경험이 있습니까?">
+                                <div id="questionParent">
+                                    <div class="row col-12">
+                                        <div id="questionWrapper" class="form-group col-8">
+                                            <input type="text" class="form-control" name="question" placeholder="예) 물류 분야 프로젝트를 수행한 경험이 있습니까?">
+                                        </div>
+                                        <button type="button" id="questionBtn" class="btn col-1 offset-1" onclick="addRow()"  style="height: 45px">
+                                            <img class="img-item" src="/img/btn_icon_plus_normal.png">
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="question2" placeholder="예) 물류 분야 프로젝트를 수행한 경험이 있습니까?">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="question3" placeholder="예) 물류 분야 프로젝트를 수행한 경험이 있습니까?">
-                                </div>
+<%--                                <div class="form-group">--%>
+<%--                                    <input type="text" class="form-control" name="question" placeholder="예) 물류 분야 프로젝트를 수행한 경험이 있습니까?">--%>
+<%--                                </div>--%>
+<%--                                <div class="form-group">--%>
+<%--                                    <input type="text" class="form-control" name="question" placeholder="예) 물류 분야 프로젝트를 수행한 경험이 있습니까?">--%>
+<%--                                </div>--%>
+<%--                                <div class="form-group">--%>
+<%--                                    <input type="text" class="form-control" name="question" placeholder="예) 물류 분야 프로젝트를 수행한 경험이 있습니까?">--%>
+<%--                                </div>--%>
                             </div>
 
                             <input type="hidden" id="type" name="type" value="${pvo.type}">
@@ -152,6 +162,7 @@
                             <input type="hidden" name="meetingTerm" value="${pvo.meetingTerm}">
                             <input type="hidden" name="workPlace" value="${pvo.workPlace}">
                             <input type="hidden" name="workingHours" value="${pvo.workingHours}">
+                            <input type="hidden" name="breakTimes" value="${pvo.breakTimes}">
                             <input type="hidden" name="extraWorkAndSupport" value="${pvo.extraWorkAndSupport}">
                             <hr/>
                             <div class="bottomBtns">
@@ -188,6 +199,36 @@
         } else {
             etcText.setAttribute('disabled', 'true');
         }
+    }
+
+    function addRow(){
+        var questionParent = document.getElementById('questionParent');
+
+        var questionWrapper = document.getElementById('questionWrapper');
+        var cloneDiv = questionWrapper.cloneNode(true);
+
+        var deleteBtn = document.createElement('button');
+        deleteBtn.setAttribute('type', 'button');
+        deleteBtn.setAttribute('class', 'btn col-1 offset-1');
+        deleteBtn.setAttribute('style', 'height: 50px');
+        deleteBtn.setAttribute('onclick', 'deleteRow(this)');
+
+        var imgTag = document.createElement('img');
+        imgTag.setAttribute('class', 'img-item');
+        imgTag.setAttribute('src', '/img/btn_icon_minus_normal.png');
+        deleteBtn.appendChild(imgTag);
+
+        var wrapper = document.createElement('div');
+        wrapper.setAttribute('class', 'row col-12');
+        wrapper.appendChild(cloneDiv);
+        wrapper.appendChild(deleteBtn);
+
+        questionParent.appendChild(wrapper);
+    }
+
+    function deleteRow(delBtn){
+        var parent = delBtn.parentNode;
+        parent.parentNode.removeChild(parent);
     }
 
     // 계속버튼클릭 함수

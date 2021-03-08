@@ -211,12 +211,20 @@ public class ProjectContoller {
             prerequisite = prerequisite.substring(0, prerequisite.length()-1);
             pvo.setPrerequisites(prerequisite);
 
-        } else if ( rq.getParameter("question1") != null || rq.getParameter("question2") != null || rq.getParameter("question3") != null ) {
-            // 파트너 지원 전 질문
-            String question = rq.getParameter("question1") + "/" + rq.getParameter("question2") + "/" + rq.getParameter("question3");
-            pvo.setQuestion(question);
+            sb.delete(0, sb.length());
         }
 
+        String[] questions = rq.getParameterValues("question");
+        String question = "";
+        if(questions.length > 0){
+            System.out.println(questions.length);
+            for(String item : questions){
+                sb.append(item + "/");
+            }
+            question = sb.toString();
+            question = question.substring(0, question.length()-1);
+            pvo.setQuestion(question);
+        }
 
         mv.addObject("pvo", pvo);
         return mv;
@@ -258,40 +266,65 @@ public class ProjectContoller {
 
     @PostMapping("/project/finish")
     public ModelAndView createProject(ModelAndView mv, ProjectVO pvo, HttpSession session){
-        ProjectVO tempVO = (ProjectVO)session.getAttribute("pvo");
 
+        // 첨부 파일이 있다면
         // session에 저장해뒀던 file 정보를 vo에 복사
-//        String fname = tempVO.getFname1();
-//        System.out.println("fname: " + fname);
-//        if(fname.isEmpty() != true) {
+        ProjectVO tempVO = (ProjectVO)session.getAttribute("pvo");
+//        if(pvo.getFname1() != null ) {
+//            pvo.setFuuid( tempVO.getFuuid() );
 //            pvo.setFname1( tempVO.getFname1() );
 //            pvo.setFsize1( tempVO.getFsize1() );
 //            pvo.setFtype1( tempVO.getFtype1() );
+//        }
+//        if(pvo.getFname2() != null ) {
 //            pvo.setFname2( tempVO.getFname2() );
 //            pvo.setFsize2( tempVO.getFsize2() );
 //            pvo.setFtype2( tempVO.getFtype2() );
+//        }
+//        if(pvo.getFname3() != null){
 //            pvo.setFname3( tempVO.getFname3() );
 //            pvo.setFsize3( tempVO.getFsize3() );
 //            pvo.setFtype3( tempVO.getFtype3() );
-//            pvo.setFuuid( tempVO.getFuuid() );
 //        }
 
+        if(tempVO != null){
+            if(tempVO.getFname1() != null){
+                pvo.setFname1(tempVO.getFname1());
+                pvo.setFsize1(tempVO.getFsize1());
+                pvo.setFtype1(tempVO.getFtype1());
+            }
+            if(tempVO.getFname2() != null){
+                pvo.setFname2(tempVO.getFname2());
+                pvo.setFsize2(tempVO.getFsize2());
+                pvo.setFtype2(tempVO.getFtype2());
+            }
+            if(tempVO.getFname3() != null){
+                pvo.setFname3(tempVO.getFname3());
+                pvo.setFsize3(tempVO.getFsize3());
+                pvo.setFtype3(tempVO.getFtype3());
+            }
+            pvo.setFuuid( tempVO.getFuuid() );
+        }
+
         String userid = (String)session.getAttribute("UID");
-        System.out.println("userid: " + userid);
+
         // 데이터 삽입
         Boolean isSuccess = psrv.createNewProject(pvo, userid);
 
         // 데이터 삽입 성공시
         if(isSuccess){
             mv.setViewName("redirect:/index");
-//            String fuuid = tempVO.getFuuid();
-//            if(!tempVO.getFname1().isEmpty()){
-//                futil.moveToFile(tempVO.getFname1(), fuuid);
-//            } else if (!tempVO.getFname2().isEmpty()){
-//                futil.moveToFile(tempVO.getFname2(), fuuid);
-//            } else if(!tempVO.getFname3().isEmpty()){
-//                futil.moveToFile(tempVO.getFname3(), fuuid);
-//            }
+            if(tempVO != null){
+                if(tempVO.getFname1() != null){
+                    futil.moveToFile(tempVO.getFname1(), tempVO.getFuuid());
+                }
+                if (tempVO.getFname2() != null){
+                    futil.moveToFile(tempVO.getFname2(), tempVO.getFuuid());
+                }
+                if(tempVO.getFname3() != null){
+                    futil.moveToFile(tempVO.getFname3(), tempVO.getFuuid());
+                }
+            }
 
         } else {
             mv.setViewName("redirect:/project/create");

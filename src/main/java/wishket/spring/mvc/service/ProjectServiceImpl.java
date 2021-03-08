@@ -88,31 +88,26 @@ public class ProjectServiceImpl implements ProjectService {
                 // 업로드를 하지 못한 경우 '-/-/-'만 넘김
             }
         }
-
-        for(int i = 0; i < files.size(); i++){
+        for(int i = 0; i < files.size() ; i++){
             if(i == 0){
-                pvo.setFname1(files.get(i).split("[/]")[0]);
-                pvo.setFsize1(files.get(i).split("[/]")[1]);
-                pvo.setFtype1(files.get(i).split("[/]")[2]);
+                pvo.setFname1(files.get(0).split("[/]")[0]);
+                pvo.setFsize1(files.get(0).split("[/]")[1]);
+                pvo.setFtype1(files.get(0).split("[/]")[2]);
             } else if(i == 1){
-                pvo.setFname2(files.get(i).split("[/]")[0]);
-                pvo.setFsize2(files.get(i).split("[/]")[1]);
-                pvo.setFtype2(files.get(i).split("[/]")[2]);
+                pvo.setFname2(files.get(1).split("[/]")[0]);
+                pvo.setFsize2(files.get(1).split("[/]")[1]);
+                pvo.setFtype2(files.get(1).split("[/]")[2]);
             } else if(i == 2) {
-                pvo.setFname3(files.get(i).split("[/]")[0]);
-                pvo.setFsize3(files.get(i).split("[/]")[1]);
-                pvo.setFtype3(files.get(i).split("[/]")[2]);
+                pvo.setFname3(files.get(2).split("[/]")[0]);
+                pvo.setFsize3(files.get(2).split("[/]")[1]);
+                pvo.setFtype3(files.get(2).split("[/]")[2]);
             }
+
         }
 
         pvo.setFuuid(uuid);
 
         return pvo;
-    }
-
-    @Override
-    public void uploadFile(ProjectVO pvo) {
-
     }
 
 }

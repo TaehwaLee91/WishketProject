@@ -212,6 +212,7 @@
                             <input type="hidden" name="meetingTerm" value="${pvo.meetingTerm}">
                             <input type="hidden" name="workPlace" value="${pvo.workPlace}">
                             <input type="hidden" name="workingHours" value="${pvo.workingHours}">
+                            <input type="hidden" name="breakTimes" value="${pvo.breakTimes}">
                             <input type="hidden" name="extraWorkAndSupport" value="${pvo.extraWorkAndSupport}">
                             <input type="hidden" name="deadLine" value="${pvo.deadLine}">
                             <input type="hidden" name="supportBusiness" value="${pvo.supportBusiness}">
