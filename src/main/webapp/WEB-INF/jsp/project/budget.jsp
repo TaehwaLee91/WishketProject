@@ -87,15 +87,15 @@
 <%--                                        </div>--%>
                                         <div class="row col-12">
                                         <div class="form-group row col-8 bg-light partnerRow" id="workerBudget">
-                                            <select id="availableBudget1" class="form-control col-4" name="availableBudget">
+                                            <select class="form-control col-4" name="availableBudget">
                                                 <option value="경력무관">경력무관</option>
                                                 <option value="1~2년차">1~2년 차</option>
                                                 <option value="3~4년차">3~4년 차</option>
                                                 <option value="5~9년차">5~9년 차</option>
                                                 <option value="10년차이상">10년 차 이상</option>
                                             </select>
-                                            <input type="text" id="availableBudget2" class="form-control col-3" name="availableBudget" placeholder="인원">
-                                            <input type="text" id="availableBudget3" class="form-control col-4" name="availableBudget" placeholder="1인당 월 지급액">
+                                            <input type="text" class="form-control col-3" name="availableBudget" placeholder="인원" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                                            <input type="text" class="form-control col-4" name="availableBudget" placeholder="1인당 월 지급액"  onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
                                         </div>
                                         <button type="button" id="addWorker" class="btn col-1 offset-1" onclick="addNewWorker()" style="height: 50px">
                                             <img class="img-item" src="/img/btn_icon_plus_normal.png">
@@ -108,7 +108,7 @@
                                     <p>프로젝트에 지출 가능한 예산을 입력해 주세요.</p>
                                     <div class="form-group">
                                         <input type="text" class="form-control col-5" id="availableBudget" name="availableBudget"
-                                               onchange="computeBudget(this)" onkeyup="numberWithCommas(this.value)">
+                                               onchange="computeBudget(this)">
                                         <label class="col-form-label">예상 결제 금액: <span id="newBudget"></span>원 (부가가치세 10% 포함)</label>
                                     </div>
                                 </c:if>
@@ -176,7 +176,7 @@
                             <hr/>
                             <div class="bottomBtns">
                                 <span style="float: left;">
-                                    <a href="/project/prepare" class="backBtn">
+                                    <a href="javascript:window.history.back();" class="backBtn">
                                         <img class="img-item" src="/img/btn_icon_back_s.png">
                                         <p>이전</p>
                                     </a>
@@ -184,8 +184,8 @@
                                 <span style="float: right">
                                     <button id="budgetNextBtn" class="btn btn-primary" onclick="clickNextBtn()">계속</button>
                                 </span>
-                            </div>
-                        </div>
+                            </div> <!-- 하단 버튼 -->
+                        </div> <!-- form-input-section -->
                     </form> <!-- form -->
                 </div> <!-- card -->
             </div> <!-- main contents -->
@@ -231,14 +231,6 @@
         var parent = delBtn.parentNode;
         parent.parentNode.removeChild(parent);
     }
-
-    // 3자리마다 콤마
-    // function numberWithCommas(x) {
-    //     x = x.replace(/[^0-9]/g,'');   // 입력값이 숫자가 아니면 공백
-    //     x = x.replace(/,/g,'');        // ,값 공백처리
-    //     var budget = document.getElementById('availableBudget');
-    //     budget.value = x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    // }
 
     // 예상금액
     function computeBudget(budget){

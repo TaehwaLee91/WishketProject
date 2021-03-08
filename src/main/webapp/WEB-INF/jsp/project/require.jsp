@@ -156,7 +156,7 @@
                             <hr/>
                             <div class="bottomBtns">
                                 <span style="float: left;">
-                                    <a href="/project/prepare" class="backBtn">
+                                    <a href="javascript:window.history.back();" class="backBtn">
                                         <img class="img-item" src="/img/btn_icon_back_s.png">
                                         <p>이전</p>
                                     </a>
@@ -182,9 +182,11 @@
     $('#datetimepicker1').datetimepicker({  format: 'YYYY-MM-DD', defaultDate: new Date(), minDate: new Date()});
 
     function checkEtc(etc){
+        var etcText = document.getElementById('prerequisitesEtcText');
         if(etc.checked == true){
-            var etcText = document.getElementById('prerequisitesEtcText');
             etcText.removeAttribute('disabled');
+        } else {
+            etcText.setAttribute('disabled', 'true');
         }
     }
 

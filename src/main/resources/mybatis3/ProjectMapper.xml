@@ -11,13 +11,14 @@
                   detailTask, skillStack, skillStackUse, availableBudget, budgetNego, budgetLater, projectStartDate,
                   projectTerm, preMeetingType, meetingType, meetingTerm, workPlace, workingHours, extraWorkAndSupport,
                   deadLine, supportBusiness, prerequisites, question, hireType, employeeState, managingExperience,
-                  futurePlan, projectPriority, interestProduct)
+                  futurePlan, projectPriority, interestProduct, fname1, fsize1, ftype1, fname2, fsize2, ftype2, fname3, fsize3, ftype3)
         values ( #{type}, #{purpose}, #{title}, #{industryArea}, #{category}, #{area}, #{position},
                  #{projectStatus}, #{detailStatus}, #{detailTask}, #{skillStack}, #{skillStackUse}, #{availableBudget},
                  #{budgetNego}, #{budgetLater}, #{projectStartDate}, #{projectTerm}, #{preMeetingType}, #{meetingType},
                  #{meetingTerm}, #{workPlace}, #{workingHours}, #{extraWorkAndSupport}, #{deadLine}, #{supportBusiness},
                  #{prerequisites}, #{question}, #{hireType}, #{employeeState}, #{managingExperience}, #{futurePlan},
-                 #{projectPriority}, #{interestProduct});
+                 #{projectPriority}, #{interestProduct}, #{fname1}, #{fsize1}, #{ftype1}, #{fname2}, #{fsize2}, #{ftype2},
+                #{fname3}, #{fsize3}, #{ftype3} );
     </insert>
 
     <select id="selectList" statementType="PREPARED" parameterType="int" resultType="wishket.spring.mvc.vo.ProjectVO">

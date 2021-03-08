@@ -77,9 +77,9 @@ public class ProjectServiceImpl implements ProjectService {
         // 파일 임시폴더에 저장
         String uuid = fud.makeUUID();
         List<String> files = new ArrayList<>();
+
         for(MultipartFile f : file){
             if(!f.getOriginalFilename().isEmpty()){
-                System.out.println(f.getOriginalFilename());
                 files.add(fud.procUpload1(f, uuid));
                 // 파일업로드시 앞서 만든 uuid값을 매개변수로 넘김
                 // 업로드한 뒤 결과값은 '파일명/파일크기/파일종류'로 넘어옴
@@ -89,23 +89,30 @@ public class ProjectServiceImpl implements ProjectService {
             }
         }
 
-        // 업로드한 파일정보를 vo로 나눠 저장
-        pvo.setFname1(files.get(0).split("[/]")[0]);
-        pvo.setFsize1(files.get(0).split("[/]")[1]);
-        pvo.setFtype1(files.get(0).split("[/]")[2]);
+        for(int i = 0; i < files.size(); i++){
+            if(i == 0){
+                pvo.setFname1(files.get(i).split("[/]")[0]);
+                pvo.setFsize1(files.get(i).split("[/]")[1]);
+                pvo.setFtype1(files.get(i).split("[/]")[2]);
+            } else if(i == 1){
+                pvo.setFname2(files.get(i).split("[/]")[0]);
+                pvo.setFsize2(files.get(i).split("[/]")[1]);
+                pvo.setFtype2(files.get(i).split("[/]")[2]);
+            } else if(i == 2) {
+                pvo.setFname3(files.get(i).split("[/]")[0]);
+                pvo.setFsize3(files.get(i).split("[/]")[1]);
+                pvo.setFtype3(files.get(i).split("[/]")[2]);
+            }
+        }
 
-        pvo.setFname2(files.get(1).split("[/]")[0]);
-        pvo.setFsize2(files.get(1).split("[/]")[1]);
-        pvo.setFtype2(files.get(1).split("[/]")[2]);
-
-        pvo.setFname3(files.get(2).split("[/]")[0]);
-        pvo.setFsize3(files.get(2).split("[/]")[1]);
-        pvo.setFtype3(files.get(2).split("[/]")[2]);
-
-        // 위에서 생성한 uuid를 pvo uuid에 저장
         pvo.setFuuid(uuid);
 
         return pvo;
+    }
+
+    @Override
+    public void uploadFile(ProjectVO pvo) {
+
     }
 
 }

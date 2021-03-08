@@ -210,9 +210,11 @@
     }
 
     function changePosition(cBox){
-        if(cBox.checked) {
-            var positionEtc = document.getElementById('positionEtcText');
+        var positionEtc = document.getElementById('positionEtcText');
+        if(cBox.checked == true) {
             positionEtc.removeAttribute('disabled');
+        } else {
+            positionEtc.setAttribute('disabled', 'true');
         }
     }
 
