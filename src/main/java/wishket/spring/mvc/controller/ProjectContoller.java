@@ -1,5 +1,6 @@
 package wishket.spring.mvc.controller;
 
+import com.sun.media.jfxmedia.logging.Logger;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,16 @@ public class ProjectContoller {
     private ProjectService psrv;
     @Autowired
     private FileUpDownUtil futil;
+
+    @GetMapping("/project/create")
+    public String create(HttpSession session){
+        String returnPage = "project/create.tiles";
+        String userid = (String)session.getAttribute("UID");
+        if(userid == null) {
+            returnPage = "redirect:/accounts/login";
+        }
+        return returnPage;
+    }
 
     @PostMapping("/project/edit/1")
     public ModelAndView enrollOK(ModelAndView mv, ProjectVO pvo){
@@ -246,34 +257,41 @@ public class ProjectContoller {
     }
 
     @PostMapping("/project/finish")
-    public ModelAndView createProject(ModelAndView mv,ProjectVO pvo, HttpSession session){
+    public ModelAndView createProject(ModelAndView mv, ProjectVO pvo, HttpSession session){
         ProjectVO tempVO = (ProjectVO)session.getAttribute("pvo");
 
         // session에 저장해뒀던 file 정보를 vo에 복사
-        pvo.setFname1( tempVO.getFname1() );
-        pvo.setFsize1( tempVO.getFsize1() );
-        pvo.setFtype1( tempVO.getFtype1() );
-        pvo.setFname2( tempVO.getFname2() );
-        pvo.setFsize2( tempVO.getFsize2() );
-        pvo.setFtype2( tempVO.getFtype2() );
-        pvo.setFname3( tempVO.getFname3() );
-        pvo.setFsize3( tempVO.getFsize3() );
-        pvo.setFtype3( tempVO.getFtype3() );
+//        String fname = tempVO.getFname1();
+//        System.out.println("fname: " + fname);
+//        if(fname.isEmpty() != true) {
+//            pvo.setFname1( tempVO.getFname1() );
+//            pvo.setFsize1( tempVO.getFsize1() );
+//            pvo.setFtype1( tempVO.getFtype1() );
+//            pvo.setFname2( tempVO.getFname2() );
+//            pvo.setFsize2( tempVO.getFsize2() );
+//            pvo.setFtype2( tempVO.getFtype2() );
+//            pvo.setFname3( tempVO.getFname3() );
+//            pvo.setFsize3( tempVO.getFsize3() );
+//            pvo.setFtype3( tempVO.getFtype3() );
+//            pvo.setFuuid( tempVO.getFuuid() );
+//        }
 
+        String userid = (String)session.getAttribute("UID");
+        System.out.println("userid: " + userid);
         // 데이터 삽입
-        Boolean isSuccess = psrv.createNewProject(pvo);
+        Boolean isSuccess = psrv.createNewProject(pvo, userid);
 
         // 데이터 삽입 성공시
         if(isSuccess){
             mv.setViewName("redirect:/index");
-            String fuuid = tempVO.getFuuid();
-            if(!tempVO.getFname1().isEmpty()){
-                futil.moveToFile(tempVO.getFname1(), fuuid);
-            } else if (!tempVO.getFname2().isEmpty()){
-                futil.moveToFile(tempVO.getFname2(), fuuid);
-            } else if(!tempVO.getFname3().isEmpty()){
-                futil.moveToFile(tempVO.getFname3(), fuuid);
-            }
+//            String fuuid = tempVO.getFuuid();
+//            if(!tempVO.getFname1().isEmpty()){
+//                futil.moveToFile(tempVO.getFname1(), fuuid);
+//            } else if (!tempVO.getFname2().isEmpty()){
+//                futil.moveToFile(tempVO.getFname2(), fuuid);
+//            } else if(!tempVO.getFname3().isEmpty()){
+//                futil.moveToFile(tempVO.getFname3(), fuuid);
+//            }
 
         } else {
             mv.setViewName("redirect:/project/create");
@@ -313,10 +331,7 @@ public class ProjectContoller {
         }
     }
 
-    @GetMapping("/project/create")
-    public String create(){
-        return "project/create.tiles";
-    }
+
 
     @GetMapping("/project/basic")
     public String basic(){
@@ -358,9 +373,4 @@ public class ProjectContoller {
         return "project/review.tiles";
     }
 
-    @PostMapping("/back")
-    public String goBack(HttpServletRequest rq){
-        String referer = rq.getHeader("Referer");
-        return "redirect:"+referer;
-    }
 }

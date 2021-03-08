@@ -7,18 +7,19 @@
 
     <insert id="insertNewProject" statementType="PREPARED" parameterType="wishket.spring.mvc.vo.ProjectVO">
         insert
-        into 프로젝트(type, purpose, title, industryArea, category, area, position, projectStatus, detailStatus,
+        into 프로젝트(mno, type, purpose, title, industryArea, category, area, position, projectStatus, detailStatus,
                   detailTask, skillStack, skillStackUse, availableBudget, budgetNego, budgetLater, projectStartDate,
                   projectTerm, preMeetingType, meetingType, meetingTerm, workPlace, workingHours, extraWorkAndSupport,
                   deadLine, supportBusiness, prerequisites, question, hireType, employeeState, managingExperience,
-                  futurePlan, projectPriority, interestProduct, fname1, fsize1, ftype1, fname2, fsize2, ftype2, fname3, fsize3, ftype3)
-        values ( #{type}, #{purpose}, #{title}, #{industryArea}, #{category}, #{area}, #{position},
+                  futurePlan, projectPriority, interestProduct, fname1, fsize1, ftype1, fname2, fsize2, ftype2, fname3, fsize3, ftype3,
+                  fuuid, breakTimes)
+        values ( #{mno}, #{type}, #{purpose}, #{title}, #{industryArea}, #{category}, #{area}, #{position},
                  #{projectStatus}, #{detailStatus}, #{detailTask}, #{skillStack}, #{skillStackUse}, #{availableBudget},
                  #{budgetNego}, #{budgetLater}, #{projectStartDate}, #{projectTerm}, #{preMeetingType}, #{meetingType},
                  #{meetingTerm}, #{workPlace}, #{workingHours}, #{extraWorkAndSupport}, #{deadLine}, #{supportBusiness},
                  #{prerequisites}, #{question}, #{hireType}, #{employeeState}, #{managingExperience}, #{futurePlan},
                  #{projectPriority}, #{interestProduct}, #{fname1}, #{fsize1}, #{ftype1}, #{fname2}, #{fsize2}, #{ftype2},
-                #{fname3}, #{fsize3}, #{ftype3} );
+                #{fname3}, #{fsize3}, #{ftype3}, #{fuuid}, #{breakTimes});
     </insert>
 
     <select id="selectList" statementType="PREPARED" parameterType="int" resultType="wishket.spring.mvc.vo.ProjectVO">
@@ -34,19 +35,9 @@
         select count(pno) cnt from 프로젝트;
     </select>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <select id="selectMno" statementType="PREPARED" parameterType="String" resultType="int">
+        select mno from 회원 where userid = #{userid}
+    </select>
 
     <!-- ajax로 주소 정보 불러오기 위한 쿼리-->
     <select id="selectSido" statementType="PREPARED" resultType="String">

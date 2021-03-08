@@ -3,8 +3,8 @@ create table 회원 (
     userid varchar(20) not null,
     email varchar(50) not null,
     passwd varchar(20) not null,
-    project_id int default null,
-    regdate timestamp default current_timestamp
+    regdate timestamp default current_timestamp,
+    user_key varchar(256)
 );
 
 insert into 회원 (userid, email, passwd) values (?,?,?)

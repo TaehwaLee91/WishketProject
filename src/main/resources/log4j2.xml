@@ -65,7 +65,7 @@
     <Logger name="org.springframework.jdbc.core.StatementCreatorUtils"
             level="trace" />
 
-        <logger name="taehwa.spring.mvc.*" additivity="false" >
+        <logger name="wishket.spring.mvc.*" additivity="false" >
             <AppenderRef ref="console" level="info" />
         </logger>
     </Loggers>

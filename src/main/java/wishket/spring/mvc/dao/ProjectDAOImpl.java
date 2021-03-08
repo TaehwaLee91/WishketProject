@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import wishket.spring.mvc.vo.ProjectVO;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository("pdao")
 public class ProjectDAOImpl implements ProjectDAO {
@@ -13,7 +15,10 @@ public class ProjectDAOImpl implements ProjectDAO {
     private SqlSession sqlSession;
 
     @Override
-    public int insertNewProject(ProjectVO pvo) {
+    public int insertNewProject(ProjectVO pvo, String userid) {
+        String mno = sqlSession.selectOne("project.selectMno", userid).toString();
+        pvo.setMno(mno);
+
         return sqlSession.insert("project.insertNewProject", pvo);
     }
 
