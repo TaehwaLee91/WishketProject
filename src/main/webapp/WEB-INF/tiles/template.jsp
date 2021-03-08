@@ -31,9 +31,9 @@
     <tiles:insertAttribute name="header"/>
     <tiles:insertAttribute name="main"/>
     <tiles:insertAttribute name="footer"/>
+      <tiles:insertAttribute name="modal"/>
   </div>
-  <!-- 로그인 모달 -->
-<%--            <tiles:insertAttribute name="modal"/>--%>
+
         
 
 
