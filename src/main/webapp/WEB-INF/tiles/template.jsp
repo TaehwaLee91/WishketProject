@@ -44,6 +44,8 @@
         <script src="/js/index.js"></script>
         <script src="/js/login.js"></script>
         <script src="/js/boardView.js"></script>
+        <script src="/js/guide.js"></script>
+        <script src="/js/postscript.js"></script>
         <script>$('#loginbtn1').on('click',function(){location.href='/accounts/login'})
         $('#joinbtn').on('click',function(){location.href='/accounts/signup'})</script>
       <script type="text/javascript">
