@@ -1,6 +1,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%-- 상주, 외주마다 항목이 바뀌어야할듯 --%>
 <%-- 레이아웃 깨지는 문제 --%>
 <%-- 파일 다운로드 --%>
@@ -99,35 +100,12 @@
                     <div id="contents " class="mt-5">
                         <div class="row col-12 ">
                             <h5 class="row col-12 font-weight-bold">업무내용</h5>
-                            <p style="font-size:15px;">
-                                <br>프로젝트 개요 :<br>
-                                참고) 프로젝트 소개, 목적 등
+                            <p style="font-size:15px;" class="col-12">
+                                <c:set var="rowArr" value="${fn: split(pvo.detailTask, ':')}"/>
+                                <textarea cols="50" rows="30" style="border:0;" readonly class="col-12"><c:forEach var="item" items="${rowArr}"> ${item}</c:forEach></textarea>
 
-                                <br><br>프로젝트 팀 구성 :<br>
-                                참고) 팀 구성 및 인원, 협업 대상자 등
-
-                                <br><br>구인 배경 :<br>
-                                참고) 신규, 결원 충원, 추가 구인 등
-
-                                <br><br>프로젝트 일정 :<br>
-                                참고) 프로젝트 시작/종료일, 런칭 예정일, 근무 시작/종료일 등
-
-                                <br><br>상세 업무 :<br>
-                                참고) 담당하게 될 업무, 개발 범위 등
-
-                                <br><br>필수 기술 :<br>
-                                참고) Java, Spring 등
-
-                                <br><br>자격 요건 :<br>
-                                참고) 필수 프로젝트 경험, 필수 기술 사용 경력 등
-
-                                <br><br>우대 사항 :<br>
-                                참고) 우대 업무 경험, 우대 보유 기술 등
-
-                                <br><br>복리후생 :<br>
-                                참고) 휴가일수, 추가근무 수당지급, 교통비 및 체재비 지원 등
                             </p>
-                            <p class="row col-12 font-weight-bold mt-3" style="font-size:16px;">관련 기술&nbsp;&nbsp;&nbsp;<span class="badge ml-2" style="background: #eeeeee; color:gray; max-height: 18px; position:relative; top:3px;">PHP</span>&nbsp;&nbsp;&nbsp;<span class="badge " style="background: #eeeeee; color:gray; max-height: 18px; position:relative; top:3px;">WordPass</span></p>
+                            <p class="row col-12 font-weight-bold mt-3" style="font-size:16px;">관련 기술&nbsp;&nbsp;&nbsp;<span class="badge ml-2" style="background: #eeeeee; color:gray; max-height: 18px; position:relative; top:3px;">${pvo.skillStack}</span></p>
 
                         </div>
                         <hr>
@@ -144,6 +122,7 @@
                         </c:if>
                         <hr>
                         <h5 class="row col-12 font-weight-bold mt-4">미팅</h5>
+                        <c:if test="${pvo.type ne  '상주'}">
                         <div class="col-12 mt-3"style="font-size:14px">
                             <div class="row" >
                                 <span class="" style="width:120px; color:gray">사전 미팅 방식</span>
@@ -158,6 +137,52 @@
                                 <span class="col-10 mb-3" style="">${pvo.workPlace}</span>
                             </div>
                         </div>
+                        </c:if>
+                        <c:if test="${pvo.type eq  '상주'}">
+                            <div class="col-12 mt-3"style="font-size:14px">
+                                <div class="row" >
+                                    <span class="" style="width:120px; color:gray">사전 미팅 방식</span>
+                                    <span class="col-10 mb-3" style="">${pvo.preMeetingType}</span>
+                                </div>
+                                <div class="row" >
+                                    <span class="" style="width:120px; color:gray">클라이언트 위치</span>
+                                    <span class="col-10 mb-3" style="">${pvo.workPlace}</span>
+                                </div>
+                            </div>
+                        <hr>
+                        <h5 class="row col-12 font-weight-bold mt-4">근무환경</h5>
+                            <div class="col-12 mt-3"style="font-size:14px">
+                                <div class="row" >
+                                    <span class="" style="width:120px; color:gray">근무지</span>
+                                    <span class="col-10 mb-3" style="">${pvo.workPlace}</span>
+                                </div>
+                                <div class="row" >
+                                    <span class="" style="width:120px; color:gray">근무시간</span>
+                                    <span class="col-10 mb-3" style="">${pvo.workingHours}</span>
+                                </div>
+                                <c:set var="rowArr" value="${fn: split(pvo.extraWorkAndSupport, '/')}"/>
+                                    <div class="row" >
+                                        <span class="" style="width:120px; color:gray">야간근무</span>
+                                        <span class="col-10 mb-3" style="">${rowArr[0]}</span>
+                                    </div>
+                                <div class="row" >
+                                    <span class="" style="width:120px; color:gray">주말근무</span>
+                                    <span class="col-10 mb-3" style="">${rowArr[1]}</span>
+                                </div>
+                                <div class="row" >
+                                    <span class="" style="width:120px; color:gray">장비지원</span>
+                                    <span class="col-10 mb-3" style="">${rowArr[2]}</span>
+                                </div>
+                                <div class="row" >
+                                    <span class="" style="width:120px; color:gray">개인장비 사용</span>
+                                    <span class="col-10 mb-3" style="">${rowArr[3]}</span>
+                                </div>
+                                <div class="row" >
+                                    <span class="" style="width:120px; color:gray">식사지원</span>
+                                    <span class="col-10 mb-3" style="">${rowArr[4]}</span>
+                                </div>
+                            </div>
+                        </c:if>
                         <c:if test="${not empty pvo.fname1}">
                             <hr>
                             <h5 class="row col-12 font-weight-bold mt-4">참고 자료</h5>
@@ -196,15 +221,15 @@
                         <hr>
                         <i class="bi bi-heart" style="color:gray;">&nbsp;4</i>
                     </div>
-
+                    <c:if test="${not empty UID}">
                     <div class="row  mt-4" style="position: relative; right:-20px; font-size:14px;">
                         <img src="/img/default_avatar_c.png" style="display: inline; width: 50px; height: 50px; border-radius: 50px;">
-                        <p class="ml-2" style="font-size:15px;">us******* &nbsp;&nbsp;&nbsp;<span class="badge" style="background: #e3edfa; color:#336fac" >member</span><br>
+                        <p class="ml-2" style="font-size:15px;">${UID} &nbsp;&nbsp;&nbsp;<span class="badge" style="background: #e3edfa; color:#336fac" >member</span><br>
                             <img src="/img/icon-badge-verification.png" style="width: 16px; height: 14px;">&nbsp;인증완료&nbsp;&nbsp;<img src="../../../resources/img/icon-badge-client-pro.png" style="width: 16px; height: 14px;">&nbsp;우수회원</p>
                     </div>
 
                     <div class="row  mt-2" style="position: relative; right:-20px;">
-                        <span style="font-size:12px; color:#777777">21년간 웹에이전시를 운영해온 회사입니다.<br></span>
+                        <span style="font-size:12px; color:#777777">Ex)21년간 웹에이전시를 운영해온 회사입니다.<br></span>
                     </div>
 
                     <hr>
@@ -217,15 +242,25 @@
                     <hr style="margin-top:-5px;">
 
                     <div class="row mt-2" style="font-size:14px;">
-                        <div class="col-6 text-left" style="color:gray;">진행된 프로젝트</div><div class="col-6 text-right">5건</div>
-                        <div class="col-6 text-left mt-3" style="color:gray;">계약한 프로젝트</div><div class="col-6 text-right mt-3">1건</div>
+                        <div class="col-6 text-left" style="color:gray;">진행된 프로젝트</div><div class="col-6 text-right">준비중</div>
+                        <div class="col-6 text-left mt-3" style="color:gray;">계약한 프로젝트</div><div class="col-6 text-right mt-3">준비중</div>
 
-                        <div class="col-6 text-left mt-2" style="color:#AEAEAE; border-left:2px solid #e0e0e0; position:relative; right: -15px">진행중인 프로젝트</div><div class="col-6 text-right mt-2">1건</div>
-                        <div class="col-6 text-left pt-2" style="color:#AEAEAE; border-left:2px solid #e0e0e0; position:relative; right: -15px; ">완료한 프로젝트</div><div class="col-6 text-right pt-2" style="">1건</div>
+                        <div class="col-6 text-left mt-2" style="color:#AEAEAE; border-left:2px solid #e0e0e0; position:relative; right: -15px">진행중인 프로젝트</div><div class="col-6 text-right mt-2">준비중</div>
+                        <div class="col-6 text-left pt-2" style="color:#AEAEAE; border-left:2px solid #e0e0e0; position:relative; right: -15px; ">완료한 프로젝트</div><div class="col-6 text-right pt-2" style="">준비중</div>
 
-                        <div class="col-6 text-left mt-3" style="color:gray;">프로젝트 계약률</div><div class="col-6 text-right mt-3">20%</div>
-                        <div class="col-6 text-left mt-3" style="color:gray;">누적 완료금</div><div class="col-6 text-right mt-3">300만원</div>
+                        <div class="col-6 text-left mt-3" style="color:gray;">프로젝트 계약률</div><div class="col-6 text-right mt-3">준비중</div>
+                        <div class="col-6 text-left mt-3" style="color:gray;">누적 완료금</div><div class="col-6 text-right mt-3">준비중</div>
                     </div>
+                    </c:if>
+                    <c:if test="${empty UID}">
+                        <div class="col-12 border text-center" style="height: 200px; background: #eeeeee; border-radius: 5px; margin-top:25px;" >
+                            <div class="mt-4"></div>
+                            <button type="button" class="loginbtn1 btn text-white mt-3" style="margin:0 auto; width:200px; height:50px; background: #2099bb">로그인</button>
+                            <button type="button" class="joinbtn btn mt-3" style="margin:0 auto; width:200px; height:50px; color:white; background: #a1a6ad">&nbsp;&nbsp;회원가입</button>
+                        </div>
+                    </c:if>
+
+
                 </div><!--floatingg-->
 
             </div>

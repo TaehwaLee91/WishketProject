@@ -40,6 +40,7 @@ $(document).ready(function(){
 //sc4btn
 $('#sc4Btn').on('click',function(){location.href="/accounts/signup"})
 $('#sc1Btn').on('click',function(){location.href="/project/create"})
-
+$('.loginbtn1').on('click',function(){location.href="/accounts/login"})
+$('.joinbtn').on('click',function(){location.href="/accounts/signup"})
 $('#index1').hover(function(){$('#index1').css('background', 'green');},
     function(){$('#index1').css('background',)})
