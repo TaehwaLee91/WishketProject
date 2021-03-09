@@ -25,44 +25,27 @@
         padding-left: 20px
     }
     .search-list {
-        margin-top: 30px;
+        margin: 0;
         width: 70%;
         text-align: left;
         float: left;
-        padding: 30px;
-        height: 3050px;
+        padding: 0;
+        height: 2750px;
         width: 870px;
         border: 1px solid #f5c6cb;
+        position: relative;
+        top: 30px;
     }
     footer { padding: 10px;
         width: 100%;
         text-align: center;}
 
-    .hr1 {
-        border-left: 1px solid #f5c6cb;
-        height: 50px;
-        position: absolute;
-        left: 50%;
-        margin: -70px 0px 0px -80px;
-    }
     .caption-1-high { font-size: 12px; margin: 0 60px 0 5px}
+
     .line-style { height: 50px; width: 868px; margin-left: -30px;  }
-    .small-line { border-left: 1px solid #f5c6cb;
-        height: 15px;
-        position: absolute;
-        left: 50%;
-        margin: 1px 0px 0px -215px; }
-    .small-line-1 { border-left: 1px solid #f5c6cb;
-        height: 15px;
-        position: absolute;
-        left: 54%;
-        margin: 1px 0px 0px -205px; }
-    .small-line-2 { border-left: 1px solid #f5c6cb;
-        height: 15px;
-        position: absolute;
-        left: 64%;
-        margin: 1px 0 0 -230px; }
-    .short-line {   height: 0px; width: 165px; margin-right: -30px; }
+
+    .short-line {   height: 0px; width: 165px; margin-right: 0px; }
+
     .iconi {
         height: 18px;
         width: 18px;
@@ -71,10 +54,6 @@
     .order-radio {
         height: 10px;
         width: 10px;
-    }
-    .only-selected-checkbox {
-        height: 16px;
-        width: 16px;
     }
     .caption-1-medium {
         font-size: 13px
@@ -91,36 +70,6 @@
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         line-height: 20px;
-    }
-
-    #loading {
-        width: 50%;
-        height: 50%;
-        top: 0;
-        left: 0;
-        position: fixed;
-        display: block;
-        opacity: 0.8;
-        background: white;
-        z-index: 99;
-        text-align: center;
-    }
-
-    #loading > img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 100;
-    }
-
-    @-webkit-keyframes spin {
-        0% { -webkit-transform: rotate(0deg); }
-        100% { -webkit-transform: rotate(360deg); }
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
     }
 </style>
 
@@ -209,6 +158,7 @@
                                             </span>
                                         </label>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                             <br>
@@ -296,7 +246,7 @@
 
             <div id="article">
                 <section class="search-list bg-white">
-                    <section class="result-header-wrap" style="margin-top: -30px;">
+                    <section class="result-header-wrap" style="padding-left: 20px">
                         <div class="result-header">
                             <div class="count-box">
                                 <br>
@@ -349,20 +299,20 @@
 <%--                            <input id="proejctSearchType" type="hidden" value="전체">--%>
                             <div class="project-list-box">
                                 <c:forEach var="pro" items="${ps}">
-                                <div class="project-info-box">
-                                    <hr class="line-style">
-                                    <div class="project-status-label recruiting-status">
-                                        <div class="status-mark recruting-mark;" style="background: green; height: 21px; width: 58px; margin-top: -40px; font-size: 13px; color: white; font-weight: bold">&nbsp;&nbsp;모집 중</div>
-                                    </div>
-                                    <br>
-                                    <div class="project-unit-heading">
-                                        <h5 class="project-title" style="margin-top: -13px">
-                                            <a class="subtitle-2-medium project-link" style="color: black; font-weight: bold"
-                                               href="/project/board?pno=${pro.pno}">${pro.title}</a>
-                                        </h5>
-                                    </div>
-                                    <div class="project-unit-body">
-                                        <section class="project-unit-info row">
+                                    <div class="project-info-box" style="padding-left: 30px; padding-right: 45px;">
+                                        <hr class="line-style">
+                                        <div class="project-status-label recruiting-status">
+                                            <div class="status-mark recruting-mark;" style="background: green; height: 21px; width: 58px; margin-top: -40px; font-size: 13px; color: white; font-weight: bold">&nbsp;&nbsp;모집 중</div>
+                                        </div>
+                                        <br>
+                                        <div class="project-unit-heading">
+                                            <h5 class="project-title" style="margin-top: -13px">
+                                                <a class="subtitle-2-medium project-link" style="color: black; font-weight: bold"
+                                                   href="/project/board?pno=${pro.pno}">${pro.title}</a>
+                                            </h5>
+                                        </div>
+                                        <div class="project-unit-body">
+                                            <section class="project-unit-info row">
                                             <span class="estimated-box col-4" style="font-size: 15px">
                                                     <div class="estimated-data">
                                                         <img src="/img/icon-project-features.svg" style="margin-top: -5px">
@@ -394,7 +344,7 @@
                                                         &nbsp;예상 기간&nbsp;&nbsp;${pro.projectTerm} 일
                                                     </div> <!-- 예상 기간 -->
                                             </span> <!-- 예상 금액, 예상 기간 -->
-                                            <span class="project-unit-category text-left col-5" style="font-size: 15px; border-left: 1px solid lightgray">
+                                                <span class="project-unit-category text-left col-5" style="font-size: 15px; border-left: 1px solid lightgray">
                                                 <div style="opacity: 0.8">
                                                     <img src="/img/icon-project-category.png" style="height: 15px; width: 15px; margin-top: -3px">
                                                         &nbsp;${fn: replace(pro.category, '/', ' · ')}
@@ -404,27 +354,35 @@
                                                         &nbsp;${fn: replace(pro.area, '/', ' · ')}
                                                 </div> <!-- 분야 -->
                                             </span> <!-- 카테고리, 분야 -->
-                                            <br>
-                                            <div class="body-3 project-description row" style="margin-top: 15px">
-                                                <p class="hide col-9" style="margin-left: 15px;">${pro.detailTask}</p>
-                                            </div> <!-- 상세 내용 -->
-                                            <div class="project-info-tag row col">
-                                                <div class="simple-chip outsourcing-chip caption-1-medium" style="margin-left: 15px">
-                                                    <span>${pro.type}</span><!-- 프로젝트 타입 -->
-                                                    <span style="margin-left: 15px">
-                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px;">
+                                                <br>
+                                                <div class="body-3 project-description row" style="margin-top: 15px">
+                                                    <p class="hide col-12" style="margin-left: 15px; width: 500px; overflow: hidden;">${pro.detailTask}</p>
+                                                </div> <!-- 상세 내용 -->
+                                                <div class="project-info-tag row col-12">
+                                                    <div class="simple-chip outsourcing-chip caption-1-medium" style="margin-left: 15px">
+                                                        <c:choose>
+                                                            <c:when test="${pro.type eq '상주'}">
+                                                                <span style="background-color: #fff9e0; border-radius: 10px 10px; padding: 2px 8px; height: 24px; line-height: 20px; color: #f28a05;">${pro.type}</span>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <span style="background-color: #e8faff; border-radius: 10px 10px; padding: 2px 8px; height: 24px; line-height: 20px; color: #369cc2;">${pro.type}</span>
+                                                            </c:otherwise>
+                                                        </c:choose>
+
+                                                        <span style="margin-left: 15px">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: -5px; height: 15px; width: 15px;">
                                                             ${pro.workPlace}
                                                     </span><!-- 근무 위치 -->
-                                                    <span style="opacity: 0.5; margin-left: 15px">등록 일자 ${pro.regdate}</span> <!-- 등록 일자 -->
-                                                </div> <!-- 프로젝트 타입, 근무 위치, 등록일자-->
-                                            </div>
-                                        </section> <!-- 카드 왼쪽 내용 -->
-                                    </div>
-                                    <section class="project-unit-status" style="text-align: right; margin-top: -110px;">
-                                        <div class="application-status-box">
-                                            <div class="application-status">
-                                                <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
-                                                <span class="deadline-date body-2 text600" style="font-size: 14px">
+                                                        <span style="opacity: 0.5; margin-left: 15px">등록 일자 ${pro.regdate}</span> <!-- 등록 일자 -->
+                                                    </div> <!-- 프로젝트 타입, 근무 위치, 등록일자-->
+                                                </div>
+                                            </section> <!-- 카드 왼쪽 내용 -->
+                                        </div>
+                                        <section class="project-unit-status" style="text-align: right; margin-top: -110px;">
+                                            <div class="application-status-box">
+                                                <div class="application-status">
+                                                    <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
+                                                    <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                     마감
                                                      <c:set var="deadLineStr" value="${fn: substring(pro.deadLine, 0, 10)}"/>
                                                     <fmt:parseDate var="deadLineDate" value="${deadLineStr}" pattern="yyyy-MM-dd"/>
@@ -434,33 +392,33 @@
                                                     <fmt:parseNumber var="endDate" value="${today.time / (1000*60*60*24)}" integerOnly="true"/>
                                                     <strong>${endDate - strDate}일 전</strong>
                                                 </span> <!-- 마감일 -->
-                                            </div>
-                                            <div class="application-status">
-                                                <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
-                                                <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
+                                                </div>
+                                                <div class="application-status">
+                                                    <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
+                                                    <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
                                                     총<strong>13명</strong> 지원
                                                 </span> <!-- 지원자 수-->
+                                                </div>
                                             </div>
-                                        </div>
-                                        <hr class="short-line">
-                                        <div class="interest-status-box" style="margin: -9px -48px">
+                                            <hr class="short-line">
+                                            <div class="interest-status-box" style="margin: -9px -48px">
                                             <span class="status-wrap-icon" style="cursor: pointer; margin-right: -95px; "title="조회수가 아주 높은 프로젝트입니다.">
                                                 <img src="/img/post-icon-view.png"
                                                      style="width: 15px; height: 15px; margin-right: -5px">
                                                 <span class="caption-1-high text500">아주 높음</span>
                                             </span>
-                                            <span class="heart" style="cursor: pointer; margin-left: 50px "  title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
+                                                <span class="heart" style="cursor: pointer; margin-left: 50px "  title="14명의 파트너가 관심 프로젝트로 추가했습니다.">
                                                 <img src="/img/btn-icon-like-s-off.png"
                                                      style="width: 15px; height: 15px; margin-right: -5px">
                                                 <span class="caption-1-high text500">14</span>
                                             </span>
-                                        </div> <!-- 우측 하단 뷰, 하트-->
-                                    </section><!-- 카드 오른쪽 내용 -->
-                                </div>
+                                            </div> <!-- 우측 하단 뷰, 하트-->
+                                        </section><!-- 카드 오른쪽 내용 -->
+                                    </div>
                                 </c:forEach>
-                                <hr class="line-style">
+                                <hr>
                             </div>
-                            <div class="row">
+                            <div class="row" style="margin-top: 32px">
                                 <div class="col-12">
                                     <ul class="pagination justify-content-center">
                                         <%-- '이전'이 표시되어야 할때는 cp > 10 --%>
@@ -490,14 +448,14 @@
                                     </ul>
                                 </div>
                             </div><!-- 페이지네이션 -->
-                        </div> <!-- project-list-wrap -->
-                    </section> <!-- result-list-wrap -->
-                </section> <!-- search list -->
-            </div> <!-- section -->
+                        </div> <!— project-list-wrap —>
+                    </section> <!— result-list-wrap —>
+                </section> <!— search list —>
+            </div> <!— section —>
 
         </form>
-    </div> <!-- container-list-view -->
-</div><!-- main -->
+    </div> <!— container-list-view —>
+</div><!— main —>
 <script type="text/javascript">
     function getFilter(){
         var filterFrm = document.getElementById('filterFrm');
@@ -506,4 +464,3 @@
         filterFrm.submit();
     }
 </script>
-
