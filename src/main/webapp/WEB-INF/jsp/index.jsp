@@ -82,7 +82,8 @@
                                                 <p class="card-text">
                                                 <p><c:choose>
                                                 <c:when test="${i.type eq '상주'}">
-                                                    <c:if test="${fn: contains(i.availableBudget, '*')}">
+                                                    <c:choose>
+                                                    <c:when test="${fn: contains(i.availableBudget, '*')}">
                                                         <c:set var="rowArr" value="${fn: split(i.availableBudget, '*')}"/>
                                                         <fmt:parseNumber var = "a" value="0"/>
                                                         <c:forEach var="row" items="${rowArr}">
@@ -92,18 +93,18 @@
                                                             <c:set var="c" value="${b=a+b}"/>
                                                         </c:forEach>
                                                         ${c}원
-                                                    </c:if>
-                                                </c:when>
+                                                    </c:when>
 
-                                                <c:when test="${i.type eq '상주'}">
-                                                        <c:if test="${fn: contains(i.availableBudget, '/')}">
-                                                            <c:set var="rowArr1" value="${fn: split(i.availableBudget, '/')}"/>
-                                                            <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
-                                                            <c:set var="d" value="${a1 * a2}"/>
-                                                        </c:if>
-                                                        ${d}원
+                                                        <c:otherwise>
+                                                            <c:if test="${fn: contains(i.availableBudget, '/')}">
+                                                                <c:set var="rowArr1" value="${fn: split(i.availableBudget, '/')}"/>
+                                                                <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
+                                                                <c:set var="d" value="${a1 * a2}"/>
+                                                            </c:if>
+                                                            ${d}원
+                                                        </c:otherwise>
+                                                    </c:choose>
                                                 </c:when>
-
                                                 <c:otherwise>
                                                     ${i.availableBudget}원
                                                </c:otherwise>
