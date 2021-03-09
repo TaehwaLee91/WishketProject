@@ -10,7 +10,4 @@ public class PartnersController {
     public String partners() {
         return "partnersboard/search.tiles";
     }
-
-
-
 }
