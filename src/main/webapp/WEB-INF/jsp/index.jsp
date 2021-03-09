@@ -130,15 +130,44 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
-                                                <p>${i.availableBudget}원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                <p><c:choose>
+                                                    <c:when test="${i.type eq '상주'}">
+                                                        <c:choose>
+                                                            <c:when test="${fn: contains(i.availableBudget, '*')}">
+                                                                <c:set var="rowArr" value="${fn: split(i.availableBudget, '*')}"/>
+                                                                <fmt:parseNumber var = "a" value="0"/>
+                                                                <c:forEach var="row" items="${rowArr}">
+                                                                    <c:set var="col" value="${fn: split(row, '/')}"/>
+                                                                    <fmt:parseNumber var="col1" value="${col[1]}}"/><fmt:parseNumber var="col2" value="${col[2]}}"/>
+                                                                    <c:set var="b" value="${col1 * col2}"/>
+                                                                    <c:set var="c" value="${b=a+b}"/>
+                                                                </c:forEach>
+                                                                ${c}원
+                                                            </c:when>
+
+                                                            <c:otherwise>
+                                                                <c:if test="${fn: contains(i.availableBudget, '/')}">
+                                                                    <c:set var="rowArr1" value="${fn: split(i.availableBudget, '/')}"/>
+                                                                    <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
+                                                                    <c:set var="d" value="${a1 * a2}"/>
+                                                                </c:if>
+                                                                ${d}원
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        ${i.availableBudget}원
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
-                                                    <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </c:forEach>
+
                             </div>
                         </div><!-- 웹 컨텐츠-->
 
@@ -151,15 +180,44 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
-                                                <p>${i.availableBudget}원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                <p><c:choose>
+                                                    <c:when test="${i.type eq '상주'}">
+                                                        <c:choose>
+                                                            <c:when test="${fn: contains(i.availableBudget, '*')}">
+                                                                <c:set var="rowArr" value="${fn: split(i.availableBudget, '*')}"/>
+                                                                <fmt:parseNumber var = "a" value="0"/>
+                                                                <c:forEach var="row" items="${rowArr}">
+                                                                    <c:set var="col" value="${fn: split(row, '/')}"/>
+                                                                    <fmt:parseNumber var="col1" value="${col[1]}}"/><fmt:parseNumber var="col2" value="${col[2]}}"/>
+                                                                    <c:set var="b" value="${col1 * col2}"/>
+                                                                    <c:set var="c" value="${b=a+b}"/>
+                                                                </c:forEach>
+                                                                ${c}원
+                                                            </c:when>
+
+                                                            <c:otherwise>
+                                                                <c:if test="${fn: contains(i.availableBudget, '/')}">
+                                                                    <c:set var="rowArr1" value="${fn: split(i.availableBudget, '/')}"/>
+                                                                    <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
+                                                                    <c:set var="d" value="${a1 * a2}"/>
+                                                                </c:if>
+                                                                ${d}원
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        ${i.availableBudget}원
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
-                                                    <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </c:forEach>
+
                             </div>
                         </div><!-- 소프트웨어 컨텐츠-->
 
@@ -172,15 +230,44 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
-                                                <p>${i.availableBudget}원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                <p><c:choose>
+                                                    <c:when test="${i.type eq '상주'}">
+                                                        <c:choose>
+                                                            <c:when test="${fn: contains(i.availableBudget, '*')}">
+                                                                <c:set var="rowArr" value="${fn: split(i.availableBudget, '*')}"/>
+                                                                <fmt:parseNumber var = "a" value="0"/>
+                                                                <c:forEach var="row" items="${rowArr}">
+                                                                    <c:set var="col" value="${fn: split(row, '/')}"/>
+                                                                    <fmt:parseNumber var="col1" value="${col[1]}}"/><fmt:parseNumber var="col2" value="${col[2]}}"/>
+                                                                    <c:set var="b" value="${col1 * col2}"/>
+                                                                    <c:set var="c" value="${b=a+b}"/>
+                                                                </c:forEach>
+                                                                ${c}원
+                                                            </c:when>
+
+                                                            <c:otherwise>
+                                                                <c:if test="${fn: contains(i.availableBudget, '/')}">
+                                                                    <c:set var="rowArr1" value="${fn: split(i.availableBudget, '/')}"/>
+                                                                    <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
+                                                                    <c:set var="d" value="${a1 * a2}"/>
+                                                                </c:if>
+                                                                ${d}원
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        ${i.availableBudget}원
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
-                                                    <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </c:forEach>
+
                             </div>
                         </div><!-- 커머스 컨텐츠-->
 
@@ -193,15 +280,44 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
-                                                <p>${i.availableBudget}원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                <p><c:choose>
+                                                    <c:when test="${i.type eq '상주'}">
+                                                        <c:choose>
+                                                            <c:when test="${fn: contains(i.availableBudget, '*')}">
+                                                                <c:set var="rowArr" value="${fn: split(i.availableBudget, '*')}"/>
+                                                                <fmt:parseNumber var = "a" value="0"/>
+                                                                <c:forEach var="row" items="${rowArr}">
+                                                                    <c:set var="col" value="${fn: split(row, '/')}"/>
+                                                                    <fmt:parseNumber var="col1" value="${col[1]}}"/><fmt:parseNumber var="col2" value="${col[2]}}"/>
+                                                                    <c:set var="b" value="${col1 * col2}"/>
+                                                                    <c:set var="c" value="${b=a+b}"/>
+                                                                </c:forEach>
+                                                                ${c}원
+                                                            </c:when>
+
+                                                            <c:otherwise>
+                                                                <c:if test="${fn: contains(i.availableBudget, '/')}">
+                                                                    <c:set var="rowArr1" value="${fn: split(i.availableBudget, '/')}"/>
+                                                                    <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
+                                                                    <c:set var="d" value="${a1 * a2}"/>
+                                                                </c:if>
+                                                                ${d}원
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        ${i.availableBudget}원
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
-                                                    <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </c:forEach>
+
                             </div>
                         </div><!-- 임베디드 컨텐츠-->
 
@@ -214,15 +330,44 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
-                                                <p>${i.availableBudget}원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                <p><c:choose>
+                                                    <c:when test="${i.type eq '상주'}">
+                                                        <c:choose>
+                                                            <c:when test="${fn: contains(i.availableBudget, '*')}">
+                                                                <c:set var="rowArr" value="${fn: split(i.availableBudget, '*')}"/>
+                                                                <fmt:parseNumber var = "a" value="0"/>
+                                                                <c:forEach var="row" items="${rowArr}">
+                                                                    <c:set var="col" value="${fn: split(row, '/')}"/>
+                                                                    <fmt:parseNumber var="col1" value="${col[1]}}"/><fmt:parseNumber var="col2" value="${col[2]}}"/>
+                                                                    <c:set var="b" value="${col1 * col2}"/>
+                                                                    <c:set var="c" value="${b=a+b}"/>
+                                                                </c:forEach>
+                                                                ${c}원
+                                                            </c:when>
+
+                                                            <c:otherwise>
+                                                                <c:if test="${fn: contains(i.availableBudget, '/')}">
+                                                                    <c:set var="rowArr1" value="${fn: split(i.availableBudget, '/')}"/>
+                                                                    <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
+                                                                    <c:set var="d" value="${a1 * a2}"/>
+                                                                </c:if>
+                                                                ${d}원
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        ${i.availableBudget}원
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
-                                                    <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </c:forEach>
+
                             </div>
                         </div><!-- 퍼블리싱 컨텐츠-->
 
@@ -235,15 +380,44 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
-                                                <p>${i.availableBudget}원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                <p><c:choose>
+                                                    <c:when test="${i.type eq '상주'}">
+                                                        <c:choose>
+                                                            <c:when test="${fn: contains(i.availableBudget, '*')}">
+                                                                <c:set var="rowArr" value="${fn: split(i.availableBudget, '*')}"/>
+                                                                <fmt:parseNumber var = "a" value="0"/>
+                                                                <c:forEach var="row" items="${rowArr}">
+                                                                    <c:set var="col" value="${fn: split(row, '/')}"/>
+                                                                    <fmt:parseNumber var="col1" value="${col[1]}}"/><fmt:parseNumber var="col2" value="${col[2]}}"/>
+                                                                    <c:set var="b" value="${col1 * col2}"/>
+                                                                    <c:set var="c" value="${b=a+b}"/>
+                                                                </c:forEach>
+                                                                ${c}원
+                                                            </c:when>
+
+                                                            <c:otherwise>
+                                                                <c:if test="${fn: contains(i.availableBudget, '/')}">
+                                                                    <c:set var="rowArr1" value="${fn: split(i.availableBudget, '/')}"/>
+                                                                    <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
+                                                                    <c:set var="d" value="${a1 * a2}"/>
+                                                                </c:if>
+                                                                ${d}원
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        ${i.availableBudget}원
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
-                                                    <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </c:forEach>
+
                             </div>
                         </div><!-- 제품 컨텐츠-->
 
@@ -256,15 +430,44 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
-                                                <p>${i.availableBudget}원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                <p><c:choose>
+                                                    <c:when test="${i.type eq '상주'}">
+                                                        <c:choose>
+                                                            <c:when test="${fn: contains(i.availableBudget, '*')}">
+                                                                <c:set var="rowArr" value="${fn: split(i.availableBudget, '*')}"/>
+                                                                <fmt:parseNumber var = "a" value="0"/>
+                                                                <c:forEach var="row" items="${rowArr}">
+                                                                    <c:set var="col" value="${fn: split(row, '/')}"/>
+                                                                    <fmt:parseNumber var="col1" value="${col[1]}}"/><fmt:parseNumber var="col2" value="${col[2]}}"/>
+                                                                    <c:set var="b" value="${col1 * col2}"/>
+                                                                    <c:set var="c" value="${b=a+b}"/>
+                                                                </c:forEach>
+                                                                ${c}원
+                                                            </c:when>
+
+                                                            <c:otherwise>
+                                                                <c:if test="${fn: contains(i.availableBudget, '/')}">
+                                                                    <c:set var="rowArr1" value="${fn: split(i.availableBudget, '/')}"/>
+                                                                    <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
+                                                                    <c:set var="d" value="${a1 * a2}"/>
+                                                                </c:if>
+                                                                ${d}원
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        ${i.availableBudget}원
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
-                                                    <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </c:forEach>
+
                             </div>
                         </div><!-- 인쇄물 컨텐츠-->
 
@@ -277,15 +480,44 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
-                                                <p>${i.availableBudget}원 |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                <p><c:choose>
+                                                    <c:when test="${i.type eq '상주'}">
+                                                        <c:choose>
+                                                            <c:when test="${fn: contains(i.availableBudget, '*')}">
+                                                                <c:set var="rowArr" value="${fn: split(i.availableBudget, '*')}"/>
+                                                                <fmt:parseNumber var = "a" value="0"/>
+                                                                <c:forEach var="row" items="${rowArr}">
+                                                                    <c:set var="col" value="${fn: split(row, '/')}"/>
+                                                                    <fmt:parseNumber var="col1" value="${col[1]}}"/><fmt:parseNumber var="col2" value="${col[2]}}"/>
+                                                                    <c:set var="b" value="${col1 * col2}"/>
+                                                                    <c:set var="c" value="${b=a+b}"/>
+                                                                </c:forEach>
+                                                                ${c}원
+                                                            </c:when>
+
+                                                            <c:otherwise>
+                                                                <c:if test="${fn: contains(i.availableBudget, '/')}">
+                                                                    <c:set var="rowArr1" value="${fn: split(i.availableBudget, '/')}"/>
+                                                                    <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
+                                                                    <c:set var="d" value="${a1 * a2}"/>
+                                                                </c:if>
+                                                                ${d}원
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        ${i.availableBudget}원
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | <button type="button" class="btn btn-sm workbtn">tomcat</button>
-                                                    <button type="button" class="btn btn-sm workbtn">apache</button> <button type="button" class="btn btn-sm workbtn">jakins</button></p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </c:forEach>
+
                             </div>
                         </div><!-- 기타 컨텐츠-->
                     </div>
