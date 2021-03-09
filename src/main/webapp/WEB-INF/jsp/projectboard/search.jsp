@@ -138,409 +138,107 @@
 프로젝트를 진행합니다">
                                 </div>
                                 <div class="filter-detail-checkbox" style="margin-top: 10px;">
+                                    <form id="filterFrm">
                                     <div class="filter-item">
                                         <label class="checkbox-wishket">
-                                    <span style="cursor: pointer">
-                                        <input class="wishket-checkbox theme-wishket" data-value="외주(도급)"
-                                               id="project_outSourcing" name="filterItem"
-                                               onclick="getProjectList()" type="checkbox" value="외주(도급)">
-                                        <span>&nbsp;외주(도급)</span>
-                                    </span>
+                                            <span style="cursor: pointer">
+                                                <input class="wishket-checkbox theme-wishket" data-value="외주(도급)"
+                                                       id="project_outSourcing" name="type"
+                                                       onclick="getProjectList()" type="checkbox" value="외주(도급)">
+                                                <span>&nbsp;외주(도급)</span>
+                                            </span>
                                         </label>
                                     </div>
                                     <div class="filter-item" style="margin-top: -5px">
                                         <label class="checkbox-wishket">
-                                    <span style="cursor: pointer">
-                                        <input class="wishket-checkbox theme-wishket" data-value="상주"
-                                               id="project_Resident" name="filterItem"
-                                               onclick="getProjectList()" type="checkbox" value="상주">
-                                        <span>&nbsp;상주</span>
-                                    </span>
+                                            <span style="cursor: pointer">
+                                                <input class="wishket-checkbox theme-wishket" data-value="상주"
+                                                     id="project_Resident" name="type" onclick="getProjectList()" type="checkbox" value="상주">
+                                                <span>&nbsp;상주</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <br>
+                            <form id="filterItem">
+                                <div class="filter-category-box show-only-checkbox" id="categoryBox">
+                                    <div class="filter-category-title body-2-medium" style="margin-top: -11px; font-weight: bold">프로젝트 카테고리</div>
+                                    <div class="filter-item">
+                                        <label class="checkbox-wishket">
+                                        <span>
+                                            <input class="wishket-checkbox theme-wishket" data-value="개발"
+                                                   id="project_category" name="type" type="checkbox" value="개발" style="margin-top: 10px">
+                                            <span style="cursor: pointer">&nbsp;개발</span>
+                                        </span>
+                                        </label>
+                                    </div>
+                                    <div class="filter-item" style="margin-top: -6px">
+                                        <label class="checkbox-wishket">
+                                        <span>
+                                            <input class="wishket-checkbox theme-wishket" data-value="디자인"
+                                                   id="project_design" name="type" type="checkbox" value="디자인">
+                                            <span style="cursor: pointer">&nbsp;디자인</span>
+                                        </span>
+                                        </label>
+                                    </div>
+                                    <div class="filter-item" style="margin-top: -6px">
+                                        <label class="checkbox-wishket">
+                                        <span>
+                                            <input class="wishket-checkbox theme-wishket" data-value="기획"
+                                                   id="project_planning" name="type" type="checkbox" value="기획">
+                                            <span style="cursor: pointer">&nbsp;기획</span>
+                                        </span>
                                         </label>
                                     </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="filter-category-box show-only-checkbox" id="categoryBox">
-                                <div class="filter-category-title body-2-medium" style="margin-top: -11px; font-weight: bold">프로젝트 카테고리</div>
-                                <div class="filter-item">
-                                    <label class="checkbox-wishket">
-                                    <span>
-                                        <input class="wishket-checkbox theme-wishket" data-value="개발"
-                                               id="project_category" name="filterItem"
-                                               onclick="getProjectList();" type="checkbox" value="develop"
-                                               style="margin-top: 10px">
-                                        <span style="cursor: pointer">&nbsp;개발</span>
-                                    </span>
-                                    </label>
+                                <br>
+                                <div class="filter-detail-checkbox body-3" id="subcategory">
+                                    <div class="filter-item" style="margin-top: -11px; font-weight: bold">프로젝트 분야</div>
+                                    <div class="filter-item" style="margin-top: 8px">
+                                        <label class="checkbox-wishket">
+                                            <span>
+                                                <input class="wishket-checkbox theme-wishket subcategory-checkbox"
+                                                       data-value="웹" id="subcategory_web" name="area" type="checkbox" value="웹">
+                                                <span style="cursor: pointer">&nbsp;웹</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="filter-item" style="margin-top: -6px">
+                                        <label class="checkbox-wishket">
+                                            <span>
+                                                <input class="wishket-checkbox theme-wishket subcategory-checkbox"
+                                                       data-value="애플리케이션" id="subcategory_app" name="area" type="checkbox" value="애플리케이션">
+                                                <span style="cursor: pointer">&nbsp;애플리케이션</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="filter-item" style="margin-top: -6px">
+                                        <label class="checkbox-wishket">
+                                            <span>
+                                                <input class="wishket-checkbox theme-wishket subcategory-checkbox"
+                                                       data-value="커머스, 쇼핑몰" id="subcategory_commerce" name="area" type="checkbox" value="커머스,쇼핑몰">
+                                                <span style="cursor: pointer">&nbsp;커머스,쇼핑몰</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="filter-item" style="margin-top: -6px">
+                                        <label class="checkbox-wishket">
+                                            <span>
+                                                <input class="wishket-checkbox theme-wishket subcategory-checkbox"
+                                                       data-value="일반 소프트웨어" id="subcategory_software" name="area" type="checkbox" value="일반 소프트웨어">
+                                                <span style="cursor: pointer">&nbsp;일반 소프트웨어</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-primary" style="width: 100px; margin-top: 30px" onclick="getFilter()">검색</button>
+                                    </div>
                                 </div>
-                                <div class="filter-item" style="margin-top: -6px">
-                                    <label class="checkbox-wishket">
-                                    <span>
-                                        <input class="wishket-checkbox theme-wishket" data-value="디자인"
-                                               id="project_design" name="filterItem"
-                                               onclick="getProjectList();" type="checkbox" value="develop">
-                                        <span style="cursor: pointer">&nbsp;디자인</span>
-                                    </span>
-                                    </label>
-                                </div>
-                                <div class="filter-item" style="margin-top: -6px">
-                                    <label class="checkbox-wishket">
-                                    <span>
-                                        <input class="wishket-checkbox theme-wishket" data-value="기획"
-                                               id="project_planning" name="filterItem"
-                                               onclick="getProjectList();" type="checkbox" value="develop">
-                                        <span style="cursor: pointer">&nbsp;기획</span>
-                                    </span>
-                                    </label>
-                                </div>
-                                <%--                                <div class="show-only-seleted">--%>
-                                <%--                                    <input class="only-selected-checkbox" data-value="선택한 카테고리만 보기"--%>
-                                <%--                                           id="selected_category"--%>
-                                <%--                                           name="filterItem" type="image"--%>
-                                <%--                                           src="/img/input-roundcheckbox-unselected.png"--%>
-                                <%--                                           value="only_selected_category"--%>
-                                <%--                                           style="opacity: 0.7">--%>
-                                <%--                                    <label class="only-selected-label" for="selected_category">--%>
-                                <%--                                        <span class="catpion-1 only-selected-description unselected"--%>
-                                <%--                                              style="opacity: 0.7; font-size: 13px; cursor: pointer">선택한 카테고리만 보기--%>
-                                <%--                                        </span>--%>
-                                <%--                                    </label>--%>
-                                <%--                                </div>--%>
-                            </div>
-                            <br>
-                            <div class="filter-detail-checkbox body-3" id="subcategory">
-                                <div class="filter-item" style="margin-top: -11px; font-weight: bold">프로젝트 분야</div>
-                                <div class="filter-item" style="margin-top: 8px">
-                                    <label class="checkbox-wishket">
-                                <span>
-                                        <input class="wishket-checkbox theme-wishket subcategory-checkbox"
-                                               data-value="웹"
-                                               id="subcategory_web" name="subcategory_web"
-                                               onclick="getProjectList();" type="checkbox" value="web">
-                                        <span style="cursor: pointer">&nbsp;웹</span>
-                                    </span>
-                                    </label>
-                                </div>
-                                <div class="filter-item" style="margin-top: -6px">
-                                    <label class="checkbox-wishket">
-                                    <span>
-                                        <input class="wishket-checkbox theme-wishket subcategory-checkbox"
-                                               data-value="애플리케이션"
-                                               id="subcategory_app" name="subcategory_app"
-                                               onclick="getProjectList();" type="checkbox" value="application">
-                                        <span style="cursor: pointer">&nbsp;애플리케이션</span>
-                                    </span>
-                                    </label>
-                                </div>
-                                <div class="filter-item" style="margin-top: -6px">
-                                    <label class="checkbox-wishket">
-                                    <span>
-                                        <input class="wishket-checkbox theme-wishket subcategory-checkbox"
-                                               data-value="커머스, 쇼핑몰"
-                                               id="subcategory_commerce" name="subcategory_commerce"
-                                               onclick="getProjectList();" type="checkbox" value="commerce">
-                                        <span style="cursor: pointer">&nbsp;커머스, 쇼핑몰</span>
-                                    </span>
-                                    </label>
-                                </div>
-                                <div class="filter-item" style="margin-top: -6px">
-                                    <label class="checkbox-wishket">
-                                    <span>
-                                        <input class="wishket-checkbox theme-wishket subcategory-checkbox"
-                                               data-value="일반 소프트웨어"
-                                               id="subcategory_software" name="subcategory_software"
-                                               onclick="getProjectList();" type="checkbox" value="software">
-                                        <span style="cursor: pointer">&nbsp;일반 소프트웨어</span>
-                                    </span>
-                                    </label>
-                                </div>
-                            </div>
-                            <%--                            <div class="show-only-seleted">--%>
-                            <%--                                <input class="only-selected-checkbox" data-value="선택한 분야만 보기" id="onlySelectedFiled"--%>
-                            <%--                                       name="onlySelectedFiled" type="image"--%>
-                            <%--                                       src="/img/input-roundcheckbox-unselected.png"--%>
-                            <%--                                       value="onlySelectedFiled"--%>
-                            <%--                                       style="opacity: 0.7">--%>
-                            <%--                                <label class="only-selected-label" for="selected_category">--%>
-                            <%--                                        <span class="catpion-1 only-selected-description unselected"--%>
-                            <%--                                              style="opacity: 0.7; cursor: pointer">&nbsp;선택한 분야만 보기</span>--%>
-                            <%--                                </label>--%>
-                            <%--                            </div>--%>
-                            <%--                            <br>--%>
-                            <%--                            <div class="filter-category-box writing-select-box" >--%>
-                            <%--                                <div class="filter-category-title body-2-medium" style="margin-top: -11px; font-weight: bold">프로젝트 예상 금액</div>--%>
-                            <%--                                <div class="form-group row" style="margin-top: 10px">--%>
-                            <%--                                    <select id="sel" name="sel" class="form-control col-8 border-danger"--%>
-                            <%--                                            style="margin-left: 15px; cursor: pointer">--%>
-                            <%--                                        <option value selected="selected">금액선택</option>--%>
-                            <%--                                        <option value="1,000,000">100만 원</option>--%>
-                            <%--                                        <option value="2,000,000">200만 원</option>--%>
-                            <%--                                        <option value="3,000,000">300만 원</option>--%>
-                            <%--                                        <option value="4,000,000">400만 원</option>--%>
-                            <%--                                        <option value="5,000,000">500만 원</option>--%>
-                            <%--                                        <option value="6,000,000">600만 원</option>--%>
-                            <%--                                        <option value="7,000,000">700만 원</option>--%>
-                            <%--                                        <option value="8,000,000">800만 원</option>--%>
-                            <%--                                        <option value="9,000,000">900만 원</option>--%>
-                            <%--                                        <option value="10,000,000">1,000만 원</option>--%>
-                            <%--                                        <option value="20,000,000">2,000만 원</option>--%>
-                            <%--                                        <option value="30,000,000">3,000만 원</option>--%>
-                            <%--                                        <option value="40,000,000">4,000만 원</option>--%>
-                            <%--                                        <option value="50,000,000">5,000만 원</option>--%>
-                            <%--                                        <option value="60,000,000">6,000만 원</option>--%>
-                            <%--                                        <option value="70,000,000">7,000만 원</option>--%>
-                            <%--                                        <option value="80,000,000">8,000만 원</option>--%>
-                            <%--                                        <option value="90,000,000">9,000만 원</option>--%>
-                            <%--                                        <option value="100,000,000">10,000만 원</option>--%>
-                            <%--                                        <option value="500,000,000">50,000만 원</option>--%>
-                            <%--                                    </select>--%>
-                            <%--                                    <p style="font-size: 15px; margin-top: 10px">&nbsp;이상</p>--%>
-                            <%--                                </div>--%>
-                            <%--                                <div class="form-group row">--%>
-                            <%--                                    <select id="sel2" name="sel" class="form-control col-8 border-danger"--%>
-                            <%--                                            style="margin:-20px 0px 0px 15px; cursor: pointer">--%>
-                            <%--                                        <option value selected="selected">금액선택</option>--%>
-                            <%--                                        <option value="1,000,000">100만 원</option>--%>
-                            <%--                                        <option value="2,000,000">200만 원</option>--%>
-                            <%--                                        <option value="3,000,000">300만 원</option>--%>
-                            <%--                                        <option value="4,000,000">400만 원</option>--%>
-                            <%--                                        <option value="5,000,000">500만 원</option>--%>
-                            <%--                                        <option value="6,000,000">600만 원</option>--%>
-                            <%--                                        <option value="7,000,000">700만 원</option>--%>
-                            <%--                                        <option value="8,000,000">800만 원</option>--%>
-                            <%--                                        <option value="9,000,000">900만 원</option>--%>
-                            <%--                                        <option value="10,000,000">1,000만 원</option>--%>
-                            <%--                                        <option value="20,000,000">2,000만 원</option>--%>
-                            <%--                                        <option value="30,000,000">3,000만 원</option>--%>
-                            <%--                                        <option value="40,000,000">4,000만 원</option>--%>
-                            <%--                                        <option value="50,000,000">5,000만 원</option>--%>
-                            <%--                                        <option value="60,000,000">6,000만 원</option>--%>
-                            <%--                                        <option value="70,000,000">7,000만 원</option>--%>
-                            <%--                                        <option value="80,000,000">8,000만 원</option>--%>
-                            <%--                                        <option value="90,000,000">9,000만 원</option>--%>
-                            <%--                                        <option value="100,000,000">10,000만 원</option>--%>
-                            <%--                                        <option value="500,000,000">50,000만 원</option>--%>
-                            <%--                                    </select>--%>
-                            <%--                                    <p style="font-size: 15px; margin-top: -10px">&nbsp;이하</p>--%>
-                            <%--                                </div>--%>
+                            </form>
 
-                            <%--                                <div class="setting-box caption-1">--%>
-                            <%--                                    <div class="hand-writing-box" style="margin-top: -20px">--%>
-                            <%--                                        <label class="checkbox-wishket" style="margin-top: 10px">--%>
-                            <%--                                 <span>--%>
-                            <%--                                     <input class="wishket-checkbox theme-wishket caption-1 hand-writing"--%>
-                            <%--                                            data-unit-text="원" id="budgetHandWriting" name="budgetHandWriting"--%>
-                            <%--                                            type="checkbox">--%>
-                            <%--                                     <span style="cursor: pointer">직접 입력</span>--%>
-                            <%--                                 </span>--%>
-                            <%--                                        </label>--%>
 
-                            <%--                                        <button class="btn reset-btn caption-2" id="resetBudget"--%>
-                            <%--                                                style="margin-top: -5px; font-size: 13px; color: #3ba3c7"><img--%>
-                            <%--                                                src="/img/chip-btn-refresh.svg" style="color: #3ba3c7"/>--%>
-                            <%--                                            금액초기화--%>
-                            <%--                                        </button>--%>
-                            <%--                                    </div>--%>
-                            <%--                                </div>--%>
-                            <%--                            </div>--%>
-                            <%--                            <br>--%>
-                            <%--                            <div class="filter-category-box writing-select-box">--%>
-                            <%--                                <div class="filter-category-title body-2-medium" style="margin-top: -11px; font-weight: bold">프로젝트 예상 기간</div>--%>
-                            <%--                                <div class="form-group row" style="margin-top: 10px">--%>
-                            <%--                                    <select id="prjdate" name="prjdate" class="form-control col-8 border-danger"--%>
-                            <%--                                            style="margin-left: 15px; cursor: pointer">--%>
-                            <%--                                        <option value selected="selected">기간 선택</option>--%>
-                            <%--                                        <option value="7">7일</option>--%>
-                            <%--                                        <option value="15">15일</option>--%>
-                            <%--                                        <option value="30">30일</option>--%>
-                            <%--                                        <option value="60">60일</option>--%>
-                            <%--                                        <option value="90">90일</option>--%>
-                            <%--                                        <option value="180">180일</option>--%>
-                            <%--                                        <option value="365">365일</option>--%>
-                            <%--                                    </select>--%>
-                            <%--                                    <p style="font-size: 15px; margin-top: 10px">&nbsp;이상</p>--%>
-                            <%--                                </div>--%>
-                            <%--                                <div class="form-group row">--%>
-                            <%--                                    <select id="prjdate2" name="prjdate2" class="form-control col-8 border-danger"--%>
-                            <%--                                            style="margin:-20px 0px 0px 15px; cursor: pointer">--%>
-                            <%--                                        <option value selected="selected">기간 선택</option>--%>
-                            <%--                                        <option value="7">7일</option>--%>
-                            <%--                                        <option value="15">15일</option>--%>
-                            <%--                                        <option value="30">30일</option>--%>
-                            <%--                                        <option value="60">60일</option>--%>
-                            <%--                                        <option value="90">90일</option>--%>
-                            <%--                                        <option value="180">180일</option>--%>
-                            <%--                                        <option value="365">365일</option>--%>
-                            <%--                                    </select>--%>
-                            <%--                                    <p style="font-size: 15px; margin-top: -10px">&nbsp;이하</p>--%>
-                            <%--                                </div>--%>
-
-                            <%--                                <div class="setting-box caption-2">--%>
-                            <%--                                    <div class="hand-writing-box" style="margin-top: -20px">--%>
-                            <%--                                        <label class="checkbox-wishket" style="margin-top: 10px">--%>
-                            <%--                                 <span>--%>
-                            <%--                                     <input class="wishket-checkbox theme-wishket caption-2 hand-writing"--%>
-                            <%--                                            data-unit-text="원" id="budgetHandWriting2" name="budgetHandWriting2"--%>
-                            <%--                                            type="checkbox">--%>
-                            <%--                                     <span style="cursor: pointer">직접 입력</span>--%>
-                            <%--                                 </span>--%>
-                            <%--                                        </label>--%>
-
-                            <%--                                        <button class="btn reset-btn caption-2" id="resetBudget2"--%>
-                            <%--                                                style="margin-top: -5px; font-size: 13px; color: #3ba3c7"><img--%>
-                            <%--                                                src="/img/chip-btn-refresh.svg" style="color: #3ba3c7"/>--%>
-                            <%--                                            기간초기화--%>
-                            <%--                                        </button>--%>
-                            <%--                                    </div>--%>
-                            <%--                                </div>--%>
-                            <%--                            </div>--%>
-                            <%--                            <br>--%>
-                            <%--                            <div class="filter-category-box writing-select-box">--%>
-                            <%--                                <div class="filter-category-title body-2-medium" style="margin-top: -11px; font-weight: bold">상주 프로젝트 월 단위 금액</div>--%>
-                            <%--                                <div class="form-group row" style="margin-top: 10px">--%>
-                            <%--                                    <select id="prjmonthm" name="prjmonthm" class="form-control col-8 border-danger"--%>
-                            <%--                                            style="margin-left: 15px; cursor: pointer">--%>
-                            <%--                                        <option value selected="selected">금액 선택</option>--%>
-                            <%--                                        <option value="1,000,000">월 100만 원</option>--%>
-                            <%--                                        <option value="2,000,000">월 200만 원</option>--%>
-                            <%--                                        <option value="3,000,000">월 300만 원</option>--%>
-                            <%--                                        <option value="4,000,000">월 400만 원</option>--%>
-                            <%--                                        <option value="5,000,000">월 500만 원</option>--%>
-                            <%--                                        <option value="6,000,000">월 600만 원</option>--%>
-                            <%--                                        <option value="7,000,000">월 700만 원</option>--%>
-                            <%--                                        <option value="8,000,000">월 800만 원</option>--%>
-                            <%--                                        <option value="9,000,000">월 900만 원</option>--%>
-                            <%--                                        <option value="10,000,000">월 1,000만 원</option>--%>
-                            <%--                                        <option value="50,000,000">월 5,000만 원</option>--%>
-                            <%--                                    </select>--%>
-                            <%--                                    <p style="font-size: 15px; margin-top: 10px">&nbsp;이상</p>--%>
-                            <%--                                </div>--%>
-                            <%--                                <div class="form-group row">--%>
-                            <%--                                    <select id="prjmonthm2" name="prjmonthm2"--%>
-                            <%--                                            class="form-control col-8 border-danger"--%>
-                            <%--                                            style="margin:-20px 0px 0px 15px; cursor: pointer">--%>
-                            <%--                                        <option value selected="selected">금액 선택</option>--%>
-                            <%--                                        <option value="1,000,000">월 100만 원</option>--%>
-                            <%--                                        <option value="2,000,000">월 200만 원</option>--%>
-                            <%--                                        <option value="3,000,000">월 300만 원</option>--%>
-                            <%--                                        <option value="4,000,000">월 400만 원</option>--%>
-                            <%--                                        <option value="5,000,000">월 500만 원</option>--%>
-                            <%--                                        <option value="6,000,000">월 600만 원</option>--%>
-                            <%--                                        <option value="7,000,000">월 700만 원</option>--%>
-                            <%--                                        <option value="8,000,000">월 800만 원</option>--%>
-                            <%--                                        <option value="9,000,000">월 900만 원</option>--%>
-                            <%--                                        <option value="10,000,000">월 1,000만 원</option>--%>
-                            <%--                                        <option value="50,000,000">월 5,000만 원</option>--%>
-                            <%--                                    </select>--%>
-                            <%--                                    <p class="caption-1 up-down" style="font-size: 15px; margin-top: -10px">--%>
-                            <%--                                        &nbsp;이하</p>--%>
-                            <%--                                </div>--%>
-                            <%--                                <div class="setting-box caption-2">--%>
-                            <%--                                    <div class="hand-writing-box" style="margin-top: -20px">--%>
-                            <%--                                        <label class="checkbox-wishket" style="margin-top: 10px">--%>
-                            <%--                                 <span>--%>
-                            <%--                                     <input class="wishket-checkbox theme-wishket caption-1 hand-writing"--%>
-                            <%--                                            data-unit-text="원" id="budgetHandWriting3" name="budgetHandWriting3"--%>
-                            <%--                                            type="checkbox">--%>
-                            <%--                                     <span style="cursor: pointer">직접 입력</span>--%>
-                            <%--                                 </span>--%>
-                            <%--                                        </label>--%>
-
-                            <%--                                        <button class="btn reset-btn caption-2" id="resetBudget4"--%>
-                            <%--                                                style="margin-top: -5px; font-size: 13px; color: #3ba3c7">--%>
-                            <%--                                            <img src="/img/chip-btn-refresh.svg" style="color: #3ba3c7"/>--%>
-                            <%--                                            금액초기화--%>
-                            <%--                                        </button>--%>
-                            <%--                                    </div>--%>
-                            <%--                                </div>--%>
-                            <%--                                <!--<div class="filter-detail-input-box small-box" id="inhouseBudgetWritingBox">--%>
-                            <%--                                    <div class="filter-item"><input autocomplete="off"--%>
-                            <%--                                                                    class="theme-wishket wishket-budget project-budget-input body-3"--%>
-                            <%--                                                                    name="inhouse_project_min_budget" placeholder="금액 입력"--%>
-                            <%--                                                                    type="text"/>--%>
-                            <%--                                        <p class="caption-1 up-down">원/월~</p></div>--%>
-                            <%--                                    <div class="filter-item inline-filter-item"><input autocomplete="off"--%>
-                            <%--                                                                                       class="theme-wishket wishket-budget project-budget-input body-3"--%>
-                            <%--                                                                                       name="inhouse_project_max_budget"--%>
-                            <%--                                                                                       placeholder="금액 입력" type="text"/>--%>
-                            <%--                                        <p class="caption-1 up-down">원/월</p></div>--%>
-                            <%--                                    <button class="btn btn-wishket caption-1 btn-filter-submit">적용</button>--%>
-                            <%--                                </div>--%>
-                            <%--                                <div class="setting-box caption-2">--%>
-                            <%--                                    <div class="hand-writing-box" style="margin-top: -20px">--%>
-                            <%--                                     <input class="wishket-checkbox theme-wishket caption-1 hand-writing"--%>
-                            <%--                                            data-unit-text="원/월" id="budgetHandWriting3" name="budgetHandWriting3"--%>
-                            <%--                                            type="checkbox"> onclick이벤트 추가예정.--%>
-                            <%--                                     <label onclick="direct()">직접 입력</label>--%>
-                            <%--                                        <div class="reset-box">--%>
-                            <%--                                        <button class="btn reset-btn caption-2" id="resetBudget2"--%>
-                            <%--                                                style="margin-top: -5px; font-size: 13px"><img src="/img/chip-btn-refresh.svg"/>--%>
-                            <%--                                            금액초기화--%>
-                            <%--                                        </button>--%>
-                            <%--                                        </div>--%>
-                            <%--                                    </div>--%>
-                            <%--                                </div>-->--%>
-                            <%--                            </div>--%>
-                            <%--                            <br>--%>
-                            <%--                            <div class="filter-category-box simple-checkbox">--%>
-                            <%--                                <div class="filter-category-title body-2-medium" style="margin-top: -11px; font-weight: bold">검증된 클라이언트</div>--%>
-                            <%--                                <div class="filter-detail-checkbox" style="margin-top: 8px">--%>
-                            <%--                                    <div class="filter-item">--%>
-                            <%--                                        <div class="input-wrap client-pro-box">--%>
-                            <%--                                            <label class="checkbox-wishket">--%>
-                            <%--                                 <span>--%>
-                            <%--                                     <input class="wishket-checkbox theme-wishket" data-value="평가 우수"--%>
-                            <%--                                            id="clientPro" name="clientPro"--%>
-                            <%--                                            type="checkbox" value="pro" style="margin-top: 10px">--%>
-                            <%--                                     <span style="cursor: pointer">평가 우수<img src="/img/icon-badge-client-pro.png" width="20px"--%>
-                            <%--                                                                             height="20px"/></span>--%>
-                            <%--                                 </span>--%>
-                            <%--                                            </label>--%>
-                            <%--                                        </div>--%>
-                            <%--                                    </div>--%>
-
-                            <%--                                    <div class="filter-item">--%>
-                            <%--                                        <div class="input-wrap client-verified-box">--%>
-                            <%--                                            <label class="checkbox-wishket">--%>
-                            <%--                                 <span>--%>
-                            <%--                                     <input class="wishket-checkbox theme-wishket" data-value="인증 완료"--%>
-                            <%--                                            id="clientVerified" name="clientVerified"--%>
-                            <%--                                            type="checkbox" value="pro" style="margin-top: 2px">--%>
-                            <%--                                     <span style="cursor: pointer">인증 완료<img src="/img/icon-badge-verification.png" width="20px"--%>
-                            <%--                                                                             height="20px"/></span>--%>
-                            <%--                                 </span>--%>
-                            <%--                                            </label>--%>
-                            <%--                                        </div>--%>
-                            <%--                                    </div>--%>
-                            <%--                                </div>--%>
-                            <%--                            </div>--%>
-                            <%--                            <br>--%>
-                            <%--                            <div class="filter-category-box simple-checkbox">--%>
-                            <%--                                <div class="filter-category-title body-2-medium" style="margin-top: -11px; font-weight: bold">클라이언트/근무 위치</div>--%>
-                            <%--                                <div class="filter-detail-checkbox body-3" id="filterLocation"></div>--%>
-                            <%--                                <button class="btn reset-btn caption-2" id="location"--%>
-                            <%--                                        style="margin-top: 8px; font-size: 13px"><img--%>
-                            <%--                                        src="/img/input-plusbox-selected-w.png" style="margin-top: -5px" height="17px"--%>
-                            <%--                                        width="17px"/>--%>
-                            <%--                                    위치 추가하기--%>
-                            <%--                                </button> <!-- 위치 추가하기 모달창 --> <!-- 추후 추가 -->--%>
-                            <%--                            </div> <!-- 클라이언트 위치/근무 -->--%>
-                            <%--                            <br>--%>
-                            <%--                            <div class="filter-category-box simple-checkbox">--%>
-                            <%--                                <div class="filter-category-title body-2-medium" style="margin-top: -11px; font-weight: bold">지원자 모집 상태</div>--%>
-                            <%--                                <div class="filter-detail-checkbox">--%>
-                            <%--                                    <div class="filter-item">--%>
-                            <%--                                        <label class="checkbox-wishket" style="margin-top: 8px">--%>
-                            <%--                                            <input class="wishket-checkbox theme-wishket"--%>
-                            <%--                                                   data-value="모집 마감 프로젝트 숨기기"--%>
-                            <%--                                                   id="hide_project" name="hide_project" type="checkbox"--%>
-                            <%--                                                   value="hide_project">--%>
-                            <%--                                            <label class="hide2" style="font-size: 13px; cursor: pointer">모집 마감 프로젝트 숨기기</label>--%>
-                            <%--                                        </label>--%>
-                            <%--                                    </div>--%>
-                            <%--                                </div>--%>
-                            <%--                            </div>--%>
                         </section> <!-- sidebar -->
                     </section>
                 </div> <!-- search-body -->
@@ -597,8 +295,8 @@
                     </section>  <!-- result header wrap -->
                     <section class="result-list-wrap" id="resultListWrap">
                         <div class="project-list-wrap">
-                            <input id="projectTotalCount" type="hidden" value="31,129">
-                            <input id="proejctSearchType" type="hidden" value="전체">
+<%--                            <input id="projectTotalCount" type="hidden" value="31,129">--%>
+<%--                            <input id="proejctSearchType" type="hidden" value="전체">--%>
                             <div class="project-list-box">
                                 <c:forEach var="pro" items="${ps}">
                                     <div class="project-info-box" style="padding-left: 30px; padding-right: 45px;">
@@ -759,5 +457,10 @@
     </div> <!— container-list-view —>
 </div><!— main —>
 <script type="text/javascript">
-
+    function getFilter(){
+        var filterFrm = document.getElementById('filterFrm');
+        filterFrm.setAttribute('action', '/project/list/filter');
+        filterFrm.setAttribute('method', 'post');
+        filterFrm.submit();
+    }
 </script>
