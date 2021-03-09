@@ -71,6 +71,15 @@
         -webkit-box-orient: vertical;
         line-height: 20px;
     }
+    #nav_advertisement { width: 100%;
+                         height: 80px;
+                         margin: -20px 0 10px 0;}
+    .advertisement.active { display: block; }
+    .advertisement { background-position: center center;
+                     background-repeat: no-repeat;
+                     background-size: auto 100%;
+                     padding: 0;
+    }
 </style>
 
 <fmt:parseNumber var="cp" value="${param.cp}" />
@@ -92,10 +101,9 @@
 <c:set var="navlink" value="/project/board?cp="/>
 <div class="main">
     <div class="row">
-        <a href="https://www.wishket.com/news-center/detail/261/">
-            <img src="/img/견적%20문의_20190429_102807.png"
-                 style="height: 85px" width="100%"
-                 alt="" onclick="clickBtn();"/></a>
+        <a class="advertisement active" id="nav_advertisement" href="https://www.wishket.com/news-center/detail/261/"
+        style="background-image: url('https://cdn.wishket.com/guide/%EB%B9%84%ED%9A%8C%EC%9B%90%20/%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98_20190429_102807.png'); margin-top: 0px"></a>
+
     </div>
     <div class="container project-list-view" style="margin-top: -20px">
         <form id="searchProjectListForm" onsubmit="return false;">
