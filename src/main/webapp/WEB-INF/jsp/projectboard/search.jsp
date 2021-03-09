@@ -30,7 +30,7 @@
         text-align: left;
         float: left;
         padding: 0;
-        height: 2800px;
+        height: 2750px;
         width: 870px;
         border: 1px solid #f5c6cb;
         position: relative;
@@ -41,8 +41,11 @@
         text-align: center;}
 
     .caption-1-high { font-size: 12px; margin: 0 60px 0 5px}
-    .line-style { height: 50px; width: 868px; margin-left: 0px;  }
+
+    .line-style { height: 50px; width: 868px; margin-left: -30px;  }
+
     .short-line {   height: 0px; width: 165px; margin-right: 0px; }
+
     .iconi {
         height: 18px;
         width: 18px;
@@ -51,10 +54,6 @@
     .order-radio {
         height: 10px;
         width: 10px;
-    }
-    .only-selected-checkbox {
-        height: 16px;
-        width: 16px;
     }
     .caption-1-medium {
         font-size: 13px
@@ -71,36 +70,6 @@
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         line-height: 20px;
-    }
-
-    #loading {
-        width: 50%;
-        height: 50%;
-        top: 0;
-        left: 0;
-        position: fixed;
-        display: block;
-        opacity: 0.8;
-        background: white;
-        z-index: 99;
-        text-align: center;
-    }
-
-    #loading > img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 100;
-    }
-
-    @-webkit-keyframes spin {
-        0% { -webkit-transform: rotate(0deg); }
-        100% { -webkit-transform: rotate(360deg); }
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
     }
 </style>
 
@@ -579,7 +548,7 @@
 
             <div id="article">
                 <section class="search-list bg-white">
-                    <section class="result-header-wrap">
+                    <section class="result-header-wrap" style="padding-left: 20px">
                         <div class="result-header">
                             <div class="count-box">
                                 <br>
@@ -632,7 +601,7 @@
                             <input id="proejctSearchType" type="hidden" value="전체">
                             <div class="project-list-box">
                                 <c:forEach var="pro" items="${ps}">
-                                    <div class="project-info-box">
+                                    <div class="project-info-box" style="padding-left: 30px; padding-right: 45px;">
                                         <hr class="line-style">
                                         <div class="project-status-label recruiting-status">
                                             <div class="status-mark recruting-mark;" style="background: green; height: 21px; width: 58px; margin-top: -40px; font-size: 13px; color: white; font-weight: bold">&nbsp;&nbsp;모집 중</div>
@@ -698,12 +667,12 @@
                                                                 <span style="background-color: #fff9e0; border-radius: 10px 10px; padding: 2px 8px; height: 24px; line-height: 20px; color: #f28a05;">${pro.type}</span>
                                                             </c:when>
                                                             <c:otherwise>
-                                                                <span style="background-color: #e8faff">${pro.type}</span>
+                                                                <span style="background-color: #e8faff; border-radius: 10px 10px; padding: 2px 8px; height: 24px; line-height: 20px; color: #369cc2;">${pro.type}</span>
                                                             </c:otherwise>
                                                         </c:choose>
 
                                                         <span style="margin-left: 15px">
-                                                        <img src="/img/icon-project-location.png" style="margin-top: 1px; height: 15px; width: 15px;">
+                                                        <img src="/img/icon-project-location.png" style="margin-top: -5px; height: 15px; width: 15px;">
                                                             ${pro.workPlace}
                                                     </span><!-- 근무 위치 -->
                                                         <span style="opacity: 0.5; margin-left: 15px">등록 일자 ${pro.regdate}</span> <!-- 등록 일자 -->
@@ -749,9 +718,9 @@
                                         </section><!-- 카드 오른쪽 내용 -->
                                     </div>
                                 </c:forEach>
-                                <hr class="line-style">
+                                <hr>
                             </div>
-                            <div class="row">
+                            <div class="row" style="margin-top: 32px">
                                 <div class="col-12">
                                     <ul class="pagination justify-content-center">
                                         <%-- '이전'이 표시되어야 할때는 cp > 10 --%>
