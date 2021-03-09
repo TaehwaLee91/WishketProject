@@ -219,7 +219,7 @@
                         <button type="button" class="btn text-white mt-3" style="margin:0 auto; width:200px; height:50px; background: #02a878">프로젝트 지원하기</button>
                         <button type="button" class="btn bg-white mt-3" style="margin:0 auto; width:200px; height:50px; color:gray"><i class="bi bi-heart"></i>&nbsp;&nbsp;관심 프로젝트</button>
                         <hr>
-                        <i class="bi bi-heart" style="color:gray;">&nbsp;4</i>
+                        <i class="bi bi-heart" style="color:gray;">&nbsp;준비중</i>
                     </div>
                     <c:if test="${not empty UID}">
                     <div class="row  mt-4" style="position: relative; right:-20px; font-size:14px;">
