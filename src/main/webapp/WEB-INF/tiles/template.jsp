@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
- 
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="/css/index.css">
         <link rel="stylesheet" href="/css/boardView.css">
@@ -26,8 +26,8 @@
     </style>
 </head>
 <body>
-  
-  
+
+
   <div class="container-fluid bg-light">
     <tiles:insertAttribute name="header"/>
     <tiles:insertAttribute name="main"/>
@@ -35,7 +35,7 @@
   </div>
   <!-- 로그인 모달 -->
 <%--            <tiles:insertAttribute name="modal"/>--%>
-        
+
 
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -46,7 +46,17 @@
         <script src="/js/boardView.js"></script>
         <script>$('#loginbtn1').on('click',function(){location.href='/accounts/login'})
         $('#joinbtn').on('click',function(){location.href='/accounts/signup'})</script>
-
+      <script type="text/javascript">
+          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+          (function(){
+              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/5f5dd237f0e7167d000fdb79/default';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+          })();
+      </script>
     </body>
 
 </html>
