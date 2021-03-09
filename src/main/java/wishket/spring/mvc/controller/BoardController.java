@@ -8,7 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
 import wishket.spring.mvc.service.ProjectService;
 import wishket.spring.mvc.vo.ProjectVO;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class BoardController {
@@ -34,8 +37,27 @@ public class BoardController {
     }
 
     @PostMapping("/project/list/filter")
-    public ModelAndView filterBoard(ModelAndView mv){
-        mv.setViewName("projectboard/boardView.tiles");
+    public ModelAndView filterBoard(ModelAndView mv, HttpServletRequest rq){
+        mv.setViewName("projectboard/search.tiles");
+        String[] type = rq.getParameterValues("type");
+        String[] category = rq.getParameterValues("category");
+        String[] area = rq.getParameterValues("area");
+        Map<String, Object> param = new HashMap<>();
+
+        if(type.length > 0){
+            param.put("type", type);
+        }
+
+        if(category.length > 0){
+            param.put("category", category);
+        }
+
+        if(area.length > 0){
+            param.put("area", area);
+        }
+        List<ProjectVO> pvo = psrv.readFilterProject(param);
+
+        mv.addObject("pvo", pvo);
         return mv;
     }
 

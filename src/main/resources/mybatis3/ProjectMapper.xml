@@ -39,6 +39,19 @@
         select count(pno) cnt from 프로젝트;
     </select>
 
+    <select id="selectFilterProject" statementType="PREPARED" resultType="wishket.spring.mvc.vo.ProjectVO">
+        select pno, title, type, category, projectTerm, area, deadLine, detailTask,
+               projectPriority, projectStatus, skillStack, workPlace, regdate, availableBudget 
+        from 프로젝트
+<!--        <foreach collection="array" item="arr"-->
+        <foreach item="value" index="key" collection="map" open = "(" close = ")" separator="or">
+            #{key}
+            <foreach item="item" collection="array" separator=",">
+                #{value}
+            </foreach>
+        </foreach>
+
+    </select>
     <select id="selectMno" statementType="PREPARED" parameterType="String" resultType="int">
         select mno from 회원 where userid = #{userid}
     </select>
