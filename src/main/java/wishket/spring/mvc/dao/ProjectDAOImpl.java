@@ -28,6 +28,11 @@ public class ProjectDAOImpl implements ProjectDAO {
     }
 
     @Override
+    public ProjectVO selectOneProject(String pno) {
+        return sqlSession.selectOne("project.selectOneProject", pno);
+    }
+
+    @Override
     public int selectCountProject() {
         return sqlSession.selectOne("project.countProject");
     }

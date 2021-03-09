@@ -31,6 +31,10 @@
         limit #{snum}, 10;
     </select>
 
+    <select id="selectOneProject" statementType="PREPARED" parameterType="String" resultType="wishket.spring.mvc.vo.ProjectVO">
+        select * from 프로젝트 where pno = #{pno};
+    </select>
+
     <select id="countProject" statementType="PREPARED" resultType="int">
         select count(pno) cnt from 프로젝트;
     </select>

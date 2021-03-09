@@ -21,10 +21,11 @@ import java.util.Set;
 public class FileUpDownUtil {
 
     // 파일 업로드시 저장된 경로 지정
-    private String uploadPath = "/Users/Taehwa/Desktop/pdsupload/"; // 윈도우용
-//    private String uploadPath = "/home/centos/pdsupload/"; // 리눅스용
-
+    private String uploadPath = "/Users/Taehwa/Desktop/fileUpload/"; // 윈도우용
     private String tempPath = "/Users/Taehwa/Desktop/fileTemp/"; // 윈도우용 임시폴더
+//    private String uploadPath = "/home/centos/fileupload/"; // 리눅스용
+//    private String tempPath = "/home/centos/filetemp/"; // 리눅스용 임시폴더
+
 
     // 임시폴더에 저장
     public String procUpload1(MultipartFile mf, String uuid) {
@@ -253,7 +254,7 @@ public class FileUpDownUtil {
     public String moveToFile(String oname, String uuid){
         FileInputStream fis = null;
         FileOutputStream fos = null;
-        String path = "/Users/Taehwa/Desktop/fileUpload/";
+
         int pos = oname.lastIndexOf(".");
         String ftype = oname.substring( pos + 1 );
         String fname = oname.substring(0, pos);
@@ -261,12 +262,18 @@ public class FileUpDownUtil {
         String nfname = fname + uuid + "." + ftype;
 
         File file = new File(tempPath, nfname);
-        File newFile = new File(path, nfname);
+        File newFile = new File(uploadPath, nfname);
+
+        // 리눅스용 퍼미션 설정
+//        String perms = "rwxr-xr-x";
+//        Path img = Paths.get(tempPath + nfname);
+//        Set<PosixFilePermission> pfp = PosixFilePermissions.fromString(perms);
 
         int n = 0;
         byte[] buf = new byte[1024];
 
         try {
+//            Files.setPosixFilePermissions(img, pfp); // 리눅스용 퍼미션 처리 코드
             fis = new FileInputStream(file);
             fos = new FileOutputStream(newFile);
             while( ( n = fis.read(buf)) != -1){

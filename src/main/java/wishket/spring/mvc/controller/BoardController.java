@@ -15,7 +15,7 @@ public class BoardController {
     @Autowired
     ProjectService psrv;
 
-    @GetMapping("/project/board")
+    @GetMapping("/project/list")
     public ModelAndView board(ModelAndView mv, String cp) {
         mv.setViewName("projectboard/search.tiles");
         List<ProjectVO> ps = psrv.readProject(cp);
@@ -24,9 +24,18 @@ public class BoardController {
         return mv;
     }
 
-    @GetMapping("/boardView")
-    public String boardView() {
-        return "projectboard/boardView.tiles";
+    @GetMapping("/project/board")
+    public ModelAndView boardView(ModelAndView mv, String pno, String cp) {
+        mv.setViewName("projectboard/boardView.tiles");
+        // 여기에 selectOne 해야함
+        mv.addObject("pvo", psrv.readOneProject(pno));
+        return mv;
+    }
+
+    @GetMapping("/project/board/filter")
+    public ModelAndView boardFilterView(ModelAndView mv){
+        mv.setViewName("projectboard/boardView.tiles");
+        return mv;
     }
 
 }
