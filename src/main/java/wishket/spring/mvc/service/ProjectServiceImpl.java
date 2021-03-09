@@ -40,6 +40,12 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
+    public ProjectVO readOneProject(String pno) {
+        ProjectVO pvo = pdao.selectOneProject(pno);
+        return pvo;
+    }
+
+    @Override
     public int countProject() {
         return pdao.selectCountProject();
     }
