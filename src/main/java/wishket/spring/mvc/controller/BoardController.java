@@ -3,6 +3,7 @@ package wishket.spring.mvc.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import wishket.spring.mvc.service.ProjectService;
 import wishket.spring.mvc.vo.ProjectVO;
@@ -32,8 +33,8 @@ public class BoardController {
         return mv;
     }
 
-    @GetMapping("/project/board/filter")
-    public ModelAndView boardFilterView(ModelAndView mv){
+    @PostMapping("/project/list/filter")
+    public ModelAndView filterBoard(ModelAndView mv){
         mv.setViewName("projectboard/boardView.tiles");
         return mv;
     }
