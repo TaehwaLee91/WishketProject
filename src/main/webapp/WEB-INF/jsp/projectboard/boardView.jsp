@@ -1,4 +1,9 @@
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%-- 상주, 외주마다 항목이 바뀌어야할듯 --%>
+<%-- 레이아웃 깨지는 문제 --%>
+<%-- 파일 다운로드 --%>
 <div id="main"  class=" bg-light" style="height: auto;">
     <div class="contentsWidth center">
         <div class="row">
@@ -11,9 +16,17 @@
                             <div class="row">
                                 <div class="status-mark recruting-mark; text-center" style="background: green; height: 21px; width: 58px; font-size: 13px; color: white; font-weight: bold">모집중</div>
                                 <div class="status-mark recruting-mark; text-center" style="background: #38A3C6; height: 21px; width: 58px; font-size: 13px; color: white; font-weight: bold; margin-left:5px">NEW</div>
-                                <p style="margin-left:540px; color:gray">등록 일자 2021.03.05.</p>
-                                <h3>워드프레스 기반 서울대학교 홈페이지 기능 추가 및 오류 수정</h3>
-                                <div><span class="status-mark recruting-mark; text-center text-info" style="background:#e8faff;  width: 90px; height: 30px">외주(도급)</span><span style="color:gray; margin-left:10px">개발   |</span><span style="color:gray; margin-left:10px">워드프레스</span></div>
+                                <p style="margin-left:540px; color:gray">등록 일자 ${pvo.regdate}</p>
+                                <h3>${pvo.title}</h3>
+                                <div>
+                                    <span class="status-mark recruting-mark; text-center text-info" style="background:#e8faff;  width: 90px; height: 30px">
+                                        ${pvo.type}
+                                    </span>
+                                    <c:forEach var="item" items="${fn: split(pvo.area, '/')}">
+                                    <span style="color:gray; margin-left:10px">${item}</span>
+                                    </c:forEach>
+<%--                                    <span style="color:gray; margin-left:10px">워드프레스</span>--%>
+                                </div>
                             </div>
 
                         </div><!--제목 제목 -->
@@ -31,7 +44,7 @@
                                 <div style="border:1px solid #e6ebef; border-radius:7px; width: 231px; height: 65px;margin-left:10px; background: white;">
                                     <p class="row" style="margin-top:17px;margin-left:3px;margin-right: -3px;">
                                         <span style="color:gray" class="col-6 text-left"><i class="bi bi-clock bidragup"></i>&nbsp;예상 기간&nbsp;&nbsp;</span>
-                                        <span class="col-6 text-right" style="">900일</span>
+                                        <span class="col-6 text-right" style="">${pvo.projectTerm}일</span>
                                     </p>
                                 </div>
 
@@ -43,38 +56,39 @@
                                 </div>
 
                             </div>
+                            <c:if test="${not empty pvo.budgetNego}">
                             <div class="row border" style="margin-top:15px; height: 35px; background: #f7fafc"><span style="color:gray; font-size:13px; margin: 5px auto;"><i class="bi bi-info-circle">&nbsp;&nbsp;&nbsp;</i>금액 조율이 가능한 프로젝트 입니다.</span></div>
-
+                            </c:if>
                         </div><!-- 금액 /  조건 / 지원자수 + 금액조율 텍스트 -->
 
                         <div class="col-12 mt-5"style="font-size:14px"><!-- 요구사항 요약 -->
                             <div class="row" >
                                 <span class="" style="width:120px; color:gray"><i class="bi bi-clock bidragup" >&nbsp;&nbsp;</i>모집 마감일</span>
-                                <span class="col-10 mb-3" style="">2021년 03월 19일</span>
+                                <span class="col-10 mb-3" style="">${pvo.deadLine}</span>
                             </div>
                             <div class="row">
                                 <span class="" style="width:120px; color:gray"><i class="bi bi-calendar bidragup" >&nbsp;&nbsp;</i>예상 시작일</span>
-                                <span class="col-10 mb-3" style="">계약 체결 이후, 즉시 시작하길 희망합니다.</span>
+                                <span class="col-10 mb-3" style="">${pvo.projectStartDate}</span>
                             </div>
                             <div class="row">
                                 <span class="" style="width:120px; color:gray"><i class="bi bi-archive bidragup" >&nbsp;&nbsp;</i>구인 유형</span>
-                                <span class="col-10 mb-3" style="">사내 프로젝트에 필요한 인력을 구인합니다.</span>
+                                <span class="col-10 mb-3" style="">${pvo.hireType}</span>
                             </div>
                             <div class="row">
                                 <span class="" style="width:120px; color:gray"><i class="bi bi-tag bidragup" >&nbsp;&nbsp;</i>진행 분류</span>
-                                <span class="col-10 mb-3" style="">운영 중인 서비스의 리뉴얼 또는 유지보수를 하려 합니다.</span>
+                                <span class="col-10 mb-3" style="">${pvo.purpose}</span>
                             </div>
                             <div class="row">
                                 <span class="" style="width:120px; color:gray"><i class="bi bi-file-earmark-text bidragup" >&nbsp;&nbsp;</i>기획 상태</span>
-                                <span class="col-10 mb-3" style="">필요한 내용들을 간단히 정리해두었습니다.요구사항 정의서, 제안요청서, 메뉴구조도 (IA), 화면설계서 (스토리보드, 와이어프레임), 프로토타입 (프로젝트 결과물의 샘플 버전)</span>
+                                <span class="col-10 mb-3" style="">${pvo.projectStatus} ${pvo.detailStatus}</span>
                             </div>
                             <div class="row">
                                 <span class="" style="width:120px; color:gray"><i class="bi bi-gear bidragup" >&nbsp;&nbsp;</i>매니징 경험</span>
-                                <span class="col-10 mb-3" style="">2021년 03월 19일</span>
+                                <span class="col-10 mb-3" style="">${pvo.managingExperience}</span>
                             </div>
                             <div class="row">
                                 <span class="" style="width:120px; color:gray"><i class="bi bi-building bidragup" >&nbsp;&nbsp;</i>인력 상황</span>
-                                <span class="col-10 mb-3" style="">2021년 03월 19일</span>
+                                <span class="col-10 mb-3" style="">${pvo.employeeState}</span>
                             </div>
 
                         </div><!-- 요구사항 요약 -->
@@ -115,32 +129,62 @@
                             </p>
                             <p class="row col-12 font-weight-bold mt-3" style="font-size:16px;">관련 기술&nbsp;&nbsp;&nbsp;<span class="badge ml-2" style="background: #eeeeee; color:gray; max-height: 18px; position:relative; top:3px;">PHP</span>&nbsp;&nbsp;&nbsp;<span class="badge " style="background: #eeeeee; color:gray; max-height: 18px; position:relative; top:3px;">WordPass</span></p>
 
-
-
                         </div>
                         <hr>
                         <h5 class="row col-12 font-weight-bold mt-4">모집요건</h5>
-                        <p style="font-size:16px;" class="mt-4"><i class="bi bi-check text-info"></i>&nbsp;팅&nbsp;개인 또는 팀 가능<br><br></p>
-                        <p style="font-size:16px;" class=""><i class="bi bi-plus"></i>&nbsp;&nbsp;향후 유지보수를 위한 아웃소싱 계획이 있습니다.<br><br></p>
+                        <c:if test="${not empty pvo.prerequisites}">
+                            <c:forEach var="item" items="${pvo.prerequisites}">
+                                <p style="font-size:16px;" class="mt-4"><i class="bi bi-check text-info"></i>&nbsp;${item}<br></p>
+                            </c:forEach>
+                        </c:if>
+                        <c:if test="${not empty pvo.futurePlan}">
+                            <c:forEach var="item" items="${pvo.futurePlan}">
+                            <p style="font-size:16px;" class=""><i class="bi bi-plus"></i>&nbsp;${item}<br></p>
+                            </c:forEach>
+                        </c:if>
                         <hr>
                         <h5 class="row col-12 font-weight-bold mt-4">미팅</h5>
                         <div class="col-12 mt-3"style="font-size:14px">
                             <div class="row" >
-                                <span class="" style="width:120px; color:gray">사전 미팅 방</span>
-                                <span class="col-10 mb-3" style="">온라인 (카카오톡, 화상미팅 등)</span>
+                                <span class="" style="width:120px; color:gray">사전 미팅 방식</span>
+                                <span class="col-10 mb-3" style="">${pvo.preMeetingType}</span>
                             </div>
                             <div class="row" >
                                 <span class="" style="width:120px; color:gray">진행 중 미팅</span>
-                                <span class="col-10 mb-3" style="">오프라인 (클라이언트 사무실), 필요시 요청</span>
+                                <span class="col-10 mb-3" style="">${pvo.meetingType}</span>
                             </div>
                             <div class="row" >
                                 <span class="" style="width:120px; color:gray">클라이언트 위치</span>
-                                <span class="col-10 mb-3" style="">서울특별시 강남구</span>
+                                <span class="col-10 mb-3" style="">${pvo.workPlace}</span>
                             </div>
                         </div>
-
+                        <c:if test="${not empty pvo.fname1}">
+                            <hr>
+                            <h5 class="row col-12 font-weight-bold mt-4">참고 자료</h5>
+                            <div class="col-12 mt-3"style="font-size:14px">
+                                <div class="row" >
+                                    <span class="" style="width:120px; color:gray">파일 :</span>
+                                    <span class="col-10 mb-3" style="">${pvo.fname1} ${pvo.fsize1}KB</span>
+                                </div>
+                            </div>
+                            <c:if test="${not empty pvo.fname2}">
+                                <div class="col-12 mt-3"style="font-size:14px">
+                                    <div class="row" >
+                                        <span class="" style="width:120px; color:gray">파일2 :</span>
+                                        <span class="col-10 mb-3" style="">${pvo.fname2} ${pvo.fsize2}KB</span>
+                                    </div>
+                                </div>
+                            </c:if>
+                            <c:if test="${not empty pvo.fname3}">
+                                <div class="col-12 mt-3"style="font-size:14px">
+                                    <div class="row" >
+                                        <span class="" style="width:120px; color:gray">파일2 :</span>
+                                        <span class="col-10 mb-3" style="">${pvo.fname3} ${pvo.fsize3}KB</span>
+                                    </div>
+                                </div>
+                            </c:if>
+                        </c:if>
                     </div>
-
                 </div>
             </div>
 
