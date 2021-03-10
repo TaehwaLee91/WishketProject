@@ -40,7 +40,37 @@
                                 <div style="border:1px solid #e6ebef; border-radius:7px; width: 330px; height: 65px; background: white;">
                                     <p class="row" style="margin-top:17px;margin-left:3px; margin-right: -3px;">
                                         <span style="color:gray" class="col-6 text-left"><i class="bi bi-clock bidragup"></i>&nbsp;예상 금액</span>
-                                        <span class="col-6 text-right" style="">1,000,000원</span>
+                                        <span class="col-6 text-right" style="">
+                                            <c:choose>
+                                                <c:when test="${pvo.type eq '상주'}">
+                                                    <c:choose>
+                                                        <c:when test="${fn: contains(pvo.availableBudget, '*')}">
+                                                            <c:set var="rowArr" value="${fn: split(pvo.availableBudget, '*')}"/>
+                                                            <fmt:parseNumber var = "a" value="0"/>
+                                                            <c:forEach var="row" items="${rowArr}">
+                                                                <c:set var="col" value="${fn: split(row, '/')}"/>
+                                                                <fmt:parseNumber var="col1" value="${col[1]}}"/><fmt:parseNumber var="col2" value="${col[2]}}"/>
+                                                                <c:set var="b" value="${col1 * col2}"/>
+                                                                <c:set var="c" value="${b=a+b}"/>
+                                                            </c:forEach>
+                                                            ${c}원
+                                                        </c:when>
+
+                                                        <c:otherwise>
+                                                            <c:if test="${fn: contains(pvo.availableBudget, '/')}">
+                                                                <c:set var="rowArr1" value="${fn: split(pvo.availableBudget, '/')}"/>
+                                                                <fmt:parseNumber var="a1" value="${rowArr1[1]}}"/><fmt:parseNumber var="a2" value="${rowArr1[2]}}"/>
+                                                                <c:set var="d" value="${a1 * a2}"/>
+                                                            </c:if>
+                                                            ${d}원
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    ${pvo.availableBudget}원
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </span>
                                     </p>
                                 </div>
 
