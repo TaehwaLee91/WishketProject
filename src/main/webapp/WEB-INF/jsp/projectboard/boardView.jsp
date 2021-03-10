@@ -5,7 +5,9 @@
 <%-- 상주, 외주마다 항목이 바뀌어야할듯 --%>
 <%-- 레이아웃 깨지는 문제 --%>
 <%-- 파일 다운로드 --%>
-<div id="main"  class=" bg-light" style="height: auto;">
+<c:set var="ppno" value="${pvo.pno}"/>
+<c:set var="uuid" value="${UID}"/>
+    <div id="main"  class=" bg-light" style="height: auto;">
     <div class="contentsWidth center">
         <div class="row">
             <!--left section-->
@@ -52,7 +54,7 @@
                                 <div style="border:1px solid #e6ebef; border-radius:7px; width: 231px; height: 65px;margin-left:10px; background: white;">
                                     <p class="row" style="margin-top:17px;margin-left:3px;margin-right: -3px;">
                                         <span style="color:gray" class="col-6 text-left"><i class="bi bi-person"></i> &nbsp;지원자&nbsp;</span>
-                                        <span class="col-6 text-right" style="">10명</span>
+                                        <span class="col-6 text-right" style="">${pvo.suppoters}</span>
                                     </p>
                                 </div>
 
@@ -109,7 +111,7 @@
 
                         </div>
                         <hr>
-                        <h5 class="row col-12 font-weight-bold mt-4">모집요건</h5>
+                        <h5 class="row col-12 font-weight-bold mt-4">모집요강</h5>
                         <c:if test="${not empty pvo.prerequisites}">
                             <c:forEach var="item" items="${pvo.prerequisites}">
                                 <p style="font-size:16px;" class="mt-4"><i class="bi bi-check text-info"></i>&nbsp;${item}<br></p>
@@ -216,16 +218,16 @@
             <div class="col-3  mt-5" >
                 <div class="floatMenu" ><!-- 플로팅 -->
                     <div class="col-12 border text-center" style="height: 200px; background: #eeeeee; border-radius: 5px" >
-                        <button type="button" class="btn text-white mt-3" style="margin:0 auto; width:200px; height:50px; background: #02a878">프로젝트 지원하기</button>
-                        <button type="button" class="btn bg-white mt-3" style="margin:0 auto; width:200px; height:50px; color:gray"><i class="bi bi-heart"></i>&nbsp;&nbsp;관심 프로젝트</button>
+                        <button type="button" class="btn text-white mt-3" style="margin:0 auto; width:200px; height:50px; background: #02a878" id="gogo">프로젝트 지원하기</button>
+                        <button type="button" class="btn bg-white mt-3" style="margin:0 auto; width:200px; height:50px; color:gray"><i class="bi bi-heart"></i>&nbsp;&nbsp;관심프로젝</button>
                         <hr>
-                        <i class="bi bi-heart" style="color:gray;">&nbsp;4</i>
+                        <i class="bi bi-heart" style="color:gray;">&nbsp;지원자 :${pvo.suppoters}</i>
                     </div>
                     <c:if test="${not empty UID}">
-                    <div class="row  mt-4" style="position: relative; right:-20px; font-size:14px;">
+                    <div class="row  mt-4" style="position: relative; right:-20px; font-size:14px;" id="check2">
                         <img src="/img/default_avatar_c.png" style="display: inline; width: 50px; height: 50px; border-radius: 50px;">
-                        <p class="ml-2" style="font-size:15px;">${UID} &nbsp;&nbsp;&nbsp;<span class="badge" style="background: #e3edfa; color:#336fac" >member</span><br>
-                            <img src="/img/icon-badge-verification.png" style="width: 16px; height: 14px;">&nbsp;인증완료&nbsp;&nbsp;<img src="../../../resources/img/icon-badge-client-pro.png" style="width: 16px; height: 14px;">&nbsp;우수회원</p>
+                        <p class="ml-2" style="font-size:15px;" >${UID} &nbsp;&nbsp;&nbsp;<span class="badge" style="background: #e3edfa; color:#336fac" >member</span><br>
+                            <img src="/img/icon-badge-verification.png" style="width: 16px; height: 14px;">&nbsp;인증완료&nbsp;&nbsp;<img src="/img/icon-badge-client-pro.png" style="width: 16px; height: 14px;">&nbsp;우수회원</p>
                     </div>
 
                     <div class="row  mt-2" style="position: relative; right:-20px;">
@@ -254,12 +256,13 @@
                     </c:if>
                     <c:if test="${empty UID}">
                         <div class="col-12 border text-center" style="height: 200px; background: #eeeeee; border-radius: 5px; margin-top:25px;" >
-                            <div class="mt-4"></div>
+                            <div class="mt-4" id="check">${UID}</div>
                             <button type="button" class="loginbtn1 btn text-white mt-3" style="margin:0 auto; width:200px; height:50px; background: #2099bb">로그인</button>
                             <button type="button" class="joinbtn btn mt-3" style="margin:0 auto; width:200px; height:50px; color:white; background: #a1a6ad">&nbsp;&nbsp;회원가입</button>
                         </div>
                     </c:if>
-
+                    <input type="text" value="${ppno}" id="hiddenpno" hidden>
+                    <input type="text" value="${uuid}"  id="hiddenid" hidden>
 
                 </div><!--floatingg-->
 
