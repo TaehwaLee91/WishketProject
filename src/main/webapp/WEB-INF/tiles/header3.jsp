@@ -1,4 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
+
 <header class="header">
     <section class="base-nav-partner">
         <div class="container">
@@ -18,7 +19,7 @@
                     <div class="nav-dropdown">
                         <a class="nav-dropdown-item body-2" href="/mywishket/partners/" tabindex="-1"><img src="/img/gnb_dropdown_icon_home.png">마이위시켓</a>
                         <a class="nav-dropdown-item body-2" href="/partners/p/" tabindex="-1"><img src="/img/gnb_dropdown_icon_profile.png">내 프로필 보기</a>
-                        <a class="nav-dropdown-item body-2" href="/partners/p/qkfns017/info/update/" tabindex="-1"><img src="/img/gnb_dropdown_icon_administer.png">프로필 정보 관리</a>
+                        <a class="nav-dropdown-item body-2" href="/partners/p/info/update/" tabindex="-1"><img src="/img/gnb_dropdown_icon_administer.png">프로필 정보 관리</a>
                         <a class="nav-dropdown-item body-2" href="/accounts/settings/profile/" tabindex="-1"><img src="/img/gnb_dropdown_icon_settings.png">계정 설정</a>
                         <div class="nav-divider"></div>
                         <a class="nav-dropdown-item body-2" href="/smart-matching/" tabindex="-1"><img class="sm-match-img" src="/img/sm2.png">스마트매칭<img alt="beta" class="sm-beta-img" src="/img/beta.png"></a>

@@ -31,5 +31,8 @@
         update 회원 set user_key = ${confirmCode} where email=#{email}
     </update>
 
+    <select id="selectMember" statementType="PREPARED" parameterType="String" resultType="wishket.spring.mvc.vo.MemberVO">
+        select mno, email, regdate from 회원 where userid = #{userid}
+    </select>
 
 </mapper>

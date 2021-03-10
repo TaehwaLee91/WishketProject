@@ -1,5 +1,6 @@
-
 <%@ page pageEncoding="UTF-8" %>
+
+
 <div id="wrap"><a class="advertisement animated fadeInDown hide" id="sticky_advertisement"></a>
     <div class="page">
         <div class="container">
@@ -10,24 +11,24 @@
             <div class="sidebar">
                 <div class="partners-name-tag"><h3 class="partners-name-tag-heading">파트너스</h3>
                     <div class="partners-name-tag-body-img">
-                        <div class="partners-name-tag-img-container"><img alt="qkfns017 사진"
+                        <div class="partners-name-tag-img-container"><img alt="${UID} 사진"
                                                                           class="partners-name-tag-img"
                                                                           src="/img/default_avatar_p.png">
                         </div>
-                        <h4 class="partners-username-bottom">qkfns017</h4></div>
+                        <h4 class="partners-username-bottom">${UID}</h4></div>
                 </div>
                 <div class="sidebar-nav">
                     <ul>
-                        <li class="active"><a href="/partners/p/qkfns017/"
+                        <li class="active"><a href="/partners/p"
                                               style="background-color: #07b481; color: #fff;">전체보기</a></li>
-                        <li class=""><a href="/partners/p/qkfns017/introduction/">자기 소개</a></li>
-                        <li class=""><a href="/partners/p/qkfns017/portfolio/">포트폴리오</a></li>
-                        <li class=""><a href="/partners/p/qkfns017/skill/">보유 기술</a></li>
-                        <li class=""><a href="/partners/p/qkfns017/employment/">경력</a></li>
-                        <li class=""><a href="/partners/p/qkfns017/background/">학력, 자격증</a></li>
-                        <li class="" style="border-top: 1px dashed #dedede"><a href="/partners/p/qkfns017/evaluation/">클라이언트의
+                        <li class=""><a href="/partners/p/introduction/">자기 소개</a></li>
+                        <li class=""><a href="/partners/p/portfolio/">포트폴리오</a></li>
+                        <li class=""><a href="/partners/p/skill/">보유 기술</a></li>
+                        <li class=""><a href="/partners/p/employment/">경력</a></li>
+                        <li class=""><a href="/partners/p/background/">학력, 자격증</a></li>
+                        <li class="" style="border-top: 1px dashed #dedede"><a href="/partners/p/evaluation/">클라이언트의
                             평가</a></li>
-                        <li class=""><a href="/partners/p/qkfns017/history/">위시켓에서 진행한 프로젝트</a></li>
+                        <li class=""><a href="/partners/p/history/">위시켓에서 진행한 프로젝트</a></li>
                     </ul>
                 </div>
                 <a class="advertisement active" id="left_sidebar_advertisement"
@@ -36,9 +37,9 @@
             </div>
             <div class="content">
                 <div class="content-inner" style="padding-top: 15px; ">
-                    <section class="p5-partition-title"><h2 class="p5-header-text"><span>qkfns017</span> <span
+                    <section class="p5-partition-title"><h2 class="p5-header-text"><span>${UID}</span> <span
                             class="label label-md label-partners-availability possible" style="top: 3px;">활동가능</span> <a
-                            class="btn btn-primary pull-right" href="/partners/p/qkfns017/info/update/"
+                            class="btn btn-primary pull-right" href="/partners/p/info/update/"
                             style="margin-top:7px;">업데이트 하기</a></h2><h5 class="p5-basic-info-underground"><span><span><i
                             class="fa fa-keyboard-o" aria-hidden="true"></i></span> <span>개발자</span> <span
                             class="p5-basic-info-seperator">|</span></span>
@@ -92,7 +93,7 @@
                     <section>
                         <div class="p5-2spanInfo">
                             <div><h4 class="p5-page-title" style="margin-top:20px;">자기 소개<a
-                                    class="btn btn-primary pull-right" href="/partners/p/qkfns017/introduction/update/"
+                                    class="btn btn-primary pull-right" href="/partners/p/introduction/update/"
                                     style="margin-top:-7px;">업데이트 하기</a></h4>
                                 <div class="p5-empty-component-md">
                                     <div class="p5-assign-component">
@@ -107,7 +108,7 @@
                         </div>
                     </section>
                     <section class="p5-partition p5-portfolio-partition"><h4 class="p5-page-title">포트폴리오<a
-                            class="btn btn-primary pull-right" href="/partners/p/qkfns017/portfolio/update/"
+                            class="btn btn-primary pull-right" href="/partners/p/portfolio/update/"
                             style="margin-top:-7px; *margin-top: -15px;">업데이트 하기</a></h4>
                         <div class="portfolio-thumbnail-container">
                             <div class="portfolio-no-img" style="width: 728px;">
@@ -118,7 +119,7 @@
                         </div>
                     </section>
                     <section class="p5-partition"><h4 class="p5-page-title">보유 기술<a class="btn btn-primary pull-right"
-                                                                                    href="/partners/p/qkfns017/skill/update/"
+                                                                                    href="/partners/p/skill/update/"
                                                                                     style="margin-top:-7px;">업데이트 하기</a>
                     </h4><span><div class="p5-partners-no-info"><div class="p5-assign-component"><div><img
                             src="/img/profile_skill.png"><div
@@ -126,7 +127,7 @@
                             class="text-center p5-bold">'보유 기술'</span>이 없습니다.</div></div></div></div></span></section>
                     <section class="p5-partition" style="padding-bottom: 27px;">
                         <section><h4 class="p5-page-title">경력<a class="btn btn-primary pull-right"
-                                                                href="/partners/p/qkfns017/employment/update/"
+                                                                href="/partners/p/employment/update/"
                                                                 style="margin-top:-7px;">업데이트 하기</a></h4><span><div
                                 class="p5-empty-component-md"><div class="p5-assign-component"><div><img
                                 src="/img/profile_employ.png"><div
@@ -135,7 +136,7 @@
                     </section>
                     <section class="p5-partition" style="padding-bottom: 27px;">
                         <section><h4 class="p5-page-title">학력<a class="btn btn-primary pull-right"
-                                                                href="/partners/p/qkfns017/background/update/"
+                                                                href="/partners/p/background/update/"
                                                                 style="margin-top:-7px;">업데이트 하기</a></h4><span><div
                                 class="p5-empty-component-md"><div class="p5-assign-component"><div><img
                                 src="/img/profile_edu.png"><div class="p5-no-partners-info-text text-center">등록된 <span
@@ -146,7 +147,7 @@
                                 class="text-center p5-bold">'자격증'</span>이 없습니다.</div></div></div></div></span></section>
                     </section>
                     <section class="p5-evaluation-list"><h4 class="p5-page-title">평가<a
-                            class="btn btn-primary pull-right" href="/partners/p/qkfns017/evaluation/update/"
+                            class="btn btn-primary pull-right" href="/partners/p/evaluation/update/"
                             style="margin-top:-7px; *margin-top: -17px;">업데이트 하기</a></h4>
                         <div class="p5-empty-component-lg">
                             <div class="p5-assign-component">
