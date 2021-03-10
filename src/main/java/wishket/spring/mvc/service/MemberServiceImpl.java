@@ -99,6 +99,9 @@ public class MemberServiceImpl implements MemberService{
             sess.setAttribute("UID", mvo.getUserid());
             sess.setMaxInactiveInterval(60*60);
             isLogin = true;
+            String userid = mvo.getUserid();
+            MemberVO memberInfo = mdao.selectMember(userid);
+            sess.setAttribute("email", memberInfo.getEmail());
         }else{
             // 로그인 실패시 로그인창에 경고메세지를 출력하기위해 세션 지정
             sess.setAttribute("warning","warning");

@@ -1,6 +1,10 @@
 
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:if test="${empty UID}">
+    <c:redirect url="/accounts/login"/>
+</c:if>
 
 <!doctype html>
 <html class="no-js modern" lang="ko">

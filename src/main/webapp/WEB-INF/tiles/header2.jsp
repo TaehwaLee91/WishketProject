@@ -1,5 +1,5 @@
-
 <%@ page pageEncoding="UTF-8" %>
+
 <header class="header">
     <section class="base-nav-partner">
         <div class="container" style="margin-left : auto; margin-right : auto">
@@ -24,9 +24,9 @@
                     <div class="nav-dropdown">
                         <a class="nav-dropdown-item body-2" href="/mywishket/partners/" tabindex="-1"><img
                                 src="/img/gnb_dropdown_icon_home.png">마이위시켓</a>
-                        <a class="nav-dropdown-item body-2" href="/partners/p/qkfns017/" tabindex="-1"><img
+                        <a class="nav-dropdown-item body-2" href="/partners/p/" tabindex="-1"><img
                                 src="/img/gnb_dropdown_icon_profile.png">내 프로필 보기</a>
-                        <a class="nav-dropdown-item body-2" href="/partners/p/qkfns017/info/update/" tabindex="-1"><img
+                        <a class="nav-dropdown-item body-2" href="/partners/p/info/update/" tabindex="-1"><img
                                 src="/img/gnb_dropdown_icon_administer.png">프로필 정보 관리</a>
                         <a class="nav-dropdown-item body-2" href="/accounts/settings/profile/" tabindex="-1"><img
                                 src="/img/gnb_dropdown_icon_settings.png">계정 설정</a>
@@ -49,7 +49,7 @@
     <section class="sub-nav-partner">
         <div class="container" style="margin-left : auto; margin-right : auto">
             <div class="left-nav">
-                <a class="snb-menu body-2 active" href="/partners/p/qkfns017/">내 프로필</a>
+                <a class="snb-menu body-2 active" href="/partners/p/">내 프로필</a>
                 <a class="snb-menu body-2 " href="/partners/manage/interest/">관심 프로젝트</a>
                 <a class="snb-menu body-2 " href="/partners/manage/apply_request/">지원 요청</a>
                 <a class="snb-menu body-2 " href="/partners/manage/proposal/">지원 내역</a>

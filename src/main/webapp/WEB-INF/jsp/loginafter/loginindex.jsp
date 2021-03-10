@@ -1,14 +1,16 @@
 <%@ page pageEncoding="UTF-8" %>
+
+
 <div class="gaia">
     <div class="main-dashboard">
         <div class="mb60 container">
-            <div class="subtitle-1-medium mb32 user-title">qkfns017 님의 마이위시켓</div>
+            <div class="subtitle-1-medium mb32 user-title">${UID} 님의 마이위시켓</div>
             <div class="content">
                 <div class="left-side">
                     <div class="matching-detail-boxes">
                         <div class="main-input-box" id="main-input-box" style="display: block;">
                             <div class="top-content mb24">
-                                <div class="subtitle-2-medium gray-900-text introduce-title">매일 오후 5시, qkfns017님께 딱 맞는 프로젝트를 소개해드립니다!</div><img alt="img-card-matching-2" class="img-card-matching-2" src="/img/img-card-matching-2.png">
+                                <div class="subtitle-2-medium gray-900-text introduce-title">매일 오후 5시, ${UID}님께 딱 맞는 프로젝트를 소개해드립니다!</div><img alt="img-card-matching-2" class="img-card-matching-2" src="/img/img-card-matching-2.png">
                                 <p class="body-2 gray-text">선택한 조건과 100% 일치하는 프로젝트를 이메일로 받아볼 수 있습니다.</p>
                             </div>
                             <div class="main-matching-content">
@@ -844,14 +846,14 @@
                     <div class="mb24 wishket-bg-card wishket-bg-card-newbie">
                         <div class="mb24 center-text wishket-bg-card-header">
                             <div style="vertical-align: middle">
-                                <div class="mb8 subtitle-1-medium header-title">환영합니다! qkfns017님</div>
+                                <div class="mb8 subtitle-1-medium header-title">환영합니다! ${UID}님</div>
                                 <img class="header-icon with-margin" src="/img/title_icon_success.png" >
                             </div>
                             <div class="body-1 header-detail">파트너님께 알맞은 프로젝트를 위시켓에서 안전하게 진행하세요.</div>
                         </div>
                         <div class="mb32 center-text"><img src="/img/contents_image.png"></div>
                         <div class="mb16 center-text">
-                            <a class="btn btn-11-24 btn-partner large-button" href="/partners/p/qkfns017/">내 프로필 작성하고 원하는 프로젝트 수주하기</a>
+                            <a class="btn btn-11-24 btn-partner large-button" href="/partners/p/">내 프로필 작성하고 원하는 프로젝트 수주하기</a>
                         </div>
                         <div class="center-text">
                             <a class="btn btn-11-24 btn-white large-button" href="/project/">나에게 맞는 프로젝트 찾기</a>
@@ -970,10 +972,10 @@
                 </div>
                 <div class="right-side">
                     <div class="mb16 user-info user-info-partner"><img class="mb8 center-text user-img" src="/img/default_avatar_p.png">
-                        <div class="body-1-medium center-text user-name">qkfns017</div>
+                        <div class="body-1-medium center-text user-name">${UID}</div>
                         <div class="center-text user-text">
                             <div class="mb16 user-email-href">
-                                <a class="body-3 center-text user-email" href="/accounts/settings/profile/">qkfns@naver.com<img class="user-email-next" src="/img/icon-arrow-r-s.png">
+                                <a class="body-3 center-text user-email" href="/accounts/settings/profile/">${email}<form method="post"></form><img class="user-email-next" src="/img/icon-arrow-r-s.png">
                                 </a>
                             </div>
                         </div>
@@ -990,7 +992,7 @@
                             </div>
                         </div>
                         <div class="button-block">
-                            <a class="mb12 btn btn-8-20 btn-partner" href="/partners/p/qkfns017/">내 프로필 업데이트 하기</a>
+                            <a class="mb12 btn btn-8-20 btn-partner" href="/partners/p/">내 프로필 업데이트 하기</a>
                         </div>
                     </div>
                     <a class="advertisement" id="partner_right_sidebar_advertisement"></a>
@@ -1060,7 +1062,7 @@
             <div class="center-text subtitle-1 container">내 프로필 작성하고 위시켓과 함께 원하는 프로젝트를 진행해보세요.
                 <div class="mb24"></div>
                 <div class="btn-block">
-                    <a class="btn btn-blg btn-partner" href="/partners/p/qkfns017/">내 프로필 작성하기</a>
+                    <a class="btn btn-blg btn-partner" href="/partners/p">내 프로필 작성하기</a>
                     <a class="btn btn-blg btn-white" href="/project/">나에게 맞는 프로젝트 찾기</a>
                 </div>
             </div>

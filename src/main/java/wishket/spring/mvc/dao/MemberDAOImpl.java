@@ -34,4 +34,9 @@ public class MemberDAOImpl implements MemberDAO{
 
     @Override   //이메일인증) 회원가입성공시 이메일 인증코드 DB에 업데이트
     public int updateCode(MemberVO mvo) {return sqlSession.update("member.updateCode",mvo);}
+
+    @Override
+    public MemberVO selectMember(String userid) {
+        return sqlSession.selectOne("member.selectMember", userid);
+    }
 }

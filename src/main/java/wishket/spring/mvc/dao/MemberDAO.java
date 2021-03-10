@@ -14,4 +14,6 @@ public interface MemberDAO {
     int confirmUser(MemberVO mvo);
 
     int updateCode(MemberVO mvo);
+
+    MemberVO selectMember(String userid);
 }

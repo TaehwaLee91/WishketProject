@@ -88,7 +88,7 @@ public class SignController {
         String returnPage ="redirect:/accounts/login";
 
         if(msrv.checkLogin(mvo,sess))  //로그인 성공시
-            returnPage="redirect:/index";
+            returnPage="redirect:/mywishket/partners";
 
 
         return returnPage;
