@@ -4,6 +4,7 @@ import com.sun.media.jfxmedia.logging.Logger;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -287,18 +288,18 @@ public class ProjectContoller {
 //            pvo.setFtype3( tempVO.getFtype3() );
 //        }
 
-        if(tempVO != null){
-            if(tempVO.getFname1() != null){
+        if(!ObjectUtils.isEmpty(tempVO)){
+            if(!ObjectUtils.isEmpty(tempVO.getFname1())){
                 pvo.setFname1(tempVO.getFname1());
                 pvo.setFsize1(tempVO.getFsize1());
                 pvo.setFtype1(tempVO.getFtype1());
             }
-            if(tempVO.getFname2() != null){
+            if(!ObjectUtils.isEmpty(tempVO.getFname2())){
                 pvo.setFname2(tempVO.getFname2());
                 pvo.setFsize2(tempVO.getFsize2());
                 pvo.setFtype2(tempVO.getFtype2());
             }
-            if(tempVO.getFname3() != null){
+            if(!ObjectUtils.isEmpty(tempVO.getFname3())){
                 pvo.setFname3(tempVO.getFname3());
                 pvo.setFsize3(tempVO.getFsize3());
                 pvo.setFtype3(tempVO.getFtype3());
@@ -314,14 +315,14 @@ public class ProjectContoller {
         // 데이터 삽입 성공시
         if(isSuccess){
             mv.setViewName("redirect:/index");
-            if(tempVO != null){
-                if(tempVO.getFname1() != null){
+            if(!ObjectUtils.isEmpty(tempVO)){
+                if(!ObjectUtils.isEmpty(tempVO.getFname1())){
                     futil.moveToFile(tempVO.getFname1(), tempVO.getFuuid());
                 }
-                if (tempVO.getFname2() != null){
+                if(!ObjectUtils.isEmpty(tempVO.getFname2())){
                     futil.moveToFile(tempVO.getFname2(), tempVO.getFuuid());
                 }
-                if(tempVO.getFname3() != null){
+                if(!ObjectUtils.isEmpty(tempVO.getFname3())){
                     futil.moveToFile(tempVO.getFname3(), tempVO.getFuuid());
                 }
             }
