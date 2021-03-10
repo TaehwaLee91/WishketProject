@@ -10,7 +10,8 @@ public interface ProjectService {
     Boolean createNewProject(ProjectVO pvo, String userid);
     List<ProjectVO> readProject(String cp);
     ProjectVO readOneProject(String pno);
-    List<ProjectVO> readFilterProject(Map<String, Object> filter);
+    List<ProjectVO> readFilterProject(Map<String, String[]> filter, String cp);
+    int countFilterProject(Map<String, String[]> filter);
     int countProject();
     String readSido();
     String readGugun(String sido);

@@ -33,10 +33,15 @@ public class ProjectDAOImpl implements ProjectDAO {
     }
 
     @Override
-    public List<ProjectVO> selectFilterProject(Map<String, Object> filter) {
-
-        return null;
+    public List<ProjectVO> selectFilterProject(Map<String, Object> param) {
+        return sqlSession.selectList("project.selectFilterProject", param);
     }
+
+    @Override
+    public int selectCountFilterProject(Map<String, String[]> param) {
+        return sqlSession.selectOne("project.countFilterProject", param);
+    }
+
 
     @Override
     public int selectCountProject() {

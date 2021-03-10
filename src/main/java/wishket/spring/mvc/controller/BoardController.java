@@ -36,28 +36,40 @@ public class BoardController {
         return mv;
     }
 
-    @PostMapping("/project/list/filter")
+//    @GetMapping("/project/list/filter")
+//    public ModelAndView filter(ModelAndView mv){
+//
+//    }
+
+    @GetMapping("/project/list/filter")
     public ModelAndView filterBoard(ModelAndView mv, HttpServletRequest rq){
-        mv.setViewName("projectboard/search.tiles");
+        mv.setViewName("projectboard/filter.tiles");
         String[] type = rq.getParameterValues("type");
         String[] category = rq.getParameterValues("category");
         String[] area = rq.getParameterValues("area");
-        Map<String, Object> param = new HashMap<>();
+        String cp = rq.getParameter("cp");
+        Map<String, String[]> param = new HashMap<>();
 
-        if(type.length > 0){
+        if(type != null){
             param.put("type", type);
         }
 
-        if(category.length > 0){
+        if(category != null){
             param.put("category", category);
         }
 
-        if(area.length > 0){
+        if(area != null){
             param.put("area", area);
         }
-        List<ProjectVO> pvo = psrv.readFilterProject(param);
-
-        mv.addObject("pvo", pvo);
+        List<ProjectVO> pvo = psrv.readFilterProject(param, cp);
+        for(ProjectVO p : pvo){
+            System.out.println(p);
+        }
+        mv.addObject("type", type);
+        mv.addObject("category", category);
+        mv.addObject("area", area);
+        mv.addObject("ps", pvo);
+        mv.addObject("pscnt", psrv.countFilterProject(param));
         return mv;
     }
 

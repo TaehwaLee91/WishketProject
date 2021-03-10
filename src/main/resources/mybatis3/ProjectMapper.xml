@@ -39,19 +39,39 @@
         select count(pno) cnt from 프로젝트;
     </select>
 
-    <select id="selectFilterProject" statementType="PREPARED" resultType="wishket.spring.mvc.vo.ProjectVO">
+<!--    <select id="selectFilterProject" statementType="PREPARED" parameterType="Map" resultType="wishket.spring.mvc.vo.ProjectVO">-->
+<!--        select pno, title, type, category, projectTerm, area, deadLine, detailTask,-->
+<!--               projectPriority, projectStatus, skillStack, workPlace, regdate, availableBudget-->
+<!--        from 프로젝트 where-->
+<!--        <foreach item="value" index="key" collection="_parameter.entrySet()" separator="or">-->
+<!--            <foreach item="item" collection="value" separator="or">-->
+<!--                ${key} like CONCAT('%', #{item}, '%')-->
+<!--            </foreach>-->
+<!--        </foreach>-->
+<!--    </select>-->
+    <select id="selectFilterProject" statementType="PREPARED" parameterType="Map" resultType="wishket.spring.mvc.vo.ProjectVO">
         select pno, title, type, category, projectTerm, area, deadLine, detailTask,
-               projectPriority, projectStatus, skillStack, workPlace, regdate, availableBudget 
-        from 프로젝트
-<!--        <foreach collection="array" item="arr"-->
-        <foreach item="value" index="key" collection="map" open = "(" close = ")" separator="or">
-            #{key}
-            <foreach item="item" collection="array" separator=",">
-                #{value}
+        projectPriority, projectStatus, skillStack, workPlace, regdate, availableBudget
+        from 프로젝트 where
+        <foreach item="value" index="key" collection="filter.entrySet()" separator="or">
+            <foreach item="item" collection="value" separator="or">
+                ${key} like CONCAT('%', #{item}, '%')
             </foreach>
         </foreach>
-
+        order by pno desc
+        limit #{snum}, 10;
     </select>
+
+    <select id="countFilterProject" statementType="PREPARED" parameterType="Map" resultType="int">
+        select count(pno)
+        from 프로젝트 where
+        <foreach item="value" index="key" collection="_parameter.entrySet()" separator="or">
+            <foreach item="item" collection="value" separator="or">
+                ${key} like CONCAT('%', #{item}, '%')
+            </foreach>
+        </foreach>
+    </select>
+
     <select id="selectMno" statementType="PREPARED" parameterType="String" resultType="int">
         select mno from 회원 where userid = #{userid}
     </select>

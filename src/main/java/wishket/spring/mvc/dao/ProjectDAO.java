@@ -7,10 +7,15 @@ import java.util.Map;
 
 public interface ProjectDAO {
     int insertNewProject(ProjectVO pvo, String userid);
+
     List<ProjectVO> selectProject(int snum);
     ProjectVO selectOneProject(String pno);
-    List<ProjectVO> selectFilterProject(Map<String, Object> filter);
+
+    List<ProjectVO> selectFilterProject(Map<String, Object> param);
+    int selectCountFilterProject(Map<String, String[]> param);
+
     int selectCountProject();
+
     List<String> selectSido();
     List<String> selectGugun(String sido);
 }

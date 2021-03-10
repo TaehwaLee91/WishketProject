@@ -2,8 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%-- 필터부분 해야함 --%>
-<%-- 필터부분 해야함 --%>
+
 <style>
     body {
         margin: 0;
@@ -100,7 +99,8 @@
 <fmt:parseNumber var="snum" integerOnly="true"
                  value="${pscnt - (cp - 1) * pp}"/>
 
-<c:set var="navlink" value="/project/list?cp="/>
+<c:set var="navlink" value="/project/list/filter?cp="/>
+
 <div class="main">
     <div class="row">
         <a class="advertisement active" id="nav_advertisement" href="https://www.wishket.com/news-center/detail/261/"
@@ -136,7 +136,7 @@
                         <div class="category-box simple-checkbox">
                             <br><br>
                             <form id="filterItemFrm">
-                                <input type="hidden" name="cp" value="1">
+                                <input type="hidden" id="cp" name="cp" value="${cp}">
                                 <div>
                                     <div class="filter-category-title body-2-medium" style="margin-top: -20px; font-weight: bold">
                                         프로젝트 진행 방식&nbsp;
@@ -153,8 +153,23 @@
                                     <div class="filter-item" style="margin-top: 10px">
                                         <label class="checkbox-wishket">
                                             <span style="cursor: pointer">
+                                                <c:if test="${not empty type}">
+                                                    <c:set var="type1" value="0"/>
+                                                    <c:set var="type2" value="0"/>
+                                                    <c:forEach var="item" items="${type}">
+                                                        <c:choose>
+                                                            <c:when test="${item eq '외주(도급)'}">
+                                                                <c:set var="type1" value="1"/>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <c:set var="type2" value="1"/>
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:forEach>
+                                                </c:if>
                                                 <input class="wishket-checkbox theme-wishket" data-value="외주(도급)"
-                                                       id="project_outSourcing" name="type" type="checkbox" value="외주(도급)">
+                                                       id="project_outSourcing" name="type" type="checkbox" value="외주(도급)"
+                                                        <c:if test="${type1 eq '1'}">checked</c:if>>
                                                 <span>&nbsp;외주(도급)</span>
                                             </span>
                                         </label>
@@ -163,7 +178,8 @@
                                         <label class="checkbox-wishket">
                                             <span style="cursor: pointer">
                                                 <input class="wishket-checkbox theme-wishket" data-value="상주"
-                                                       id="project_Resident" name="type" type="checkbox" value="상주">
+                                                       id="project_Resident" name="type" type="checkbox" value="상주"
+                                                       <c:if test="${type2 eq '1'}">checked</c:if>>
                                                 <span>&nbsp;상주</span>
                                             </span>
                                         </label>
@@ -173,10 +189,29 @@
                                 <div>
                                     <div class="filter-category-title body-2-medium" style="margin-top: -11px; font-weight: bold">프로젝트 카테고리</div>
                                         <div class="filter-item">
+                                            <c:if test="${not empty category}">
+                                                <c:set var="category1" value="0"/>
+                                                <c:set var="category2" value="0"/>
+                                                <c:set var="category3" value="0"/>
+                                                <c:forEach var="item" items="${category}">
+                                                    <c:choose>
+                                                        <c:when test="${item eq '개발'}">
+                                                            <c:set var="category1" value="1"/>
+                                                        </c:when>
+                                                        <c:when test="${item eq '디자인'}">
+                                                            <c:set var="category2" value="1"/>
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <c:set var="category3" value="1"/>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </c:forEach>
+                                            </c:if>
                                             <label class="checkbox-wishket">
                                             <span>
                                                 <input class="wishket-checkbox theme-wishket" data-value="개발"
-                                                       id="project_category" name="category" type="checkbox" value="개발" style="margin-top: 10px">
+                                                       id="project_category" name="category" type="checkbox" value="개발" style="margin-top: 10px"
+                                                       <c:if test="${category1 eq '1'}">checked</c:if>>
                                                 <span style="cursor: pointer">&nbsp;개발</span>
                                             </span>
                                             </label>
@@ -185,7 +220,8 @@
                                         <label class="checkbox-wishket">
                                             <span>
                                                 <input class="wishket-checkbox theme-wishket" data-value="디자인"
-                                                       id="project_design" name="category" type="checkbox" value="디자인">
+                                                       id="project_design" name="category" type="checkbox" value="디자인"
+                                                       <c:if test="${category2 eq '1'}">checked</c:if>>
                                                 <span style="cursor: pointer">&nbsp;디자인</span>
                                             </span>
                                         </label>
@@ -194,7 +230,8 @@
                                         <label class="checkbox-wishket">
                                             <span>
                                                 <input class="wishket-checkbox theme-wishket" data-value="기획"
-                                                       id="project_planning" name="category" type="checkbox" value="기획">
+                                                       id="project_planning" name="category" type="checkbox" value="기획"
+                                                       <c:if test="${category3 eq '1'}">checked</c:if>>
                                                 <span style="cursor: pointer">&nbsp;기획</span>
                                             </span>
                                         </label>
@@ -204,10 +241,33 @@
                                 <div>
                                     <div class="filter-category-title" style="margin-top: -11px; font-weight: bold">프로젝트 분야</div>
                                     <div class="filter-item" style="margin-top: 8px">
+                                        <c:if test="${not empty area}">
+                                            <c:set var="area1" value="0"/>
+                                            <c:set var="area2" value="0"/>
+                                            <c:set var="area3" value="0"/>
+                                            <c:set var="area4" value="0"/>
+                                            <c:forEach var="item" items="${area}">
+                                                <c:choose>
+                                                    <c:when test="${item eq '웹'}">
+                                                        <c:set var="area1" value="1"/>
+                                                    </c:when>
+                                                    <c:when test="${item eq '애플리케이션'}">
+                                                        <c:set var="area2" value="1"/>
+                                                    </c:when>
+                                                    <c:when test="${item eq '커머스,쇼핑몰'}">
+                                                        <c:set var="area3" value="1"/>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <c:set var="area4" value="1"/>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </c:forEach>
+                                        </c:if>
                                         <label class="checkbox-wishket">
                                             <span>
                                                 <input class="wishket-checkbox theme-wishket subcategory-checkbox"
-                                                       data-value="웹" id="subcategory_web" name="area" type="checkbox" value="웹">
+                                                       data-value="웹" id="subcategory_web" name="area" type="checkbox" value="웹"
+                                                       <c:if test="${area1 eq '1'}">checked</c:if>>
                                                 <span style="cursor: pointer">&nbsp;웹</span>
                                             </span>
                                         </label>
@@ -216,7 +276,8 @@
                                         <label class="checkbox-wishket">
                                             <span>
                                                 <input class="wishket-checkbox theme-wishket subcategory-checkbox"
-                                                       data-value="애플리케이션" id="subcategory_app" name="area" type="checkbox" value="애플리케이션">
+                                                       data-value="애플리케이션" id="subcategory_app" name="area" type="checkbox" value="애플리케이션"
+                                                       <c:if test="${area2 eq '1'}">checked</c:if>>
                                                 <span style="cursor: pointer">&nbsp;애플리케이션</span>
                                             </span>
                                         </label>
@@ -225,7 +286,8 @@
                                         <label class="checkbox-wishket">
                                             <span>
                                                 <input class="wishket-checkbox theme-wishket subcategory-checkbox"
-                                                       data-value="커머스, 쇼핑몰" id="subcategory_commerce" name="area" type="checkbox" value="커머스,쇼핑몰">
+                                                       data-value="커머스, 쇼핑몰" id="subcategory_commerce" name="area" type="checkbox" value="커머스,쇼핑몰"
+                                                       <c:if test="${area3 eq '1'}">checked</c:if>>
                                                 <span style="cursor: pointer">&nbsp;커머스,쇼핑몰</span>
                                             </span>
                                         </label>
@@ -234,14 +296,15 @@
                                         <label class="checkbox-wishket">
                                             <span>
                                                 <input class="wishket-checkbox theme-wishket subcategory-checkbox"
-                                                       data-value="일반 소프트웨어" id="subcategory_software" name="area" type="checkbox" value="일반 소프트웨어">
+                                                       data-value="일반 소프트웨어" id="subcategory_software" name="area" type="checkbox" value="일반 소프트웨어"
+                                                       <c:if test="${area4 eq '1'}">checked</c:if>>
                                                 <span style="cursor: pointer">&nbsp;일반 소프트웨어</span>
                                             </span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-primary" style="width: 100px; margin-top: 30px" onclick="getFilter()">검색</button>
+                                    <button type="button" class="btn btn-primary" onclick="getFilter()">검색</button>
                                 </div>
                             </form>
                         </div><!-- 프로젝트 분야 -->
@@ -426,12 +489,14 @@
                                         <c:if test="${i le tp}">
                                             <c:if test="${i ne cp}">
                                                 <li class="page-item">
-                                                    <a href="${navlink}${i}" class="page-link font-weight-bold">${i}</a>
+<%--                                                    <a href="${navlink}${i}" class="page-link font-weight-bold">${i}</a>--%>
+                                                    <a onclick="nextPage(${i})" class="page-link font-weight-bold" style="cursor: pointer">${i}</a>
                                                 </li>
                                             </c:if>
                                             <c:if test="${i eq cp}">
                                                 <li class="page-item active">
-                                                    <a href="${navlink}${i}" class="page-link font-weight-bold">${i}</a>
+<%--                                                    <a href="${navlink}${i}" class="page-link font-weight-bold">${i}</a>--%>
+                                                    <a onclick="nextPage(${i})" class="page-link font-weight-bold" style="cursor: pointer">${i}</a>
                                                 </li>
                                             </c:if>
                                         </c:if>
@@ -454,10 +519,84 @@
 <script type="text/javascript">
 
     function getFilter(){
-        var frm = document.getElementById('filterItemFrm');
-        frm.setAttribute('method', 'get');
-        frm.setAttribute('action', '/project/list/filter');
-        frm.submit();
+        var type = document.getElementsByName('type');
+        var category = document.getElementsByName('category');
+        var area = document.getElementsByName('area');
+
+        var checked1 = false;
+        var checked2 = false;
+        var checked3 = false;
+
+        for(var i = 0; i < type.length; i++){
+            if(type[i].checked == true){
+                checked1 = true;
+                break;
+            }
+        }
+        for(var i = 0; i < category.length; i++){
+            if(category[i].checked == true){
+                checked2 = true;
+                break;
+            }
+        }
+        for(var i = 0; i < area.length; i++){
+            if(area[i].checked == true){
+                checked3 = true;
+                break;
+            }
+        }
+
+        if(checked1 == false && checked2 == false && checked3 == false){
+            window.location.href = '/project/list?cp=1';
+            event.preventDefault();
+        } else {
+            var frm = document.getElementById('filterItemFrm');
+            frm.setAttribute('method', 'get');
+            frm.setAttribute('action', '/project/list/filter');
+            frm.submit();
+        }
+    }
+
+    function nextPage(i) {
+        var cp = document.getElementById('cp');
+        cp.value = i;
+
+        var type = document.getElementsByName('type');
+        var category = document.getElementsByName('category');
+        var area = document.getElementsByName('area');
+
+        var checked1 = false;
+        var checked2 = false;
+        var checked3 = false;
+
+        for(var i = 0; i < type.length; i++){
+            if(type[i].checked == true){
+                checked1 = true;
+                break;
+            }
+        }
+        for(var i = 0; i < category.length; i++){
+            if(category[i].checked == true){
+                checked2 = true;
+                break;
+            }
+        }
+        for(var i = 0; i < area.length; i++){
+            if(area[i].checked == true){
+                checked3 = true;
+                break;
+            }
+        }
+
+        if(checked1 == false && checked2 == false && checked3 == false){
+            window.location.href = '/project/list?cp=1';
+            event.preventDefault();
+        } else {
+            var frm = document.getElementById('filterItemFrm');
+            frm.setAttribute('method', 'get');
+            frm.setAttribute('action', '/project/list/filter');
+            frm.submit();
+        }
     }
 
 </script>
