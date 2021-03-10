@@ -57,6 +57,16 @@ public class ProjectVO {
 
     private String regdate;
 
+    private int suppoters;
+
+    public int getSuppoters() {
+        return suppoters;
+    }
+
+    public void setSuppoters(int suppoters) {
+        this.suppoters = suppoters;
+    }
+
     public String getPno() {
         return pno;
     }
