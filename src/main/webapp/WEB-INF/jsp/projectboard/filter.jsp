@@ -304,7 +304,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-primary" onclick="getFilter()">검색</button>
+                                    <button type="button" class="btn btn-primary" style="width: 100px; margin-top: 30px" onclick="getFilter()">검색</button>
                                 </div>
                             </form>
                         </div><!-- 프로젝트 분야 -->
@@ -359,10 +359,22 @@
 <%--                            <input id="proejctSearchType" type="hidden" value="전체">--%>
                         <div class="project-list-box">
                             <c:forEach var="pro" items="${ps}">
+                                <c:set var="deadLineStr" value="${fn: substring(pro.deadLine, 0, 10)}"/>
+                                <fmt:parseDate var="deadLineDate" value="${deadLineStr}" pattern="yyyy-MM-dd"/>
+                                <c:set var="today" value="<%=new java.util.Date()%>"/>
+                                <fmt:parseNumber var="strDate" value="${deadLineDate.time / (1000*60*60*24)}" integerOnly="true"/>
+                                <fmt:parseNumber var="endDate" value="${today.time / (1000*60*60*24)}" integerOnly="true"/>
                                 <div class="project-info-box" style="padding-left: 30px; padding-right: 45px;">
                                     <hr class="line-style">
                                     <div class="project-status-label recruiting-status">
-                                        <div class="status-mark recruting-mark;" style="background: green; height: 21px; width: 58px; margin-top: -40px; font-size: 13px; color: white; font-weight: bold">&nbsp;&nbsp;모집 중</div>
+                                        <c:choose>
+                                            <c:when test="${(endDate-strDate) lt 0}">
+                                                <div class="status-mark recruting-mark;" style="background: orange; height: 21px; width: 58px; margin-top: -40px; font-size: 13px; color: white; font-weight: bold">&nbsp;&nbsp;모집 마감</div>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <div class="status-mark recruting-mark;" style="background: green; height: 21px; width: 50px; margin-top: -40px; font-size: 13px; color: white; font-weight: bold">&nbsp;&nbsp;모집 중</div>
+                                            </c:otherwise>
+                                        </c:choose>
                                     </div>
                                     <br>
                                     <div class="project-unit-heading">
@@ -444,18 +456,13 @@
                                                 <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                 <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                 마감
-                                                    <c:set var="deadLineStr" value="${fn: substring(pro.deadLine, 0, 10)}"/>
-                                                    <fmt:parseDate var="deadLineDate" value="${deadLineStr}" pattern="yyyy-MM-dd"/>
-                                                    <c:set var="today" value="<%=new java.util.Date()%>"/>
-                                                    <fmt:parseNumber var="strDate" value="${deadLineDate.time / (1000*60*60*24)}" integerOnly="true"/>
-                                                    <fmt:parseNumber var="endDate" value="${today.time / (1000*60*60*24)}" integerOnly="true"/>
                                                     <strong>${endDate - strDate}일 전</strong>
                                                 </span> <!-- 마감일 -->
                                             </div>
                                             <div class="application-status">
                                                 <img src="/img/icon-project-applicant.png" style="height:30px; width:30px; margin-left: 17px" >
                                                 <span class="deadline-date body-2 text600" style="font-size: 14px; margin-left: 17px">
-                                                총<strong>13명</strong> 지원
+                                                총 <strong>${pro.suppoters}명</strong> 지원
                                             </span> <!-- 지원자 수-->
                                             </div>
                                         </div>

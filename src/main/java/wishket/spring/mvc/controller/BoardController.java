@@ -3,8 +3,6 @@ package wishket.spring.mvc.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import wishket.spring.mvc.service.BoardService;
@@ -20,12 +18,16 @@ import java.util.Map;
 
 @Controller
 public class BoardController {
-
-    @Autowired
     ProjectService psrv;
-    @Autowired
     BoardService bsrv;
 
+    @Autowired
+    public BoardController(ProjectService psrv, BoardService bsrv) {
+        this.psrv = psrv;
+        this.bsrv = bsrv;
+    }
+
+    // 프로젝트 찾기
     @GetMapping("/project/list")
     public ModelAndView board(ModelAndView mv, String cp) {
         mv.setViewName("projectboard/search.tiles");
@@ -35,6 +37,7 @@ public class BoardController {
         return mv;
     }
 
+    // 상세페이지
     @GetMapping("/project/board")
     public ModelAndView boardView(ModelAndView mv, String pno, String cp) {
         mv.setViewName("projectboard/boardView.tiles");
@@ -43,11 +46,7 @@ public class BoardController {
         return mv;
     }
 
-//    @GetMapping("/project/list/filter")
-//    public ModelAndView filter(ModelAndView mv){
-//
-//    }
-
+    // 프로젝트 찾기 조건검색
     @GetMapping("/project/list/filter")
     public ModelAndView filterBoard(ModelAndView mv, HttpServletRequest rq){
         mv.setViewName("projectboard/filter.tiles");
@@ -92,7 +91,7 @@ public class BoardController {
         }
     }
 
-    @ResponseBody // 지원하기 버튼 클릭시 데이터 들어가도록 설
+    @ResponseBody // 지원하기 버튼 클릭시 데이터 들어가도록 설정
     @GetMapping("/project/board/insertMember")
     public void insert(String result, HttpServletResponse res){
         try{
