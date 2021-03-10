@@ -1,6 +1,5 @@
 package wishket.spring.mvc.controller;
 
-import com.sun.media.jfxmedia.logging.Logger;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -271,22 +270,6 @@ public class ProjectContoller {
         // 첨부 파일이 있다면
         // session에 저장해뒀던 file 정보를 vo에 복사
         ProjectVO tempVO = (ProjectVO)session.getAttribute("pvo");
-//        if(pvo.getFname1() != null ) {
-//            pvo.setFuuid( tempVO.getFuuid() );
-//            pvo.setFname1( tempVO.getFname1() );
-//            pvo.setFsize1( tempVO.getFsize1() );
-//            pvo.setFtype1( tempVO.getFtype1() );
-//        }
-//        if(pvo.getFname2() != null ) {
-//            pvo.setFname2( tempVO.getFname2() );
-//            pvo.setFsize2( tempVO.getFsize2() );
-//            pvo.setFtype2( tempVO.getFtype2() );
-//        }
-//        if(pvo.getFname3() != null){
-//            pvo.setFname3( tempVO.getFname3() );
-//            pvo.setFsize3( tempVO.getFsize3() );
-//            pvo.setFtype3( tempVO.getFtype3() );
-//        }
 
         if(!ObjectUtils.isEmpty(tempVO)){
             if(!ObjectUtils.isEmpty(tempVO.getFname1())){
@@ -317,13 +300,13 @@ public class ProjectContoller {
             mv.setViewName("redirect:/index");
             if(!ObjectUtils.isEmpty(tempVO)){
                 if(!ObjectUtils.isEmpty(tempVO.getFname1())){
-                    futil.moveToFile(tempVO.getFname1(), tempVO.getFuuid());
+                    futil.moveFile(tempVO.getFname1(), tempVO.getFuuid());
                 }
                 if(!ObjectUtils.isEmpty(tempVO.getFname2())){
-                    futil.moveToFile(tempVO.getFname2(), tempVO.getFuuid());
+                    futil.moveFile(tempVO.getFname2(), tempVO.getFuuid());
                 }
                 if(!ObjectUtils.isEmpty(tempVO.getFname3())){
-                    futil.moveToFile(tempVO.getFname3(), tempVO.getFuuid());
+                    futil.moveFile(tempVO.getFname3(), tempVO.getFuuid());
                 }
             }
 

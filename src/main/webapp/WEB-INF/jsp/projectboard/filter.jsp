@@ -217,7 +217,7 @@
                                             </label>
                                         </div>
                                     <div class="filter-item" style="margin-top: -6px">
-                                        <label class="checkbox-wishket">
+                                        <label  class="checkbox-wishket">
                                             <span>
                                                 <input class="wishket-checkbox theme-wishket" data-value="디자인"
                                                        id="project_design" name="category" type="checkbox" value="디자인"
@@ -456,7 +456,14 @@
                                                 <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                 <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                 마감
-                                                    <strong>${endDate - strDate}일 전</strong>
+                                                <c:choose>
+                                                  <c:when test="${(endDate-strDate) lt 0}">
+                                                      <strong>${-(endDate - strDate)}일 지남</strong>
+                                                  </c:when>
+                                                  <c:otherwise>
+                                                      <strong>${endDate - strDate}일 전</strong>
+                                                  </c:otherwise>
+                                                </c:choose>
                                                 </span> <!-- 마감일 -->
                                             </div>
                                             <div class="application-status">

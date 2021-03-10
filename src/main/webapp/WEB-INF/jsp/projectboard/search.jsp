@@ -394,7 +394,14 @@
                                                 <img src="/img/icon-project-deadline-clock.png" style="height: 30px" width="30px">
                                                 <span class="deadline-date body-2 text600" style="font-size: 14px">
                                                 마감
-                                                    <strong>${endDate - strDate}일 전</strong>
+                                                 <c:choose>
+                                                     <c:when test="${(endDate-strDate) lt 0}">
+                                                         <strong>${-(endDate - strDate)}일 지남</strong>
+                                                     </c:when>
+                                                     <c:otherwise>
+                                                         <strong>${endDate - strDate}일 전</strong>
+                                                     </c:otherwise>
+                                                 </c:choose>
                                                 </span> <!-- 마감일 -->
                                             </div>
                                             <div class="application-status">

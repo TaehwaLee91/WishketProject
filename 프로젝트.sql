@@ -33,7 +33,7 @@ create table 프로젝트 (
     managingExperience varchar(50) not null,
     futurePlan varchar(50) default '',
     projectPriority varchar(50) default '',
-    interestProduct varchar(50) default '',
+    interestProduct varchar(200) default '',
     regdate timestamp default current_timestamp,
     fname1 varchar(100),
     fsize1 varchar(5),
@@ -44,7 +44,8 @@ create table 프로젝트 (
     fname3 varchar(100),
     fsize3 varchar(5),
     ftype3 varchar(5),
-    fuuid varchar(30)
+    fuuid varchar(30),
+    suppoters int default 0
 );
 
 

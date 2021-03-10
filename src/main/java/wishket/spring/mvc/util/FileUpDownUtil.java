@@ -251,7 +251,7 @@ public class FileUpDownUtil {
         return sdf.format(new Date());
     }
 
-    public String moveToFile(String oname, String uuid){
+    public String moveFile(String oname, String uuid){
         FileInputStream fis = null;
         FileOutputStream fos = null;
 
