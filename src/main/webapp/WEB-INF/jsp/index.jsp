@@ -109,7 +109,7 @@
                                                     ${i.availableBudget}원
                                                </c:otherwise>
                                             </c:choose>
-                                                     |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoter}명 지원 </p>
+                                                     |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
                                                 <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
@@ -159,7 +159,7 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoter}명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
                                                 <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
@@ -209,7 +209,7 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoter}명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
                                                 <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
@@ -259,7 +259,7 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoter}명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
                                                 <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
@@ -309,7 +309,7 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoter}명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
                                                 <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
@@ -359,7 +359,7 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoter}명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
                                                 <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
@@ -409,7 +409,7 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoter}명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
                                                 <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
@@ -459,7 +459,7 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoter}명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
                                                 <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
@@ -509,7 +509,7 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoter}명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
                                                 <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
