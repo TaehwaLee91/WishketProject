@@ -37,8 +37,8 @@
             pointer;color: #212121;font-size: 16px; line-height: 20px;font-weight: 400;}
     .dropdown-box .question:before {
         content: '';display: inline-block;margin-right: 12px;background-size: 20px 20px;height: 20px;width: 20px;vertical-align: text-bottom;
-       /* background-image: -webkit-image-set(url(/img/use-icon-down.png) 1x, url(/img/use-icon-down%402x.png) 2x,
-        url(/img/use-icon-down%403x.png) 3x);*/}
+        /* background-image: -webkit-image-set(url(/img/use-icon-down.png) 1x, url(/img/use-icon-down%402x.png) 2x,
+         url(/img/use-icon-down%403x.png) 3x);*/}
 
     .dropdown-box .answer {margin-top: 16px;margin-left: 32px;display: none;color: #424242;word-break: keep-all;
         font-size: 14px; line-height: 24px; font-weight: 400; }
@@ -71,7 +71,7 @@
     .img-contents:before {content: '';  align-self: flex-start;margin: 4px 16px 0 0;
         background-size: 18px 18px;height: 18px; width: 18px;}
     .img-title {font-weight: 500; font-size: 18px; line-height: 28px; color: #212121;
-    margin-bottom: 12px;}
+        margin-bottom: 12px;}
 
     .guide-link-box {
         margin: 48px 64px 0; padding: 20px 32px;border-radius: 8px;box-shadow: 0 1px 4px 0 rgb(0 0 0 / 16%);
@@ -80,7 +80,7 @@
 
     .left-box {display: flex; align-items: center;cursor: pointer;}
     .guide-link{color: #3ba3c7;display: flex;align-items: center; font-weight: 500; font-size: 14px; line-height: 24px;
-                cursor: pointer;}
+        cursor: pointer;}
 
     .guide-link:after {content: '';display: inline-block;background-size: 14px 14px;margin-left: 4px;
         height: 14px;width: 14px;background-image: url(/img/btn-icon-go.png);}
@@ -106,7 +106,7 @@
 
 
 
-<div class="main">
+<div class="main bg-light">
     <div class="container cs-box" >
         <header style="margin: 20px; display: block; box-sizing: border-box;">
             <div class="flex-box" style="justify-content: space-between; align-items: baseline; display: flex; margin-bottom: 24px;">
@@ -168,7 +168,7 @@
                             <img alt="guide img" class="center-img" src="/img/use-img-c-1.png"/>
                         </div>
 
-                            <div class="contents-box2" style="text-align: left; margin-left: 120px">
+                        <div class="contents-box2" style="text-align: left; margin-left: 120px">
                             <div class="horizon-guide" >
                                 <img alt="guide img" src="/img/use-icon-estimate-c.png"/>
                                 <div class="horizon-contents">
@@ -205,9 +205,9 @@
                                 <p class="answer">네. 프로젝트를 등록할 때 프로젝트 진행 방식을 ‘인력을 기간 단위로 구인’을 선택하시면,
                                     그에 맞는 파트너를 구인하실 수 있습니다.
                                 </p>
-                            </p>
+                                </p>
+                            </div>
                         </div>
-                    </div>
                 </section>
                 <section class="guide-contents" id="projectInspection">
                     <div class="contents-box">

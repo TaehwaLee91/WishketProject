@@ -36,7 +36,7 @@
     .review_list:first-child {padding: 5px 0 0 5px;}
     .review_list {display: inline-block; padding: 5px 0 0 22px;}
     .review_box:first-child {margin: 0;}
-    .review_list.review_box {width: 443px;height: 169px;padding: 20px 25px;border-radius: 2px;
+    .review_box {width: 443px;height: 169px;padding: 20px 25px;border-radius: 2px;
         box-shadow: 0 0 8px 0 rgba(0 0 0 .1);background-color: #ffffff;margin: 10px 0 0 0;}
     .review_client_image {width: 55px;height: 55px;border-radius: 27.5px; vertical-align: top;}
     .review_client_info_box {display: inline-block;font-size: 14px;line-height: 15px;margin-left: 15px;}
@@ -52,10 +52,7 @@
     .faq_title:before{background-image: url(/img/use-icon-question-w.png);content: '';display: inline-block; margin-right: 12px;
         background-size: 20px 20px; height: 20px; width: 20px; vertical-align: text-bottom;}
     .faq_box .faq_body {background: #fafafa;}
-
     .faq_box .faq_answer {padding: 25px;}
-
-
     img {vertical-align: middle;}
     .total_info_title {font-size: 16px;}
     .success_client_section .success_client_info .total_info .total_info_body {margin: 10px 0 0 0;font-size: 20px;}
@@ -71,7 +68,7 @@
         -webkit-transition-property: left;
         -webkit-transition-duration: 0.5s;    }
 
-    .review_list_list {width: 3300px;}
+    .review_list_list {width: 3300px;position: absolute;}
 
 </style>
 
@@ -86,52 +83,52 @@
             </div>
             <div class="content-inner" style="padding: 30px;background-color: #fff;border-radius: 3px;border-bottom-width: 2px; border: 1px solid #dedede;">
                 <section class="postscript_section" style="display: block;box-sizing">
-                <div class="represent_postscript_box" style="padding: 15px 15px 30px 15px;border-bottom: 1px solid #eeeeee;line-height: 1;">
-                    <a href="https://www.wishket.com/news-center/detail/272/" style="color: #2099bb;text-decoration: none;">
-                    <div class="postscript_title represent" style="font-size: 21px;">카셰어링 서비스 쏘카- 정산시스템 구축</div></a>
-                    <div class="postscript_client">비공개 지원 시스템</div>
-                    <div class="postscript_body" style="display: inline-block;"><a href="https://www.wishket.com/news-center/detail/272/" >
-                        <img class="postscript_image represent" style="width: 520px; height: 180px; font-size: 14px;
+                    <div class="represent_postscript_box" style="padding: 15px 15px 30px 15px;border-bottom: 1px solid #eeeeee;line-height: 1;">
+                        <a href="https://www.wishket.com/news-center/detail/272/" style="color: #2099bb;text-decoration: none;">
+                            <div class="postscript_title represent" style="font-size: 21px;">카셰어링 서비스 쏘카- 정산시스템 구축</div></a>
+                        <div class="postscript_client">비공개 지원 시스템</div>
+                        <div class="postscript_body" style="display: inline-block;"><a href="https://www.wishket.com/news-center/detail/272/" >
+                            <img class="postscript_image represent" style="width: 520px; height: 180px; font-size: 14px;
                         line-height: 24px;margin: 16px 0 16px 0px;" src="/img/wishket_carsharing.png"/></a>
-                        <div class="postscript_text represent" style="width: 420px;font-size: 14px;line-height: 24px;margin: 40px 0 16px 25px; vertical-align: center;">
-                            <a href="https://www.wishket.com/news-center/detail/272/"><p>위시켓은 파트너 풀이 굉장히 다양했고,
-                            지정된 업체와 컨텍을 하는 것이 아니라 여러 파트너를 한 번에 만날 수 있어서 좋았습니다.<br/>덕분에 빠르게 전문적인 파트너를 만날 수 있었어요.
-                            <br/>빠르게 독립적인 프로젝트를 수행하고 싶은 분들께 <br/>위시켓을 추천합니다.</p></a>
-                            <div class="postscript_detail">
-                                <a href="https://www.wishket.com/news-center/detail/272/">자세히 보기 &gt;</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="normal_postscript_box first" style="width: 497px;padding: 30px 30px 0 15px;border: none; display: inline-block;">
-                    <a href="https://www.wishket.com/news-center/detail/232/">
-                    <div class="postscript_title">가구, 가전 쇼핑몰 ADR- 상세페이지 디자인</div></a>
-                    <div class="postscript_client">지급 승인 후, 대금송금</div>
-                    <div class="postscript_body">
-                        <a href="https://www.wishket.com/news-center/detail/232/">
-                            <img class="postscript_image" src="/img/wishket_safe.png"/></a>
-                        <div class="postscript_text"><a href="https://www.wishket.com/news-center/detail/232/">
-                            <p>클라이언트가 산출물을 받고, 지급 승인을 할 때까지 위시켓이 대금을 보호하는 시스템이라고 하니까 안심하고 외주를 맡길 수 있었습니다.<br/></p></a>
-                            <div class="postscript_detail">
-                                <a href="https://www.wishket.com/news-center/detail/232/">자세히 보기 &gt;</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="normal_postscript_box" style="width: 497px; margin: 0 0 30px 0;padding: 30px 15px 0 30px;border-left: 1px solid #eeeeee;
-                line-height: 1;display: inline-block; float: right;">
-                    <a href="https://www.wishket.com/news-center/detail/260/">
-                    <div class="postscript_title">법무법인 세움- 홈페이지 제작</div></a>
-                    <div class="postscript_client">일주일에 1번 대면미팅</div>
-                    <div class="postscript_body"><a href="https://www.wishket.com/news-center/detail/260/">
-                        <img class="postscript_image" src="/img/wishket_partner.png"/></a>
-                        <div class="postscript_text"><a href="https://www.wishket.com/news-center/detail/260/">
-                            <p>개발자님이 끝까지 책임감있는 모습, 적극적인 모습으로 프로젝트를 맡아주셔서 저희가 원하던 홈페이지가 구현됐어요.</p></a>
-                            <div class="postscript_detail">
-                                <a href="https://www.wishket.com/news-center/detail/260/">자세히 보기 &gt;</a>
+                            <div class="postscript_text represent" style="width: 420px;font-size: 14px;line-height: 24px;margin: 40px 0 16px 25px; vertical-align: center;">
+                                <a href="https://www.wishket.com/news-center/detail/272/"><p>위시켓은 파트너 풀이 굉장히 다양했고,
+                                    지정된 업체와 컨텍을 하는 것이 아니라 여러 파트너를 한 번에 만날 수 있어서 좋았습니다.<br/>덕분에 빠르게 전문적인 파트너를 만날 수 있었어요.
+                                    <br/>빠르게 독립적인 프로젝트를 수행하고 싶은 분들께 <br/>위시켓을 추천합니다.</p></a>
+                                <div class="postscript_detail">
+                                    <a href="https://www.wishket.com/news-center/detail/272/">자세히 보기 &gt;</a></div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                    <div class="normal_postscript_box first" style="width: 497px;padding: 30px 30px 0 15px;border: none; display: inline-block;">
+                        <a href="https://www.wishket.com/news-center/detail/232/">
+                            <div class="postscript_title">가구, 가전 쇼핑몰 ADR- 상세페이지 디자인</div></a>
+                        <div class="postscript_client">지급 승인 후, 대금송금</div>
+                        <div class="postscript_body">
+                            <a href="https://www.wishket.com/news-center/detail/232/">
+                                <img class="postscript_image" src="/img/wishket_safe.png"/></a>
+                            <div class="postscript_text"><a href="https://www.wishket.com/news-center/detail/232/">
+                                <p>클라이언트가 산출물을 받고, 지급 승인을 할 때까지 위시켓이 대금을 보호하는 시스템이라고 하니까 안심하고 외주를 맡길 수 있었습니다.<br/></p></a>
+                                <div class="postscript_detail">
+                                    <a href="https://www.wishket.com/news-center/detail/232/">자세히 보기 &gt;</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="normal_postscript_box" style="width: 497px; margin: 0 0 30px 0;padding: 30px 15px 0 30px;border-left: 1px solid #eeeeee;
+                line-height: 1;display: inline-block; float: right;">
+                        <a href="https://www.wishket.com/news-center/detail/260/">
+                            <div class="postscript_title">법무법인 세움- 홈페이지 제작</div></a>
+                        <div class="postscript_client">일주일에 1번 대면미팅</div>
+                        <div class="postscript_body"><a href="https://www.wishket.com/news-center/detail/260/">
+                            <img class="postscript_image" src="/img/wishket_partner.png"/></a>
+                            <div class="postscript_text"><a href="https://www.wishket.com/news-center/detail/260/">
+                                <p>개발자님이 끝까지 책임감있는 모습, 적극적인 모습으로 프로젝트를 맡아주셔서 저희가 원하던 홈페이지가 구현됐어요.</p></a>
+                                <div class="postscript_detail">
+                                    <a href="https://www.wishket.com/news-center/detail/260/">자세히 보기 &gt;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section class="client_review_section" style="margin: 0 -30px;background: #fafafa;padding: 65px 31px 40px 31px;">
                     <div class="review_header_box" style="text-align: center;">
                         <div class="review_header_title" style="font-size: 24px;line-height: 1;font-weight: bold;color: #333333;">
@@ -493,10 +490,10 @@
                     <div class="success_client_footer" style="position: relative;background: url('/img/colored_bars2.png') no-repeat;
                             background-size: 1058px 178px;margin: 0 -61px;text-align: center;height: 178px;">
                         <div class="client_footer_title" style="font-size: 18px; font-weight: bold; padding: 60px 0 0 0;">위시켓과 함께 클라이언트님의 프로젝트를 성공적으로 완료해보세요.</div>
-                            <button class="btn btn-client btn-lg" onclick="location.href = '/project/create'"
-                                    style="width: 237px; font-size: 16px; margin-top: 20px;
+                        <button class="btn btn-client btn-lg" onclick="location.href = '/project/create'"
+                                style="width: 237px; font-size: 16px; margin-top: 20px;
                                     padding: 10px 16px; line-height: 1.33; border-radius: 3px;color: #fff;background-color: #446eab;border-color: #3d6299;display: inline-block; margin-bottom: 0; text-align: center;cursor: pointer;white-space: nowrap;}">
-                                프로젝트 등록하기</button></a>
+                            프로젝트 등록하기</button></a>
                     </div>
                 </section>
                 <section class="faq_section" style="padding: 32px 1px 0 1px;">
@@ -546,6 +543,3 @@
     </div>
     <div id="push"></div>
 </div>
-
-
-<script src="/js/postscript.js"></script>
