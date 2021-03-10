@@ -133,28 +133,16 @@
                                 </div>
                             </div>
 
-                            <%-- 추가는 구현. 삭제는 미구현 --%>
                             <div class="form-content" id="basicPlan">
                                 <p class="form-content-title">프로젝트 관련자료</p>
                                 <p>아이디어 또는 필요한 내용을 정리한 문서를 추가해 주세요.<p>
                                 <p>프로젝트 예산 및 일정 산정에 활용되며, 문서 및 이미지 파일만 추가 가능합니다.</p>
                                 <button type="button" class="col-12 text-center bg-light" style="border: 1px dotted gray;" onclick="clickFileBtn(this)">
                                     <div style="padding-top: 15px">
-<%--                                        <p><img src = "/img/btn_icon_plus_normal.png"/>프로젝트 관련 자료 추가</p>--%>
                                         <p><i class="bi bi-plus-square-dotted" style="font-size: 20px"></i>&nbsp;&nbsp;&nbsp;프로젝트 관련 자료 추가</p>
                                     </div>
                                 </button>
-                                <div id="fileWrapper" class="form-group">
-<%--                                    <div>--%>
-<%--                                        <input type="file" name="file" id="file1" onchange="addFile(this)" style="display: none"/>--%>
-<%--                                    </div>--%>
-<%--                                    <div>--%>
-<%--                                        <input type="file" name="file" id="file2" onchange="addFile(this)" style="display: none"/>--%>
-<%--                                    </div>--%>
-<%--                                    <div>--%>
-<%--                                        <input type="file" name="file" id="file3" onchange="addFile(this)" style="display: none"/>--%>
-<%--                                    </div>--%>
-                                </div>
+                                <div id="fileWrapper" class="form-group"></div>
                             </div>
 
                             <input type="hidden" name="type" value="${pvo.type}">
