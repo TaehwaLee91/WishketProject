@@ -531,9 +531,9 @@
     <!--section4 -->
     <div class="section4 basicWidth bg-white">
         <div class="center contentsWidth" >
-            <div class="row" style="margin:65px 220px;">
+            <div class="row col-12" style="margin:65px 220px;">
                 <h4 class="text-white font-weight-light">다양한 카테고리의 IT 프로젝트를 찾고 있으신가요?</h4>
-                <button class="btn bg-white border-info ml-5 text-info" id="sc4Btn">회원가입하기</button></div>
+                <button class="btn bg-white border-info ml-5 text-info" id="sc4Btn" style="margin-top: -7px">회원가입하기</button></div>
         </div>
     </div><!--section4 -->
 
