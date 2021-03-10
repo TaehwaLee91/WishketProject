@@ -78,7 +78,7 @@
                                     <div class="col mb-4">
                                         <div class="card quest">
                                             <div class="card-body">
-                                                <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
+                                                <h5 class="card-title"><a href="/project/board?pno=${i.pno}" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
                                                 <p><c:choose>
                                                 <c:when test="${i.type eq '상주'}">
@@ -109,9 +109,9 @@
                                                     ${i.availableBudget}원
                                                </c:otherwise>
                                             </c:choose>
-                                                     |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                     |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -128,7 +128,7 @@
                                     <div class="col mb-4">
                                         <div class="card quest">
                                             <div class="card-body">
-                                                <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
+                                                <h5 class="card-title"><a href="/project/board?pno=${i.pno}" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
                                                 <p><c:choose>
                                                     <c:when test="${i.type eq '상주'}">
@@ -159,9 +159,9 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -178,7 +178,7 @@
                                     <div class="col mb-4">
                                         <div class="card quest">
                                             <div class="card-body">
-                                                <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
+                                                <h5 class="card-title"><a href="/project/board?pno=${i.pno}" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
                                                 <p><c:choose>
                                                     <c:when test="${i.type eq '상주'}">
@@ -209,9 +209,9 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -228,7 +228,7 @@
                                     <div class="col mb-4">
                                         <div class="card quest">
                                             <div class="card-body">
-                                                <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
+                                                <h5 class="card-title"><a href="/project/board?pno=${i.pno}" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
                                                 <p><c:choose>
                                                     <c:when test="${i.type eq '상주'}">
@@ -259,9 +259,9 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -278,7 +278,7 @@
                                     <div class="col mb-4">
                                         <div class="card quest">
                                             <div class="card-body">
-                                                <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
+                                                <h5 class="card-title"><a href="/project/board?pno=${i.pno}" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
                                                 <p><c:choose>
                                                     <c:when test="${i.type eq '상주'}">
@@ -309,9 +309,9 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -328,7 +328,7 @@
                                     <div class="col mb-4">
                                         <div class="card quest">
                                             <div class="card-body">
-                                                <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
+                                                <h5 class="card-title"><a href="/project/board?pno=${i.pno}" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
                                                 <p><c:choose>
                                                     <c:when test="${i.type eq '상주'}">
@@ -359,9 +359,9 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -378,7 +378,7 @@
                                     <div class="col mb-4">
                                         <div class="card quest">
                                             <div class="card-body">
-                                                <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
+                                                <h5 class="card-title"><a href="/project/board?pno=${i.pno}" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
                                                 <p><c:choose>
                                                     <c:when test="${i.type eq '상주'}">
@@ -409,9 +409,9 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -428,7 +428,7 @@
                                     <div class="col mb-4">
                                         <div class="card quest">
                                             <div class="card-body">
-                                                <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
+                                                <h5 class="card-title"><a href="/project/board?pno=${i.pno}" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
                                                 <p><c:choose>
                                                     <c:when test="${i.type eq '상주'}">
@@ -459,9 +459,9 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -478,7 +478,7 @@
                                     <div class="col mb-4">
                                         <div class="card quest">
                                             <div class="card-body">
-                                                <h5 class="card-title"><a href="#" class="text-info">${i.title}</a></h5>
+                                                <h5 class="card-title"><a href="/project/board?pno=${i.pno}" class="text-info">${i.title}</a></h5>
                                                 <p class="card-text">
                                                 <p><c:choose>
                                                     <c:when test="${i.type eq '상주'}">
@@ -509,9 +509,9 @@
                                                         ${i.availableBudget}원
                                                     </c:otherwise>
                                                 </c:choose>
-                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>0명 지원 </p>
+                                                    |&nbsp;&nbsp;<i class="bi bi-clock"></i>${i.projectTerm}일 | &nbsp;&nbsp;<i class="bi bi-person"></i>${i.suppoters}명 지원 </p>
                                                 <p class="sc3Contents2" style="width: 478px; height: 42px; overflow: hidden">${i.detailTask}</p>
-                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | </p>
+                                                <p class="sc3Contents3"><span class="font-weight-bold">${i.type}</span> | IT아웃소싱은 Wishket</p>
                                                 </p>
                                             </div>
                                         </div>
