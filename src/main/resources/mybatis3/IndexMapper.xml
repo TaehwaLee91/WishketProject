@@ -13,7 +13,7 @@
 
     <select id="selectList" statementType="PREPARED" parameterType="String"
             resultType="wishket.spring.mvc.vo.IndexVO">
-        select pno,title,detailTask,availableBudget,projectTerm,type from 프로젝트 where area like CONCAT('%', #{s}, '%')
+        select pno,title,detailTask,availableBudget,projectTerm,type,suppoters from 프로젝트 where area like CONCAT('%', #{s}, '%')
         order by pno desc
             limit 0,4;
     </select>

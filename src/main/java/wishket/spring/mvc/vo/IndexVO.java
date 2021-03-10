@@ -7,17 +7,27 @@ public class IndexVO {
     private String projectTerm;
     private String type;
     private String detailTask;
+    private String suppoters;
 
     public IndexVO() {
     }
 
-    public IndexVO(String pno, String title, String availableBudget, String projectTerm, String type, String detailTask) {
+    public IndexVO(String pno, String title, String availableBudget, String projectTerm, String type, String detailTask, String suppoters) {
         this.pno = pno;
         this.title = title;
         this.availableBudget = availableBudget;
         this.projectTerm = projectTerm;
         this.type = type;
         this.detailTask = detailTask;
+        this.suppoters = suppoters;
+    }
+
+    public String getSuppoters() {
+        return suppoters;
+    }
+
+    public void setSuppoters(String suppoters) {
+        this.suppoters = suppoters;
     }
 
     public IndexVO(String availableBudget) {
