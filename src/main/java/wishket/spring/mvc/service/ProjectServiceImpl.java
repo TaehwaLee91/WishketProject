@@ -9,7 +9,9 @@ import wishket.spring.mvc.util.FileUpDownUtil;
 import wishket.spring.mvc.vo.ProjectVO;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service("psrv")
 public class ProjectServiceImpl implements ProjectService {
@@ -43,6 +45,21 @@ public class ProjectServiceImpl implements ProjectService {
     public ProjectVO readOneProject(String pno) {
         ProjectVO pvo = pdao.selectOneProject(pno);
         return pvo;
+    }
+
+    @Override
+    public List<ProjectVO> readFilterProject(Map<String, String[]> filter, String cp) {
+        int snum = (Integer.parseInt(cp) - 1) * 10;
+        Map<String, Object> param = new HashMap<>();
+        param.put("filter", filter);
+        param.put("snum", snum);
+        List<ProjectVO> pvo = pdao.selectFilterProject(param);
+        return pvo;
+    }
+
+    @Override
+    public int countFilterProject(Map<String, String[]> filter) {
+        return pdao.selectCountFilterProject(filter);
     }
 
     @Override
