@@ -52,10 +52,7 @@
     .faq_title:before{background-image: url(/img/use-icon-question-w.png);content: '';display: inline-block; margin-right: 12px;
         background-size: 20px 20px; height: 20px; width: 20px; vertical-align: text-bottom;}
     .faq_box .faq_body {background: #fafafa;}
-
     .faq_box .faq_answer {padding: 25px;}
-
-
     img {vertical-align: middle;}
     .total_info_title {font-size: 16px;}
     .success_client_section .success_client_info .total_info .total_info_body {margin: 10px 0 0 0;font-size: 20px;}
